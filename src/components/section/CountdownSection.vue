@@ -2,7 +2,7 @@
   <section class="countdown-section">
     <h2 class="section-title">⏳ Coupons Expiring Soon</h2>
 
-    <div class="coupon-grid">
+    <div class="coupon-grid container">
       <div
         v-for="coupon in coupons"
         :key="coupon.id"
@@ -89,7 +89,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .countdown-section {
   padding: 3rem 1rem;
-  background: #fef2f2;
+  /* background: #fef2f2; */
   text-align: center;
 }
 

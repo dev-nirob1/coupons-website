@@ -8,12 +8,12 @@
     --popins-font: 'Poppins', sans-serif;
     --nunito-font: "Nunito Sans", serif;
 
-    --primary-color: #379A86;
-    --secondary-color: #fff;
-    --dark-color: #3C3C3C;
-    --light-color: #4c4b4b;
+    --primary-color: #1F2937;
+    --secondary-color: #7567EB;
+    --dark-color: #1F2937;
+    --light-color: #384252;
     --white-color: #fff;
-    --alternative-color: #4c4b4b01;
+    --alternative-color: #F43F5E;
     --hover-color: #d75454;
     /* ---------------typography------------ */
     /* headings  */
@@ -33,7 +33,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    /* line-height: 1.8; */
+    line-height: 1.2;
     font-size: 1rem;
     box-sizing: border-box;
 }
@@ -97,7 +97,7 @@ a {
 }
 
 .text-secondary {
-    color: var(--white-color);
+    color: var(--secondary-color);
 }
 
 .text-white {
