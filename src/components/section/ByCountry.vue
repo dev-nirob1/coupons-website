@@ -1,0 +1,3 @@
+<template>
+  by country
+</template>

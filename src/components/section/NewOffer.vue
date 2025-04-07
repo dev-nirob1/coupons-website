@@ -1,0 +1,3 @@
+<template>
+  new offer
+</template>
