@@ -1,5 +1,6 @@
 <script setup>
 import BannerSection from '@/components/section/BannerSection.vue';
+import CategorySection from '@/components/section/CategorySection.vue';
 import HeroSection from '@/components/section/HeroSection.vue';
 
 </script>
@@ -7,4 +8,5 @@ import HeroSection from '@/components/section/HeroSection.vue';
 <template>
   <HeroSection/>
   <BannerSection/>
+  <CategorySection/>
 </template>
