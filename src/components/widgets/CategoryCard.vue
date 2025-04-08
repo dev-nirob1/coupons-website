@@ -1,4 +1,8 @@
 <script setup>
+import BaseButton from '../element/BaseButton.vue';
+import BaseImage from '../element/BaseImage.vue';
+import BaseTitle from '../element/BaseTitle.vue';
+
 defineProps({
   category: Object
 })
@@ -7,14 +11,14 @@ defineProps({
 <template>
   <div class="category-card">
     <div class="bg-white p-2">
-      <div class="category-icon">
-        <img :src="category.image" alt="">
+      <div class="category-image">
+        <BaseImage :image="category.image"/>
       </div>
-      <h5>{{ category.name }}</h5>
+      <BaseTitle tag="h5">{{ category.name }}</BaseTitle>
       <small>{{ category.count }} deals</small>
     </div>
     <div class="category-overlay">
-      <button class="btn text-white bg-secondary">View Deals</button>
+      <BaseButton class="btn text-white bg-secondary">View Details</BaseButton>
     </div>
   </div>
 </template>
@@ -29,11 +33,17 @@ defineProps({
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.category-card .category-image {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+.category-card h5 {
+  margin: 1rem 0;
+}
 .category-card:hover {
   transform: translateY(-5px);
 }
-
 .category-overlay {
   position: absolute;
   top: 0;

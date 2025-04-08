@@ -49,7 +49,9 @@ const closeMenu = () => {
 
 <style scoped>
 .navbar {
-  background-color: var(--white-color);
+  background-color: var(--dark-color);
+  color: var(--white-color);
+ color: #fff;
   padding: 0.75rem 0;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
   position: sticky;
@@ -78,7 +80,7 @@ header ul {
 }
 header ul li a {
   text-decoration: none;
-  color: var(--light-color);
+  /* color: var(--light-color); */
   font-weight: 500;
   transition: color 0.2s ease-in-out;
   position: relative;
