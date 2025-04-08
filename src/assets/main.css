@@ -101,7 +101,13 @@ a {
 }
 
 .text-white {
-    color: var(--white-color)
+    color: var(--white-color);
+}
+.text-light{
+  color: var(--light-color);
+}
+.text-dark{
+  color: var(--dark-color);
 }
 
 .bg-light {
