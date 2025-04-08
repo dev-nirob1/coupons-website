@@ -1,5 +1,4 @@
 @import './grid.css';
-@import './grid.css';
 
 *{
     box-sizing: border-box;
@@ -111,7 +110,7 @@ a {
 }
 
 .bg-light {
-    background-color: rgb(from var(--primary-color) r g b/ 20%);
+    background-color: rgb(from var(--primary-color) r g b/ 10%);
 }
 
 .bg-primary {

@@ -7,7 +7,7 @@ import BaseTitle from '../element/BaseTitle.vue';
 </script>
 
 <template>
-  <section class="hero bg-secondary mb-1 py-2 medium-py-3 large-py-5">
+  <section class="hero bg-secondary py-2 medium-py-3 large-py-5">
     <div class="container medium-2 gap-2">
       <div>
         <HeroTitle>
@@ -45,11 +45,13 @@ import BaseTitle from '../element/BaseTitle.vue';
 </template>
 <style scoped>
 
-/* my one */
 .hero {
   min-height: 100Vh;
   display: flex;
   align-items: center;
+}
+.hero .highlight {
+  border-bottom: 5px solid var(--alternative-color);
 }
 .input-field input {
   background-color: var(--white-color);
