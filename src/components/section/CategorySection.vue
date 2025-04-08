@@ -8,14 +8,14 @@ import InputField from '../element/InputField.vue';
 
 // Sample categories data
 const categories = ref([
-  { id: 1, name: 'Fashion', icon: '👗', count: 245, },
-  { id: 2, name: 'Electronics', icon: '📱', count: 189 },
-  { id: 3, name: 'Home & Garden', icon: '🏠', count: 132 },
-  { id: 4, name: 'Food & Grocery', icon: '🍎', count: 98 },
-  { id: 5, name: 'Travel', icon: '✈️', count: 76 },
-  { id: 6, name: 'Health & Beauty', icon: '💄', count: 167 },
-  { id: 7, name: 'Sports & Outdoors', icon: '⚽', count: 112 },
-  { id: 8, name: 'Pet Supplies', icon: '🐶', count: 54 },
+  { id: 1, name: 'Fashion', image: '/categories/fashion.png', count: 245, },
+  { id: 2, name: 'Electronics', image: '/categories/electronics.png', count: 189 },
+  { id: 3, name: 'Home & Garden', image: '/categories/garden.png', count: 132 },
+  { id: 4, name: 'Food & Grocery', image: '/categories/grocery.png', count: 98 },
+  { id: 5, name: 'Travel', image: '/categories/travel.png', count: 76 },
+  { id: 6, name: 'Health & Beauty', image: '/categories/health.png', count: 167 },
+  { id: 7, name: 'Sports & Outdoors', image: '/categories/sports.png', count: 112 },
+  { id: 8, name: 'Pet Supplies', image: '/categories/pet.png', count: 54 },
 ]);
 
 </script>
@@ -65,9 +65,6 @@ const categories = ref([
   border: none;
 }
 
-/* .search-box {
-  position:
-} */
 .search-box input {
   outline: none;
   border: none;

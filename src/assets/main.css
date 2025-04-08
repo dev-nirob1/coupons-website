@@ -110,7 +110,7 @@ a {
 }
 
 .bg-light {
-    background-color: rgb(from var(--primary-color) r g b/ 10%);
+    background-color: rgb(from var(--primary-color) r g b/ 5%);
 }
 
 .bg-primary {
@@ -120,7 +120,9 @@ a {
 .bg-secondary {
     background-color: var(--secondary-color);
 }
-
+.bg-white {
+  background-color: var(--white-color);
+}
 .text-center {
     text-align: center;
 }
@@ -176,6 +178,8 @@ a {
 /* button styles  */
 .btn {
     display: inline-block;
+    border: none;
+    outline: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-size: 1rem;
