@@ -1,23 +1,19 @@
 <script setup>
 import BannerSection from '@/components/section/BannerSection.vue';
 import ByCompany from '@/components/section/ByCompany.vue';
-// import CallToAction from '@/components/section/CallToAction.vue';
+import CallToAction from '@/components/section/CallToAction.vue';
 import CategorySection from '@/components/section/CategorySection.vue';
-// import CountdownSection from '@/components/section/CountdownSection.vue';
 import EndingSoon from '@/components/section/EndingSoon.vue';
 import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
-//  import HeroSection from '@/components/section/HeroSection.vue';
-//  import NewOffer from '@/components/section/NewOffer.vue';
- </script>
+import TestimonialSection from '@/components/section/TestimonialSection.vue';
+</script>
 
 <template>
-  <!-- <HeroSection/> -->
-  <ByCompany/>
-  <BannerSection/>
-  <CategorySection/>
-  <EndingSoon/>
-  <!-- <CountdownSection/> -->
-  <FeaturedCoupon/>
-  <!-- <NewOffer/> -->
-  <!-- <CallToAction/> -->
+  <TestimonialSection/>
+  <ByCompany />
+  <BannerSection />
+  <CategorySection />
+  <EndingSoon />
+  <FeaturedCoupon />
+  <CallToAction/>
 </template>
