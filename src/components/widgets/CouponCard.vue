@@ -1,24 +1,25 @@
 <script setup lang="ts">
+import BaseButton from '../element/BaseButton.vue';
 import BaseParagraph from '../element/BaseParagraph.vue';
 import BaseTitle from '../element/BaseTitle.vue';
-import HeroTitle from '../element/HeroTitle.vue';
-
 </script>
 
 <template>
   <div class="coupon-card">
-    <div class="flex justify-between align-center gap-1">
+    <div class="flex justify-between gap-1">
       <div>
         <BaseTitle tag="h5">Medical Care Coupon</BaseTitle>
         <BaseParagraph>Support free consultation all inquery fee is less then or equal to $5000</BaseParagraph>
       </div>
       <div>
-        <BaseParagraph>Over $300 minus</BaseParagraph>
-        <HeroTitle>$50</HeroTitle>
+        <BaseTitle>$50</BaseTitle>
       </div>
     </div>
     <div class="card-footer">
-      <BaseParagraph>Validity Period: 2025 - 06 - 02</BaseParagraph>
+      <div class="flex justify-between align-center">
+        <BaseParagraph>Validity Period: 2025 - 06 - 02</BaseParagraph>
+        <BaseButton class="bg-white">Get Code</BaseButton>
+      </div>
       <div class="circle-1"></div>
       <div class="circle-2"></div>
     </div>
@@ -29,7 +30,7 @@ import HeroTitle from '../element/HeroTitle.vue';
 .coupon-card {
   background-color: var(--secondary-color);
   color: var(--white-color);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: .75rem;
   overflow: hidden;
 }
@@ -38,12 +39,13 @@ import HeroTitle from '../element/HeroTitle.vue';
   margin: 0 0 10px 0;
 }
 
-.coupon-card h1 {
+.coupon-card h3 {
   margin-top: 10px;
 }
 .card-footer {
   position: relative;
   border-top: 5px dashed #fff;
+  text-align: center;
 }
 .card-footer .circle-1,.circle-2 {
   position: absolute;
@@ -54,12 +56,12 @@ import HeroTitle from '../element/HeroTitle.vue';
   background-color: var(--white-color);
 }
 .circle-1 {
-  left: -45px;
+  left: -55px;
 }
 
 /* Right circle */
 .circle-2 {
-  right: -45px;
+  right: -55px;
 }
 
 

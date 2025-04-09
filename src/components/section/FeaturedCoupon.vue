@@ -6,7 +6,7 @@ import CouponCard from '../widgets/CouponCard.vue';
 </script>
 
 <template>
-  <section class="container py-5">
+  <section class="featured-coupon container py-5">
     <!-- Section Header -->
     <div class="text-center mb-3">
       <BaseTitle>Featured Coupons</BaseTitle>
@@ -21,9 +21,8 @@ import CouponCard from '../widgets/CouponCard.vue';
     </div>
   </section>
 </template>
-
-
-
 <style scoped>
-
+.featured-coupon h3 {
+  margin-bottom: 10px;
+}
 </style>

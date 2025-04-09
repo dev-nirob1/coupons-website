@@ -1,7 +1,7 @@
 <template>
   <section class="cta-section mb-5">
     <div class="cta-container">
-      <h2 class="cta-title">🎉 Don't Miss Out on the Best Coupons!</h2>
+      <h2 class="cta-title">Don't Miss Out on the Best Coupons!</h2>
       <p class="cta-description">Sign up today to get exclusive offers and discounts delivered straight to your inbox!</p>
 
       <!-- Action Buttons -->

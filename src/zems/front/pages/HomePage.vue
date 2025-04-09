@@ -1,7 +1,7 @@
 <script setup>
 import BannerSection from '@/components/section/BannerSection.vue';
-// import ByCountry from '@/components/section/ByCountry.vue';
-import CallToAction from '@/components/section/CallToAction.vue';
+import ByCompany from '@/components/section/ByCompany.vue';
+// import CallToAction from '@/components/section/CallToAction.vue';
 import CategorySection from '@/components/section/CategorySection.vue';
 // import CountdownSection from '@/components/section/CountdownSection.vue';
 import EndingSoon from '@/components/section/EndingSoon.vue';
@@ -12,12 +12,12 @@ import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
 
 <template>
   <!-- <HeroSection/> -->
+  <ByCompany/>
   <BannerSection/>
   <CategorySection/>
   <EndingSoon/>
   <!-- <CountdownSection/> -->
   <FeaturedCoupon/>
   <!-- <NewOffer/> -->
-  <!-- <ByCountry/> -->
-  <CallToAction/>
+  <!-- <CallToAction/> -->
 </template>

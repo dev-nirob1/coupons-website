@@ -1,3 +1,0 @@
-<template>
-  ending soon
-</template>

@@ -8,7 +8,8 @@
 </script>
 
 <template>
-    <tag class="title">
+    <tag class="
+    ">
         <slot></slot>
     </tag>
 </template>
