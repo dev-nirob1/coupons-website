@@ -7,7 +7,7 @@ import TestimonialsCard from '../widgets/TestimonialsCard.vue';
 <template>
   <div class="container py-5">
     <div class="medium-8">
-      <div class="span-3">
+      <div class="span-3 text-center">
         <SubTitle>Our Clients</SubTitle>
         <BaseTitle>Testimonials</BaseTitle>
       </div>

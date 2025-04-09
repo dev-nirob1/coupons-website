@@ -1,6 +1,7 @@
 <script setup>
 import BaseImage from '../element/BaseImage.vue';
 import BaseParagraph from '../element/BaseParagraph.vue';
+import SubTitle from '../element/SubTitle.vue';
 
 
 </script>
@@ -10,7 +11,7 @@ import BaseParagraph from '../element/BaseParagraph.vue';
     <div class="flex align-center gap-1">
       <BaseImage image="/author.jpg" />
       <div>
-        <h5 class="text-dark">Adam Josheph</h5>
+        <SubTitle>Adam Josheph</SubTitle>
         <BaseParagraph>
           Selling Agent
         </BaseParagraph>
@@ -34,7 +35,7 @@ import BaseParagraph from '../element/BaseParagraph.vue';
   flex: 0 0 auto;
   padding: 1.5rem;
   width: 300px;
-  height:280px;
+  height: 280px;
   background: #ffff;
   border-radius: 8px;
 }

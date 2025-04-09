@@ -4,7 +4,7 @@
     </h5>
 </template>
 <style scoped>
-.sub-title{
-    font-size: 1.5rem;
-}
+/* .sub-title{
+    font-size: 1.3rem;
+} */
 </style>
