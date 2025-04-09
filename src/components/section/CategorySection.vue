@@ -18,7 +18,7 @@ const categories = ref([
 
 </script>
 <template>
-  <section class=" py-2 my-5">
+  <section class=" py-2">
     <div class="container">
       <BaseTitle class="text-center text-dark">Browse Categories</BaseTitle>
       <SubTitle class="text-center text-light">Find the best deals in your favorite categories</SubTitle>
