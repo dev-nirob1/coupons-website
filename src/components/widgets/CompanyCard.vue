@@ -1,4 +1,8 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+import BaseImage from '../element/BaseImage.vue';
+import BaseTitle from '../element/BaseTitle.vue';
+
 defineProps({
   company: {
     type: Object
@@ -6,13 +10,25 @@ defineProps({
 })
 </script>
 <template>
-   <div class="company-card">
-       {{company.name}}
-      </div>
+  <RouterLink class="company-card" to="/">
+    <BaseImage :image="company.logo"/>
+    <BaseTitle>{{ company.name }}</BaseTitle>
+  </RouterLink>
 </template>
 <style scoped>
 .company-card{
-  border: 1px solid red;
+  background-color: var(--white-color);
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 1rem;
   padding: 1.5rem;
+  text-align: center;
+}
+.company-card h3 {
+  margin: 10px;
+}
+.company-card img {
+  height: 80px;
+  width: 80px;
 }
 </style>

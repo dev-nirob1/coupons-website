@@ -10,9 +10,9 @@ import TestimonialSection from '@/components/section/TestimonialSection.vue';
 
 <template>
   <TestimonialSection/>
-  <ByCompany />
   <BannerSection />
   <CategorySection />
+  <ByCompany />
   <EndingSoon />
   <FeaturedCoupon />
   <CallToAction/>
