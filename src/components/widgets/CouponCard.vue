@@ -12,12 +12,13 @@ import BaseTitle from '../element/BaseTitle.vue';
         <BaseParagraph>Support free consultation all inquery fee is less then or equal to $5000</BaseParagraph>
       </div>
       <div>
-        <BaseTitle>$50</BaseTitle>
+        <span>Flat</span>
+        <BaseTitle class="price">50 <span>$</span></BaseTitle>
       </div>
     </div>
-    <div class="card-footer">
+    <div class="card-footer pt-1">
       <div class="flex justify-between align-center">
-        <BaseParagraph>Validity Period: 2025 - 06 - 02</BaseParagraph>
+        <BaseParagraph>Validity: 2025 - 06 - 02</BaseParagraph>
         <BaseButton class="bg-white">Get Code</BaseButton>
       </div>
       <div class="circle-1"></div>
@@ -41,6 +42,13 @@ import BaseTitle from '../element/BaseTitle.vue';
 
 .coupon-card h3 {
   margin-top: 10px;
+}
+.coupon-card .price {
+  display: flex;
+  align-items: center;
+}
+.coupon-card .price span {
+  font-size: 1.5rem;
 }
 .card-footer {
   position: relative;
