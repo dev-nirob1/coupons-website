@@ -46,12 +46,16 @@ const companies = [
   color: var(--white-color);
   padding: 1rem;
   border-radius: 1rem;
+  transition: all .3s ease-in-out;
 }
-
+.link-card:hover{
+  transform: translateY(-10px);
+}
 .link-card img {
   height: 100%;
   width: 100%;
 }
+
 hr {
   flex: 1;
   border: none;

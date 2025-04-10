@@ -23,6 +23,10 @@ defineProps({
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
+  transition: all .3s ease-in-out;
+}
+.company-card:hover{
+  transform: translateY(-10px);
 }
 .company-card h3 {
   margin: 10px;
