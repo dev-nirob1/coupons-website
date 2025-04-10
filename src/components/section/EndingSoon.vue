@@ -16,6 +16,9 @@ import CouponCard from '../widgets/CouponCard.vue';
           <div class="text-center">
             <BaseTitle>Ending In</BaseTitle>
             <SubTitle>Grab these deals before they expire!</SubTitle>
+            <div class="clock">
+              <div class="hand"></div>
+            </div>
             <CountDown />
           </div>
         </div>
@@ -37,9 +40,58 @@ import CouponCard from '../widgets/CouponCard.vue';
 
 
 <style scoped>
-.left { margin-top: 5rem;}
+.ending-soon h3 {
+  margin-bottom: 0;
+}
+.ending-soon h5 {
+  margin-top: 15px;
+}
+
+.clock {
+  width: 150px;
+  height: 150px;
+  border: 6px solid #333;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 60px;
+  background: #333;
+  transform-origin: bottom;
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+.left {
+  margin-top: 5rem;
+}
+
 .left .coupon-card,
-.right .coupon-card{
+.right .coupon-card {
   margin-top: 1rem;
 }
 </style>
