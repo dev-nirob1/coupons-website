@@ -16,7 +16,7 @@ const companies = [
 
 <template>
   <section class="company-section container py-3">
-    <BaseTitle class="text-center">Offer From Company</BaseTitle>
+    <BaseTitle class="flex">Company <span class="text-secondary"> Offer</span> <hr></BaseTitle>
     <div class="medium-4 gap-2">
       <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
       <div class="span-2">
@@ -51,5 +51,11 @@ const companies = [
 .link-card img {
   height: 100%;
   width: 100%;
+}
+hr {
+  flex: 1;
+  border: none;
+  margin: 15px 0;
+  border-bottom: 3px solid var(--primary-color);
 }
 </style>

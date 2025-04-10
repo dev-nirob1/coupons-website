@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import BaseParagraph from '../element/BaseParagraph.vue';
+<script setup>
 import BaseTitle from '../element/BaseTitle.vue';
 import CouponCard from '../widgets/CouponCard.vue';
 
@@ -8,18 +7,20 @@ import CouponCard from '../widgets/CouponCard.vue';
 <template>
   <section class="featured-coupon container py-2">
     <!-- Section Header -->
-    <div class="text-center mb-3">
-      <BaseTitle>Featured Coupons</BaseTitle>
-      <BaseParagraph>Exclusive discounts for you</BaseParagraph>
+    <div class="mb-3">
+      <BaseTitle class="flex">Featured
+        <span class="text-secondary">Coupons</span>
+        <hr>
+      </BaseTitle>
     </div>
     <!-- Coupon Grid -->
     <div class="medium-3 gap-2">
-      <CouponCard/>
-      <CouponCard/>
-      <CouponCard/>
-      <CouponCard/>
-      <CouponCard/>
-      <CouponCard/>
+      <CouponCard />
+      <CouponCard />
+      <CouponCard />
+      <CouponCard />
+      <CouponCard />
+      <CouponCard />
 
     </div>
   </section>
@@ -27,5 +28,12 @@ import CouponCard from '../widgets/CouponCard.vue';
 <style scoped>
 .featured-coupon h3 {
   margin-bottom: 10px;
+}
+
+hr {
+  flex: 1;
+  border: none;
+  margin: 15px 0;
+  border-bottom: 3px solid var(--primary-color);
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import BaseTitle from '../element/BaseTitle.vue';
-import SubTitle from '../element/SubTitle.vue';
+// import SubTitle from '../element/SubTitle.vue';
 import CategoryCard from '../widgets/CategoryCard.vue';
 
 // Sample categories data
@@ -20,8 +20,10 @@ const categories = ref([
 <template>
   <section class=" py-2">
     <div class="container">
-      <BaseTitle class="text-center text-dark">Browse Categories</BaseTitle>
-      <SubTitle class="text-center text-light">Find the best deals in your favorite categories</SubTitle>
+      <BaseTitle class="text-dark flex">
+        Browse <span class="text-secondary">Categories</span>
+        <hr>
+      </BaseTitle>
       <!-- Categories container -->
       <div class="medium-2 large-4 gap-2">
         <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
@@ -31,5 +33,10 @@ const categories = ref([
 </template>
 
 <style scoped>
-
+hr {
+  flex: 1;
+  border: none;
+  margin: 15px 0;
+  border-bottom: 3px solid var(--primary-color);
+}
 </style>
