@@ -21,10 +21,14 @@ import CouponCard from '../widgets/CouponCard.vue';
         </div>
         <!-- Coupon Cards Grid -->
         <div class="medium-span-2 medium-2 gap-2">
-          <CouponCard/>
-          <CouponCard/>
-          <CouponCard/>
-          <CouponCard/>
+          <div class="left">
+            <CouponCard />
+            <CouponCard />
+          </div>
+          <div class="right">
+            <CouponCard />
+            <CouponCard />
+          </div>
         </div>
       </div>
     </div>
@@ -33,5 +37,9 @@ import CouponCard from '../widgets/CouponCard.vue';
 
 
 <style scoped>
-
+.left { margin-top: 5rem;}
+.left .coupon-card,
+.right .coupon-card{
+  margin-top: 1rem;
+}
 </style>
