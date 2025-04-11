@@ -5,9 +5,9 @@ import TestimonialsCard from '../widgets/TestimonialsCard.vue';
 </script>
 
 <template>
-  <div class="container py-5">
-    <div class="medium-8">
-      <div class="span-3 text-center">
+  <div class="testimonials bg-secondary py-2 medium-py-3 large-py-5">
+    <div class="medium-8 container">
+      <div class="span-3 text-center text-white">
         <SubTitle>Our Clients</SubTitle>
         <BaseTitle>Testimonials</BaseTitle>
       </div>
@@ -26,6 +26,9 @@ import TestimonialsCard from '../widgets/TestimonialsCard.vue';
 </template>
 
 <style scoped>
+.testimonials h3 {
+  margin-top: 0;
+}
 .cards-scroll-container {
   width: 100%;
   overflow-x: scroll;

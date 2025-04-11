@@ -9,7 +9,7 @@ import CouponCard from '../widgets/CouponCard.vue';
 </script>
 
 <template>
-  <section class="ending-soon mt-5">
+  <section class="ending-soon my-5">
     <div class="container">
       <div class="medium-3 gap-2">
         <div class=" flex flex-col justify-center align-center">
@@ -17,7 +17,8 @@ import CouponCard from '../widgets/CouponCard.vue';
             <BaseTitle>Ending In</BaseTitle>
             <SubTitle>Grab these deals before they expire!</SubTitle>
             <div class="clock">
-              <div class="hand"></div>
+              <div class="hour-hand"></div>
+              <div class="minute-hand"></div>
             </div>
             <CountDown />
           </div>
@@ -43,10 +44,10 @@ import CouponCard from '../widgets/CouponCard.vue';
 .ending-soon h3 {
   margin-bottom: 0;
 }
+
 .ending-soon h5 {
   margin-top: 15px;
 }
-
 .clock {
   width: 150px;
   height: 150px;
@@ -68,7 +69,20 @@ import CouponCard from '../widgets/CouponCard.vue';
   transform: translate(-50%, -50%);
 }
 
-.hand {
+/* Static hour hand */
+.hour-hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 40px;
+  background: #333;
+  transform-origin: bottom;
+  transform: translate(-50%, -100%) rotate(30deg); /* Fixed at 1 o'clock position */
+}
+
+/* Rotating minute hand */
+.minute-hand {
   position: absolute;
   left: 50%;
   top: 50%;
