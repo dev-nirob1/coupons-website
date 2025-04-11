@@ -14,7 +14,7 @@ import CouponCard from '../widgets/CouponCard.vue';
       </BaseTitle>
     </div>
     <!-- Coupon Grid -->
-    <div class="medium-3 gap-2">
+    <div class="medium-3 gap-2 animate__animated animate__fadeInUp">
       <CouponCard />
       <CouponCard />
       <CouponCard />

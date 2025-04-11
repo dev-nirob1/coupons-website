@@ -28,7 +28,7 @@ const hideScrollElement = (element, zems) => {
 const handleScrollAnimation = () => {
   isInView.forEach((el) => {
     zems = el.getAttribute("data-zems")
-    if (elementInView(el, 1.25)) {      
+    if (elementInView(el, 1.25)) {
       if(zems != null){
         console.log(zems);
         displayScrollElement(el, zems);
@@ -36,11 +36,11 @@ const handleScrollAnimation = () => {
     } else if (elementOutofView(el)) {
       if(zems != null){
         hideScrollElement(el, zems);
-      }      
+      }
     }
   })
 }
 
-window.addEventListener("scroll", () => { 
+window.addEventListener("scroll", () => {
   handleScrollAnimation();
 });

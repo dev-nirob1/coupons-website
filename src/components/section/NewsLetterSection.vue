@@ -15,7 +15,7 @@ import SubTitle from '../element/SubTitle.vue';
       </div>
       <div class="medium-span-3 flex">
         <InputField class="bg-white" placeholder="Please Enter Your Email"/>
-        <BaseButton class="bg-primary">Subscribe</BaseButton>
+        <BaseButton class="bg-primary text-white">Subscribe</BaseButton>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ const companies = [
 <template>
   <section class="company-section container py-3">
     <BaseTitle class="flex">Company <span class="text-secondary"> Offer</span> <hr></BaseTitle>
-    <div class="medium-4 gap-2">
+    <div class="medium-4 gap-2 animate__animated animate__fadeInUp">
       <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
       <div class="span-2">
         <RouterLink class="link-card" to="/">

@@ -1,4 +1,5 @@
 <script setup>
+import 'animate.css';
 import BannerSection from '@/components/section/BannerSection.vue';
 import ByCompany from '@/components/section/ByCompany.vue';
 // import CallToAction from '@/components/section/CallToAction.vue';
