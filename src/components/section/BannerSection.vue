@@ -9,7 +9,7 @@ import BaseTitle from '../element/BaseTitle.vue';
 <template>
   <section class="hero  bg-secondary py-2 medium-py-3 large-py-5">
     <div class="container medium-2 gap-2">
-      <div class="animate__animated animate__slideInLeft">
+      <div data-zems="animate__slideInLeft" class="animate__animated">
         <HeroTitle>
           Save Big with <br>
           Exclusive Coupons
@@ -23,7 +23,7 @@ import BaseTitle from '../element/BaseTitle.vue';
           <BaseButton>Find Deals</BaseButton>
         </div>
       </div>
-      <div class="card-content relative animate__animated animate__slideInRight">
+      <div  data-zems="animate__slideInRight" class="card-content relative animate__animated">
         <div class="hero-card card-1">
           <BaseTitle tag="h3">$20 OFF</BaseTitle>
           <BaseTitle class="text-light" tag="h6">Amazon</BaseTitle>

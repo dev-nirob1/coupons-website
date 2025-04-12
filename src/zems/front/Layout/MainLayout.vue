@@ -1,11 +1,11 @@
 <script setup>
 import FooterSection from '@/components/section/FooterSection.vue';
 import HeaderSection from '@/components/section/HeaderSection.vue';
-import { onUpdated } from 'vue';
+import {  onMounted } from 'vue';
 import { RouterView } from 'vue-router';
 import { zems_animate } from '@/plugins/zems_animate';
 
-onUpdated(()=>{
+onMounted(()=>{
   zems_animate()
 })
 </script>
