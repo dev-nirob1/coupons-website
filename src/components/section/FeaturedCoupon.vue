@@ -14,13 +14,8 @@ import CouponCard from '../widgets/CouponCard.vue';
       </BaseTitle>
     </div>
     <!-- Coupon Grid -->
-    <div class="medium-3 gap-2 animate__animated animate__fadeInUp">
-      <CouponCard />
-      <CouponCard />
-      <CouponCard />
-      <CouponCard />
-      <CouponCard />
-      <CouponCard />
+    <div class="medium-3 gap-2 animate__animated animate__fadeInUp" data-zems="animate__fadeInUp">
+      <CouponCard v-for="(item, i) in 8" :key="i"/>
 
     </div>
   </section>

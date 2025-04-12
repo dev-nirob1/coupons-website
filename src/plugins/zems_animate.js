@@ -1,3 +1,6 @@
+const zems_animate = ()=> {
+  console.log('animation loaded');
+
 const isInView = document.querySelectorAll(".animate__animated");
 
 const elementInView = (el, divideBy = 1) => {
@@ -27,7 +30,7 @@ const hideScrollElement = (element, zems) => {
 
 const handleScrollAnimation = () => {
   isInView.forEach((el) => {
-    zems = el.getAttribute("data-zems")
+   let zems = el.getAttribute("data-zems")
     if (elementInView(el, 1.25)) {
       if(zems != null){
         console.log(zems);
@@ -44,3 +47,5 @@ const handleScrollAnimation = () => {
 window.addEventListener("scroll", () => {
   handleScrollAnimation();
 });
+}
+export {zems_animate};
