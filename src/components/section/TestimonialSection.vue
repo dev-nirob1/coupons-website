@@ -15,6 +15,7 @@ onMounted(() => {
     let cardIndex = 0;
     // console.log(cardWidth);
     nextBtn.addEventListener('click', () => {
+      // todo: nextBtn logic in individual function
       if (cardIndex < cardList.length - 1) {
         cardIndex++;
         console.log(cardIndex);
@@ -24,10 +25,23 @@ onMounted(() => {
           left: cardWidth * cardIndex,
           behavior: 'smooth'
         });
-      } else {
-        cardIndex = 0;
+      }
+      // else {
+      //   cardIndex = 0;
+      //   cardContainer.scrollTo({
+      //     left: 0,
+      //     behavior: 'smooth'
+      //   });
+      // }
+    })
+    prevBtn.addEventListener('click', () => {
+      // todo: prevBtn logic in individual function
+      if (cardIndex > 0) {
+        cardIndex--;
+        console.log(cardIndex);
+
         cardContainer.scrollTo({
-          left: 0,
+          left: cardWidth * cardIndex,
           behavior: 'smooth'
         });
       }
