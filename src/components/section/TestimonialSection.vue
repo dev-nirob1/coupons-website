@@ -13,20 +13,25 @@ onMounted(() => {
 
     const cardWidth = cardList[0].offsetWidth + 16
     let cardIndex = 0;
-    // console.log(cardWidth);
+    console.log(cardList.length);
     nextBtn.addEventListener('click', () => {
       // todo: nextBtn logic in individual function
       if (cardIndex < cardList.length - 1) {
-        cardIndex++;
         console.log(cardIndex);
-
+        let lastIndex = cardList.length -3
         // cardContainer.style.transform = `translateX(-${cardIndex * cardWidth}px)`
         cardContainer.scrollTo({
-          left: cardWidth * cardIndex,
+          left: cardWidth * (cardIndex + 1),
           behavior: 'smooth'
         });
+        if(lastIndex == cardIndex){
+          cardIndex = 0;
+        }
+        cardIndex++;
+
       }
       // else {
+
       //   cardIndex = 0;
       //   cardContainer.scrollTo({
       //     left: 0,
@@ -75,7 +80,6 @@ onMounted(() => {
 }
 
 .cards-scroll-container {
-  position: relative;
   width: 100%;
   overflow: auto;
   padding-bottom: 1rem;
