@@ -1,7 +1,40 @@
-<script setup lang="ts">
+<script setup>
+import { onMounted } from 'vue';
 import BaseTitle from '../element/BaseTitle.vue';
 import SubTitle from '../element/SubTitle.vue';
 import TestimonialsCard from '../widgets/TestimonialsCard.vue';
+
+onMounted(() => {
+  const owlCarousel = () => {
+    const cardList = document.getElementsByClassName('testimonial');
+    const cardContainer = document.querySelector('.cards-scroll-container')
+    const prevBtn = document.getElementById('prev')
+    const nextBtn = document.getElementById('next')
+
+    const cardWidth = cardList[0].offsetWidth + 16
+    let cardIndex = 0;
+    // console.log(cardWidth);
+    nextBtn.addEventListener('click', () => {
+      if (cardIndex < cardList.length - 1) {
+        cardIndex++;
+        console.log(cardIndex);
+
+        // cardContainer.style.transform = `translateX(-${cardIndex * cardWidth}px)`
+        cardContainer.scrollTo({
+          left: cardWidth * cardIndex,
+          behavior: 'smooth'
+        });
+      } else {
+        cardIndex = 0;
+        cardContainer.scrollTo({
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
+    })
+  }
+  owlCarousel()
+})
 </script>
 
 <template>
@@ -13,13 +46,10 @@ import TestimonialsCard from '../widgets/TestimonialsCard.vue';
       </div>
       <div class="span-5">
         <div class="cards-scroll-container">
-            <TestimonialsCard />
-            <TestimonialsCard />
-            <TestimonialsCard />
-            <TestimonialsCard />
-            <TestimonialsCard />
-            <TestimonialsCard />
+          <TestimonialsCard v-for="(item, i) in 6" :key="i" />
         </div>
+        <button id="prev">Prev</button>
+        <button id="next">Next</button>
       </div>
     </div>
   </div>
@@ -29,20 +59,18 @@ import TestimonialsCard from '../widgets/TestimonialsCard.vue';
 .testimonials h3 {
   margin-top: 0;
 }
+
 .cards-scroll-container {
+  position: relative;
   width: 100%;
-  overflow-x: scroll;
+  overflow: auto;
   padding-bottom: 1rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  transition: all .5s ease-in-out;
 }
 
 .cards-scroll-container::-webkit-scrollbar {
-  height: 10px;
-}
-
-.cards-scroll-container::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
+  display: none;
 }
 </style>

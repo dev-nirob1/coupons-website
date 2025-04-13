@@ -7,11 +7,11 @@ import BaseTitle from '../element/BaseTitle.vue';
 </script>
 
 <template>
-  <section class="hero  bg-secondary py-2 medium-py-3 large-py-5">
+  <section class="hero bg-secondary py-2 medium-py-3 large-py-5">
     <div class="container medium-2 gap-2">
       <div data-zems="animate__slideInLeft" class="animate__animated">
         <HeroTitle>
-          Save Big with <br>
+          Save Big with
           Exclusive Coupons
         </HeroTitle>
         <SubTitle class="text-white">
@@ -50,6 +50,7 @@ import BaseTitle from '../element/BaseTitle.vue';
   display: flex;
   align-items: center;
 }
+
 .hero .highlight {
   border-bottom: 5px solid var(--alternative-color);
 }
