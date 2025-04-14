@@ -24,8 +24,8 @@
 
         <!-- Auth Buttons -->
         <div class="flex gap-1">
-          <button class="btn login">Login</button>
-          <button class="btn signup">Sign Up</button>
+          <RouterLink to="/login" class="btn login">Login</RouterLink>
+          <RouterLink to="/register" class="btn signup">Sign Up</RouterLink>
         </div>
       </ul>
     </nav>

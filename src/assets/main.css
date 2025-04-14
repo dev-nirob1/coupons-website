@@ -179,6 +179,7 @@ a {
 /* button styles  */
 .btn {
     display: inline-block;
+    text-decoration: none;
     border: none;
     outline: none;
     padding: 0.5rem 1rem;
