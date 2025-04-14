@@ -11,12 +11,12 @@ import TestimonialSection from '@/components/section/TestimonialSection.vue';
 </script>
 
 <template>
-  <TestimonialSection/>
   <BannerSection />
   <CategorySection />
   <FeaturedCoupon />
   <ByCompany />
   <EndingSoon />
+  <TestimonialSection/>
   <NewsLetterSection/>
   <CallToAction/>
 </template>

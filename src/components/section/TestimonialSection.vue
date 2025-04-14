@@ -18,13 +18,13 @@ onMounted(() => {
       // todo: nextBtn logic in individual function
       if (cardIndex < cardList.length - 1) {
         console.log(cardIndex);
-        let lastIndex = cardList.length -3
+        let lastIndex = cardList.length - 3
         // cardContainer.style.transform = `translateX(-${cardIndex * cardWidth}px)`
         cardContainer.scrollTo({
           left: cardWidth * (cardIndex + 1),
           behavior: 'smooth'
         });
-        if(lastIndex == cardIndex){
+        if (lastIndex == cardIndex) {
           cardIndex = 0;
         }
         cardIndex++;
@@ -67,8 +67,10 @@ onMounted(() => {
         <div class="cards-scroll-container">
           <TestimonialsCard v-for="(item, i) in 6" :key="i" />
         </div>
-        <button id="prev">Prev</button>
-        <button id="next">Next</button>
+        <div class="flex gap-1">
+          <button class="btn bg-white" id="prev">Prev</button>
+          <button class="btn bg-white" id="next">Next</button>
+        </div>
       </div>
     </div>
   </div>

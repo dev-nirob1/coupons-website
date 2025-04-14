@@ -7,7 +7,7 @@ import BaseTitle from '../element/BaseTitle.vue';
 </script>
 
 <template>
-  <section class="hero bg-secondary py-2 medium-py-3 large-py-5">
+  <section class="hero bg-secondary">
     <div class="container medium-2 gap-2">
       <div data-zems="animate__slideInLeft" class="animate__animated">
         <HeroTitle>
@@ -23,13 +23,13 @@ import BaseTitle from '../element/BaseTitle.vue';
           <BaseButton>Find Deals</BaseButton>
         </div>
       </div>
-      <div  data-zems="animate__slideInRight" class="card-content relative animate__animated">
+      <div data-zems="animate__slideInRight" class="relative animate__animated">
         <div class="hero-card card-1">
           <BaseTitle tag="h3">$20 OFF</BaseTitle>
           <BaseTitle class="text-light" tag="h6">Amazon</BaseTitle>
           <small class="text-light">Expires in 2days</small>
         </div>
-        <div class="hero-card card-2">
+         <div class="hero-card card-2">
           <BaseTitle tag="h3">$50 OFF</BaseTitle>
           <BaseTitle class="text-light" tag="h6">Nike</BaseTitle>
           <small class="text-light">Expires in 2days</small>
@@ -44,7 +44,6 @@ import BaseTitle from '../element/BaseTitle.vue';
   </section>
 </template>
 <style scoped>
-
 .hero {
   min-height: 100Vh;
   display: flex;
@@ -54,6 +53,7 @@ import BaseTitle from '../element/BaseTitle.vue';
 .hero .highlight {
   border-bottom: 5px solid var(--alternative-color);
 }
+
 .input-field input {
   background-color: var(--white-color);
   border-radius: 1.5rem;
@@ -61,6 +61,7 @@ import BaseTitle from '../element/BaseTitle.vue';
   outline: none;
   border: none;
 }
+
 .input-field button {
   background-color: var(--alternative-color);
   color: var(--white-color);
@@ -72,42 +73,76 @@ import BaseTitle from '../element/BaseTitle.vue';
   top: 0;
   padding: 1.18rem 1.75rem;
 }
-.hero-card{
-  position: static;
+
+.hero-card {
+  position: absolute;
   background-color: var(--white-color);
-  border-top: 5px solid ;
+  border-top: 5px solid;
   width: fit-content;
   padding: 1.5rem 2rem;
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   box-shadow: var(--card-shadow);
+  /* transition: transform 0.5s ease-in-out; */
 }
 .hero-card h3 {
   margin: 10px 0;
   color: var(--dark-color)
 }
-.hero-card.card-1{
-  top: 0%;
-  left: 0%;
-  transform: translateX(60%) rotate(-5deg);
+.card-1, .card-2, .card-3 {
+  animation: moveTrain 9s infinite ease-in-out;
+}
+.card-1 {
   border-color: var(--alternative-color);
+  animation-delay: 0s;
 }
-.hero-card.card-2{
-  top: 20%;
-  left: 35%;
-  transform: translateX(50%) rotate(2deg);
+.card-2 {
   border-color: var(--primary-color);
+  animation-delay: 3s;
 }
-.hero-card.card-3{
-  top:50%;
-  left: 20%;
-  transform: translateY(20%) rotate(2deg);
+.card-3 {
   border-color: var(--secondary-color);
+  animation-delay: -3s;
 }
-
-@media (min-width: 768px){
-  .hero-card{
-    position: absolute;
+@keyframes moveTrain {
+  0% {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    opacity: .5;
+  }
+  33.33% {
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    opacity: 1;
+  }
+  /* 33.33% {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  } */
+  66.66% {
+    top: 0;
+    left: 120%;
+    transform: translate(-100%, 0);
+    opacity: .5;
+  }
+  /* 66.66% {
+    top: 0;
+    left: 100%;
+    transform: translate(-100%, 0);
+  } */
+  100% {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
   }
 }
 
+
+@media (min-width: 768px) {
+  .hero-card {
+    position: absolute;
+  }
+}
 </style>
