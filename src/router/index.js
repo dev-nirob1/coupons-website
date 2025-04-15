@@ -7,6 +7,7 @@ import LoginPage from '@/zems/front/pages/LoginPage.vue'
 import RegisterPage from '@/zems/front/pages/RegisterPage.vue'
 import DashboardLayout from '@/zems/back/layout/DashboardLayout.vue'
 import DashboardHome from '@/zems/back/pages/DashboardHome.vue'
+import CouponDetails from '@/zems/front/pages/CouponDetails.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,16 @@ const router = createRouter({
           path: '/coupons',
           name: 'coupons',
           component: CouponsPage,
+        },
+        {
+          path: '/coupons/:id',
+          name: 'coupons-details',
+          component: CouponDetails,
+        },
+        {
+          path: '/categories/:categories',
+          name: 'categories',
+          component: CouponDetails,
         },
         {
           path: '/login',

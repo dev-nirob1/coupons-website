@@ -26,12 +26,15 @@ import InputField from '../element/InputField.vue';
     width: 2.5rem;
     border-radius: 50%;
   }
-  .dashboard-navbar input{
+
+  @media (min-width: 992px){
+    .dashboard-navbar input{
     border: none;
     margin: 0;
     padding: 10px;
     width: 540px;
     border-radius: 5px;
     background-color: var(--white-color);
+  }
   }
 </style>

@@ -20,7 +20,7 @@
         <li><router-link to="/" @click="closeMenu">Home</router-link></li>
         <li><router-link to="/coupons" @click="closeMenu">Coupons</router-link></li>
         <li><router-link to="/categories" @click="closeMenu">Categories</router-link></li>
-        <li><router-link to="/about" @click="closeMenu">About</router-link></li>
+        <li><router-link to="/dashboard" @click="closeMenu">Dashboard</router-link></li>
 
         <!-- Auth Buttons -->
         <div class="flex gap-1">
