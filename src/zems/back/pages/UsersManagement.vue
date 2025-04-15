@@ -1,3 +1,3 @@
 <template>
-  coupon details page
+  users
 </template>

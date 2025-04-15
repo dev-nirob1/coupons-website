@@ -9,7 +9,7 @@ import { RouterView } from 'vue-router';
   <div class="flex gap-1 container">
     <DashboardSidebar />
     <div class="width-full">
-      <DashboardNavbar/>
+      <DashboardNavbar />
       <RouterView />
     </div>
   </div>

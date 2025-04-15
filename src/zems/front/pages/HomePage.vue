@@ -8,6 +8,7 @@ import EndingSoon from '@/components/section/EndingSoon.vue';
 import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
 import NewsLetterSection from '@/components/section/NewsLetterSection.vue';
 import TestimonialSection from '@/components/section/TestimonialSection.vue';
+
 </script>
 
 <template>

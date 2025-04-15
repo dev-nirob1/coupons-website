@@ -16,34 +16,34 @@ const toggleSidebar = () => {
     <hr>
     <ul>
       <li>
-        <RouterLink>
+        <RouterLink to="/dashboard">
           <i class="fa-solid fa-house-user"></i>
           <span v-if="!collapsed">Home</span>
         </RouterLink>
       </li>
       <li>
-        <RouterLink>
+        <RouterLink to="/coupons-management">
           <i class="fa-solid fa-ticket"></i>
           <span v-if="!collapsed">Coupons</span>
         </RouterLink>
       </li>
       <li>
-        <RouterLink>
+        <RouterLink to="/categories-management">
           <i class="fa-solid fa-layer-group"></i>
           <span v-if="!collapsed">Categories</span>
         </RouterLink>
       </li>
       <li>
-        <RouterLink>
+        <RouterLink to="/users-management">
           <i class="fa-solid fa-users"></i>
           <span v-if="!collapsed">Users</span>
         </RouterLink>
       </li>
     </ul>
     <div class="profile">
-      <RouterLink>
+      <RouterLink to="/profile-page">
         <i class="fa-solid fa-user"></i>
-          <span v-if="!collapsed">Users</span>
+          <span v-if="!collapsed">Profile</span>
         </RouterLink>
       <div class="logout-btn">
         <button class="text-white">

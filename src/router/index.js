@@ -8,6 +8,10 @@ import RegisterPage from '@/zems/front/pages/RegisterPage.vue'
 import DashboardLayout from '@/zems/back/layout/DashboardLayout.vue'
 import DashboardHome from '@/zems/back/pages/DashboardHome.vue'
 import CouponDetails from '@/zems/front/pages/CouponDetails.vue'
+import CategoriesManagement from '@/zems/back/pages/CategoriesManagement.vue'
+import ProfilePage from '@/zems/back/pages/ProfilePage.vue'
+import CouponsManagement from '@/zems/back/pages/CouponsManagement.vue'
+import UsersManagement from '@/zems/back/pages/UsersManagement.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -61,7 +65,27 @@ const router = createRouter({
           path: '',
           name: 'dashboard-home',
           component: DashboardHome
-        }
+        },
+        {
+          path: '/categories-management',
+          name: 'categories-management',
+          component: CategoriesManagement
+        },
+        {
+          path: '/users-management',
+          name: 'users-management',
+          component: UsersManagement
+        },
+        {
+          path: '/profile-page',
+          name: 'profile-page',
+          component: ProfilePage
+        },
+        {
+          path: '/coupons-management',
+          name: '/coupons-management',
+          component: CouponsManagement
+        },
       ]
     }
   ],
