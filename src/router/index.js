@@ -64,30 +64,30 @@ const router = createRouter({
         {
           path: '',
           name: 'dashboard-home',
-          component: DashboardHome
+          component: DashboardHome,
         },
         {
           path: '/categories-management',
           name: 'categories-management',
-          component: CategoriesManagement
+          component: CategoriesManagement,
         },
         {
           path: '/users-management',
           name: 'users-management',
-          component: UsersManagement
+          component: UsersManagement,
         },
         {
           path: '/profile-page',
           name: 'profile-page',
-          component: ProfilePage
+          component: ProfilePage,
         },
         {
           path: '/coupons-management',
           name: '/coupons-management',
-          component: CouponsManagement
+          component: CouponsManagement,
         },
-      ]
-    }
+      ],
+    },
   ],
 })
 
