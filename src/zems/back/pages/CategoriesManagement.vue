@@ -11,7 +11,7 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
     </header>
 
     <!-- Search and Filter Controls -->
-    <div class="flex justify-between">
+    <div class="flex justify-between mb-1">
       <button type="button" class="btn bg-secondary">Add Category</button>
 
       <select class="status-filter">
@@ -95,5 +95,4 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
 .categories table tr:not(:last-child) {
   border-bottom: 1px solid var(--light-color);
 }
-
 </style>

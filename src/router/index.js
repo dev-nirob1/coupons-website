@@ -12,6 +12,7 @@ import CategoriesManagement from '@/zems/back/pages/CategoriesManagement.vue'
 import ProfilePage from '@/zems/back/pages/ProfilePage.vue'
 import CouponsManagement from '@/zems/back/pages/CouponsManagement.vue'
 import UsersManagement from '@/zems/back/pages/UsersManagement.vue'
+import AddCoupon from '@/zems/back/pages/AddCoupon.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -80,6 +81,11 @@ const router = createRouter({
           path: '/profile-page',
           name: 'profile-page',
           component: ProfilePage,
+        },
+        {
+          path: '/add-coupon',
+          name: '/add-coupon',
+          component: AddCoupon,
         },
         {
           path: '/coupons-management',

@@ -3,6 +3,13 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const collapsed = ref(true)
+const dropdownCollapse = ref(false)
+
+const toggleDropdown = () => {
+  dropdownCollapse.value = !dropdownCollapse.value;
+  console.log(dropdownCollapse);
+}
+
 const toggleSidebar = () => {
   collapsed.value = !collapsed.value
 }
@@ -22,10 +29,23 @@ const toggleSidebar = () => {
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/coupons-management">
-          <i class="fa-solid fa-ticket"></i>
-          <span v-if="!collapsed">Coupons</span>
-        </RouterLink>
+        <div @click="toggleDropdown" class="flex align-center justify-between px-1">
+          <div>
+            <i class="fa-solid fa-ticket"></i>
+            <span v-if="!collapsed">Coupons</span>
+          </div>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <div v-if="dropdownCollapse">
+          <RouterLink to="/add-coupon">
+            <i class="fa-solid fa-plus"></i>
+            <span v-if="!collapsed">Add Coupon</span>
+          </RouterLink>
+          <RouterLink to="/coupons-management">
+            <i class="fa-solid fa-list-check"></i>
+            <span v-if="!collapsed">Manage Coupon</span>
+          </RouterLink>
+        </div>
       </li>
       <li>
         <RouterLink to="/categories-management">
@@ -43,13 +63,13 @@ const toggleSidebar = () => {
     <div class="profile">
       <RouterLink to="/profile-page">
         <i class="fa-solid fa-user"></i>
-          <span v-if="!collapsed">Profile</span>
-        </RouterLink>
+        <span v-if="!collapsed">Profile</span>
+      </RouterLink>
       <div class="logout-btn">
         <button class="text-white">
           <i class="fa-solid fa-right-from-bracket"></i>
         </button>
-          <span v-if="!collapsed">Logout</span>
+        <span v-if="!collapsed">Logout</span>
       </div>
     </div>
   </div>
@@ -64,44 +84,54 @@ const toggleSidebar = () => {
   background: var(--light-color);
   color: var(--white-color)
 }
-.sidebar hr{
+
+.sidebar hr {
   margin: 0;
 }
-.sidebar .toggle-btn{
-  padding:1rem;
+
+.sidebar .toggle-btn {
+  padding: 1rem;
 }
-.sidebar ul{
+
+.sidebar ul {
   padding: 0;
   list-style: none;
 }
-.sidebar ul li a{
+
+.sidebar ul li a {
   padding: 1rem;
   display: flex;
   align-items: center;
   gap: .5rem;
 }
-.sidebar ul li a:hover{
+
+.sidebar ul li a:hover {
   background-color: var(--dark-color);
   border-radius: 2rem 0 0 2rem;
 }
-.sidebar a{
+
+.sidebar a {
   display: inline-block;
   text-decoration: none;
 }
-.profile{
+
+.profile {
   position: absolute;
   left: 1rem;
   bottom: 2rem;
 }
+
 .profile a {
   margin-bottom: .75rem;
 }
-.logout-btn button{
+
+.logout-btn button {
   border: none;
   color: var(--white-color);
   font-size: 1.5rem;
   padding: 0;
 }
+
 .profile a,
 .logout-btn {
   display: flex;

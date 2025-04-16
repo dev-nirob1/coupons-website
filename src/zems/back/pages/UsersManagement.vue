@@ -6,8 +6,8 @@ import InputField from '@/components/element/InputField.vue';
 <template>
   <div class="users py-2">
     <div class="users-content bg-white p-2">
-      <div class="flex justify-between">
-        <BaseTitle tag="h5">Total Users: 5</BaseTitle>
+      <div class="flex justify-between align-center mb-2">
+        <BaseTitle tag="h5">Total Users: 385</BaseTitle>
         <InputField placeholder="Search User" />
       </div>
       <table>
