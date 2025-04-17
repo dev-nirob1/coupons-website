@@ -8,9 +8,15 @@ import { RouterView } from 'vue-router';
 <template>
   <div class="flex gap-1 container">
     <DashboardSidebar />
-    <div class="width-full">
+    <div class="width-full router-view">
       <DashboardNavbar />
       <RouterView />
     </div>
   </div>
 </template>
+<style scoped>
+.router-view{
+  max-height: 100vh;
+  overflow-y: auto;
+}
+</style>

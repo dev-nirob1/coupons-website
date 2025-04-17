@@ -28,15 +28,15 @@ const toggleSidebar = () => {
           <span v-if="!collapsed">Home</span>
         </RouterLink>
       </li>
-      <li>
-        <div @click="toggleDropdown" class="flex align-center justify-between px-1">
+      <li class="dropdown-parent">
+        <div @click="toggleDropdown" class="flex align-center justify-between pl-1">
           <div>
             <i class="fa-solid fa-ticket"></i>
             <span v-if="!collapsed">Coupons</span>
           </div>
           <i class="fa-solid fa-angle-down"></i>
         </div>
-        <div v-if="dropdownCollapse">
+        <div class="dropdown-child" v-if="dropdownCollapse">
           <RouterLink to="/add-coupon">
             <i class="fa-solid fa-plus"></i>
             <span v-if="!collapsed">Add Coupon</span>
@@ -115,6 +115,13 @@ const toggleSidebar = () => {
   text-decoration: none;
 }
 
+.dropdown-child {
+  font-size: 1.25rem;
+}
+.dropdown-parent .fa-angle-down{
+  font-size: 1rem;
+  margin-left: 5px;
+}
 .profile {
   position: absolute;
   left: 1rem;

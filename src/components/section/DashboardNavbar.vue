@@ -19,7 +19,9 @@ import InputField from '../element/InputField.vue';
   .dashboard-navbar{
     padding: .75rem;
     background-color: var(--light-color);
-    color: var(--white-color)
+    color: var(--white-color);
+    position: sticky;
+    top: 0;
   }
   .dashboard-navbar img{
     height: 2.5rem;
