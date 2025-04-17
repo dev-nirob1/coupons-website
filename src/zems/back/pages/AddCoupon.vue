@@ -38,7 +38,7 @@ import InputField from '@/components/element/InputField.vue';
         <!-- Discount Section -->
         <div>
           <div>
-            <BaseTitle tag="h5">Discount Settings</BaseTitle>
+            <BaseTitle tag="h5">Discount</BaseTitle>
           </div>
 
           <div class="all-2 gap-1">
@@ -84,7 +84,7 @@ import InputField from '@/components/element/InputField.vue';
         <!-- Usage Limits Section -->
         <div>
           <div>
-            <BaseTitle tag="h5">Usage Limits</BaseTitle>
+            <BaseTitle tag="h5">Coupon Limits</BaseTitle>
           </div>
 
           <div class="all-2 gap-1">

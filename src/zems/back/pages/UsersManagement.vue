@@ -20,40 +20,14 @@ import InputField from '@/components/element/InputField.vue';
           <th>Action</th>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="(data, i) in 5" :key="i">
             <td>Md. John</td>
             <td>john@gmail.com</td>
             <td>Admin</td>
             <td>02-04-2024</td>
             <td>56</td>
             <td>
-              <button>Ban</button>
-              <button>Promote</button>
-              <button>Details</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Md. John</td>
-            <td>john@gmail.com</td>
-            <td>Admin</td>
-            <td>02-04-2024</td>
-            <td>56</td>
-            <td>
-              <button>Ban</button>
-              <button>Promote</button>
-              <button>Details</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Md. John</td>
-            <td>john@gmail.com</td>
-            <td>Admin</td>
-            <td>02-04-2024</td>
-            <td>56</td>
-            <td>
-              <button>Ban</button>
-              <button>Promote</button>
-              <button>Details</button>
+              <button type="button" class="actions-button">⋮</button>
             </td>
           </tr>
         </tbody>

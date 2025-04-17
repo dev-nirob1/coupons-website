@@ -33,34 +33,12 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>🛒</td>
+        <tr v-for="(icon, i) in 4" :key="i">
+          <td>Icon</td>
           <td>Electronics</td>
           <td>1,240</td>
           <td>
             <span class="status-badge active">Active</span>
-          </td>
-          <td>
-            <button type="button" class="actions-button">⋮</button>
-          </td>
-        </tr>
-        <tr>
-          <td>👕</td>
-          <td>Clothing</td>
-          <td>3,450</td>
-          <td>
-            <span class="status-badge active">Active</span>
-          </td>
-          <td>
-            <button type="button" class="actions-button">⋮</button>
-          </td>
-        </tr>
-        <tr>
-          <td>📚</td>
-          <td>Books</td>
-          <td>890</td>
-          <td>
-            <span class="status-badge inactive">Inactive</span>
           </td>
           <td>
             <button type="button" class="actions-button">⋮</button>
@@ -73,12 +51,15 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
 </template>
 
 <style scoped>
+.categories {
+  padding: 2rem 3rem;
+}
 .categories .status-filter{
   width: fit-content !important;
   background-color: var(--white-color);
   border: none;
   border-radius: 5px;
-  box-shadow: var(--card-shadow)
+  box-shadow: var(--card-shadow);
 }
 .categories table {
   width: 100%;
