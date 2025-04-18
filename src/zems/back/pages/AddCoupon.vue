@@ -41,7 +41,7 @@ import InputField from '@/components/element/InputField.vue';
             <BaseTitle tag="h5">Discount</BaseTitle>
           </div>
 
-          <div class="all-2 gap-1">
+          <div class="medium-2 gap-1">
             <div>
               <label>Discount Type *</label>
               <div class="flex gap-1 mt-1">
@@ -69,7 +69,7 @@ import InputField from '@/components/element/InputField.vue';
             <BaseTitle tag="h5">Validity</BaseTitle>
           </div>
 
-          <div class="all-2 gap-1">
+          <div class="medium-2 gap-1">
             <div>
               <label>Start Date</label>
               <InputField type="date" />
@@ -87,7 +87,7 @@ import InputField from '@/components/element/InputField.vue';
             <BaseTitle tag="h5">Coupon Limits</BaseTitle>
           </div>
 
-          <div class="all-2 gap-1">
+          <div class="medium-2 gap-1">
             <div>
             <label>Coupon limit</label>
             <InputField type="number" placeholder="Leave empty for unlimited uses" />

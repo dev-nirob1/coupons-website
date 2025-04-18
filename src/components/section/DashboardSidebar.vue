@@ -77,13 +77,32 @@ const toggleSidebar = () => {
 
 <style scoped>
 .sidebar {
-  position: relative;
+  position: aboslute;
   max-width: 200px;
   min-height: 100vh;
   font-size: 1.5rem;
   background: var(--light-color);
   color: var(--white-color)
 }
+ /* .sidebar{
+  position: absolute;
+  height: 100vh;
+  width: 300px;
+  z-index: 999;
+  transform: translateX(-100%);
+ }
+@media (min-width: 768px){
+  .sidebar {
+  position: aboslute;
+  max-width: 200px;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background: var(--light-color);
+  color: var(--white-color);
+  transform: translateX(0);
+
+  } */
+
 
 .sidebar hr {
   margin: 0;

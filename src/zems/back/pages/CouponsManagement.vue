@@ -35,35 +35,27 @@ const coupons = ref([
 <template>
   <div class="coupons-management-page">
     <!-- Header Section -->
-    <header class="page-header">
-      <div class="header-content">
-        <div class="title-group">
+    <header class="flex align-center justify-between">
+        <div>
           <BaseTitle>Coupons Management</BaseTitle>
         </div>
-        <RouterLink to="/add-coupon" class="add-button">
+        <RouterLink to="/add-coupon" class="btn bg-secondary">
           <i class="fa-solid fa-plus"></i>
           <span>Add Coupon</span>
         </RouterLink>
-      </div>
     </header>
 
-    <!-- Controls Section -->
-    <div class="controls">
-      <!-- <div class="search-control">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search coupons..." class="search-input">
-      </div> -->
-      <select class="status-filter">
+    <!-- select dropdown Section -->
+      <select class="bg-white mb-2">
         <option value="all">All Statuses</option>
         <option value="active">Active</option>
         <option value="expired">Expired</option>
         <option value="scheduled">Scheduled</option>
       </select>
-    </div>
 
     <!-- Desktop Table View (shows on larger screens) -->
-    <div class="table-container desktop-view">
-      <table class="coupons-table">
+    <div class="desktop-view">
+      <table>
         <thead>
           <tr>
             <th>Code</th>
@@ -86,12 +78,10 @@ const coupons = ref([
               </span>
             </td>
             <td class="actions">
-              <button class="action-btn edit">
-                <i class="fa-solid fa-pen-to-square"></i>
-              </button>
-              <button class="action-btn delete">
-                <i class="fa-solid fa-trash"></i>
-              </button>
+              <select>
+                <option value="Action">Delete</option>
+                <option value="Action">Update</option>
+              </select>
             </td>
           </tr>
         </tbody>
@@ -134,23 +124,6 @@ const coupons = ref([
       </div>
     </div>
 
-    <!-- Pagination -->
-    <div class="pagination">
-      <button class="page-btn" :disabled="currentPage === 1">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <button
-        v-for="page in totalPages"
-        :key="page"
-        class="page-btn"
-        :class="{ active: currentPage === page }"
-      >
-        {{ page }}
-      </button>
-      <button class="page-btn" :disabled="currentPage === totalPages">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-    </div>
   </div>
 </template>
 
@@ -162,94 +135,19 @@ const coupons = ref([
   background-color: #f8fafc;
   min-height: 100vh;
 }
-
-/* Header Styles */
-.page-header {
-  margin-bottom: 2rem;
-}
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.title-group {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.title-group i {
-  font-size: 1.25rem;
-  color: #4f46e5;
-}
-.title-group h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e293b;
-}
-.add-button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #4f46e5;
-  color: white;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-.add-button:hover {
-  background-color: #4338ca;
-}
-
-/* Controls Section */
-.controls {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-.search-control {
-  flex: 1;
-  min-width: 250px;
-  position: relative;
-}
-.search-control i {
-  position: absolute;
-  left: 0.875rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #94a3b8;
-}
-.search-input {
-  width: 100%;
-  padding: 0.625rem 0.875rem 0.625rem 2.5rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.375rem;
-  background-color: #fff;
-}
-.status-filter {
-  padding: 0.625rem 0.875rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.375rem;
-  background-color: #fff;
-  min-width: 150px;
-}
-
 /* Desktop Table View */
 .desktop-view {
-  display: block;
+  display: none;
 }
-.table-container {
+table {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-.coupons-table {
+  overflow-x: scroll;
   width: 100%;
   border-collapse: collapse;
 }
-.coupons-table th {
+table th {
   text-align: left;
   padding: 1rem;
   background-color: #f8fafc;
@@ -257,11 +155,12 @@ const coupons = ref([
   color: #475569;
   border-bottom: 1px solid #e2e8f0;
 }
-.coupons-table td {
+table td {
   padding: 1rem;
   border-bottom: 1px solid #f1f5f9;
   color: #334155;
 }
+
 .status-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -297,22 +196,10 @@ const coupons = ref([
   cursor: pointer;
   transition: all 0.2s;
 }
-.action-btn.edit {
-  color: #4f46e5;
-}
-.action-btn.edit:hover {
-  background-color: #eef2ff;
-}
-.action-btn.delete {
-  color: #ef4444;
-}
-.action-btn.delete:hover {
-  background-color: #fee2e2;
-}
 
 /* Mobile Cards View */
 .mobile-view {
-  display: none;
+  display: block;
 }
 .cards-container {
   display: grid;
@@ -373,55 +260,14 @@ const coupons = ref([
   background-color: #fee2e2;
   color: #ef4444;
 }
-
-/* Pagination */
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
-}
-.page-btn {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.375rem;
-  border: 1px solid #e2e8f0;
-  background-color: white;
-  color: #64748b;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.page-btn:hover:not(:disabled) {
-  background-color: #f1f5f9;
-  color: #4f46e5;
-}
-.page-btn.active {
-  background-color: #4f46e5;
-  color: white;
-  border-color: #4f46e5;
-}
-.page-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 /* Responsive Breakpoints */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .desktop-view {
-    display: none;
-  }
-  .mobile-view {
     display: block;
   }
-  .controls {
-    flex-direction: column;
-    gap: 0.75rem;
+  .mobile-view {
+    display: none;
   }
-  .search-control {
-    min-width: 100%;
-  }
+
 }
 </style>
