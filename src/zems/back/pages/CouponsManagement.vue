@@ -89,24 +89,24 @@ const coupons = ref([
     </div>
 
     <!-- Mobile Cards View (shows on smaller screens) -->
-    <div class="cards-container mobile-view">
+    <div class="mobile-view">
       <div class="coupon-card" v-for="coupon in coupons" :key="coupon.id">
-        <div class="card-header">
-          <span class="code">{{ coupon.code }}</span>
+        <div class="flex align-center justify-between">
+          <BaseTitle tag="h5">{{ coupon.code }}</BaseTitle>
           <span :class="`status-badge ${coupon.status}`">
             {{ coupon.status }}
           </span>
         </div>
-        <div class="card-body">
-          <div class="card-row">
+        <div>
+          <div class="flex justify-between">
             <span class="label">Discount:</span>
             <span class="value">{{ coupon.discount }}</span>
           </div>
-          <div class="card-row">
+          <div class="flex justify-between">
             <span class="label">Uses:</span>
             <span class="value">{{ coupon.uses }}/{{ coupon.maxUses || '∞' }}</span>
           </div>
-          <div class="card-row">
+          <div class="flex justify-between">
             <span class="label">Valid Until:</span>
             <span class="value">{{ coupon.validUntil }}</span>
           </div>
@@ -201,43 +201,14 @@ table td {
 .mobile-view {
   display: block;
 }
-.cards-container {
-  display: grid;
-  gap: 1rem;
-}
 .coupon-card {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-}
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-}
-.card-header .code {
-  font-weight: 600;
-  color: #1e293b;
-}
-.card-body {
-  display: grid;
-  gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.card-row {
-  display: flex;
-  justify-content: space-between;
-}
-.card-row .label {
-  color: #64748b;
-  font-size: 0.875rem;
-}
-.card-row .value {
-  color: #334155;
-  font-weight: 500;
-}
+
 .card-actions {
   display: flex;
   gap: 0.5rem;
@@ -266,7 +237,7 @@ table td {
     display: block;
   }
   .mobile-view {
-    display: none;
+    display: block;
   }
 
 }
