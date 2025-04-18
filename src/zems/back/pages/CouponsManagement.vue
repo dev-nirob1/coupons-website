@@ -1,4 +1,5 @@
 <script setup>
+import BaseButton from '@/components/element/BaseButton.vue';
 import BaseTitle from '@/components/element/BaseTitle.vue';
 import { ref } from 'vue';
 
@@ -112,22 +113,20 @@ const coupons = ref([
           </div>
         </div>
         <div class="flex gap-1 align-center">
-          <button class="btn width-full bg-primary text-white">
+          <BaseButton class="btn width-full bg-primary text-white">
             <i class="fa-solid fa-pen-to-square"></i>
             <span>Edit</span>
-          </button>
-          <button class="btn width-full bg-secondary text-white">
+          </BaseButton>
+          <BaseButton class="btn width-full bg-secondary text-white">
             <i class="fa-solid fa-trash"></i>
             <span>Delete</span>
-          </button>
+          </BaseButton>
         </div>
       </div>
     </div>
 
   </div>
 </template>
-
-
 
 <style scoped>
 .coupons-management-page {
@@ -140,7 +139,7 @@ const coupons = ref([
   display: none;
 }
 table {
-  background-color: white;
+  background-color: var(--white-color);
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow-x: scroll;
@@ -149,16 +148,16 @@ table {
 }
 table th {
   text-align: left;
-  padding: 1rem;
+  padding: .8rem;
   background-color: #f8fafc;
   font-weight: 600;
-  color: #475569;
+  color: var(--dark-color);
   border-bottom: 1px solid #e2e8f0;
 }
 table td {
-  padding: 1rem;
+  padding: .5rem;
   border-bottom: 1px solid #f1f5f9;
-  color: #334155;
+  color: var(--light-color);
 }
 
 .status-badge {
