@@ -8,15 +8,15 @@ import InputField from '@/components/element/InputField.vue';
 <template>
   <div class="add-coupon">
     <!-- Header Section -->
-      <div class="flex justify-between align-center">
-        <div>
-          <BaseTitle>Add New Coupon</BaseTitle>
-        </div>
-        <RouterLink to="/coupons-management" class="p-1 bg-white">
-          <i class="fa-solid fa-arrow-left"></i>
-          <span>Back to Coupons</span>
-        </RouterLink>
+    <header class="flex justify-between align-center">
+      <div>
+        <BaseTitle>Add New Coupon</BaseTitle>
       </div>
+      <RouterLink to="/coupons-management" class="btn bg-secondary text-white">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to Coupons</span>
+      </RouterLink>
+    </header>
 
     <!-- Main Form Section -->
     <main class="form-container">
@@ -27,10 +27,14 @@ import InputField from '@/components/element/InputField.vue';
             <BaseTitle tag="h5">Coupon Information</BaseTitle>
           </div>
 
-          <div>
-            <label>Coupon Code *</label>
+          <div class="all-2 gap-2">
             <div>
+              <label>Coupon Code *</label>
               <InputField type="text" placeholder="e.g. SUMMER25" required />
+            </div>
+            <div class="flex gap-1 align-center">
+              <label>IsFeatured</label>
+              <InputField type="checkbox"></InputField>
             </div>
           </div>
         </div>
@@ -41,7 +45,7 @@ import InputField from '@/components/element/InputField.vue';
             <BaseTitle tag="h5">Discount</BaseTitle>
           </div>
 
-          <div class="medium-2 gap-1">
+          <div class="all-2 gap-1">
             <div>
               <label>Discount Type *</label>
               <div class="flex gap-1 mt-1">
@@ -69,7 +73,7 @@ import InputField from '@/components/element/InputField.vue';
             <BaseTitle tag="h5">Validity</BaseTitle>
           </div>
 
-          <div class="medium-2 gap-1">
+          <div class="all-2 gap-1">
             <div>
               <label>Start Date</label>
               <InputField type="date" />
@@ -89,20 +93,20 @@ import InputField from '@/components/element/InputField.vue';
 
           <div class="medium-2 gap-1">
             <div>
-            <label>Coupon limit</label>
-            <InputField type="number" placeholder="Leave empty for unlimited uses" />
-          </div>
+              <label>Coupon limit</label>
+              <InputField type="number" placeholder="Leave empty for unlimited uses" />
+            </div>
 
-          <div>
-            <label>Minimum Money Spend</label>
-            <InputField type="number" placeholder="No minimum requirement" />
-          </div>
+            <div>
+              <label>Minimum Money Spend</label>
+              <InputField type="number" placeholder="No minimum requirement" />
+            </div>
           </div>
         </div>
 
         <!-- Form Actions -->
         <div class="mt-2">
-          <BaseButton type="submit" class="btn bg-secondary width-full">Create Coupon</BaseButton>
+          <BaseButton type="submit" class="btn bg-secondary text-white width-full">Create Coupon</BaseButton>
         </div>
       </form>
     </main>
@@ -110,13 +114,19 @@ import InputField from '@/components/element/InputField.vue';
 </template>
 
 <style scoped>
-.add-coupon{
+.add-coupon input{
+  border-color: var(--border-color);
+  border-radius: .5rem;
+}
+.add-coupon {
   padding: 2rem 3rem;
 }
+
 .add-coupon h5 {
   margin-bottom: 1rem;
 }
-.add-coupon input[type=radio] {
+
+.add-coupon input[type=radio], .add-coupon input[type=checkbox] {
   width: fit-content;
 }
 </style>

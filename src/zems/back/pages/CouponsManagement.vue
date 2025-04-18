@@ -34,13 +34,13 @@ const coupons = ref([
       ])
 </script>
 <template>
-  <div class="coupons-management-page">
+  <div class="coupons-management">
     <!-- Header Section -->
     <header class="flex align-center justify-between">
         <div>
           <BaseTitle>Coupons Management</BaseTitle>
         </div>
-        <RouterLink to="/add-coupon" class="btn bg-secondary">
+        <RouterLink to="/add-coupon" class="btn bg-secondary text-white">
           <i class="fa-solid fa-plus"></i>
           <span>Add Coupon</span>
         </RouterLink>
@@ -78,10 +78,11 @@ const coupons = ref([
                 {{ coupon.status }}
               </span>
             </td>
-            <td class="actions">
+            <td>
               <select>
-                <option value="Action">Delete</option>
-                <option value="Action">Update</option>
+                <option default-value="Action">Action</option>
+                <option value="Delete">Delete</option>
+                <option value="Delete">Update</option>
               </select>
             </td>
           </tr>
@@ -129,10 +130,14 @@ const coupons = ref([
 </template>
 
 <style scoped>
-.coupons-management-page {
+.coupons-management {
   padding: 1.5rem;
   background-color: #f8fafc;
   min-height: 100vh;
+}
+.coupons-management select {
+  border-radius: .5rem;
+  border-color: var(--border-color);
 }
 /* Desktop Table View */
 .desktop-view {
@@ -152,11 +157,11 @@ table th {
   background-color: #f8fafc;
   font-weight: 600;
   color: var(--dark-color);
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-color);
 }
 table td {
   padding: .5rem;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--border-color);
   color: var(--light-color);
 }
 
