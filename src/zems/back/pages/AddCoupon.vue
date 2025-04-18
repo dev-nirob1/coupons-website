@@ -19,14 +19,11 @@ import InputField from '@/components/element/InputField.vue';
     </header>
 
     <!-- Main Form Section -->
-    <main class="form-container">
+    <div class="form-container">
       <form class="coupon-form">
         <!-- Coupon Code Section -->
-        <div>
-          <div>
-            <BaseTitle tag="h5">Coupon Information</BaseTitle>
-          </div>
-
+         <fieldset>
+          <legend>Coupon Information</legend>
           <div class="all-2 gap-2">
             <div>
               <label>Coupon Code *</label>
@@ -37,15 +34,10 @@ import InputField from '@/components/element/InputField.vue';
               <InputField type="checkbox"></InputField>
             </div>
           </div>
-        </div>
-
         <!-- Discount Section -->
         <div>
-          <div>
             <BaseTitle tag="h5">Discount</BaseTitle>
-          </div>
-
-          <div class="all-2 gap-1">
+          <div class="medium-2 gap-1">
             <div>
               <label>Discount Type *</label>
               <div class="flex gap-1 mt-1">
@@ -66,14 +58,10 @@ import InputField from '@/components/element/InputField.vue';
             </div>
           </div>
         </div>
-
         <!-- Validity Section -->
         <div>
-          <div>
             <BaseTitle tag="h5">Validity</BaseTitle>
-          </div>
-
-          <div class="all-2 gap-1">
+          <div class="medium-2 gap-1">
             <div>
               <label>Start Date</label>
               <InputField type="date" />
@@ -84,13 +72,9 @@ import InputField from '@/components/element/InputField.vue';
             </div>
           </div>
         </div>
-
         <!-- Usage Limits Section -->
         <div>
-          <div>
             <BaseTitle tag="h5">Coupon Limits</BaseTitle>
-          </div>
-
           <div class="medium-2 gap-1">
             <div>
               <label>Coupon limit</label>
@@ -103,13 +87,13 @@ import InputField from '@/components/element/InputField.vue';
             </div>
           </div>
         </div>
-
         <!-- Form Actions -->
         <div class="mt-2">
           <BaseButton type="submit" class="btn bg-secondary text-white width-full">Create Coupon</BaseButton>
         </div>
+         </fieldset>
       </form>
-    </main>
+    </div>
   </div>
 </template>
 
@@ -119,7 +103,7 @@ import InputField from '@/components/element/InputField.vue';
   border-radius: .5rem;
 }
 .add-coupon {
-  padding: 2rem 3rem;
+  padding:1.5rem;
 }
 
 .add-coupon h5 {
@@ -128,5 +112,11 @@ import InputField from '@/components/element/InputField.vue';
 
 .add-coupon input[type=radio], .add-coupon input[type=checkbox] {
   width: fit-content;
+}
+.add-coupon fieldset{
+  padding: 1rem;
+}
+.add-coupon fieldset legend {
+  font-size: 1.5rem;
 }
 </style>

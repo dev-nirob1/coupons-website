@@ -87,7 +87,6 @@ const coupons = ref([
         </tbody>
       </table>
     </div>
-
     <!-- Mobile Cards View (shows on smaller screens) -->
     <div class="mobile-view">
       <div class="coupon-card" v-for="coupon in coupons" :key="coupon.id">
