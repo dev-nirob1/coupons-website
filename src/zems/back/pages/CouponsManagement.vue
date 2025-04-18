@@ -111,12 +111,12 @@ const coupons = ref([
             <span class="value">{{ coupon.validUntil }}</span>
           </div>
         </div>
-        <div class="card-actions">
-          <button class="action-btn edit">
+        <div class="flex gap-1 align-center">
+          <button class="btn width-full bg-primary text-white">
             <i class="fa-solid fa-pen-to-square"></i>
             <span>Edit</span>
           </button>
-          <button class="action-btn delete">
+          <button class="btn width-full bg-secondary text-white">
             <i class="fa-solid fa-trash"></i>
             <span>Delete</span>
           </button>
@@ -169,32 +169,16 @@ table td {
   font-weight: 500;
 }
 .status-badge.active {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
 }
 .status-badge.expired {
-  background-color: #fee2e2;
-  color: #991b1b;
+  background-color: var(--alternative-color);
+  color: var(--white-color);
 }
 .status-badge.scheduled {
   background-color: #e0f2fe;
   color: #075985;
-}
-.actions {
-  display: flex;
-  gap: 0.5rem;
-}
-.action-btn {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.375rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.2s;
 }
 
 /* Mobile Cards View */
@@ -202,42 +186,20 @@ table td {
   display: block;
 }
 .coupon-card {
-  background-color: white;
+  background-color: var(--white-color);
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   margin-bottom: 1rem;
 }
 
-.card-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-.card-actions .action-btn {
-  flex: 1;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.card-actions .action-btn.edit {
-  background-color: #eef2ff;
-  color: #4f46e5;
-}
-.card-actions .action-btn.delete {
-  background-color: #fee2e2;
-  color: #ef4444;
-}
 /* Responsive Breakpoints */
 @media (min-width: 768px) {
   .desktop-view {
     display: block;
   }
   .mobile-view {
-    display: block;
+    display: none;
   }
 
 }

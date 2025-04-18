@@ -59,7 +59,7 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
   background-color: var(--white-color);
   border: none;
   border-radius: 5px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--box-shadow);
 }
 .categories table {
   width: 100%;

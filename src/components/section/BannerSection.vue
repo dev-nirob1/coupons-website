@@ -81,7 +81,7 @@ import BaseTitle from '../element/BaseTitle.vue';
   width: fit-content;
   padding: 1.5rem 2rem;
   border-radius: 0.75rem;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--box-shadow);
   /* transition: transform 0.5s ease-in-out; */
 }
 .hero-card h3 {
