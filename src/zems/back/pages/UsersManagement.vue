@@ -51,21 +51,22 @@ import InputField from '@/components/element/InputField.vue';
   overflow-x: auto;
 }
 .users-content table {
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
+  background-color: var(--white-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow-x: scroll;
-  border: 1px solid var(--light-color);
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .users-content table thead th{
   padding: 10px 0;
-  border-bottom: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--border-color);
 
 }
 .users-content table tbody tr:not(:last-child) {
-  border-bottom: 1px solid var(--light-color);
-  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+  /* padding-bottom: 8px; */
   margin-bottom: 8px;
 }
 

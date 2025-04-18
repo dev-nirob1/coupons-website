@@ -80,7 +80,7 @@ const coupons = ref([
             </td>
             <td>
               <select>
-                <option default-value="Action">Action</option>
+                <option value="Action" disbaled>Action</option>
                 <option value="Delete">Delete</option>
                 <option value="Delete">Update</option>
               </select>
@@ -132,8 +132,6 @@ const coupons = ref([
 <style scoped>
 .coupons-management {
   padding: 1.5rem;
-  background-color: #f8fafc;
-  min-height: 100vh;
 }
 .coupons-management select {
   border-radius: .5rem;
@@ -143,7 +141,7 @@ const coupons = ref([
 .desktop-view {
   display: none;
 }
-table {
+.coupons-management table {
   background-color: var(--white-color);
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -151,7 +149,7 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-table th {
+.coupons-management table th {
   text-align: left;
   padding: .8rem;
   background-color: #f8fafc;
@@ -159,12 +157,13 @@ table th {
   color: var(--dark-color);
   border-bottom: 1px solid var(--border-color);
 }
-table td {
-  padding: .5rem;
-  border-bottom: 1px solid var(--border-color);
+.coupons-management table td {
   color: var(--light-color);
+  padding: .5rem;
 }
-
+.coupons-management table tr:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
 .status-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;
