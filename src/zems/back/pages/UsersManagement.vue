@@ -13,6 +13,7 @@ import InputField from '@/components/element/InputField.vue';
       <table>
         <thead>
           <th>Name</th>
+          <th>Image</th>
           <th>Email</th>
           <th>Role</th>
           <th>Member Since</th>
@@ -21,6 +22,9 @@ import InputField from '@/components/element/InputField.vue';
         <tbody>
           <tr v-for="(data, i) in 5" :key="i">
             <td>Md. John</td>
+            <td>
+              <img src="/author.jpg" alt="">
+            </td>
             <td>john@gmail.com</td>
             <td>Admin</td>
             <td>02-04-2024</td>
@@ -38,11 +42,18 @@ import InputField from '@/components/element/InputField.vue';
   </div>
 </template>
 <style scoped>
-.users-management{
+.users-management {
   padding: 1.5rem;
 }
+
 .users-management h5 {
   margin: 10px 0;
+}
+
+.users-management .users-content {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
 }
 
 .users-management select,
@@ -56,12 +67,6 @@ import InputField from '@/components/element/InputField.vue';
   width: fit-content;
 }
 
-.users-management .users-content {
-  width: 100%;
-  margin: 0 auto;
-  overflow-x: auto;
-}
-
 .users-management .users-content table {
   background-color: var(--white-color);
   border-radius: 0.5rem;
@@ -69,6 +74,11 @@ import InputField from '@/components/element/InputField.vue';
   overflow-x: scroll;
   width: 100%;
   border-collapse: collapse;
+}
+.users-management .users-content table img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: .5rem;
 }
 
 .users-management .users-content table th {

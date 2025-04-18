@@ -58,14 +58,12 @@ const coupons = ref([
     <div class="desktop-view">
       <table>
         <thead>
-          <tr>
             <th>Code</th>
             <th>Discount</th>
             <th>Uses</th>
             <th>Valid Until</th>
             <th>Status</th>
             <th>Actions</th>
-          </tr>
         </thead>
         <tbody>
           <tr v-for="coupon in coupons" :key="coupon.id">
