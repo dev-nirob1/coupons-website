@@ -4,8 +4,8 @@ import InputField from '@/components/element/InputField.vue';
 </script>
 
 <template>
-  <div class="users py-2">
-    <div class="users-content bg-white p-2">
+  <div class="users-management">
+    <div class="users-content">
       <div class="flex justify-between align-center mb-2">
         <BaseTitle tag="h5">Total Users: 385</BaseTitle>
         <InputField placeholder="Search User" />
@@ -16,7 +16,6 @@ import InputField from '@/components/element/InputField.vue';
           <th>Email</th>
           <th>Role</th>
           <th>Member Since</th>
-          <th>Total Purchase</th>
           <th>Action</th>
         </thead>
         <tbody>
@@ -25,9 +24,12 @@ import InputField from '@/components/element/InputField.vue';
             <td>john@gmail.com</td>
             <td>Admin</td>
             <td>02-04-2024</td>
-            <td>56</td>
             <td>
-              <button type="button" class="actions-button">⋮</button>
+              <select>
+                <option value="Action" disbaled>Action</option>
+                <option value="Delete">Ban User</option>
+                <option value="Delete">Promote to Admin</option>
+              </select>
             </td>
           </tr>
         </tbody>
@@ -36,21 +38,31 @@ import InputField from '@/components/element/InputField.vue';
   </div>
 </template>
 <style scoped>
-
-.users h5 {
+.users-management{
+  padding: 1.5rem;
+}
+.users-management h5 {
   margin: 10px 0;
 }
 
-.users input {
+.users-management select,
+.users-management input {
+  border-radius: .5rem;
+  border-color: var(--border-color);
+
+}
+
+.users-management input {
   width: fit-content;
 }
 
-.users-content {
+.users-management .users-content {
   width: 100%;
   margin: 0 auto;
   overflow-x: auto;
 }
-.users-content table {
+
+.users-management .users-content table {
   background-color: var(--white-color);
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -59,16 +71,21 @@ import InputField from '@/components/element/InputField.vue';
   border-collapse: collapse;
 }
 
-.users-content table thead th{
-  padding: 10px 0;
+.users-management .users-content table th {
+  text-align: left;
+  padding: .8rem;
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: var(--dark-color);
   border-bottom: 1px solid var(--border-color);
-
-}
-.users-content table tbody tr:not(:last-child) {
-  border-bottom: 1px solid var(--border-color);
-  /* padding-bottom: 8px; */
-  margin-bottom: 8px;
 }
 
+.users-management .users-content table td {
+  color: var(--light-color);
+  padding: .5rem;
+}
 
+.users-management .users-content table tr:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
 </style>
