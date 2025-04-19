@@ -59,7 +59,9 @@ const closeMenu = () => {
   top: 0;
   z-index: 1000;
 }
-
+.navbar h3{
+margin: 5px;
+}
 .logo {
   text-decoration: none;
 }

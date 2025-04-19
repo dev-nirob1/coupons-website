@@ -8,14 +8,12 @@ import EndingSoon from '@/components/section/EndingSoon.vue';
 import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
 import NewsLetterSection from '@/components/section/NewsLetterSection.vue';
 import TestimonialSection from '@/components/section/TestimonialSection.vue';
-import PopUp from '@/components/widgets/PopUp.vue';
-import CounterSection from '@/components/section/counterSection.vue';
+import TimelineSection from '@/components/section/TimelineSection.vue';
 
 </script>
 
 <template>
-  <CounterSection/>
-  <PopUp/>
+  <TimelineSection/>
   <BannerSection />
   <CategorySection />
   <FeaturedCoupon />
