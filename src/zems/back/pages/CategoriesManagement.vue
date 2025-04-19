@@ -1,4 +1,5 @@
 <script setup>
+import BaseButton from '@/components/element/BaseButton.vue';
 import BaseTitle from '@/components/element/BaseTitle.vue';
 
 </script>
@@ -45,12 +46,10 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
           <td>
             <span class="status-badge active">Active</span>
           </td>
-          <td>
-            <select>
-                <option value="Action" disabled>Action</option>
-                <option value="Active">Active</option>
-                <option value="Delete">Update</option>
-              </select>
+          <td class="flex align-center gap-1">
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </td>
         </tr>
       </tbody>

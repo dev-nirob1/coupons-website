@@ -1,6 +1,7 @@
 <script setup>
 import BaseTitle from '@/components/element/BaseTitle.vue';
 import { ref } from 'vue';
+import BaseButton from '../element/BaseButton.vue';
 
 const coupons = ref([
   {
@@ -55,13 +56,11 @@ const coupons = ref([
                 {{ coupon.status }}
               </span>
             </td>
-            <td>
-              <select>
-                <option value="Action" disbaled>Action</option>
-                <option value="Delete">Delete</option>
-                <option value="Delete">Update</option>
-              </select>
-            </td>
+            <td class="flex align-center gap-1">
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
+          </td>
           </tr>
         </tbody>
       </table>

@@ -103,7 +103,7 @@ import InputField from '@/components/element/InputField.vue';
   border-radius: .5rem;
 }
 .add-coupon {
-  padding:1.5rem;
+  padding:1.5rem;                           
 }
 
 .add-coupon h5 {

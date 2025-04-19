@@ -19,7 +19,7 @@
       <ul class="flex align-center gap-1" :class="{ 'active': isMenuOpen }">
         <li><router-link to="/" @click="closeMenu">Home</router-link></li>
         <li><router-link to="/coupons" @click="closeMenu">Coupons</router-link></li>
-        <li><router-link to="/categories" @click="closeMenu">Categories</router-link></li>
+        <li><router-link to="/categories/1" @click="closeMenu">Categories</router-link></li>
         <li><router-link to="/dashboard" @click="closeMenu">Dashboard</router-link></li>
 
         <!-- Auth Buttons -->

@@ -1,4 +1,5 @@
 <script setup>
+import BaseButton from '@/components/element/BaseButton.vue';
 import BaseTitle from '@/components/element/BaseTitle.vue';
 import InputField from '@/components/element/InputField.vue';
 </script>
@@ -28,12 +29,10 @@ import InputField from '@/components/element/InputField.vue';
             <td>john@gmail.com</td>
             <td>Admin</td>
             <td>02-04-2024</td>
-            <td>
-              <select>
-                <option value="Action" disbaled>Action</option>
-                <option value="Delete">Ban User</option>
-                <option value="Delete">Promote to Admin</option>
-              </select>
+            <td class="flex align-center gap-1">
+              <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+              <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+              <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
             </td>
           </tr>
         </tbody>
@@ -75,6 +74,7 @@ import InputField from '@/components/element/InputField.vue';
   width: 100%;
   border-collapse: collapse;
 }
+
 .users-management .users-content table img {
   width: 3rem;
   height: 3rem;
