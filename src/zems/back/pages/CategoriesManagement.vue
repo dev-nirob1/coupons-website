@@ -1,23 +1,37 @@
 <script setup>
 import BaseButton from '@/components/element/BaseButton.vue';
 import BaseTitle from '@/components/element/BaseTitle.vue';
+import PopUp from '@/components/widgets/PopUp.vue';
+import { ref } from 'vue';
+const isModalOpen = ref(false)
+
+const handleCloseModal = ()=> {
+  isModalOpen.value = false;
+  console.log(isModalOpen.value);
+}
+const handleOpenModal = ()=> {
+  isModalOpen.value = true;
+  console.log(isModalOpen.value);
+}
 
 </script>
 
 <template>
   <div class="categories">
+    <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">View coupon details dashboard</PopUp>
+
     <!-- Header Section with Title and Add Button -->
    <header class="flex align-center justify-between">
         <div>
           <BaseTitle>Categories Management</BaseTitle>
         </div>
-        <RouterLink to="/add-categories" class="btn bg-secondary text-white">
+        <BaseButton @click="handleOpenModal" class="btn bg-secondary text-white">
           <i class="fa-solid fa-plus"></i>
           <span>Add Categories</span>
-        </RouterLink>
+        </BaseButton>
     </header>
 
-    <!-- Search and Filter Controls -->
+    <!-- Filter/sorting -->
     <div class="flex justify-between mb-1">
 
       <select class="bg-white mb-2">
@@ -47,7 +61,7 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
             <span class="status-badge active">Active</span>
           </td>
           <td class="flex align-center gap-1">
-            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+            <BaseButton @click="handleOpenModal" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
             <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </td>

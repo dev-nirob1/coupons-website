@@ -2,7 +2,6 @@
 import DashboardNavbar from '@/components/section/DashboardNavbar.vue';
 import DashboardSidebar from '@/components/section/DashboardSidebar.vue';
 import { RouterView } from 'vue-router';
-
 </script>
 
 <template>

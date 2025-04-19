@@ -34,6 +34,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import BaseTitle from '../element/BaseTitle.vue';
 
 const isMenuOpen = ref(false);
 

@@ -103,7 +103,7 @@ import BaseTitle from '../element/BaseTitle.vue';
   border-color: var(--secondary-color);
   animation-delay: -3s;
 }
-@keyframes moveTrain {
+/* @keyframes moveTrain {
   0% {
     top: 0;
     left: 0;
@@ -116,28 +116,18 @@ import BaseTitle from '../element/BaseTitle.vue';
     transform: translate(-50%, -100%);
     opacity: 1;
   }
-  /* 33.33% {
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-  } */
   66.66% {
     top: 0;
     left: 120%;
     transform: translate(-100%, 0);
     opacity: .5;
   }
-  /* 66.66% {
-    top: 0;
-    left: 100%;
-    transform: translate(-100%, 0);
-  } */
   100% {
     top: 0;
     left: 0;
     transform: translate(0, 0);
   }
-}
+} */
 
 
 @media (min-width: 768px) {

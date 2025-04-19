@@ -1,7 +1,19 @@
+<script setup>
+defineProps({
+  isModalOpen: {
+    type: Boolean
+  },
+  handleCloseModal: {
+    type: Function
+  },
+})
+
+</script>
+
 <template>
-  <div class="modal">
+  <div v-if="isModalOpen" @click="handleCloseModal" class="modal">
     <div class="modal-content">
-      this is modal
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -16,17 +28,16 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-content {
   position: relative;
-  width: 70%;
+  width: 90%;
   max-width: 800px;
   height: 80vh;
   max-height: 90vh;
   background-color: var(--white-color);
-  border-radius: 8px;
+  border-radius: .5rem;
   overflow-y: auto;
   z-index: 1000;
   animation: modalFadeIn 0.3s ease-out;
@@ -34,7 +45,7 @@
 @keyframes modalFadeIn {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   to {
     opacity: 1;
