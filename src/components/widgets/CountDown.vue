@@ -1,6 +1,5 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue';
-
 // Countdown timer logic
 const hours = ref('12');
 const minutes = ref('45');
@@ -26,8 +25,6 @@ const updateTimer = () => {
   minutes.value = min.toString().padStart(2, '0');
   seconds.value = sec.toString().padStart(2, '0');
 };
-
-
 // Start/stop timer
 
 onMounted(() => {
@@ -74,7 +71,6 @@ onBeforeUnmount(() => {
   min-width: 80px;
   box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
 }
-
 
 .timer-value {
   font-size: 1.8rem;
