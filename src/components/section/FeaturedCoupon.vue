@@ -2,6 +2,11 @@
 import BaseTitle from '../element/BaseTitle.vue';
 import CouponCard from '../widgets/CouponCard.vue';
 
+defineProps({
+  featured:{
+    type: Array
+  }
+})
 </script>
 
 <template>
@@ -15,7 +20,7 @@ import CouponCard from '../widgets/CouponCard.vue';
     </div>
     <!-- Coupon Grid -->
     <div class="medium-3 gap-2 animate__animated animate__fadeInUp" data-zems="animate__fadeInUp">
-      <CouponCard v-for="(item, i) in 8" :key="i"/>
+      <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id"/>
 
     </div>
   </section>

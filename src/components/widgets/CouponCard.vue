@@ -1,24 +1,31 @@
-<script setup lang="ts">
+<script setup>
 import BaseButton from '../element/BaseButton.vue';
 import BaseParagraph from '../element/BaseParagraph.vue';
 import BaseTitle from '../element/BaseTitle.vue';
+
+defineProps({
+  couponData: {
+  type: Object
+}
+})
 </script>
 
 <template>
   <div class="coupon-card">
     <div class="flex justify-between gap-1">
       <div>
-        <BaseTitle tag="h5">Medical Care Coupon</BaseTitle>
-        <BaseParagraph>Support free consultation all inquery fee is less then or equal to $5000</BaseParagraph>
+        <BaseTitle tag="h5">{{couponData?.name}}</BaseTitle>
+        <BaseParagraph>{{ couponData?.details }}</BaseParagraph>
       </div>
       <div>
         <span>Flat</span>
-        <BaseTitle class="price">50 <span>$</span></BaseTitle>
+        <BaseTitle v-if="couponData?.discount_percent" class="price">{{couponData?.discount_percent}} <span>%</span></BaseTitle>
+        <BaseTitle v-else class="price">{{couponData?.discount}} <span>$</span></BaseTitle>
       </div>
     </div>
     <div class="card-footer pt-1">
       <div class="flex justify-between align-center">
-        <BaseParagraph>Validity: 2025 - 06 - 02</BaseParagraph>
+        <BaseParagraph>Validity: {{couponData?.expire_date}}</BaseParagraph>
         <BaseButton class="bg-white">Get Code</BaseButton>
       </div>
       <div class="circle-1"></div>
