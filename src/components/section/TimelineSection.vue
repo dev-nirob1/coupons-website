@@ -52,66 +52,67 @@ import BaseTitle from '../element/BaseTitle.vue';
   align-items: center;
 }
 
-.timeline h4 {
-  margin: 0;
-}
-
 .two {
-  align-self: self-end !important;
+  align-self: end;
   margin-bottom: 8rem;
 }
-
-.one,
-.three {
-  align-self: self-start !important;
-  height: fit-content;
+.one, .three {
+  align-self: start;
 }
-
-.timeline .timeline-card {
+.timeline-card {
   position: relative;
-  border: 1px solid var(--border-color);
-  padding: 20px;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  z-index: 2;
 }
 
-/* Connecting Lines */
-.one .timeline-card::after,
-.two .timeline-card::before,
-.two .timeline-card::after,
-.three .timeline-card::before {
+.timeline-card::before,
+.timeline-card::after {
   content: '';
   position: absolute;
-  background-color: #ff0000; /* Red line as in the screenshot */
+  background-color: var(--alternative-color);
+  z-index: 1;
 }
 
 .one .timeline-card::after {
-  right: -50%;
-  top: 0%;
-  transform: translateY(-50%);
-  width: 50%;
-  height: 4px;
+  right: 0;
+  top: 1%;
+  width: calc(50% + 2rem);
+  transform: translate(100%, -50%);
+  height: 5px;
 }
 
 .two .timeline-card::before {
   left: 50%;
-  top: -50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100px;
+  top: 0;
+  transform: translate(-50%, -100%);
+  width: 5px;
+  height: 9.15rem;
 }
 
 .two .timeline-card::after {
-  right: 50%;
-  top: 100%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 5px;
+  height: 8rem;
 }
 
 .three .timeline-card::before {
   left: 0;
-  top: 100%; 
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100px;
+  top: 96%;
+  width: calc(50% + 2rem);
+  transform: translate(-100%, 50%);
+  height: 5px;
+}
+
+.three .text-right {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.timeline h4 {
+  margin: 0;
+  line-height: 1.3;
 }
 </style>
