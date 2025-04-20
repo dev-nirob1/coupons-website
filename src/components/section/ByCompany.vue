@@ -1,8 +1,4 @@
 <script setup>
-import BaseImage from '../element/BaseImage.vue';
-import BaseParagraph from '../element/BaseParagraph.vue';
-import BaseTitle from '../element/BaseTitle.vue';
-import SubTitle from '../element/SubTitle.vue';
 import CompanyCard from '../widgets/CompanyCard.vue';
 const companies = [
   { id: 1, name: "Nike", logo: "/company/nike.png", discount: "20% OFF" },

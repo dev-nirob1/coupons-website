@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import BaseButton from '../element/BaseButton.vue';
-import BaseTitle from '../element/BaseTitle.vue';
-import InputField from '../element/InputField.vue';
-import SubTitle from '../element/SubTitle.vue';
+<script setup>
 
 </script>
 

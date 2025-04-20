@@ -1,10 +1,3 @@
-<script setup>
-import HeroTitle from '../element/HeroTitle.vue';
-import SubTitle from '../element/SubTitle.vue';
-import InputField from '../element/InputField.vue';
-import BaseButton from '../element/BaseButton.vue';
-import BaseTitle from '../element/BaseTitle.vue';
-</script>
 
 <template>
   <section class="hero bg-secondary">

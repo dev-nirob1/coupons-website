@@ -1,5 +1,4 @@
 <script setup>
-import BaseTitle from '../element/BaseTitle.vue';
 import CategoryCard from '../widgets/CategoryCard.vue';
 defineProps({
   categories:{

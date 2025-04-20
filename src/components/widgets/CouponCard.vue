@@ -1,7 +1,4 @@
 <script setup>
-import BaseButton from '../element/BaseButton.vue';
-import BaseParagraph from '../element/BaseParagraph.vue';
-import BaseTitle from '../element/BaseTitle.vue';
 
 defineProps({
   couponData: {

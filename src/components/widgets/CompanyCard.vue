@@ -1,7 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import BaseImage from '../element/BaseImage.vue';
-import BaseTitle from '../element/BaseTitle.vue';
 
 defineProps({
   company: {

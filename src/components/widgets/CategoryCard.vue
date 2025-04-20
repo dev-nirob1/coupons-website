@@ -1,7 +1,4 @@
 <script setup>
-import BaseImage from '../element/BaseImage.vue';
-import BaseTitle from '../element/BaseTitle.vue';
-
 defineProps({
   category: Object
 })

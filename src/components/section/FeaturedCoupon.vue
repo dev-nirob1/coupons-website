@@ -1,5 +1,4 @@
 <script setup>
-import BaseTitle from '../element/BaseTitle.vue';
 import CouponCard from '../widgets/CouponCard.vue';
 
 defineProps({

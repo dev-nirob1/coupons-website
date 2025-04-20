@@ -1,9 +1,3 @@
-<script setup>
-import BaseImage from '../element/BaseImage.vue';
-import BaseParagraph from '../element/BaseParagraph.vue';
-import SubTitle from '../element/SubTitle.vue';
-
-</script>
 
 <template>
   <div class="testimonial">

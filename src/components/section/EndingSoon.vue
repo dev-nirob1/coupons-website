@@ -1,8 +1,5 @@
 <script setup>
 // import { ref } from 'vue';
-import CountDown from '../widgets/CountDown.vue';
-import BaseTitle from '../element/BaseTitle.vue';
-import SubTitle from '../element/SubTitle.vue';
 import CouponCard from '../widgets/CouponCard.vue';
 import { computed } from 'vue';
 const props = defineProps({

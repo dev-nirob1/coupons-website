@@ -1,7 +1,5 @@
 <script setup>
-import BaseTitle from '@/components/element/BaseTitle.vue';
 import { ref } from 'vue';
-import BaseButton from '../element/BaseButton.vue';
 
 const coupons = ref([
   {

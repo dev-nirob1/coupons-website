@@ -1,7 +1,5 @@
 <script setup>
 import { onMounted } from 'vue';
-import BaseTitle from '../element/BaseTitle.vue';
-import SubTitle from '../element/SubTitle.vue';
 import TestimonialsCard from '../widgets/TestimonialsCard.vue';
 
 onMounted(() => {

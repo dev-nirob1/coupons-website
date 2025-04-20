@@ -38,12 +38,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <TimelineSection />
   <BannerSection />
   <CategorySection :categories="categories" />
   <FeaturedCoupon :featured="featured" />
   <ByCompany />
   <EndingSoon :ending="ending" />
+  <TimelineSection />
   <TestimonialSection />
   <NewsLetterSection />
   <CallToAction />

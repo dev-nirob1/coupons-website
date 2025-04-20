@@ -1,10 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import BaseParagraph from '../element/BaseParagraph.vue';
-import BaseTitle from '../element/BaseTitle.vue';
-import BaseImage from '../element/BaseImage.vue';
-import ListItem from '../element/ListItem.vue';
-import InputField from '../element/InputField.vue';
 
 const currentYear = new Date().getFullYear();
 const email = ref('');
