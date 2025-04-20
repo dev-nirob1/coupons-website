@@ -7,15 +7,16 @@ import LoginPage from '@/zems/front/pages/LoginPage.vue'
 import RegisterPage from '@/zems/front/pages/RegisterPage.vue'
 import DashboardLayout from '@/zems/back/layout/DashboardLayout.vue'
 import DashboardHome from '@/zems/back/pages/DashboardHome.vue'
-import CouponDetails from '@/zems/front/pages/CouponDetails.vue'
 import CategoriesManagement from '@/zems/back/pages/CategoriesManagement.vue'
 import ProfilePage from '@/zems/back/pages/ProfilePage.vue'
 import CouponsManagement from '@/zems/back/pages/CouponsManagement.vue'
 import UsersManagement from '@/zems/back/pages/UsersManagement.vue'
 import AddCoupon from '@/zems/back/pages/AddCoupon.vue'
 import CategoriesPage from '@/zems/front/pages/CategoriesPage.vue'
-import CompanyPage from '@/zems/front/pages/CompanyPage.vue'
 import CategoryDetailsPage from '@/zems/front/pages/CategoryDetailsPage.vue'
+import CompanyDetailsPage from '@/zems/front/pages/CompanyDetailsPage.vue'
+import CompaniesPage from '@/zems/front/pages/CompaniesPage.vue'
+import CouponDetailsPage from '@/zems/front/pages/CouponDetailsPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,27 +38,32 @@ const router = createRouter({
         {
           path: '/coupons',
           name: 'coupons',
-          component: CouponsPage,
+          component: CouponsPage, //all coupon details
         },
         {
-          path: '/coupons/:id',
+          path: '/coupons/:id', // Optional if coupon details are shown in a modal
           name: 'coupons-details',
-          component: CouponDetails,
+          component: CouponDetailsPage, // single coupon details page
         },
         {
-          path: '/all-company',
-          name: 'all-company',
-          component: CompanyPage
+          path: '/companies',
+          name: 'companies',
+          component: CompaniesPage // for all company listing
+        },
+        {
+          path: '/companies/:slug',
+          name: 'company-details',
+          component: CompanyDetailsPage //for single company details with coupon
         },
         {
           path: '/categories',
           name: 'categories',
-          component: CategoriesPage,
+          component: CategoriesPage, //for all category
         },
         {
           path: '/category/:slug',
           name: 'category-details',
-          component: CategoryDetailsPage
+          component: CategoryDetailsPage //for single category dynamic route
         },
         {
           path: '/login',
