@@ -109,7 +109,7 @@ import BaseTitle from '../element/BaseTitle.vue';
 
 .three .timeline-card::before {
   left: 0;
-  top: 100%; /* Adjust to match the height of the vertical line above */
+  top: 100%; 
   transform: translateX(-50%);
   width: 4px;
   height: 100px;

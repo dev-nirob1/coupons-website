@@ -12,13 +12,15 @@ defineProps({
   <div class="category-card">
     <div class="bg-white p-2">
       <div class="category-image">
-        <BaseImage :image="category.image"/>
+        <BaseImage :image="category.icon || '/categories/health.png'" />
       </div>
       <BaseTitle tag="h5">{{ category.name }}</BaseTitle>
-      <small>{{ category.count }} deals</small>
+      <!-- <small>{{ category.count }} deals</small> -->
     </div>
     <div class="category-overlay">
-      <BaseButton class="btn text-white bg-secondary">View Details</BaseButton>
+      <BaseButton class="btn text-white bg-secondary">
+        <RouterLink :to="`/category/${category.slug}`">Go to Category</RouterLink>
+      </BaseButton>
     </div>
   </div>
 </template>
