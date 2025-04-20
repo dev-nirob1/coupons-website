@@ -4,8 +4,14 @@ import CountDown from '../widgets/CountDown.vue';
 import BaseTitle from '../element/BaseTitle.vue';
 import SubTitle from '../element/SubTitle.vue';
 import CouponCard from '../widgets/CouponCard.vue';
-
-
+import { computed } from 'vue';
+const props = defineProps({
+  ending: {
+    type: Array
+  }
+})
+const leftCoupons = computed(() => props.ending.slice(0, 2));
+const rightCoupons = computed(() => props.ending.slice(2, 4));
 </script>
 
 <template>
@@ -26,13 +32,12 @@ import CouponCard from '../widgets/CouponCard.vue';
         <!-- Coupon Cards Grid -->
         <div class="medium-span-2 medium-2 gap-2">
           <div class="left">
-            <CouponCard />
-            <CouponCard />
+            <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" />
           </div>
-          <div class="right">
-            <CouponCard />
-            <CouponCard />
+          <div v-if="rightCoupons.length > 0" class="right">
+            <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id" />
           </div>
+          <div style="border: 1px solid red" v-else>Comming soon</div>
         </div>
       </div>
     </div>
@@ -48,6 +53,7 @@ import CouponCard from '../widgets/CouponCard.vue';
 .ending-soon h5 {
   margin-top: 15px;
 }
+
 .clock {
   width: 150px;
   height: 150px;
@@ -69,7 +75,7 @@ import CouponCard from '../widgets/CouponCard.vue';
   transform: translate(-50%, -50%);
 }
 
-/* Static hour hand */
+/* hour hand */
 .hour-hand {
   position: absolute;
   left: 50%;
@@ -78,7 +84,8 @@ import CouponCard from '../widgets/CouponCard.vue';
   height: 40px;
   background: #333;
   transform-origin: bottom;
-  transform: translate(-50%, -100%) rotate(30deg); /* Fixed at 1 o'clock position */
+  transform: translate(-50%, -100%) rotate(30deg);
+  /* Fixed at 1 o'clock position */
 }
 
 /* Rotating minute hand */
