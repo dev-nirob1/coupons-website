@@ -14,6 +14,8 @@ import CouponsManagement from '@/zems/back/pages/CouponsManagement.vue'
 import UsersManagement from '@/zems/back/pages/UsersManagement.vue'
 import AddCoupon from '@/zems/back/pages/AddCoupon.vue'
 import CategoriesPage from '@/zems/front/pages/CategoriesPage.vue'
+import CompanyPage from '@/zems/front/pages/CompanyPage.vue'
+import CategoryDetailsPage from '@/zems/front/pages/CategoryDetailsPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,9 +45,19 @@ const router = createRouter({
           component: CouponDetails,
         },
         {
-          path: '/categories/:categories',
+          path: '/all-company',
+          name: 'all-company',
+          component: CompanyPage
+        },
+        {
+          path: '/categories',
           name: 'categories',
           component: CategoriesPage,
+        },
+        {
+          path: '/category/:slug',
+          name: 'category-details',
+          component: CategoryDetailsPage
         },
         {
           path: '/login',

@@ -17,7 +17,7 @@ defineProps({
         <hr>
       </BaseTitle>
       <!-- Categories container -->
-      <div data-zems="animate__fadeInUp" class="medium-2 large-4 gap-2 animate__animated animate__delay-2s">
+      <div data-zems="animate__fadeInUp" class="medium-2 large-5 gap-2 animate__animated animate__delay-2s">
         <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
       </div>
     </div>

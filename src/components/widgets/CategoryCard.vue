@@ -31,6 +31,7 @@ defineProps({
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow);
 }
 .category-card .category-image {
   margin: 0 auto;

@@ -24,6 +24,7 @@ defineProps({
   padding: 1.5rem;
   text-align: center;
   transition: all .3s ease-in-out;
+  box-shadow: var(--box-shadow);
 }
 .company-card:hover{
   transform: translateY(-10px);
