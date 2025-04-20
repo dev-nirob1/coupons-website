@@ -1,5 +1,4 @@
 <script setup>
-import BaseButton from '../element/BaseButton.vue';
 import BaseImage from '../element/BaseImage.vue';
 import BaseTitle from '../element/BaseTitle.vue';
 
@@ -12,15 +11,13 @@ defineProps({
   <div class="category-card">
     <div class="bg-white p-2">
       <div class="category-image">
-        <BaseImage :image="category.icon || '/categories/health.png'" />
+        <BaseImage :image="category?.icon || '/categories/health.png'" />
       </div>
-      <BaseTitle tag="h5">{{ category.name }}</BaseTitle>
+      <BaseTitle tag="h5">{{ category?.name }}</BaseTitle>
       <!-- <small>{{ category.count }} deals</small> -->
     </div>
     <div class="category-overlay">
-      <BaseButton class="btn text-white bg-secondary">
-        <RouterLink :to="`/category/${category.slug}`">Go to Category</RouterLink>
-      </BaseButton>
+        <RouterLink class="btn text-white bg-secondary" :to="`/category/${category?.slug}`">Go to Category</RouterLink>
     </div>
   </div>
 </template>

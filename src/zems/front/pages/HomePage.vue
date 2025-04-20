@@ -9,17 +9,42 @@ import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
 import NewsLetterSection from '@/components/section/NewsLetterSection.vue';
 import TestimonialSection from '@/components/section/TestimonialSection.vue';
 import TimelineSection from '@/components/section/TimelineSection.vue';
+import { onMounted, ref } from 'vue';
+const isLoading = ref(true)
+const categories = ref([]);
+const featured = ref([]);
+const ending = ref([]);
 
+const fetchHomeData = async () => {
+  try {
+    const res = await fetch('https://coupon.zems.uk/api/home');
+    const data = await res.json();
+    // console.log(data);
+    // console.log(data?.cat);
+    categories.value = data.cat;
+    featured.value = data.featured;
+    ending.value = data.ending;
+    // set loading value to false
+    isLoading.value = false;
+  } catch (error) {
+    // set loading value to false
+    isLoading.value = false;
+    console.log('error while fetching home page data', error);
+  }
+}
+onMounted(() => {
+  fetchHomeData()
+})
 </script>
 
 <template>
-  <TimelineSection/>
+  <TimelineSection />
   <BannerSection />
-  <CategorySection />
-  <FeaturedCoupon />
+  <CategorySection :categories="categories" />
+  <FeaturedCoupon :featured="featured" />
   <ByCompany />
-  <EndingSoon />
-  <TestimonialSection/>
-  <NewsLetterSection/>
-  <CallToAction/>
+  <EndingSoon :ending="ending" />
+  <TestimonialSection />
+  <NewsLetterSection />
+  <CallToAction />
 </template>

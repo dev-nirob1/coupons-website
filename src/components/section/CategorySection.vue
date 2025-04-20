@@ -1,25 +1,10 @@
 <script setup>
-import { onMounted, ref } from 'vue';
 import BaseTitle from '../element/BaseTitle.vue';
 import CategoryCard from '../widgets/CategoryCard.vue';
-const categories = ref([]);
-const isLoading = ref(true);
-
-// data fetching function
-const fetchCategories = async () => {
-  try {
-    const res = await fetch('https://coupon.zems.uk/api/category');
-    const jsonData = await res.json()
-    categories.value = jsonData;
-    isLoading.value = false;
-    // console.log(categories.value);
-  } catch (error) {
-    isLoading.value = false;
-    console.log('Error while fetching Categories', error);
+defineProps({
+  categories:{
+    type: Array
   }
-}
-onMounted(() => {
-  fetchCategories()
 })
 
 </script>
