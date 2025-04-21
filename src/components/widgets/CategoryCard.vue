@@ -14,7 +14,7 @@ defineProps({
       <!-- <small>{{ category.count }} deals</small> -->
     </div>
     <div class="category-overlay">
-        <RouterLink class="btn text-white bg-secondary" :to="`/category/${category?.slug}`">Go to Category</RouterLink>
+        <RouterLink class="btn text-white bg-secondary" :to="`/category_list/${category?.slug}`">Go to Category</RouterLink>
     </div>
   </div>
 </template>

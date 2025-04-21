@@ -13,8 +13,6 @@ import CouponsManagement from '@/zems/back/pages/CouponsManagement.vue'
 import UsersManagement from '@/zems/back/pages/UsersManagement.vue'
 import AddCoupon from '@/zems/back/pages/AddCoupon.vue'
 import CategoriesPage from '@/zems/front/pages/CategoriesPage.vue'
-import CategoryDetailsPage from '@/zems/front/pages/CategoryDetailsPage.vue'
-import CompanyDetailsPage from '@/zems/front/pages/CompanyDetailsPage.vue'
 import CompaniesPage from '@/zems/front/pages/CompaniesPage.vue'
 import CouponDetailsPage from '@/zems/front/pages/CouponDetailsPage.vue'
 
@@ -36,34 +34,34 @@ const router = createRouter({
           component: AboutPage,
         },
         {
-          path: '/coupons',
-          name: 'coupons',
-          component: CouponsPage, //all coupon details
+          path: '/coupon_list/:type',
+          name: 'coupon_list',
+          component: CouponsPage,
         },
         {
-          path: '/coupons/:id', // Optional if coupon details are shown in a modal
+          path: '/coupons-details/:id', //single coupon details
           name: 'coupons-details',
-          component: CouponDetailsPage, // single coupon details page
+          component: CouponDetailsPage,
         },
         {
           path: '/companies',
           name: 'companies',
-          component: CompaniesPage // for all company listing
+          component: CompaniesPage,
         },
         {
-          path: '/companies/:slug',
-          name: 'company-details',
-          component: CompanyDetailsPage //for single company details with coupon
+          path: '/company_list/:type',
+          name: 'company_list',
+          component: CouponsPage,
         },
         {
           path: '/categories',
           name: 'categories',
-          component: CategoriesPage, //for all category
+          component: CategoriesPage,
         },
         {
-          path: '/category/:slug',
-          name: 'category-details',
-          component: CategoryDetailsPage //for single category dynamic route
+          path: '/category_list/:type',
+          name: 'category_list',
+          component: CouponsPage
         },
         {
           path: '/login',
