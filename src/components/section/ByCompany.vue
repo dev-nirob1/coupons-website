@@ -23,8 +23,8 @@ const companies = [
             <BaseImage image="/company/store.png" />
           </div>
           <div class="span-3">
-            <SubTitle>More Offer From Us</SubTitle>
-            <BaseParagraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate officia exercitationem sint iure sunt porro molestiae.</BaseParagraph>
+            <SubTitle>Explore All Partner Companies</SubTitle>
+            <BaseParagraph> Discover our full network of trusted partners and browse their exclusive offers. Click to view all available companies.</BaseParagraph>
           </div>
           </div>
         </RouterLink>

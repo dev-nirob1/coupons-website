@@ -10,6 +10,7 @@ import NewsLetterSection from '@/components/section/NewsLetterSection.vue';
 import TestimonialSection from '@/components/section/TestimonialSection.vue';
 import TimelineSection from '@/components/section/TimelineSection.vue';
 import { onMounted, ref } from 'vue';
+import ExclusiveCoupon from '@/components/section/ExclusiveCoupon.vue';
 const isLoading = ref(true)
 const categories = ref([]);
 const featured = ref([]);
@@ -43,6 +44,7 @@ onMounted(() => {
   <FeaturedCoupon :featured="featured" />
   <ByCompany />
   <EndingSoon :ending="ending" />
+  <ExclusiveCoupon/>
   <TimelineSection />
   <TestimonialSection />
   <NewsLetterSection />

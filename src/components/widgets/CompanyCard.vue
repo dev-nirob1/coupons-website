@@ -8,7 +8,7 @@ defineProps({
 })
 </script>
 <template>
-  <RouterLink class="company-card" :to="`/company_list/${category?.slug}`">
+  <RouterLink class="company-card" to="/company_list">
     <BaseImage :image="company.logo"/>
     <BaseTitle>{{ company.name }}</BaseTitle>
   </RouterLink>

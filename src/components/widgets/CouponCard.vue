@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="coupon-card">
+  <div :class="['coupon-card', couponData?.exclusive ? 'bg-danger' : 'bg-secondary']">
     <div class="flex justify-between gap-1">
       <div>
         <BaseTitle tag="h5">{{couponData?.name}}</BaseTitle>
@@ -33,7 +33,7 @@ defineProps({
 
 <style scoped>
 .coupon-card {
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
   color: var(--white-color);
   padding: 2rem;
   border-radius: .75rem;
