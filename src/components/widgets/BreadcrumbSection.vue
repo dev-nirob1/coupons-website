@@ -1,16 +1,23 @@
 <script setup>
-defineProps({
-  routeName: {
-    type: String
-  }
-})
+import { useRoute } from 'vue-router';
+
+// defineProps({
+//   routeName: {
+//     type: String
+//   }
+// })
+const route = useRoute()
+const routeName = route?.name;
+const paramsName =  route?.params?.type
+console.log(route);
 </script>
 
 <template>
   <section class="breadcrumb bg-light py-2">
     <ul class="container flex align-center gap-1">
-      <ListItem><RouterLink>Home</RouterLink></ListItem>
+      <ListItem><RouterLink to="/">Home</RouterLink></ListItem>
       <ListItem>{{ routeName }}</ListItem>
+      <ListItem v-if="paramsName">{{ paramsName}}</ListItem>
     </ul>
   </section>
 </template>

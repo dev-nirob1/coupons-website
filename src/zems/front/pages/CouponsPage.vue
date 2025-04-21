@@ -32,7 +32,7 @@ onMounted(() => {
 
 <template>
   <section>
-    <BreadcrumbSection :routeName="routeName"/>
+    <BreadcrumbSection/>
     <div class="container py-2">
       <div class="flex justify-end mb-2">
         <div class="select">

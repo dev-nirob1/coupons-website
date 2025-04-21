@@ -11,10 +11,11 @@ defineProps({
         <BaseImage :image="category?.icon || '/categories/health.png'" />
       </div>
       <BaseTitle tag="h5">{{ category?.name }}</BaseTitle>
-      <!-- <small>{{ category.count }} deals</small> -->
+      <small>{{ Object.keys(category.name).length }} deals</small>
     </div>
     <div class="category-overlay">
-        <RouterLink class="btn text-white bg-secondary" :to="`/category_list/${category?.slug}`">Go to Category</RouterLink>
+      <RouterLink class="btn text-white bg-secondary" :to="`/category_list/${category?.slug}`">Go to Category
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -30,17 +31,21 @@ defineProps({
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: var(--box-shadow);
 }
+
 .category-card .category-image {
   margin: 0 auto;
   width: 80px;
   height: 80px;
 }
+
 .category-card h5 {
   margin: 1rem 0;
 }
+
 .category-card:hover {
   transform: translateY(-5px);
 }
+
 .category-overlay {
   position: absolute;
   top: 0;
@@ -59,5 +64,4 @@ defineProps({
 .category-card:hover .category-overlay {
   opacity: 1;
 }
-
 </style>
