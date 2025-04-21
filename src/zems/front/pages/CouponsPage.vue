@@ -1,5 +1,4 @@
 <script setup>
-import InputField from '@/components/element/InputField.vue';
 import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import CouponCard from '@/components/widgets/CouponCard.vue';
 import { onMounted, ref } from 'vue';
@@ -34,12 +33,9 @@ onMounted(() => {
 <template>
   <section>
     <BreadcrumbSection :routeName="routeName"/>
-    <div class="container py-2 medium-py-3">
-      <div class="flex justify-between mb-2">
-        <div class="span-6">
-          <InputField placeholder="Search Coupon" />
-        </div>
-        <div class="span-4">
+    <div class="container py-2">
+      <div class="flex justify-end mb-2">
+        <div class="select">
           <select>
             <option value="sort" disabled>Sort By</option>
             <option value="sort">Newest</option>
@@ -54,3 +50,11 @@ onMounted(() => {
     </div>
   </section>
 </template>
+
+<style scoped>
+.select select {
+  background-color: var(--white-color);
+  border: var(--border-color);
+  box-shadow: var(--box-shadow);
+}
+</style>
