@@ -13,10 +13,11 @@ const companies = [
 <template>
   <section class="company-section container py-3">
     <BaseTitle class="flex">Company <span class="text-secondary"> Offer</span> <hr></BaseTitle>
-    <div class="medium-4 gap-2 animate__animated animate__fadeInUp">
+    <div class="medium-4 gap-2">
       <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
       <div class="span-2">
-        <RouterLink class="link-card" to="/">
+        <!-- bttn -->
+        <RouterLink class="link-card" to="/company">
           <div class="all-4 gap-1 align-center">
             <div>
             <BaseImage image="/company/store.png" />
@@ -38,14 +39,15 @@ const companies = [
   text-decoration: none;
   height: 100%;
   width: 100%;
-  background-color: var(--secondary-color);
-  color: var(--white-color);
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  /* color: var(--white-color); */
   padding: 1rem;
   border-radius: 1rem;
   transition: all .3s ease-in-out;
 }
 .link-card:hover{
-  transform: translateY(-10px);
+  transform: scale(1.02);
 }
 .link-card img {
   height: 100%;

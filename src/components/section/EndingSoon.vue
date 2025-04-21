@@ -1,5 +1,6 @@
 <script setup>
 // import { ref } from 'vue';
+import CountDown from '../widgets/CountDown.vue';
 import CouponCard from '../widgets/CouponCard.vue';
 import { computed } from 'vue';
 const props = defineProps({
@@ -23,7 +24,7 @@ const rightCoupons = computed(() => props.ending.slice(2, 4));
               <div class="hour-hand"></div>
               <div class="minute-hand"></div>
             </div>
-            <CountDown />
+            <CountDown/>
           </div>
         </div>
         <!-- Coupon Cards Grid -->
