@@ -40,6 +40,7 @@ defineProps({
   overflow: hidden;
 }
 
+
 .coupon-card h5 {
   margin: 0 0 10px 0;
 }

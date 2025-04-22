@@ -3,6 +3,9 @@
 *{
     box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 :root {
     --popins-font: 'Poppins', sans-serif;
     --nunito-font: "Nunito Sans", serif;
@@ -121,6 +124,9 @@ a {
 
 .bg-secondary {
     background-color: var(--secondary-color);
+}
+.bg-danger{
+  background-color: var(--alternative-color);
 }
 .bg-white {
   background-color: var(--white-color);

@@ -1,8 +1,16 @@
+<script setup>
+import { heroSectionAnimation } from '@/plugins/animation';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  heroSectionAnimation()
+});
+</script>
 
 <template>
-  <section class="hero bg-secondary">
-    <div class="container medium-2 gap-2">
-      <div data-zems="animate__slideInLeft" class="animate__animated">
+  <section id="hero" class="hero bg-secondary">
+    <div id="content" class="container medium-2 gap-2">
+      <div>
         <HeroTitle>
           Save Big with
           Exclusive Coupons
@@ -16,7 +24,7 @@
           <BaseButton>Find Deals</BaseButton>
         </div>
       </div>
-      <div data-zems="animate__slideInRight" class="relative animate__animated">
+      <div class="relative">
         <div class="hero-card card-1">
           <BaseTitle tag="h3">$20 OFF</BaseTitle>
           <BaseTitle class="text-light" tag="h6">Amazon</BaseTitle>
@@ -37,8 +45,16 @@
   </section>
 </template>
 <style scoped>
+#hero{
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
+  overflow-y: hidden;
+}
+#content{
+  transition: all 0.3s ease, transform 0.3s ease;
+}
 .hero {
-  min-height: 100Vh;
+  height: 100Vh;
   display: flex;
   align-items: center;
 }

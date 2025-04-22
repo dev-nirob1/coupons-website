@@ -1,15 +1,20 @@
 <script setup>
+import { onMounted } from 'vue';
 import CategoryCard from '../widgets/CategoryCard.vue';
+import { categorySectionAnimation } from '@/plugins/animation';
 defineProps({
   categories:{
     type: Array
   }
 })
 
+onMounted(()=> {
+  categorySectionAnimation()
+})
 </script>
 
 <template>
-  <section class="py-2">
+  <section id="category" class="py-2">
     <div class="container">
       <BaseTitle class="text-dark flex">
         Browse <span class="text-secondary">Categories</span>
@@ -24,6 +29,9 @@ defineProps({
 </template>
 
 <style scoped>
+#category{
+  transition: all .3s ease;
+}
 hr {
   flex: 1;
   border: none;
