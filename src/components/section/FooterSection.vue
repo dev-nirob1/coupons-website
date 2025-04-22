@@ -14,7 +14,7 @@ const handleSubscribe = () => {
 <template>
   <footer class="coupon-footer">
     <!-- Main Footer Content -->
-    <div class="container medium-2 large-4 gap-2 p-2">
+    <div class="container bg-primary medium-2 large-4 gap-2 p-2">
       <!-- Company Info -->
       <div class="flex flex-col gap-1">
         <div class="logo">
@@ -123,7 +123,7 @@ const handleSubscribe = () => {
 
 <style scoped>
 .coupon-footer {
-  background: var(--dark-color);
+  /* background: var(--dark-color); */
   color: var(--white-color);
 }
 
