@@ -1,11 +1,12 @@
 
+
 <template>
   <section class="login-page height-full">
     <div class="container medium-2 align-center gap-2">
       <div class="left-div">
-        <div>
-          <HeroTitle>Welcome back</HeroTitle>
-          <BaseParagraph>Enter your email and password</BaseParagraph>
+        <div class="text-white">
+          <BaseTitle>Welcome to Coupon Craze</BaseTitle>
+          <SubTitle>We missed you! Sign in to continue</SubTitle>
         </div>
         <div class="curve"></div>
       </div>
@@ -27,9 +28,9 @@
         <div class="divider">
           <div></div>or <div></div>
         </div>
-        <div class="all-2 gap-1">
-          <BaseButton class="btn bg-primary text-white">Google</BaseButton>
-          <BaseButton class="btn bg-secondary text-white">Facebook</BaseButton>
+        <div class="all-2 gap-1 social-login">
+          <BaseButton class="btn"><i class="fa-brands fa-google"></i> Google</BaseButton>
+          <BaseButton class="btn"><i class="fa-brands fa-facebook-f"></i> Facebook</BaseButton>
         </div>
         <div>
           <BaseParagraph>Don't have an account? <RouterLink to="/register">Register Here</RouterLink>
@@ -41,7 +42,14 @@
 </template>
 <style scoped>
 .login-page {
-  margin: 2rem auto;
+  padding: 5rem 0;
+}
+.login-page h3{
+  margin: 1rem 0;
+}
+.login-page .social-login .btn{
+  background-color: var(--white-color);
+  border: 3px solid var(--secondary-color);
 }
 
 .left-div {
@@ -71,7 +79,7 @@
 
 .login-page input,
 .login-page button {
-  border: 1px solid var(--border-color);
+  border: 3px solid var(--border-color);
   border-radius: .5rem;
   font-size: 1.25rem;
 }
