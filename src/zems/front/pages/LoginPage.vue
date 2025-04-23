@@ -1,16 +1,13 @@
-<script setup>
-
-</script>
 
 <template>
-  <section class="form-container">
-
+  <section class="login-page height-full">
     <div class="container medium-2 align-center gap-2">
-      <div class="bg-secondary height-full flex align-center justify-center">
+      <div class="left-div">
         <div>
           <HeroTitle>Welcome back</HeroTitle>
           <BaseParagraph>Enter your email and password</BaseParagraph>
         </div>
+        <div class="curve"></div>
       </div>
       <div>
         <form>
@@ -43,31 +40,52 @@
   </section>
 </template>
 <style scoped>
-.form-container {
+.login-page {
   margin: 2rem auto;
 }
 
-.form-container .btn {
+.left-div {
+  background-color: var(--secondary-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.curve {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--white-color);
+  top: 60%;
+  left: 70%;
+  rotate: 45deg;
+}
+
+.login-page .btn {
   padding: .75rem 1rem;
   margin: 1rem 0;
 }
 
-.form-container input,
-.form-container button {
+.login-page input,
+.login-page button {
   border: 1px solid var(--border-color);
   border-radius: .5rem;
   font-size: 1.25rem;
 }
 
-.form-container .input-field {
+.login-page .input-field {
   position: relative;
   margin: 1.5rem 0;
 }
-.form-container .input-field input {
+
+.login-page .input-field input {
   background-color: var(--white-color);
 }
 
-.form-container .input-field .label {
+.login-page .input-field .label {
   position: absolute;
   top: 1.75rem;
   left: 1rem;
@@ -77,7 +95,7 @@
   transition: .3s ease;
 }
 
-.input-field input:focus + .label{
+.input-field input:focus+.label {
   top: 0;
   left: 1rem;
   background-color: var(--white-color);
@@ -85,26 +103,15 @@
   z-index: 10;
 }
 
-
-
-
-
-
-
-
-
-
-
-.form-container a {
+.login-page a {
   display: inline-block;
   text-decoration: none;
   margin-left: .5rem;
   color: var(--secondary-color);
 }
 
-.form-container a:hover {
+.login-page a:hover {
   text-decoration: underline;
-
 }
 
 .divider {
