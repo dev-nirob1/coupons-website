@@ -1,41 +1,42 @@
 <script setup>
-import BaseTitle from '@/components/element/BaseTitle.vue';
-import InputField from '@/components/element/InputField.vue';
 
 </script>
 
 <template>
   <section class="form-container">
 
-    <div class="medium-2 align-center gap-2">
-      <div class="width-full height-full">
-        <img class="width-full height-full"
-          src="https://plus.unsplash.com/premium_photo-1681487814165-018814e29155?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="">
+    <div class="container medium-2 align-center gap-2">
+      <div class="bg-secondary height-full flex align-center justify-center">
+        <div>
+          <HeroTitle>Welcome back</HeroTitle>
+          <BaseParagraph>Enter your email and password</BaseParagraph>
+        </div>
       </div>
       <div>
         <form>
           <BaseTitle class="text-center">
             Sign In
           </BaseTitle>
-          <div>
-            <InputField placeholder="Enter Your Email" />
+          <div class="input-field">
+            <InputField />
+            <label class="label">Email</label>
           </div>
-          <div>
-            <InputField placeholder="Enter Your Password" />
+          <div class="input-field">
+            <InputField />
+            <label class="label">Password</label>
           </div>
-          <button class="btn bg-secondary text-white width-full">Sign In</button>
+          <BaseButton class="btn bg-secondary text-white width-full">Sign In</BaseButton>
         </form>
         <div class="divider">
           <div></div>or <div></div>
         </div>
         <div class="all-2 gap-1">
-          <button class="btn bg-primary text-white">Google</button><button
-            class="btn bg-primary text-white">Apple</button>
+          <BaseButton class="btn bg-primary text-white">Google</BaseButton>
+          <BaseButton class="btn bg-secondary text-white">Facebook</BaseButton>
         </div>
         <div>
-          <p>Don't have an account? <RouterLink to="/register">Register Here</RouterLink>
-          </p>
+          <BaseParagraph>Don't have an account? <RouterLink to="/register">Register Here</RouterLink>
+          </BaseParagraph>
         </div>
       </div>
     </div>
@@ -43,15 +44,67 @@ import InputField from '@/components/element/InputField.vue';
 </template>
 <style scoped>
 .form-container {
-  max-width: 992px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
-form a {
+.form-container .btn {
+  padding: .75rem 1rem;
+  margin: 1rem 0;
+}
+
+.form-container input,
+.form-container button {
+  border: 1px solid var(--border-color);
+  border-radius: .5rem;
+  font-size: 1.25rem;
+}
+
+.form-container .input-field {
+  position: relative;
+  margin: 1.5rem 0;
+}
+.form-container .input-field input {
+  background-color: var(--white-color);
+}
+
+.form-container .input-field .label {
+  position: absolute;
+  top: 1.75rem;
+  left: 1rem;
+  font-size: 1.25rem;
+  color: var(--light-color);
+  pointer-events: none;
+  transition: .3s ease;
+}
+
+.input-field input:focus + .label{
+  top: 0;
+  left: 1rem;
+  background-color: var(--white-color);
+  padding: 0 .5rem;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+.form-container a {
+  display: inline-block;
+  text-decoration: none;
   margin-left: .5rem;
+  color: var(--secondary-color);
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+
 }
 
 .divider {
@@ -63,6 +116,6 @@ form a {
 .divider div {
   height: 2px;
   width: 100%;
-  background-color: var(--light-color);
+  background-color: var(--border-color);
 }
 </style>

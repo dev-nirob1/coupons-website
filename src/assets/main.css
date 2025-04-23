@@ -15,7 +15,7 @@ html{
     --dark-color: #1F2937;
     --light-color: #384252;
     --white-color: #fff;
-    --border-color: #e2e8f0;
+    --border-color: #dfe6ee;
     --alternative-color: #F43F5E;
     --hover-color: #d75454;
     /* ---------------typography------------ */
@@ -189,7 +189,7 @@ a {
     text-decoration: none;
     border: none;
     outline: none;
-    padding: 0.5rem 1rem;
+    /* padding: 1rem 1rem; */
     border-radius: 4px;
     font-size: 1rem;
     text-align: center;
