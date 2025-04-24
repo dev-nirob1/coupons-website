@@ -8,8 +8,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="hero" class="hero bg-secondary text-center">
-    <div id="content" class="container">
+  <section id="hero" class="hero text-center">
+    <div class="banner-image">
+      <img src="/banner.jpg" />
+    </div>
+    <div id="content" class="content">
       <div>
         <HeroTitle>
           Save Big with
@@ -37,9 +40,32 @@ onMounted(() => {
   transition: all 0.3s ease, transform 0.3s ease;
 }
 .hero {
+
+  position: reltaive;
   height: 100Vh;
   display: flex;
   align-items: center;
+}
+.hero .banner-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero .banner-image img{
+  object-fit: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+.hero .content{
+  background: linear-gradient( rgba(23, 44, 82, 0.1), rgba(23, 44, 82, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
 }
 
 .hero .highlight {
@@ -66,10 +92,4 @@ onMounted(() => {
   padding: 1.18rem 1.75rem;
 }
 
-
-@media (min-width: 768px) {
-  .hero-card {
-    position: absolute;
-  }
-}
 </style>
