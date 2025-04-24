@@ -1,15 +1,10 @@
 <script setup>
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-// defineProps({
-//   routeName: {
-//     type: String
-//   }
-// })
 const route = useRoute()
-const routeName = route?.name;
-const paramsName =  route?.params?.type
-console.log(route);
+const routeName = computed(() => route.name)
+const paramsName = computed(() => route.params.type)
 </script>
 
 <template>
