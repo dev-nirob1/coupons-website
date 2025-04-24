@@ -1,5 +1,5 @@
-import AuthLayout from "@zems/auth/AuthLayout.vue";
-import LoginPage from "./LoginPage.vue";
+import AuthLayout from "@/zems/auth/AuthLayout/AuthLayout.vue";
+import LoginPage from "./Pages/LoginPage.vue";
 
 export default [
   {
