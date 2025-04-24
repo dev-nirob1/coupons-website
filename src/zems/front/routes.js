@@ -47,7 +47,7 @@ export default [
         component: CategoriesPage,
       },
       {
-        path: '/category_list/:type',
+        path: '/category_list/:type?',
         name: 'category_list',
         component: CouponsPage,
       },

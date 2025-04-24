@@ -9,7 +9,7 @@ import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
 import NewsLetterSection from '@/components/section/NewsLetterSection.vue';
 import TestimonialSection from '@/components/section/TestimonialSection.vue';
 import TimelineSection from '@/components/section/TimelineSection.vue';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import ExclusiveCoupon from '@/components/section/ExclusiveCoupon.vue';
 const isLoading = ref(true)
 const categories = ref([]);
@@ -33,9 +33,8 @@ const fetchHomeData = async () => {
     console.log('error while fetching home page data', error);
   }
 }
-onMounted(() => {
   fetchHomeData()
-})
+
 </script>
 
 <template>

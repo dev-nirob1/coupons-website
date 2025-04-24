@@ -7,9 +7,9 @@ import axios from 'axios';
 const route = useRoute();
 
 const { isPending: isLoading, data: couponsData = [] } = useQuery({
-  queryKey: ()=> ['coupon_list', route.params.type],
+  queryKey: ()=> [route.name, route.params.type],
   queryFn: async () => {
-    const url = `https://coupon.zems.uk/api/coupon_list${route.params.type ? '/' + route.params.type : ''}`;
+    const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}`;
     const res = await axios.get(url);
     return res.data.data;
   }
