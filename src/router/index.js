@@ -3,8 +3,6 @@ import MainLayout from '@/zems/front/Layout/MainLayout.vue'
 import AboutPage from '@/zems/front/pages/AboutPage.vue'
 import HomePage from '@/zems/front/pages/HomePage.vue'
 import CouponsPage from '@/zems/front/pages/CouponsPage.vue'
-import LoginPage from '@/zems/front/pages/LoginPage.vue'
-import RegisterPage from '@/zems/front/pages/RegisterPage.vue'
 import DashboardLayout from '@/zems/back/layout/DashboardLayout.vue'
 import DashboardHome from '@/zems/back/pages/DashboardHome.vue'
 import CategoriesManagement from '@/zems/back/pages/CategoriesManagement.vue'
@@ -15,6 +13,7 @@ import AddCoupon from '@/zems/back/pages/AddCoupon.vue'
 import CategoriesPage from '@/zems/front/pages/CategoriesPage.vue'
 import CompaniesPage from '@/zems/front/pages/CompaniesPage.vue'
 import CouponDetailsPage from '@/zems/front/pages/CouponDetailsPage.vue'
+import auth_routes from '@/zems/auth/routes'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,7 +33,7 @@ const router = createRouter({
           component: AboutPage,
         },
         {
-          path: '/coupon_list/:type',
+          path: '/coupon_list/:type?',
           name: 'coupon_list',
           component: CouponsPage,
         },
@@ -49,7 +48,7 @@ const router = createRouter({
           component: CompaniesPage,
         },
         {
-          path: '/company_list/:type',
+          path: '/company_list/:type?',
           name: 'company_list',
           component: CouponsPage,
         },
@@ -62,16 +61,6 @@ const router = createRouter({
           path: '/category_list/:type',
           name: 'category_list',
           component: CouponsPage
-        },
-        {
-          path: '/login',
-          name: 'login',
-          component: LoginPage,
-        },
-        {
-          path: '/register',
-          name: 'register',
-          component: RegisterPage,
         },
       ],
     },
@@ -111,6 +100,7 @@ const router = createRouter({
         },
       ],
     },
+    ...auth_routes
   ],
 })
 

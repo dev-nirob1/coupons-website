@@ -18,7 +18,9 @@
       <!-- Navigation Links -->
       <ul class="flex align-center gap-1" :class="{ 'active': isMenuOpen }">
         <li><router-link to="/" @click="closeMenu">Home</router-link></li>
-        <li><router-link to="/coupons" @click="closeMenu">Coupons</router-link></li>
+        <li><router-link to="/coupon_list" @click="closeMenu">Latest Coupons</router-link></li>
+        <li><router-link to="/coupon_list/exclusive" @click="closeMenu">Exclusive Coupons</router-link></li>
+        <li><router-link to="/coupon_list/ending_soon" @click="closeMenu">Ending Soon</router-link></li>
         <li><router-link to="/categories" @click="closeMenu">Categories</router-link></li>
         <li><router-link to="/dashboard" @click="closeMenu">Dashboard</router-link></li>
 
@@ -118,11 +120,14 @@ header ul li  a:hover::after {
 .signup {
   background-color: #f43f5e;
   color: var(--white-color);
+  &:hover {
+    background-color: black;
+  }
 }
 
-.signup:hover {
+/* .signup:hover {
   background-color: #e11d48;
-}
+} */
 
 /* Mobile Menu Styles */
 .mobile-menu-button {

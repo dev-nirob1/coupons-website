@@ -13,10 +13,13 @@ import BaseImage from './components/element/BaseImage.vue'
 import BaseParagraph from './components/element/BaseParagraph.vue'
 import BaseTextArea from './components/element/BaseTextArea.vue'
 import ListItem from './components/element/ListItem.vue'
+import { VueQueryPlugin } from '@tanstack/vue-query'
+
 
 const pinia = createPinia()
 const app = createApp(App)
 app.use(pinia)
+app.use(VueQueryPlugin)
 // app.use(zems_animate)
 app.use(router)
 app.component('BaseButton', BaseButton)

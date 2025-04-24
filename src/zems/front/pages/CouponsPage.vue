@@ -1,38 +1,27 @@
 <script setup>
+import { useRoute } from 'vue-router';
+import { useQuery } from '@tanstack/vue-query';
 import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import CouponCard from '@/components/widgets/CouponCard.vue';
-import { onMounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
 
-const couponsData = ref([])
-const loading = ref(true)
-const route = useRoute()
-const routeName = route.name;
-const type = route.params.type;
+const route = useRoute();
 
-console.log(route);
-const url = `https://coupon.zems.uk/api/${routeName}/${type}`
-// console.log(url);
-const fetchData = async () => {
-  try {
-    const res = await fetch(url)
-    const data = await res.json()
-    couponsData.value = data?.data || data;
-    loading.value = false
-  } catch (error) {
-    loading.value = false
-    console.log('error while fetching data', error);
+const { isPending, isError, data: couponsData, error } = useQuery({
+  queryKey: ()=> ['coupon_list', route.params.type],
+  queryFn: async () => {
+    const url = `https://coupon.zems.uk/api/coupon_list${route.params.type ? '/' + route.params.type : ''}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    return data.data || [];
   }
-}
-onMounted(() => {
-  fetchData()
-})
-
+});
 </script>
+
 
 <template>
   <section>
-    <BreadcrumbSection/>
+    <div v-if="isPending">loading</div>
+    <BreadcrumbSection />
     <div class="container py-2">
       <div class="flex justify-end mb-2">
         <div class="select">
