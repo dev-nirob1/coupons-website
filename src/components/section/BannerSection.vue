@@ -19,8 +19,9 @@ onMounted(() => {
           Exclusive Coupons
         </HeroTitle>
         <SubTitle class="text-white">
-          Unlock <span class="highlight">thousands of deals</span> from your favorite brands
-        </SubTitle>
+  Unlock <span class="highlight">thousands of deals</span> and save up to 80% at top retailers - <br/>
+  verified coupons updated daily for maximum savings
+</SubTitle>
         <div class="input-field flex align-center relative">
           <InputField placeholder="Search Stores, Categories">
           </InputField>

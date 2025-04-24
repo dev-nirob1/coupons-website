@@ -29,8 +29,9 @@
   padding: 1.5rem;
   width: 300px;
   height: 280px;
-  background: #ffff;
+  background:#F0F0F0;
   border-radius: 8px;
+  box-shadow: var(--box-shadow);
 }
 
 .testimonial h5 {

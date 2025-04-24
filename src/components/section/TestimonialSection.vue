@@ -22,20 +22,11 @@ onMounted(() => {
           left: cardWidth * (cardIndex + 1),
           behavior: 'smooth'
         });
-        if (lastIndex == cardIndex) {
+        if (cardIndex == lastIndex) {
           cardIndex = 0;
         }
         cardIndex++;
-
       }
-      // else {
-
-      //   cardIndex = 0;
-      //   cardContainer.scrollTo({
-      //     left: 0,
-      //     behavior: 'smooth'
-      //   });
-      // }
     })
     prevBtn.addEventListener('click', () => {
       // todo: prevBtn logic in individual function
@@ -55,11 +46,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="testimonials bg-secondary py-2 medium-py-3 large-py-5">
-    <div class="medium-8 container">
-      <div class="span-3 text-center text-white">
-        <SubTitle>Our Clients</SubTitle>
-        <BaseTitle>Testimonials</BaseTitle>
+  <div class="testimonials bg-white py-2 medium-py-3 large-py-5">
+    <div class="medium-8 align-center container">
+      <div class="span-3 text-center">
+
+        <BaseTitle>Feedback &
+         <br> Testimonials</BaseTitle>
+         <BaseParagraph>
+          Real savings from real people. See how our community saves big every day.
+        </BaseParagraph>
       </div>
       <div class="span-5">
         <div class="cards-scroll-container">
