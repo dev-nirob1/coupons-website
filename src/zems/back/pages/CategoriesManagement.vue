@@ -2,6 +2,7 @@
 import BaseButton from '@/components/element/BaseButton.vue';
 import BaseTitle from '@/components/element/BaseTitle.vue';
 import PopUp from '@/components/widgets/PopUp.vue';
+import TableData from './TableData.vue';
 import { ref } from 'vue';
 const isModalOpen = ref(false)
 
@@ -17,6 +18,7 @@ const handleOpenModal = ()=> {
 </script>
 
 <template>
+  <TableData/>
   <div class="categories">
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">View coupon details dashboard</PopUp>
 

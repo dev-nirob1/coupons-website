@@ -11,8 +11,7 @@
 
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-button" @click="toggleMenu">
-        <i :class="isMenuOpen ? 'fas fa-xmark text-2xl' : 'fas fa-bars text-2xl'"
-          class="fa-2xl"></i>
+        <i :class="isMenuOpen ? 'fas fa-xmark text-2xl' : 'fas fa-bars text-2xl'" class="fa-2xl"></i>
       </button>
 
       <!-- Navigation Links -->
@@ -51,18 +50,20 @@ const closeMenu = () => {
 
 <style scoped>
 .navbar {
-  background-color: var(--dark-color);
+  background-color: transparent;
   color: var(--white-color);
- color: #fff;
   padding: 0.75rem 0;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
 }
-.navbar h3{
-margin: 5px;
+
+.navbar h3 {
+  margin: 5px;
 }
+
 .logo {
   text-decoration: none;
 }
@@ -76,12 +77,14 @@ margin: 5px;
   font-size: 1.5rem;
   margin-right: 0.4rem;
 }
+
 header ul {
   list-style: none;
   margin: 0;
   padding: 0;
   transition: all 0.3s ease;
 }
+
 header ul li a {
   text-decoration: none;
   /* color: var(--light-color); */
@@ -106,13 +109,15 @@ header ul li a::after {
   transition: width 0.3s ease;
 }
 
-header ul li  a:hover::after {
+header ul li a:hover::after {
   width: 100%;
 }
+
 .login {
   background-color: #f3f4f6;
   color: #374151;
 }
+
 .login:hover {
   background-color: #e5e7eb;
 }
@@ -120,6 +125,7 @@ header ul li  a:hover::after {
 .signup {
   background-color: #f43f5e;
   color: var(--white-color);
+
   &:hover {
     background-color: black;
   }
