@@ -9,40 +9,46 @@ import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
 import NewsLetterSection from '@/components/section/NewsLetterSection.vue';
 import TestimonialSection from '@/components/section/TestimonialSection.vue';
 import TimelineSection from '@/components/section/TimelineSection.vue';
-import { ref } from 'vue';
 import ExclusiveCoupon from '@/components/section/ExclusiveCoupon.vue';
-const isLoading = ref(true)
-const categories = ref([]);
-const featured = ref([]);
-const ending = ref([]);
+import { useQuery } from '@tanstack/vue-query';
+import axios from 'axios';
+// const isLoading = ref(true)
+// const categories = ref([]);
+// const featured = ref([]);
+// const ending = ref([]);
 
-const fetchHomeData = async () => {
-  try {
-    const res = await fetch('https://coupon.zems.uk/api/home');
-    const data = await res.json();
-    // console.log(data);
-    // console.log(data?.cat);
-    categories.value = data.cat;
-    featured.value = data.featured;
-    ending.value = data.ending;
-    // set loading value to false
-    isLoading.value = false;
-  } catch (error) {
-    // set loading value to false
-    isLoading.value = false;
-    console.log('error while fetching home page data', error);
-  }
-}
-  fetchHomeData()
+const {isLoading, data } = useQuery ({
+  queryKey: ['home'],
+  queryFn: async()=> {{
+    const res = await axios.get('https://coupon.zems.uk/api/home')
+    return res.data
+  }}
+})
+  console.log(data);
+// const fetchHomeData = async () => {
+//   try {
+//     const res = await fetch('https://coupon.zems.uk/api/home');
+//     const data = await res.json();
+//     categories.value = data.cat;
+//     featured.value = data.featured;
+//     ending.value = data.ending;
+//     isLoading.value = false;
+//   } catch (error) {
+//     isLoading.value = false;
+//     console.log('error while fetching home page data', error);
+//   }
+// }
+//   fetchHomeData()
 
 </script>
 
 <template>
+  <div v-if="isLoading">loading</div>
   <BannerSection />
-  <CategorySection :categories="categories" />
-  <FeaturedCoupon :featured="featured" />
+  <CategorySection :categories="data?.cat" :isLoading="isLoading" />
+  <FeaturedCoupon :featured="data?.featured" :isLoading="isLoading" />
   <ByCompany />
-  <EndingSoon :ending="ending" />
+  <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
   <ExclusiveCoupon/>
   <TimelineSection />
   <TestimonialSection />

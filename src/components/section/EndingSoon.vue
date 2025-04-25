@@ -6,10 +6,14 @@ import { computed } from 'vue';
 const props = defineProps({
   ending: {
     type: Array
+  },
+  isLoading: {
+    type: Boolean
   }
 })
-const leftCoupons = computed(() => props.ending.slice(0, 2));
-const rightCoupons = computed(() => props.ending.slice(2, 4));
+console.log(props.ending);
+const leftCoupons = computed(() => props?.ending?.slice(0, 2) ?? []);
+const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
 </script>
 
 <template>
@@ -30,6 +34,7 @@ const rightCoupons = computed(() => props.ending.slice(2, 4));
         <!-- Coupon Cards Grid -->
         <div class="medium-span-2 medium-2 gap-2">
           <div class="left">
+            <div v-if="isLoading">Loading</div>
             <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" />
           </div>
           <div v-if="rightCoupons.length > 0" class="right">

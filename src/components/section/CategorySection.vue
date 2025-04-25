@@ -4,9 +4,11 @@ import LoadingSkeleton from '../widgets/LoadingSkeleton.vue';
 defineProps({
   categories: {
     type: Array
+  },
+  isLoading: {
+    type: Boolean
   }
 })
-
 </script>
 
 <template>
@@ -16,9 +18,12 @@ defineProps({
         Browse <span class="text-secondary">Categories</span>
         <hr>
       </BaseTitle>
+      <!-- loading skeleton  -->
+      <div v-if="isLoading" class="medium-2 large-5 gap-2">
+        <LoadingSkeleton v-for="(load, i) in 5" :key="i" />
+      </div>
       <!-- Categories container -->
-      <div class="medium-2 large-5 gap-2">
-        <LoadingSkeleton />
+      <div v-else class="medium-2 large-5 gap-2">
         <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
       </div>
     </div>
