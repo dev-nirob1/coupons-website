@@ -1,16 +1,11 @@
 <script setup>
-import { onMounted } from 'vue';
 import CategoryCard from '../widgets/CategoryCard.vue';
-import { categorySectionAnimation } from '@/plugins/animation';
 defineProps({
   categories:{
     type: Array
   }
 })
 
-onMounted(()=> {
-  categorySectionAnimation()
-})
 </script>
 
 <template>

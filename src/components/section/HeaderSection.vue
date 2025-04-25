@@ -1,3 +1,20 @@
+<script setup>
+import { onMounted, ref } from 'vue';
+import { navbarAnimation } from '@/plugins/animation';
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+onMounted(()=> {
+  navbarAnimation()
+})
+</script>
+
 <template>
   <header class="navbar">
     <nav class="flex justify-between align-center flex-wrap container">
@@ -33,24 +50,19 @@
   </header>
 </template>
 
-<script setup>
-import { ref } from 'vue';
 
-const isMenuOpen = ref(false);
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
-
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
-
-</script>
 
 <style scoped>
+.scroll-down .navbar {
+    transform: translate3d(0, -100%, 0);
+    background-color: transparent;
+}
+.scroll-up .navbar {
+    background-color: var(--alternative-color);
+}
+
 .navbar {
-  background-color: transparent;
+  /* background-color: transparent; */
   color: var(--white-color);
   padding: 0.75rem 0;
   position: fixed;
@@ -58,6 +70,7 @@ const closeMenu = () => {
   left: 0;
   width: 100%;
   z-index: 1000;
+  transition: color .3s ease;
 }
 
 .navbar h3 {

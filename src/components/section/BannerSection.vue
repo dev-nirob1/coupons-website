@@ -60,7 +60,7 @@ onMounted(() => {
   height: 100%;
 }
 .hero .content{
-  background: linear-gradient( rgba(23, 44, 82, 0.1), rgba(23, 44, 82, 0.1));
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   display: flex;
   align-items: center;
   justify-content: center;
