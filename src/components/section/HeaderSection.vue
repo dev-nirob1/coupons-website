@@ -50,19 +50,16 @@ onMounted(()=> {
   </header>
 </template>
 
-
-
 <style scoped>
 .scroll-down .navbar {
     transform: translate3d(0, -100%, 0);
-    background-color: transparent;
-}
-.scroll-up .navbar {
-    background-color: var(--alternative-color);
-}
+  }
+  .scroll-up .navbar {
+    background-color: var(--border-color);
+  }
 
 .navbar {
-  /* background-color: transparent; */
+  background-color: transparent;
   color: var(--white-color);
   padding: 0.75rem 0;
   position: fixed;

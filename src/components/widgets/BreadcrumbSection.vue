@@ -17,6 +17,9 @@ const paramsName = computed(() => route.params.type)
   </section>
 </template>
 <style scoped>
+.breadcrumb{
+  margin-top: 6rem;
+}
 .breadcrumb ul {
   list-style: none;
   font-size: 1.5rem;
