@@ -1,7 +1,8 @@
 <script setup>
 import CategoryCard from '../widgets/CategoryCard.vue';
+import LoadingSkeleton from '../widgets/LoadingSkeleton.vue';
 defineProps({
-  categories:{
+  categories: {
     type: Array
   }
 })
@@ -16,7 +17,8 @@ defineProps({
         <hr>
       </BaseTitle>
       <!-- Categories container -->
-      <div data-zems="animate__fadeInUp" class="medium-2 large-5 gap-2 animate__animated animate__delay-2s">
+      <div class="medium-2 large-5 gap-2">
+        <LoadingSkeleton />
         <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
       </div>
     </div>
@@ -24,9 +26,10 @@ defineProps({
 </template>
 
 <style scoped>
-#category{
+#category {
   transition: all .3s ease;
 }
+
 hr {
   flex: 1;
   border: none;
