@@ -4,6 +4,7 @@ import BaseTitle from '@/components/element/BaseTitle.vue';
 import PopUp from '@/components/widgets/PopUp.vue';
 import TableData from './TableData.vue';
 import { ref } from 'vue';
+
 const isModalOpen = ref(false)
 
 const handleCloseModal = ()=> {
@@ -19,9 +20,11 @@ const handleOpenModal = ()=> {
 
 <template>
   <TableData/>
+
+
   <div class="categories">
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">View coupon details dashboard</PopUp>
-
+    <!-- <TableData/> -->
     <!-- Header Section with Title and Add Button -->
    <header class="flex align-center justify-between">
         <div>
@@ -32,17 +35,14 @@ const handleOpenModal = ()=> {
           <span>Add Categories</span>
         </BaseButton>
     </header>
-
     <!-- Filter/sorting -->
     <div class="flex justify-between mb-1">
-
       <select class="bg-white mb-2">
         <option value="all">All Statuses</option>
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
       </select>
     </div>
-
     <!-- Categories Table -->
     <table class="categories-table">
       <thead>

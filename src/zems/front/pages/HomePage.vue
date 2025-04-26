@@ -24,21 +24,6 @@ const {isLoading, data } = useQuery ({
     return res.data
   }}
 })
-  console.log(data);
-// const fetchHomeData = async () => {
-//   try {
-//     const res = await fetch('https://coupon.zems.uk/api/home');
-//     const data = await res.json();
-//     categories.value = data.cat;
-//     featured.value = data.featured;
-//     ending.value = data.ending;
-//     isLoading.value = false;
-//   } catch (error) {
-//     isLoading.value = false;
-//     console.log('error while fetching home page data', error);
-//   }
-// }
-//   fetchHomeData()
 
 </script>
 

@@ -1,5 +1,6 @@
 <script setup>
 import CompanyCard from '../widgets/CompanyCard.vue';
+// import LoadingSkeleton from '../widgets/LoadingSkeleton.vue';
 const companies = [
   { id: 1, name: "Nike", logo: "/company/nike.png", discount: "20% OFF" },
   { id: 2, name: "Adidas", logo: "/company/adidas.png", discount: "15% OFF" },
@@ -12,20 +13,26 @@ const companies = [
 
 <template>
   <section class="company-section container py-3">
-    <BaseTitle class="flex">Company <span class="text-secondary"> Offer</span> <hr></BaseTitle>
+    <BaseTitle class="flex">Company <span class="text-secondary"> Offer</span>
+      <hr>
+    </BaseTitle>
     <div class="medium-4 gap-2">
+      <!-- loading skeleton  -->
+      <!-- <LoadingSkeleton /> -->
+      <!-- company data  -->
       <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
       <div class="span-2">
-        <!-- bttn -->
+        <!-- link card/btn -->
         <RouterLink class="link-card" to="/company">
           <div class="all-4 gap-1 align-center">
             <div>
-            <BaseImage image="/company/store.png" />
-          </div>
-          <div class="span-3">
-            <SubTitle>Explore All Partner Companies</SubTitle>
-            <BaseParagraph> Discover our full network of trusted partners and browse their exclusive offers. Click to view all available companies.</BaseParagraph>
-          </div>
+              <BaseImage image="/company/store.png" />
+            </div>
+            <div class="span-3">
+              <SubTitle>Explore All Partner Companies</SubTitle>
+              <BaseParagraph> Discover our full network of trusted partners and browse their exclusive offers. Click to
+                view all available companies.</BaseParagraph>
+            </div>
           </div>
         </RouterLink>
       </div>
@@ -46,9 +53,11 @@ const companies = [
   border-radius: 1rem;
   transition: all .3s ease-in-out;
 }
-.link-card:hover{
+
+.link-card:hover {
   transform: scale(1.02);
 }
+
 .link-card img {
   height: 100%;
   width: 100%;
