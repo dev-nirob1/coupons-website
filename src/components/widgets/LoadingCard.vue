@@ -1,19 +1,17 @@
 <template>
   <div class="card-skeleton">
-    <div class="flex justify-between gap-1">
+    <div class="">
       <div>
         <BaseTitle tag="h5"></BaseTitle>
-        <BaseParagraph></BaseParagraph>
+        <BaseTitle></BaseTitle>
       </div>
       <div>
-        <span></span>
         <BaseTitle></BaseTitle>
-        <BaseTitle></BaseTitle>
+        <BaseParagraph></BaseParagraph>
       </div>
     </div>
-    <div class="card-footer pt-1">
-      <div class="flex justify-between align-center">
-        <BaseParagraph></BaseParagraph>
+    <div class="">
+      <div>
         <BaseButton></BaseButton>
       </div>
     </div>
@@ -21,16 +19,21 @@
 </template>
 
 <style scoped>
-.card-skeleton{
+.card-skeleton {
   background-color: var(--white-color);
+  border-radius: .5rem;
+  padding: 1rem;
 }
-.card-skeleton p, button, h3, h5{
-  background-color: var(--light-color);
+
+.card-skeleton p,
+button,
+h3,
+h5 {
+  background-color: lightgray;
+  margin: 1rem 0;
+  height: 25px;
+  width: 100%;
+  border-radius: .5rem;
 }
-.card-skeleton p, h5{
-  height: 20px;
-}
-.card-skeleton h3 {
-  height: 30px;
-}
+
 </style>
