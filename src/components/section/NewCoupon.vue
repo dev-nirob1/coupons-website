@@ -68,7 +68,7 @@ const coupons = ref([
         </div>
         <div>
           <div class="medium-none">Uses</div>
-          {{ coupon.validUntil}}
+          {{ coupon.validUntil }}
         </div>
         <div>
           <div class="medium-none">Status</div>
@@ -87,7 +87,6 @@ const coupons = ref([
   </div>
 </template>
 <style scoped>
-
 .status-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -105,9 +104,10 @@ const coupons = ref([
   background-color: var(--alternative-color);
   color: var(--white-color);
 }
+
 @media (min-width: 768px) {
-.medium-none{
-  display: none;
-}
+  .medium-none {
+    display: none;
+  }
 }
 </style>

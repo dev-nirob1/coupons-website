@@ -4,10 +4,11 @@ import { useQuery } from '@tanstack/vue-query';
 import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import CouponCard from '@/components/widgets/CouponCard.vue';
 import axios from 'axios';
+import LoadingCard from '@/components/widgets/LoadingCard.vue';
 const route = useRoute();
 
 const { isPending: isLoading, data: couponsData = [] } = useQuery({
-  queryKey: ()=> [route.name, route.params.type],
+  queryKey: () => [route.name, route.params.type],
   queryFn: async () => {
     const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}`;
     const res = await axios.get(url);
@@ -31,7 +32,9 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
           </select>
         </div>
       </div>
-      <div v-if="isLoading">loading</div>
+      <div v-if="isLoading" class=" medium-2 large-3 gap-2">
+        <LoadingCard v-for="(data, i) in 6" :key="i"></LoadingCard>
+      </div>
       <div v-else class=" medium-2 large-3 gap-2">
         <CouponCard v-for="couponData in couponsData" :couponData="couponData" :key="couponData.id" />
       </div>
