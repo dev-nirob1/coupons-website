@@ -1,28 +1,15 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import axios from 'axios';
 import CouponCard from '../widgets/CouponCard.vue';
+import { useQuery } from '@tanstack/vue-query';
+import LoadingCard from '../widgets/LoadingCard.vue';
 
-const exclusiveCoupon = ref([]);
-const isLoading = ref(true);
-const url = 'https://coupon.zems.uk/api/coupon_list/exclusive';
-
-// fetch exclusive coupon
-
-const fetchExclusiveCoupon = async () => {
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data.data);
-    exclusiveCoupon.value = data.data;
-    // console.log(exclusiveCoupon);
-    isLoading.value = false;
-  } catch (error) {
-    console.log('error while fetching exclusive data', error);
-    isLoading.value = false;
+const { isLoading, data: exclusiveCoupon = [] } = useQuery({
+  queryKey: ['exclusive'],
+  queryFn: async () => {
+    const res = await axios.get('https://coupon.zems.uk/api/coupon_list/exclusive');
+    return res?.data?.data
   }
-}
-onMounted(() => {
-  fetchExclusiveCoupon();
 })
 
 </script>
@@ -35,19 +22,24 @@ onMounted(() => {
         <hr>
       </BaseTitle>
       <div class="medium-3 gap-2">
-        <CouponCard v-for="couponData in exclusiveCoupon" :couponData="couponData" :key="couponData.id" />
-        <!-- link card  -->
-        <RouterLink class="link-card" to="/category_list/featured">
-        <div class="flex flex-col justify-center align-center text-center">
-          <div>
-            <BaseImage image="/company/store.png" />
-          </div>
-          <div>
-            <SubTitle>All Exclusive Coupons</SubTitle>
-            <BaseParagraph>Limited-time offers! Click to view exclusive deals and special discounts.</BaseParagraph>
-          </div>
-        </div>
-      </RouterLink>
+        <template v-if="isLoading">
+          <LoadingCard v-for="(l, i) in 6" :key="i" />
+        </template>
+        <template v-else>
+          <CouponCard v-for="couponData in exclusiveCoupon" :couponData="couponData" :key="couponData.id" />
+          <!-- link card  -->
+          <RouterLink class="link-card" to="/category_list/featured">
+            <div class="flex flex-col justify-center align-center text-center">
+              <div>
+                <BaseImage image="/company/store.png" />
+              </div>
+              <div>
+                <SubTitle>All Exclusive Coupons</SubTitle>
+                <BaseParagraph>Limited-time offers! Click to view exclusive deals and special discounts.</BaseParagraph>
+              </div>
+            </div>
+          </RouterLink>
+        </template>
       </div>
     </div>
   </div>

@@ -29,22 +29,28 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
               <div class="hour-hand"></div>
               <div class="minute-hand"></div>
             </div>
-            <CountDown/>
+            <CountDown />
           </div>
         </div>
         <!-- Coupon Cards Grid -->
         <div class="medium-span-2 medium-2 gap-2">
           <div class="left">
-            <template>
-              <LoadingCard></LoadingCard>
+            <template v-if="isLoading">
+              <LoadingCard v-for="(l, i) in 2" :key="i" />
             </template>
-            <div v-if="isLoading">Loading</div>
-            <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" />
+            <template v-else>
+              <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" />
+            </template>
           </div>
-          <div v-if="rightCoupons.length > 0" class="right">
-            <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id" />
+
+          <div class="right">
+            <template v-if="isLoading">
+              <LoadingCard v-for="(l, i) in 2" :key="i" />
+            </template>
+            <template v-else>
+              <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id" />
+            </template>
           </div>
-          <div style="border: 1px solid red" v-else>Comming soon</div>
         </div>
       </div>
     </div>

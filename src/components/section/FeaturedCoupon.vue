@@ -1,9 +1,13 @@
 <script setup>
 import CouponCard from '../widgets/CouponCard.vue';
+import LoadingCard from '../widgets/LoadingCard.vue';
 
 defineProps({
   featured: {
     type: Array
+  },
+  isLoading: {
+    type: Boolean
   }
 })
 </script>
@@ -19,20 +23,24 @@ defineProps({
     </div>
     <!-- Coupon Grid -->
     <div class="medium-3 gap-2">
-      <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id" />
-      <!-- link button
-  -->
-      <RouterLink class="link-card" to="/category_list/featured">
-        <div class="flex flex-col justify-center align-center text-center">
-          <div>
-            <BaseImage image="/company/store.png" />
+      <template v-if="isLoading">
+        <LoadingCard v-for="(l, i) in 6" :key="i"/>
+      </template>
+      <template v-else>
+        <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id" />
+        <!-- link button-->
+        <RouterLink class="link-card" to="/category_list/featured">
+          <div class="flex flex-col justify-center align-center text-center">
+            <div>
+              <BaseImage image="/company/store.png" />
+            </div>
+            <div>
+              <SubTitle>All Featured Coupons</SubTitle>
+              <BaseParagraph>Limited-time offers! Click to view exclusive deals and special discounts.</BaseParagraph>
+            </div>
           </div>
-          <div>
-            <SubTitle>All Featured Coupons</SubTitle>
-            <BaseParagraph>Limited-time offers! Click to view exclusive deals and special discounts.</BaseParagraph>
-          </div>
-        </div>
-      </RouterLink>
+        </RouterLink>
+      </template>
     </div>
   </section>
 </template>
