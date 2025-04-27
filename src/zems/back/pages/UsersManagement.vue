@@ -2,6 +2,10 @@
 import BaseButton from '@/components/element/BaseButton.vue';
 import BaseTitle from '@/components/element/BaseTitle.vue';
 import InputField from '@/components/element/InputField.vue';
+import BaseTable from '../Components/Element/BaseTable.vue';
+import TableHeader from '../Components/Element/TableHeader.vue';
+import TableRow from '../Components/Element/TableRow.vue';
+
 </script>
 
 <template>
@@ -11,33 +15,56 @@ import InputField from '@/components/element/InputField.vue';
         <BaseTitle tag="h5">Total Users: 385</BaseTitle>
         <InputField placeholder="Search User" />
       </div>
-      <Base
-      <table>
-        <thead>
-          <th>Name</th>
-          <th>Image</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Member Since</th>
-          <th>Action</th>
-        </thead>
-        <tbody>
-          <tr v-for="(data, i) in 5" :key="i">
-            <td>Md. John</td>
-            <td>
-              <img src="/author.jpg" alt="">
-            </td>
-            <td>john@gmail.com</td>
-            <td>Admin</td>
-            <td>02-04-2024</td>
-            <td class="flex align-center gap-1">
-              <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
-              <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
-              <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <BaseTable>
+        <TableHeader>
+          <div>SL</div>
+          <div>Name</div>
+          <div>Image</div>
+          <div>Email</div>
+          <div>Role</div>
+          <div>Member Since</div>
+          <div>Actions</div>
+        </TableHeader>
+        <TableRow v-for="(data, i) in 5" :key="i">
+          <div class="sl">
+            <div class="medium-none">Sl</div>
+            1
+            <!-- {{  }} -->
+            <!-- {{ data.id }} -->
+          </div>
+          <div>
+            <div class="medium-none">Name</div>
+            Mr. Jack
+            <!-- {{  }} -->
+          </div>
+          <div>
+            <div class="medium-none">Image</div>
+            <img src="/author.jpg" alt="">
+          </div>
+          <div>
+            <div class="medium-none">Email</div>
+            jack@gmail.com
+            <!-- {{  }} -->
+          </div>
+          <div>
+            <div class="medium-none">Role</div>
+            Admin
+            <!-- {{  }} -->
+          </div>
+          <div>
+            <div class="medium-none">Member since</div>
+            24-05-2022
+            <!-- {{  }} -->
+          </div>
+
+          <div class="flex align-center gap-1">
+            <div class="medium-none">Actions</div>
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
+          </div>
+        </TableRow>
+      </BaseTable>
     </div>
   </div>
 </template>
@@ -67,36 +94,16 @@ import InputField from '@/components/element/InputField.vue';
   width: fit-content;
 }
 
-.users-management .users-content table {
-  background-color: var(--white-color);
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  overflow-x: scroll;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.users-management .users-content table img {
+.users-management .users-content .table img {
   width: 3rem;
   height: 3rem;
   border-radius: .5rem;
+  display: block;
 }
 
-.users-management .users-content table th {
-  text-align: left;
-  padding: .8rem;
-  background-color: #f8fafc;
-  font-weight: 600;
-  color: var(--dark-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.users-management .users-content table td {
-  color: var(--light-color);
-  padding: .5rem;
-}
-
-.users-management .users-content table tr:not(:last-child) {
-  border-bottom: 1px solid var(--border-color);
+@media (min-width: 768px){
+  .medium-none{
+    display: none;
+  }
 }
 </style>
