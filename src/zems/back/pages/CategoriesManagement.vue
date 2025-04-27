@@ -2,16 +2,19 @@
 import BaseButton from '@/components/element/BaseButton.vue';
 import BaseTitle from '@/components/element/BaseTitle.vue';
 import PopUp from '@/components/widgets/PopUp.vue';
-import TableData from './TableData.vue';
 import { ref } from 'vue';
+import BaseTable from '../Components/Element/BaseTable.vue';
+import TableHeader from '../Components/Element/TableHeader.vue';
+import TableRow from '../Components/Element/TableRow.vue';
+import TableData from './TableData.vue';
 
 const isModalOpen = ref(false)
 
-const handleCloseModal = ()=> {
+const handleCloseModal = () => {
   isModalOpen.value = false;
   console.log(isModalOpen.value);
 }
-const handleOpenModal = ()=> {
+const handleOpenModal = () => {
   isModalOpen.value = true;
   console.log(isModalOpen.value);
 }
@@ -19,21 +22,18 @@ const handleOpenModal = ()=> {
 </script>
 
 <template>
-  <TableData/>
-
-
   <div class="categories">
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">View coupon details dashboard</PopUp>
     <!-- <TableData/> -->
     <!-- Header Section with Title and Add Button -->
-   <header class="flex align-center justify-between">
-        <div>
-          <BaseTitle>Categories Management</BaseTitle>
-        </div>
-        <BaseButton @click="handleOpenModal" class="btn bg-secondary text-white">
-          <i class="fa-solid fa-plus"></i>
-          <span>Add Categories</span>
-        </BaseButton>
+    <header class="flex align-center justify-between">
+      <div>
+        <BaseTitle>Categories Management</BaseTitle>
+      </div>
+      <BaseButton @click="handleOpenModal" class="btn bg-secondary text-white">
+        <i class="fa-solid fa-plus"></i>
+        <span>Add Categories</span>
+      </BaseButton>
     </header>
     <!-- Filter/sorting -->
     <div class="flex justify-between mb-1">
@@ -44,7 +44,33 @@ const handleOpenModal = ()=> {
       </select>
     </div>
     <!-- Categories Table -->
-    <table class="categories-table">
+    <BaseTable>
+      <TableHeader>
+        <div>Id</div>
+        <div>Name</div>
+        <div>Image</div>
+      </TableHeader>
+
+      <TableRow>
+        <div class="sl">
+          <div class="medium-none">Id</div>
+          1
+          <!-- {{ data.id }} -->
+        </div>
+        <div>
+          <div class="medium-none">Name</div>
+          coupon
+          <!-- {{ data.name }} -->
+        </div>
+        <div>
+          <div class="medium-none">Image</div>
+          image
+          <!-- {{ data.image }} -->
+        </div>
+      </TableRow>
+    </BaseTable>
+    <TableData/>
+    <!-- <table class="categories-table">
       <thead>
         <tr>
           <th>Icon</th>
@@ -69,7 +95,7 @@ const handleOpenModal = ()=> {
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
 
   </div>
 </template>
@@ -78,36 +104,13 @@ const handleOpenModal = ()=> {
 .categories {
   padding: 1.5rem;
 }
-.categories input, .categories select{
+
+.categories input,
+.categories select {
   border-color: var(--border-color);
   border-radius: .5rem;
 }
 
-.categories table {
-  background-color: var(--white-color);
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  overflow-x: scroll;
-  width: 100%;
-  border-collapse: collapse;
-}
-.categories table th {
-  text-align: left;
-  padding: .8rem;
-  background-color: #f8fafc;
-  font-weight: 600;
-  color: var(--dark-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.categoriestable table td {
-  padding: .5rem;
-  color: var(--light-color);
-}
-
-.categories table tr:not(:last-child) {
-  border-bottom: 1px solid var(--border-color);
-}
 .categories .status-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -115,12 +118,19 @@ const handleOpenModal = ()=> {
   font-size: 0.75rem;
   font-weight: 500;
 }
+
 .categories .status-badge.active {
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+
 .categories .status-badge.expired {
   background-color: var(--alternative-color);
   color: var(--white-color);
+}
+@media (min-width: 768px) {
+  .medium-none {
+    display: none !important;
+  }
 }
 </style>
