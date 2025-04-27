@@ -1,4 +1,7 @@
 <script setup>
+import BaseTable from '@/zems/back/Components/Element/BaseTable.vue';
+import TableHeader from '@/zems/back/Components/Element/TableHeader.vue';
+import TableRow from '@/zems/back/Components/Element/TableRow.vue';
 import { ref } from 'vue';
 
 const coupons = ref([
@@ -32,67 +35,59 @@ const coupons = ref([
 ])
 </script>
 <template>
-   <div class="desktop-view">
+  <div class="desktop-view">
     <BaseTitle>New Coupon</BaseTitle>
-      <table>
-        <thead>
-            <th>Code</th>
-            <th>Discount</th>
-            <th>Uses</th>
-            <th>Valid Until</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </thead>
-        <tbody>
-          <tr v-for="coupon in coupons" :key="coupon.id">
-            <td>{{ coupon.code }}</td>
-            <td>{{ coupon.discount }}</td>
-            <td>{{ coupon.uses }}/{{ coupon.maxUses || '∞' }}</td>
-            <td>{{ coupon.validUntil }}</td>
-            <td>
-              <span :class="`status-badge ${coupon.status}`">
-                {{ coupon.status }}
-              </span>
-            </td>
-            <td class="flex align-center gap-1">
+
+    <BaseTable>
+      <TableHeader>
+        <div>SL</div>
+        <div>Code</div>
+        <div>Discount</div>
+        <div>Uses</div>
+        <div>Valid Until</div>
+        <div>Status</div>
+        <div>Actions</div>
+      </TableHeader>
+      <TableRow v-for="(coupon, i) in coupons" :key="coupon.id">
+        <div class="sl">
+          <div class="medium-none">Sl</div>
+          {{ i += 1 }}
+          <!-- {{ data.id }} -->
+        </div>
+        <div>
+          <div class="medium-none">Code</div>
+          {{ coupon.code }}
+        </div>
+        <div>
+          <div class="medium-none">Discount</div>
+          {{ coupon.discount }}
+        </div>
+        <div>
+          <div class="medium-none">Uses</div>
+          {{ coupon.uses }}/{{ coupon.maxUses }}
+        </div>
+        <div>
+          <div class="medium-none">Uses</div>
+          {{ coupon.validUntil}}
+        </div>
+        <div>
+          <div class="medium-none">Status</div>
+          {{ coupon.status }}
+        </div>
+        <div>
+          <div class="medium-none">Actions</div>
+          <div class="flex gap-1">
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
             <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
-          </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+          </div>
+        </div>
+      </TableRow>
+    </BaseTable>
+  </div>
 </template>
 <style scoped>
-.desktop-view{
-  width: 100%;
-}
-.desktop-view  table {
-  background-color: var(--white-color);
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  overflow-x: scroll;
-  width: 100%;
-  border-collapse: collapse;
-}
-table th {
-  text-align: left;
-  padding: .8rem;
-  background-color: #f8fafc;
-  font-weight: 600;
-  color: var(--dark-color);
-  border-bottom: 1px solid var(--border-color);
-}
 
-.desktop-view table td {
-  color: var(--light-color);
-  padding: .5rem;
-}
-
-.desktop-view table tr:not(:last-child) {
-  border-bottom: 1px solid var(--border-color);
-}
 .status-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -109,5 +104,10 @@ table th {
 .status-badge.expired {
   background-color: var(--alternative-color);
   color: var(--white-color);
+}
+@media (min-width: 768px) {
+.medium-none{
+  display: none;
+}
 }
 </style>

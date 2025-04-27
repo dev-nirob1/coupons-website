@@ -74,7 +74,11 @@ const { isLoading, data: categories = [] } = useQuery({
         </div>
         <div>
           <div class="medium-none">Actions</div>
-          <BaseButton/>
+          <div class="flex gap-1">
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
+          </div>
         </div>
       </TableRow>
     </BaseTable>
