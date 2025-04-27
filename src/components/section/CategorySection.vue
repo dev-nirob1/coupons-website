@@ -16,15 +16,16 @@ defineProps({
     <div class="container">
       <BaseTitle class="text-dark flex">
         Browse <span class="text-secondary">Categories</span>
-        <hr>
+        <hr />
       </BaseTitle>
       <!-- loading skeleton  -->
-      <div v-if="isLoading" class="medium-2 large-5 gap-2">
-        <LoadingSkeleton v-for="(load, i) in 5" :key="i" />
-      </div>
-      <!-- Categories container -->
-      <div v-else class="medium-2 large-5 gap-2">
-        <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
+      <div class="medium-2 large-5 gap-2">
+        <template v-if="isLoading">
+          <LoadingSkeleton v-for="(load, i) in 5" :key="i" />
+        </template>
+        <template v-else>
+          <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
+        </template>
       </div>
     </div>
   </section>

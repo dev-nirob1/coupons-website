@@ -32,12 +32,13 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
           </select>
         </div>
       </div>
-      <div v-if="isLoading" class=" medium-2 large-3 gap-2">
-        <LoadingCard v-for="(data, i) in 6" :key="i"></LoadingCard>
-      </div>
-      <div v-else class=" medium-2 large-3 gap-2">
-        <CouponCard v-for="couponData in couponsData" :couponData="couponData" :key="couponData.id" />
-        <LoadingCard/>
+      <div class=" medium-2 large-3 gap-2">
+        <template v-if="isLoading">
+          <LoadingCard v-for="(data, i) in 6" :key="i"></LoadingCard>
+        </template>
+        <template v-else>
+          <CouponCard v-for="couponData in couponsData" :couponData="couponData" :key="couponData.id" />
+        </template>
       </div>
     </div>
   </section>

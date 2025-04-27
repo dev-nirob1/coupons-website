@@ -3,6 +3,7 @@
 import CountDown from '../widgets/CountDown.vue';
 import CouponCard from '../widgets/CouponCard.vue';
 import { computed } from 'vue';
+import LoadingCard from '../widgets/LoadingCard.vue';
 const props = defineProps({
   ending: {
     type: Array
@@ -34,6 +35,9 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
         <!-- Coupon Cards Grid -->
         <div class="medium-span-2 medium-2 gap-2">
           <div class="left">
+            <template>
+              <LoadingCard></LoadingCard>
+            </template>
             <div v-if="isLoading">Loading</div>
             <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" />
           </div>
