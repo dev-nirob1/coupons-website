@@ -4,27 +4,25 @@
   </div>
 </template>
 <style scoped>
-
 .table-row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
+  padding: .5rem;
 }
 
 .table-row:not(:last-child) {
   border-bottom: 1px solid var(--border-color);
 }
-.medium-none {
-    display: block;
-    background-color: red;
-    font-weight: bold;
-  }
+
 .table-row>div {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
 }
+
 @media (min-width: 768px) {
 
   .table-row {
@@ -32,14 +30,15 @@
     margin: 0;
   }
 
-  .table-row > div {
+  .table-row>div {
     border: none;
   }
 
-  .table-row > div {
+  .table-row>div {
     padding: 10px;
   }
-    .medium-none {
+
+  .medium-none {
     display: none !important;
   }
 }

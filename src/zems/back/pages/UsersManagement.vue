@@ -11,6 +11,7 @@ import InputField from '@/components/element/InputField.vue';
         <BaseTitle tag="h5">Total Users: 385</BaseTitle>
         <InputField placeholder="Search User" />
       </div>
+      <Base
       <table>
         <thead>
           <th>Name</th>

@@ -1,15 +1,12 @@
 <script setup>
-import BaseButton from '@/components/element/BaseButton.vue';
-import BaseTitle from '@/components/element/BaseTitle.vue';
 import PopUp from '@/components/widgets/PopUp.vue';
 import { ref } from 'vue';
 import BaseTable from '../Components/Element/BaseTable.vue';
 import TableHeader from '../Components/Element/TableHeader.vue';
 import TableRow from '../Components/Element/TableRow.vue';
-import TableData from './TableData.vue';
-
+import { useQuery } from '@tanstack/vue-query';
+import axios from 'axios';
 const isModalOpen = ref(false)
-
 const handleCloseModal = () => {
   isModalOpen.value = false;
   console.log(isModalOpen.value);
@@ -18,6 +15,14 @@ const handleOpenModal = () => {
   isModalOpen.value = true;
   console.log(isModalOpen.value);
 }
+
+const { isLoading, data: categories = [] } = useQuery({
+  queryKey: ['category'],
+  queryFn: async () => {
+    const res = await axios.get('https://coupon.zems.uk/api/category');
+    return res.data;
+  }
+})
 
 </script>
 
@@ -44,32 +49,35 @@ const handleOpenModal = () => {
       </select>
     </div>
     <!-- Categories Table -->
+     <div v-if="isLoading">IsLoading</div>
     <BaseTable>
       <TableHeader>
-        <div>Id</div>
+        <div class="sl">SL</div>
         <div>Name</div>
-        <div>Image</div>
+        <div>Status</div>
+        <div>Actions</div>
       </TableHeader>
 
-      <TableRow>
+      <TableRow v-for="(data, i) in categories" :key="data.id">
         <div class="sl">
-          <div class="medium-none">Id</div>
-          1
+          <div class="medium-none">Sl</div>
+          {{ i += 1}}
           <!-- {{ data.id }} -->
         </div>
         <div>
           <div class="medium-none">Name</div>
-          coupon
-          <!-- {{ data.name }} -->
+          {{ data.name }}
         </div>
         <div>
-          <div class="medium-none">Image</div>
-          image
-          <!-- {{ data.image }} -->
+          <div class="medium-none">Status</div>
+          {{ data.status === 1 ? 'Active' : 'Inactive' }}
+        </div>
+        <div>
+          <div class="medium-none">Actions</div>
+          <BaseButton/>
         </div>
       </TableRow>
     </BaseTable>
-    <TableData/>
     <!-- <table class="categories-table">
       <thead>
         <tr>
@@ -128,9 +136,13 @@ const handleOpenModal = () => {
   background-color: var(--alternative-color);
   color: var(--white-color);
 }
+
 @media (min-width: 768px) {
-  .medium-none {
+ .table .table-row .medium-none {
     display: none !important;
+  }
+  .sl {
+    max-width: 3rem;
   }
 }
 </style>
