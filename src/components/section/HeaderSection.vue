@@ -7,43 +7,38 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
-onMounted(()=> {
+onMounted(() => {
   navbarAnimation()
 })
 </script>
 
 <template>
-  <header class="navbar">
-    <nav class="flex justify-between align-center flex-wrap container">
+  <header class="navbar ">
+    <nav class="flex justify-between align-center container">
       <!-- Logo -->
       <router-link to="/" class="logo">
-        <BaseTitle class="flex align-center">
-          <img src="/logo.png" alt="">
+          <img src="/logo.png" alt="logo">
           <span class="brand">CouponCraze</span>
-        </BaseTitle>
       </router-link>
 
       <!-- Mobile Menu Button -->
-      <button class="mobile-menu-button" @click="toggleMenu">
+      <button class="hamburger" @click="toggleMenu">
         <i :class="isMenuOpen ? 'fas fa-xmark text-2xl' : 'fas fa-bars text-2xl'" class="fa-2xl"></i>
       </button>
 
       <!-- Navigation Links -->
-      <ul class="flex align-center gap-1" :class="{ 'active': isMenuOpen }">
-        <li><router-link to="/" @click="closeMenu">Home</router-link></li>
-        <li><router-link to="/coupon_list" @click="closeMenu">Latest Coupons</router-link></li>
-        <li><router-link to="/coupon_list/exclusive" @click="closeMenu">Exclusive Coupons</router-link></li>
-        <li><router-link to="/coupon_list/ending_soon" @click="closeMenu">Ending Soon</router-link></li>
-        <li><router-link to="/categories" @click="closeMenu">Categories</router-link></li>
-        <li><router-link to="/dashboard" @click="closeMenu">Dashboard</router-link></li>
+      <ul class="nav-links" :class="{ 'active': isMenuOpen }">
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/coupon_list">Latest Coupons</router-link></li>
+        <li><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></li>
+        <li><router-link to="/coupon_list/ending_soon">Ending Soon</router-link></li>
+        <li><router-link to="/categories">Categories</router-link></li>
+        <li><router-link to="/dashboard">Dashboard</router-link></li>
 
         <!-- Auth Buttons -->
         <div class="flex gap-1">
-          <RouterLink to="/login" class="btn login">Login</RouterLink>
-          <RouterLink to="/register" class="btn signup">Sign Up</RouterLink>
+          <RouterLink to="/login" class="btn p-1 login">Login</RouterLink>
+          <RouterLink to="/register" class="btn p-1 signup">Sign Up</RouterLink>
         </div>
       </ul>
     </nav>
@@ -52,14 +47,15 @@ onMounted(()=> {
 
 <style scoped>
 .scroll-down .navbar {
-    transform: translate3d(0, -100%, 0);
-  }
-  .scroll-up .navbar {
-    background-color: var(--border-color);
-  }
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up .navbar {
+  background-color: var(--alternative-color);
+}
 
 .navbar {
-  background-color: transparent;
+  backdrop-filter: blur(50px);
   color: var(--white-color);
   padding: 0.75rem 0;
   position: fixed;
@@ -67,101 +63,129 @@ onMounted(()=> {
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: color .3s ease;
+  transition: .3s ease;
 }
-
-.navbar h3 {
-  margin: 5px;
-}
-
-.logo {
+.navbar a {
   text-decoration: none;
 }
-
+.logo{
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
 .logo img {
   height: 60px;
   width: 100%;
 }
 
-.icon {
-  font-size: 1.5rem;
-  margin-right: 0.4rem;
+.brand {
+  display: none;
 }
-
-header ul {
+.nav-links{
+  display:flex;
+   align-items:center;
+    gap:1rem;
+}
+.navbar ul {
   list-style: none;
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  width: 80%;
   margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
+  /* height: calc(100vh - 70px); */
+  color: var(--light-color);
+  background: var(--white-color);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 1.5rem;
+  transition: .3s;
+  /* box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1); */
 }
-
-header ul li a {
-  text-decoration: none;
-  /* color: var(--light-color); */
+.navbar ul.active {
+  top: 100px;
+    left: 0;
+  }
+.navbar ul li a {
   font-weight: 500;
   transition: color 0.2s ease-in-out;
   position: relative;
   padding: 0.5rem 0;
 }
 
-header ul li a:hover {
-  color: #f43f5e;
-}
-
-header ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--alternative-color);
-  transition: width 0.3s ease;
-}
-
-header ul li a:hover::after {
-  width: 100%;
+.navbar ul li a:hover {
+  color: var(--alternative-color);
 }
 
 .login {
-  background-color: #f3f4f6;
-  color: #374151;
-}
-
-.login:hover {
-  background-color: #e5e7eb;
+  background-color: var(--white-color);
+  color: var(--light-color);
 }
 
 .signup {
-  background-color: #f43f5e;
+  background-color: var(--alternative-color);
   color: var(--white-color);
-
-  &:hover {
-    background-color: black;
-  }
 }
 
-/* .signup:hover {
-  background-color: #e11d48;
-} */
-
 /* Mobile Menu Styles */
-.mobile-menu-button {
-  display: none;
+.hamburger {
+  display: block;
+  height: 2rem;
+  width: 3rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1001;
+}
+
+@media (min-width: 992px) {
+  .brand {
+    display: block;
+    margin: 0;
+  }
+  .navbar ul{
+    position: inherit;
+    color: var(--white-color);
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    padding: .75rem 0;
+  }
+  .navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--alternative-color);
+    transition: width 0.3s ease;
+  }
+
+  .navbar ul li a:hover::after {
+    width: 100%;
+  }
+
+  .hamburger {
+    display: none;
+  }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .mobile-menu-button {
-    display: block;
+/* @media (min-width: 768px) {
+  .hamburger {
+    display: none;
   }
-
   header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+ header ul {
     position: fixed;
     top: 70px;
     left: -100%;
@@ -178,5 +202,5 @@ header ul li a:hover::after {
   header ul.active {
     left: 0;
   }
-}
+} */
 </style>

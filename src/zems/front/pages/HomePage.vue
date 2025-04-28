@@ -29,8 +29,8 @@ const {isLoading, data } = useQuery ({
   <ByCompany />
   <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
   <ExclusiveCoupon/>
-  <TimelineSection />
+  <!-- <TimelineSection /> -->
   <TestimonialSection />
-  <NewsLetterSection />
+  <!-- <NewsLetterSection /> -->
   <!-- <CallToAction /> -->
 </template>
