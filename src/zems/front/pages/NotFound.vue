@@ -1,3 +1,11 @@
+<script setup>
+const handleRefresh = ()=> {
+  window.location.reload()
+}
+const handleGoBack = ()=> {
+  history.back()
+}
+</script>
 <template>
   <div class="not-found">
     <div class="image">
@@ -7,6 +15,10 @@
       <div class="text-center text-white">
         <HeroTitle>404</HeroTitle>
         <BaseTitle>Page Not Found</BaseTitle>
+        <div class="flex justify-center gap-1">
+          <BaseButton @click="handleGoBack" class="bg-secondary text-white">Go Back</BaseButton>
+        <BaseButton @click="handleRefresh" class="bg-white">Refresh</BaseButton>
+        </div>
       </div>
     </div>
   </div>
@@ -49,12 +61,12 @@
 
 .not-found h1 {
   font-size: 5rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 .not-found h3 {
   font-size: 4rem;
-  margin-top: 1rem;
+  margin: 1rem;
 
 }
 </style>
