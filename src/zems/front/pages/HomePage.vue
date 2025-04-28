@@ -23,7 +23,6 @@ const {isLoading, data } = useQuery ({
 </script>
 
 <template>
-  <div v-if="isLoading">loading</div>
   <BannerSection />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
   <FeaturedCoupon :featured="data?.featured" :isLoading="isLoading" />
