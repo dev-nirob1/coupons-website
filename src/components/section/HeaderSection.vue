@@ -33,7 +33,7 @@ onMounted(() => {
         <ListItem><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></ListItem>
         <ListItem><router-link to="/coupon_list/ending_soon">Ending Soon</router-link></ListItem>
         <ListItem><router-link to="/categories">Categories</router-link></ListItem>
-        <!-- <li><router-link to="/dashboard">Dashboard</router-link></li> -->
+        <ListItem><router-link to="/dashboard">Dashboard</router-link></ListItem>
         <ListItem><router-link to="/login" class="btn p-1 login">Login</router-link></ListItem>
       </ul>
     </nav>

@@ -1,8 +1,6 @@
 <script setup>
 import FooterSection from '@/components/section/FooterSection.vue';
 import HeaderSection from '@/components/section/HeaderSection.vue';
-import NavbarSection from '@/components/section/NavbarSection.vue';
-// import {  onMounted } from 'vue';
 import { RouterView } from 'vue-router';
 // import { zems_animate } from '@/plugins/zems_animate';
 
@@ -14,7 +12,6 @@ import { RouterView } from 'vue-router';
 
 <template>
   <HeaderSection />
-  <!-- <NavbarSection/> -->
   <main>
     <RouterView />
   </main>

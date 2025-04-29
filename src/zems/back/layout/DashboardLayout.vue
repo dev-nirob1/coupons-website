@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div class="flex gap-1">
+  <div class="flex">
     <DashboardSidebar />
     <div class="width-full router-view">
       <DashboardNavbar />

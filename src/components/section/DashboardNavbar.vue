@@ -17,7 +17,7 @@
 <style scoped>
 .dashboard-navbar {
   padding: .75rem;
-  background-color: var(--light-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
   position: sticky;
   top: 0;
