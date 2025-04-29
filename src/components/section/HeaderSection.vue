@@ -17,29 +17,24 @@ onMounted(() => {
     <nav class="flex justify-between align-center container">
       <!-- Logo -->
       <router-link to="/" class="logo">
-          <img src="/logo.png" alt="logo">
-          <span class="brand">CouponCraze</span>
+        <BaseImage src="/logo.png" alt="logo"/>
+        <span class="brand">CouponCraze</span>
       </router-link>
 
       <!-- Mobile Menu Button -->
-      <button class="hamburger" @click="toggleMenu">
-        <i :class="isMenuOpen ? 'fas fa-xmark text-2xl' : 'fas fa-bars text-2xl'" class="fa-2xl"></i>
-      </button>
+      <BaseButton class="hamburger" @click="toggleMenu">
+        <i :class="isMenuOpen ? 'fas fa-xmark' : 'fas fa-bars'" class="fa-2xl"></i>
+      </BaseButton>
 
       <!-- Navigation Links -->
       <ul class="nav-links" :class="{ 'active': isMenuOpen }">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/coupon_list">Latest Coupons</router-link></li>
-        <li><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></li>
-        <li><router-link to="/coupon_list/ending_soon">Ending Soon</router-link></li>
-        <li><router-link to="/categories">Categories</router-link></li>
-        <li><router-link to="/dashboard">Dashboard</router-link></li>
-
-        <!-- Auth Buttons -->
-        <div class="flex gap-1">
-          <RouterLink to="/login" class="btn p-1 login">Login</RouterLink>
-          <RouterLink to="/register" class="btn p-1 signup">Sign Up</RouterLink>
-        </div>
+        <ListItem><router-link to="/">Home</router-link></ListItem>
+        <Listitem><router-link to="/coupon_list">Latest Coupons</router-link></Listitem>
+        <ListItem><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></ListItem>
+        <ListItem><router-link to="/coupon_list/ending_soon">Ending Soon</router-link></ListItem>
+        <ListItem><router-link to="/categories">Categories</router-link></ListItem>
+        <!-- <li><router-link to="/dashboard">Dashboard</router-link></li> -->
+        <ListItem><router-link to="/login" class="btn p-1 login">Login</router-link></ListItem>
       </ul>
     </nav>
   </header>
@@ -57,7 +52,7 @@ onMounted(() => {
 .navbar {
   backdrop-filter: blur(50px);
   color: var(--white-color);
-  padding: 0.75rem 0;
+  padding: 0.75rem 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -65,15 +60,18 @@ onMounted(() => {
   z-index: 1000;
   transition: .3s ease;
 }
+
 .navbar a {
   text-decoration: none;
 }
-.logo{
+
+.logo {
   display: flex;
   align-items: center;
   font-size: 2.5rem;
   font-weight: bold;
 }
+
 .logo img {
   height: 60px;
   width: 100%;
@@ -82,11 +80,12 @@ onMounted(() => {
 .brand {
   display: none;
 }
-.nav-links{
-  display:flex;
-   align-items:center;
-    gap:1rem;
+
+.nav-links {
+  display: flex;
+  align-items: center;
 }
+
 .navbar ul {
   list-style: none;
   position: fixed;
@@ -94,7 +93,6 @@ onMounted(() => {
   left: -100%;
   width: 80%;
   margin: 0;
-  /* height: calc(100vh - 70px); */
   color: var(--light-color);
   background: var(--white-color);
   flex-direction: column;
@@ -102,12 +100,13 @@ onMounted(() => {
   padding: 2rem;
   gap: 1.5rem;
   transition: .3s;
-  /* box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1); */
 }
+
 .navbar ul.active {
   top: 100px;
-    left: 0;
-  }
+  left: 0;
+}
+
 .navbar ul li a {
   font-weight: 500;
   transition: color 0.2s ease-in-out;
@@ -117,16 +116,6 @@ onMounted(() => {
 
 .navbar ul li a:hover {
   color: var(--alternative-color);
-}
-
-.login {
-  background-color: var(--white-color);
-  color: var(--light-color);
-}
-
-.signup {
-  background-color: var(--alternative-color);
-  color: var(--white-color);
 }
 
 /* Mobile Menu Styles */
@@ -144,7 +133,7 @@ onMounted(() => {
     display: block;
     margin: 0;
   }
-  .navbar ul{
+  .navbar ul {
     position: inherit;
     color: var(--white-color);
     width: 100%;
@@ -154,6 +143,7 @@ onMounted(() => {
     background-color: transparent;
     padding: .75rem 0;
   }
+
   .navbar ul li a::after {
     content: '';
     position: absolute;
@@ -174,33 +164,4 @@ onMounted(() => {
   }
 }
 
-/* Responsive Design */
-/* @media (min-width: 768px) {
-  .hamburger {
-    display: none;
-  }
-  header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
-}
- header ul {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 80%;
-    height: calc(100vh - 70px);
-    background: var(--white-color);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem;
-    gap: 1.5rem;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  header ul.active {
-    left: 0;
-  }
-} */
 </style>
