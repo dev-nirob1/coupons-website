@@ -44,31 +44,6 @@ const toggleMenu = () => {
     </div>
   </div>
   <!-- <div class="sidebar">
-    <div class="toggle-btn" @click="toggleSidebar">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-    <ul class="nav-links" :class="{ 'active': collapsed }">
-
-      <li class="dropdown-parent">
-        <div @click="toggleDropdown" class="flex align-center justify-between">
-          <div>
-            <i class="fa-solid fa-ticket"></i>
-            <span>Coupons</span>
-          </div>
-          <i class="fa-solid fa-angle-down"></i>
-        </div>
-        <div class="dropdown-child" v-if="dropdownCollapse">
-
-
-        </div>
-      </li>
-      <li>
-
-      </li>
-      <li>
-
-      </li>
-    </ul>
     <ul class="profile">
       <RouterLink to="/profile-page">
         <i class="fa-solid fa-user"></i>
@@ -88,7 +63,7 @@ const toggleMenu = () => {
 .small {
   background-color: var(--primary-color);
   color: var(--white-color);
-  max-width: 300px;
+  /* width:100%; */
 }
 
 .small i {
@@ -124,7 +99,7 @@ const toggleMenu = () => {
   left: -120%;
   background-color: var(--primary-color);
   height: 100vh;
-  width: fit-content;
+  /* width: calc(2rem + 1.5rem); */
   transition: .3s;
 }
 
@@ -136,95 +111,30 @@ const toggleMenu = () => {
 }
 
 @media (min-width: 768px) {
-  .small {
-    width: 300px;
+  .logo {
+    display: none;
   }
-
   .menu {
-    background-color: var(--light-color);
     position: static;
     left: 0;
+    width: calc(2rem + 1.5rem);
+    transition: .3s;
+  }
+
+  .menu span {
+    font-size: 1rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .collapsed .menu {
     width: 100%;
-  }
-}
-
-/* @media (min-width: 768px) {
-  .small-nav {
-    flex-direction: column;
-    justify-content: flex-start;
+    transition: .3s;
   }
 
-  .menu {
-    width: 4rem;
+  .collapsed .menu span {
+    opacity: 1;
+    visibility: visible;
   }
-
-  .is-expanded .menu {
-    position: static;
-    width: 100%;
-    font-size: 1.25rem;
-    overflow: hidden;
-  }
-} */
-
-
-/* .is-expanded {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  width: calc(2rem + 2rem);
-  overflow-y: auto;
-  height: 100vh;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  z-index: 99;
-  transition: .4s;
 }
-
-aside i {
-  font-size: 2rem;
-  color: var(--white-color);
-}
-
-.logo {
-  margin-bottom: 1rem;
-  width: 2rem;
-}
-
-.logo img {
-  width: 100%;
-}
-.is-expanded{
-  width: 60%;
-}
-.is-expanded .menu-toggle {
-    top: -4.5rem;
-  }
-.menu-toggle {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-  position: relative;
-  top: 0;
-  transition: .3s;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-} */
-
-/* @media (min-width: 768px) {
-  aside {
-    position: sticky;
-    top: 0;
-  }
-  .is-expanded {
-    width: 300px;
-  }
-
-
-} */
 </style>

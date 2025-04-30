@@ -4,15 +4,25 @@ import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div class="medium-12">
-    <DashboardSidebar class="medium-span-2" />
-    <!-- <DashboardNavbar /> -->
-    <div class="medium-span-10">
+  <div class="dashboard">
+    <DashboardSidebar class="aside" />
+    <div class="router-view">
       <RouterView />
     </div>
   </div>
 </template>
 <style scoped>
+@media (min-width: 768px){
+  .dashboard {
+    display: flex;
+  }
+  .dashboard .aside{
+    max-width: 250px;
+  }
+  .dashboard .router-view {
+    flex: 0 0 1;
+  }
+}
 /* .sidebar {
   max-width: 300px;
 } */
