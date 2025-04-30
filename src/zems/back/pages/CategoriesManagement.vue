@@ -116,6 +116,10 @@ const { isLoading, data: categories = [] } = useQuery({
 .categories {
   padding: 1.5rem;
 }
+.table-row > div{
+  display: flex;
+  justify-content: space-between;
+}
 
 .categories input,
 .categories select {

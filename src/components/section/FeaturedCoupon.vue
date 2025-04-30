@@ -13,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="featured-coupon container py-2">
+  <section class="featured-coupon container">
     <!-- Section Header -->
     <div class="mb-3">
       <BaseTitle class="flex">Featured
@@ -45,6 +45,9 @@ defineProps({
   </section>
 </template>
 <style scoped>
+.featured-coupon{
+  padding: 2rem .5rem;
+}
 .featured-coupon h3 {
   margin-bottom: 10px;
 }

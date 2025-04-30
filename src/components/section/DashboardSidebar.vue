@@ -64,10 +64,12 @@ const toggleMenu = () => {
   background-color: var(--primary-color);
   color: var(--white-color);
   /* width:100%; */
+  /* height: 100vh; */
 }
 
 .small i {
   color: var(--white-color);
+  font-size: 1.5rem;
 }
 
 .logo {
@@ -94,7 +96,6 @@ const toggleMenu = () => {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  font-size: 1.5rem;
   position: absolute;
   left: -120%;
   background-color: var(--primary-color);
@@ -128,7 +129,7 @@ const toggleMenu = () => {
   }
 
   .collapsed .menu {
-    width: 100%;
+    width: 250px;
     transition: .3s;
   }
 

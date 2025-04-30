@@ -18,9 +18,10 @@ import { RouterView } from 'vue-router';
   }
   .dashboard .aside{
     max-width: 250px;
+    flex: 0;
   }
   .dashboard .router-view {
-    flex: 0 0 1;
+    flex:1;
   }
 }
 /* .sidebar {

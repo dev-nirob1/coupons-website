@@ -41,7 +41,6 @@ onMounted(() => {
   transition: all 0.3s ease, transform 0.3s ease;
 }
 .hero {
-
   position: reltaive;
   height: 100Vh;
   display: flex;
@@ -60,6 +59,7 @@ onMounted(() => {
   height: 100%;
 }
 .hero .content{
+  padding: 0 .5rem;
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   display: flex;
   align-items: center;

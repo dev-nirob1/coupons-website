@@ -16,12 +16,12 @@ const { isLoading, data: exclusiveCoupon = [] } = useQuery({
 
 <template>
   <div class="container">
-    <div class="mb-3">
+    <div class="exclusive-coupon">
       <BaseTitle class="flex">Exclusive
         <span class="text-secondary">Coupons</span>
         <hr>
       </BaseTitle>
-      <div class="medium-3 gap-2">
+      <div class="medium-3 gap-1 medium-gap-2">
         <template v-if="isLoading">
           <LoadingCard v-for="(l, i) in 6" :key="i" />
         </template>
@@ -46,6 +46,9 @@ const { isLoading, data: exclusiveCoupon = [] } = useQuery({
 </template>
 
 <style scoped>
+.exclusive-coupon{
+  padding: 2rem .5rem;
+}
 .link-card {
   display: flex;
   justify-content: center;

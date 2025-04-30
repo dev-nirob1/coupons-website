@@ -12,11 +12,11 @@ const companies = [
 </script>
 
 <template>
-  <section class="company-section container py-3">
+  <section class="company-section container">
     <BaseTitle class="flex">Company <span class="text-secondary"> Offer</span>
       <hr>
     </BaseTitle>
-    <div class="medium-4 gap-2">
+    <div class="medium-4 gap-1 medium-gap-2">
       <!-- loading skeleton  -->
       <!-- <LoadingSkeleton /> -->
       <!-- company data  -->
@@ -41,6 +41,9 @@ const companies = [
 </template>
 
 <style scoped>
+.company-section {
+  padding: 2rem .5rem;
+}
 .link-card {
   display: inline-block;
   text-decoration: none;

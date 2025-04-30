@@ -59,6 +59,9 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
 
 
 <style scoped>
+.ending-soon {
+  padding: 2rem .5rem;
+}
 .ending-soon h3 {
   margin-bottom: 0;
 }

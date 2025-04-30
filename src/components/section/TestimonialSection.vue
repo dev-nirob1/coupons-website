@@ -46,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="testimonials bg-white py-2 medium-py-3 large-py-5">
+  <div class="testimonials bg-white">
     <div class="medium-8 align-center container">
       <div class="span-3 text-center">
 
@@ -70,6 +70,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.testimonials {
+  padding: 2rem .5rem;
+}
 .testimonials h3 {
   margin-top: 0;
 }

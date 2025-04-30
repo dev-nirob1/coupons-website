@@ -31,6 +31,6 @@ const {isLoading, data } = useQuery ({
   <ExclusiveCoupon/>
   <!-- <TimelineSection /> -->
   <TestimonialSection />
-  <!-- <NewsLetterSection /> -->
+  <NewsLetterSection />
   <!-- <CallToAction /> -->
 </template>

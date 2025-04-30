@@ -12,14 +12,14 @@ defineProps({
 </script>
 
 <template>
-  <section id="category" class="py-2">
+  <section id="category" class="categories">
     <div class="container">
       <BaseTitle class="text-dark flex">
         Browse <span class="text-secondary">Categories</span>
         <hr />
       </BaseTitle>
       <!-- loading skeleton  -->
-      <div class="medium-2 large-5 gap-2">
+      <div class="medium-2 large-5 gap-1 medium-gap-2">
         <template v-if="isLoading">
           <LoadingSkeleton v-for="(load, i) in 5" :key="i" />
         </template>
@@ -35,7 +35,9 @@ defineProps({
 #category {
   transition: all .3s ease;
 }
-
+.categories {
+  padding: 2rem .5rem;
+}
 hr {
   flex: 1;
   border: none;
