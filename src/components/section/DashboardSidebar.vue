@@ -1,24 +1,28 @@
 <script setup>
-import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
-
-// const collapsed = ref(true)
-const dropdownCollapse = ref(false)
-
-const toggleDropdown = () => {
-  dropdownCollapse.value = !dropdownCollapse.value;
-  console.log(dropdownCollapse);
+import { ref } from 'vue';
+const isExpanded = ref(false)
+const toggleMenu = () => {
+  isExpanded.value = !isExpanded.value;
+  console.log(isExpanded.value);
 }
-
 </script>
-
 <template>
-  <div class="sidebar">
+  <aside :class="{ 'is-expanded': isExpanded }">
+    <div class="logo">
+      <img src="/logo.png" alt="logo">
+    </div>
+    <!-- toggle menu bar  -->
+    <div class="menu-toggle">
+      <BaseButton @click="toggleMenu">
+        <i :class="isExpanded ? 'fas fa-xmark' : 'fas fa-bars'"></i>
+      </BaseButton>
+    </div>
+  </aside>
+  <!-- <div class="sidebar">
     <div class="toggle-btn" @click="toggleSidebar">
       <i class="fa-solid fa-bars"></i>
     </div>
-    <!-- <hr> -->
-    <ul class="nav-links">
+    <ul class="nav-links" :class="{ 'active': collapsed }">
       <li>
         <RouterLink to="/dashboard">
           <i class="fa-solid fa-house-user"></i>
@@ -26,7 +30,7 @@ const toggleDropdown = () => {
         </RouterLink>
       </li>
       <li class="dropdown-parent">
-        <div @click="toggleDropdown" class="flex align-center justify-between pl-1">
+        <div @click="toggleDropdown" class="flex align-center justify-between">
           <div>
             <i class="fa-solid fa-ticket"></i>
             <span>Coupons</span>
@@ -57,7 +61,7 @@ const toggleDropdown = () => {
         </RouterLink>
       </li>
     </ul>
-    <!-- <ul class="profile">
+    <ul class="profile">
       <RouterLink to="/profile-page">
         <i class="fa-solid fa-user"></i>
         <span>Profile</span>
@@ -68,36 +72,62 @@ const toggleDropdown = () => {
         </button>
         <span>Logout</span>
       </div>
-    </ul> -->
-  </div>
+    </ul>
+  </div> -->
 </template>
 
 <style scoped>
-.sidebar {
-  position: relative;
-  height: 95px;
-  width: 50px;
+aside {
+  position: fixed;
+  z-index: 99;
+}
+
+.logo {
+  margin-bottom: 1rem;
+  width: 2rem;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.menu-toggle {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  position: relative;
+  top: 0;
+  transition: .3s;
+}
+.menu-toggle i {
+  font-size: 2rem;
   color: var(--white-color);
 }
 
-.toggle-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.sidebar .nav-links {
-  color: var(--light-color);
-  background-color: var(--white-color);
-  position: absolute;
-  width: 80vw;
-  left: -80vw;
-  top: 0;
-  z-index: 999;
-}
+@media (min-width: 768px) {
+  aside {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    width: calc(2rem + 2rem);
+    overflow-y: auto;
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transition: .4s;
+  }
 
+  .is-expanded {
+    width: 300px;
+  }
+
+
+
+  .is-expanded .menu-toggle {
+    top: -4.5rem;
+  }
+
+}
 </style>

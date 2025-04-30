@@ -6,7 +6,9 @@ import { RouterView } from 'vue-router';
 
 <template>
   <div class="flex">
-    <DashboardSidebar />
+    <div class="sidebar">
+      <DashboardSidebar />
+    </div>
     <div class="width-full router-view">
       <DashboardNavbar />
       <RouterView />
@@ -14,8 +16,12 @@ import { RouterView } from 'vue-router';
   </div>
 </template>
 <style scoped>
-.router-view{
-  max-height: 100vh;
+.sidebar {
+  max-width: 300px;
+}
+.router-view {
+  height: 100vh;
   overflow-y: auto;
+
 }
 </style>
