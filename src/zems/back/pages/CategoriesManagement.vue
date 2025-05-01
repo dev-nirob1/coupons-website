@@ -30,7 +30,7 @@ const { isLoading, data: categories = [] } = useQuery({
   <!-- <TableData /> -->
   <div class="categories">
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
-      View coupon details dashboard
+      View category details
     </PopUp>
     <!-- <TableData/> -->
     <!-- Header Section with Title and Add Button -->

@@ -1,14 +1,23 @@
 <script setup>
-
 defineProps({
   couponData: {
   type: Object
+},
+handleOpenModal: {
+  type: Function
+},
+isModalOpen: {
+  type: Boolean
 }
 })
+
 </script>
 
 <template>
   <div :class="['coupon-card', couponData?.exclusive ? 'bg-danger' : 'bg-secondary']">
+
+
+
     <div class="flex justify-between gap-1">
       <div>
         <BaseTitle tag="h5">{{couponData?.name}}</BaseTitle>
@@ -23,7 +32,7 @@ defineProps({
     <div class="card-footer pt-1">
       <div class="flex justify-between align-center">
         <BaseParagraph>Validity: {{couponData?.expire_date}}</BaseParagraph>
-        <BaseButton class="bg-white">Get Code</BaseButton>
+        <BaseButton @click='handleOpenModal' class="bg-white">Get Code</BaseButton>
       </div>
       <div class="circle-1"></div>
       <div class="circle-2"></div>

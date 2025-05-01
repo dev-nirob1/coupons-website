@@ -8,7 +8,7 @@ const paramsName = computed(() => route.params.type)
 </script>
 
 <template>
-  <section class="breadcrumb bg-light py-2">
+  <section class="breadcrumb bg-light">
     <ul class="container flex align-center gap-1">
       <ListItem><RouterLink to="/">Home</RouterLink></ListItem>
       <ListItem>{{ routeName }}</ListItem>
@@ -19,6 +19,7 @@ const paramsName = computed(() => route.params.type)
 <style scoped>
 .breadcrumb{
   margin-top: 6rem;
+  padding: 2rem .5rem;
 }
 .breadcrumb ul {
   list-style: none;

@@ -2,7 +2,17 @@
 import BaseTable from '@/components/Element/BaseTable.vue';
 import TableHeader from '@/components/Element/TableHeader.vue';
 import TableRow from '@/components/Element/TableRow.vue';
+import PopUp from '@/components/Widgets/PopUp.vue';
 import { ref } from 'vue';
+
+const isModalOpen = ref(false)
+
+const handleCloseModal = () => {
+  isModalOpen.value = false;
+}
+const handleOpenModal = () => {
+  isModalOpen.value = true;
+}
 
 const coupons = ref([
   {
@@ -36,6 +46,9 @@ const coupons = ref([
 </script>
 <template>
   <div class="coupons-management">
+    <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
+      View coupon details
+    </PopUp>
     <!-- Header Section -->
     <header class="flex align-center justify-between">
       <div>
@@ -92,8 +105,8 @@ const coupons = ref([
         <div>
           <div class="medium-none">Actions</div>
           <div class="flex gap-1">
-            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
-            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton @click="handleOpenModal" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+            <RouterLink to="/edit-coupon"><BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton></RouterLink>
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>

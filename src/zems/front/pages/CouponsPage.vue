@@ -1,7 +1,7 @@
 <script setup>
 import BreadcrumbSection from '@/components/Widgets/BreadcrumbSection.vue';
 import LoadingCard from '@/components/Widgets/LoadingCard.vue';
-import CouponCard from '@/zems/front/Components/widgets/CouponCard.vue';
+import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 import { useRoute } from 'vue-router';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
@@ -32,6 +32,11 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
           </select>
         </div>
       </div>
+
+      <div v-if="!isLoading && couponsData.length < 1">
+        <BaseTitle class="text-center">Opps! No Data Found</BaseTitle>
+      </div>
+
       <div class=" medium-2 large-3 gap-2">
         <template v-if="isLoading">
           <LoadingCard v-for="(data, i) in 6" :key="i"></LoadingCard>

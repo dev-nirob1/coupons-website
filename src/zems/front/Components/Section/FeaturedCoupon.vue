@@ -1,7 +1,8 @@
 <script setup>
 import LoadingCard from '@/components/Widgets/LoadingCard.vue';
+import PopUp from '@/components/Widgets/PopUp.vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
-
+import { ref } from 'vue';
 defineProps({
   featured: {
     type: Array
@@ -10,10 +11,21 @@ defineProps({
     type: Boolean
   }
 })
+const isModalOpen = ref(false)
+
+const handleCloseModal = () => {
+  isModalOpen.value = false;
+}
+const handleOpenModal = () => {
+  isModalOpen.value = true;
+}
 </script>
 
 <template>
   <section class="featured-coupon container">
+    <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
+      <BaseTitle>Get Code</BaseTitle>
+    </PopUp>
     <!-- Section Header -->
     <div class="mb-3">
       <BaseTitle class="flex">Featured
@@ -24,10 +36,11 @@ defineProps({
     <!-- Coupon Grid -->
     <div class="medium-3 gap-2">
       <template v-if="isLoading">
-        <LoadingCard v-for="(l, i) in 6" :key="i"/>
+        <LoadingCard v-for="(l, i) in 6" :key="i" />
       </template>
       <template v-else>
-        <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id"/>
+        <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id"
+          :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
         <!-- link button-->
         <RouterLink class="link-card" to="/category_list/featured">
           <div class="flex flex-col justify-center align-center text-center">
@@ -45,9 +58,10 @@ defineProps({
   </section>
 </template>
 <style scoped>
-.featured-coupon{
+.featured-coupon {
   padding: 2rem .5rem;
 }
+
 .featured-coupon h3 {
   margin-bottom: 10px;
 }

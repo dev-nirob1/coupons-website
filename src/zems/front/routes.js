@@ -1,9 +1,9 @@
-import HomePage from '@/zems/front/pages/HomePage.vue'
-import AboutPage from '@/zems/front/pages/AboutPage.vue'
-import CouponsPage from '@/zems/front/pages/CouponsPage.vue'
-import CouponDetailsPage from '@/zems/front/pages/CouponDetailsPage.vue'
-import CompaniesPage from '@/zems/front/pages/CompaniesPage.vue'
-import CategoriesPage from '@/zems/front/pages/CategoriesPage.vue'
+import HomePage from '@/zems/front/Pages/HomePage.vue'
+import AboutPage from '@/zems/front/Pages/AboutPage.vue'
+import CouponsPage from '@/zems/front/Pages/CouponsPage.vue'
+import CouponDetailsPage from '@/zems/front/Pages/CouponDetailsPage.vue'
+import CompaniesPage from '@/zems/front/Pages/CompaniesPage.vue'
+import CategoriesPage from '@/zems/front/Pages/CategoriesPage.vue'
 import MainLayout from '@/zems/front/Layout/MainLayout.vue'
 
 export default [

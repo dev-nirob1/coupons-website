@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
-import TestimonialsCard from '../widgets/TestimonialsCard.vue';
+import TestimonialsCard from '@/zems/front/Components/Widgets/TestimonialsCard.vue';
 
 onMounted(() => {
   const owlCarousel = () => {
@@ -71,7 +71,7 @@ onMounted(() => {
 
 <style scoped>
 .testimonials {
-  padding: 2rem .5rem;
+  padding: 5rem .5rem;
 }
 .testimonials h3 {
   margin-top: 0;
