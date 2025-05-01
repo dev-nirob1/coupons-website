@@ -29,17 +29,19 @@ const { isLoading, data: categories = [] } = useQuery({
 <template>
   <!-- <TableData /> -->
   <div class="categories">
-    <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">View coupon details dashboard</PopUp>
+    <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
+      View coupon details dashboard
+    </PopUp>
     <!-- <TableData/> -->
     <!-- Header Section with Title and Add Button -->
     <header class="flex align-center justify-between">
       <div>
         <BaseTitle>Categories Management</BaseTitle>
       </div>
-      <BaseButton @click="handleOpenModal" class="btn bg-secondary text-white">
+      <RouterLink to="/add-category" class="btn bg-secondary text-white p-1">
         <i class="fa-solid fa-plus"></i>
         <span>Add Categories</span>
-      </BaseButton>
+      </RouterLink>
     </header>
     <!-- Filter/sorting -->
     <div class="flex justify-between mb-1">
@@ -77,8 +79,13 @@ const { isLoading, data: categories = [] } = useQuery({
         <div>
           <div class="medium-none">Actions</div>
           <div class="flex gap-1">
-            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
-            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton @click="handleOpenModal" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i>
+            </BaseButton>
+
+            <RouterLink to="/edit-category">
+              <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            </RouterLink>
+
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>

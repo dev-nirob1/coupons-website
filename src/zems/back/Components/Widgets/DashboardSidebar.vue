@@ -63,7 +63,7 @@ const toggleMenu = () => {
 .sidebar {
   background-color: var(--primary-color);
   color: var(--white-color);
-  /* width:100%; */
+  position: relative;
 }
 
 .sidebar i {
