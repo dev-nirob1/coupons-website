@@ -7,7 +7,7 @@ const toggleMenu = () => {
 }
 </script>
 <template>
-  <div class="small" :class="{ 'collapsed': isExpanded }">
+  <div class="sidebar" :class="{ 'collapsed': isExpanded }">
     <div class="small-nav">
       <!-- toggle menu bar  -->
       <div class="menu-toggle">
@@ -18,8 +18,8 @@ const toggleMenu = () => {
       <div class="logo">
         <img src="/logo.png" alt="logo">
       </div>
-
     </div>
+
     <div class="menu">
       <RouterLink to="/dashboard">
         <i class="fa-solid fa-house-user"></i>
@@ -60,24 +60,23 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
-.small {
+.sidebar {
   background-color: var(--primary-color);
   color: var(--white-color);
   /* width:100%; */
-  /* height: 100vh; */
 }
 
-.small i {
+.sidebar i {
   color: var(--white-color);
   font-size: 1.5rem;
 }
 
-.logo {
+.sidebar .logo {
   width: 60px;
   height: 60px;
 }
 
-.logo img {
+.sidebar .logo img {
   width: 100%;
   height: 100%;
 }
@@ -115,6 +114,7 @@ const toggleMenu = () => {
   .logo {
     display: none;
   }
+
   .menu {
     position: static;
     left: 0;

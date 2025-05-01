@@ -15,10 +15,13 @@ import DashboardSidebar from '@/zems/back/Components/Widgets/DashboardSidebar.vu
 @media (min-width: 768px){
   .dashboard {
     display: flex;
+    height: 100vh;
+    overflow-y: scroll;
   }
   .dashboard .aside{
+    position: sticky;
+    top: 0;
     max-width: 250px;
-    flex: 0;
   }
   .dashboard .router-view {
     flex:1;

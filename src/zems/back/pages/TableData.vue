@@ -1,9 +1,3 @@
-<script setup>
-import BaseTable from '../Components/Element/BaseTable.vue';
-import TableHeader from '../Components/Element/TableHeader.vue';
-import TableRow from '../Components/Element/TableRow.vue';
-</script>
-
 <template>
   <!-- <div class="table-row" v-for="data in datas" key="data.id"> -->
   <BaseTable>
@@ -49,5 +43,3 @@ import TableRow from '../Components/Element/TableRow.vue';
       &nbsp;
     </div> -->
 </template>
-
-

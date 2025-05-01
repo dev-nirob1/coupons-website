@@ -1,4 +1,8 @@
 <template>
+  <!-- <div class="sl">
+      <div class="medium-none">Id</div>
+      1
+    </div> -->
   <div class="table-row">
     <slot></slot>
   </div>
@@ -18,14 +22,16 @@
 }
 
 .table-row>div {
+  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
 }
 
 @media (min-width: 768px) {
-
   .table-row {
+    display: flex;
     flex-direction: row;
     margin: 0;
   }

@@ -4,11 +4,11 @@
     </div>
 </template>
 <style scoped>
+
 .table-header {
   display: none;
   font-weight: bold;
   padding: .75rem;
-  /* display: flex; */
   justify-content: space-between;
   background-color: #e6f5f5;
 }
@@ -16,6 +16,5 @@
   .table-header {
     display: flex;
   }
-
 }
 </style>

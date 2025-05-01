@@ -1,7 +1,8 @@
 <script setup>
 import LoadingCard from '@/components/Widgets/LoadingCard.vue';
 import { computed } from 'vue';
-import CouponCard from '@/zems/front/Widgets/CouponCard.vue';
+import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
+import CountDown from './CountDown.vue';
 const props = defineProps({
   ending: {
     type: Array
@@ -89,27 +90,24 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
   transform: translate(-50%, -50%);
 }
 
-/* hour hand */
 .hour-hand {
   position: absolute;
   left: 50%;
   top: 50%;
   width: 4px;
   height: 40px;
-  background: #333;
+  background: var(--light-color);
   transform-origin: bottom;
   transform: translate(-50%, -100%) rotate(30deg);
-  /* Fixed at 1 o'clock position */
 }
 
-/* Rotating minute hand */
 .minute-hand {
   position: absolute;
   left: 50%;
   top: 50%;
   width: 3px;
   height: 60px;
-  background: #333;
+  background: var(--light-color);
   transform-origin: bottom;
   transform: translate(-50%, -100%) rotate(0deg);
   animation: spin 10s linear infinite;
@@ -120,11 +118,9 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
     transform: translate(-50%, -100%) rotate(360deg);
   }
 }
-
 .left {
   margin-top: 5rem;
 }
-
 .left .coupon-card,
 .right .coupon-card {
   margin-top: 1rem;

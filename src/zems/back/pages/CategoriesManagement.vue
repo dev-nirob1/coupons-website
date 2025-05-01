@@ -4,9 +4,7 @@ import { ref } from 'vue';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 import PopUp from '@/components/Widgets/PopUp.vue';
-import BaseTable from '@/components/Element/BaseTable.vue';
-import TableHeader from '@/components/Element/TableHeader.vue';
-import TableRow from '@/components/Element/TableRow.vue';
+// import TableData from './TableData.vue';
 
 const isModalOpen = ref(false)
 const handleCloseModal = () => {
@@ -29,6 +27,7 @@ const { isLoading, data: categories = [] } = useQuery({
 </script>
 
 <template>
+  <!-- <TableData /> -->
   <div class="categories">
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">View coupon details dashboard</PopUp>
     <!-- <TableData/> -->
@@ -51,7 +50,8 @@ const { isLoading, data: categories = [] } = useQuery({
       </select>
     </div>
     <!-- Categories Table -->
-     <div v-if="isLoading">IsLoading</div>
+    <div v-if="isLoading">IsLoading</div>
+
     <BaseTable>
       <TableHeader>
         <div class="sl">SL</div>
@@ -63,7 +63,7 @@ const { isLoading, data: categories = [] } = useQuery({
       <TableRow v-for="(data, i) in categories" :key="data.id">
         <div class="sl">
           <div class="medium-none">Sl</div>
-          {{ i += 1}}
+          {{ i += 1 }}
           <!-- {{ data.id }} -->
         </div>
         <div>
@@ -118,7 +118,8 @@ const { isLoading, data: categories = [] } = useQuery({
 .categories {
   padding: 1.5rem;
 }
-.table-row > div{
+
+.table-row>div {
   display: flex;
   justify-content: space-between;
 }
@@ -148,9 +149,10 @@ const { isLoading, data: categories = [] } = useQuery({
 }
 
 @media (min-width: 768px) {
- .table .table-row .medium-none {
+  .table .table-row .medium-none {
     display: none !important;
   }
+
   .sl {
     max-width: 3rem;
   }
