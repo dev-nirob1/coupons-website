@@ -20,7 +20,7 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
       <div>
-        <BaseTitle tag="h5" class="section-title">Quick Links</BaseTitle>
+        <BaseTitle tag="h5">Quick Links</BaseTitle>
         <ul class="footer-links">
           <ListItem>
             <RouterLink to="/">Home</RouterLink>
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div>
-        <BaseTitle tag="h5" class="section-title">Coupon Policies</BaseTitle>
+        <BaseTitle tag="h5">Coupon Policies</BaseTitle>
         <ul class="footer-links">
           <ListItem>
             <RouterLink to="/">How it Works</RouterLink>
@@ -62,13 +62,14 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div class="newsletter">
-        <BaseTitle tag="h5" class="section-title">Get Exclusive Deals</BaseTitle>
+        <BaseTitle tag="h5">Get Exclusive Deals</BaseTitle>
         <BaseParagraph>Subscribe to receive special offers before anyone else</BaseParagraph>
+
         <form class="subscribe-form">
-            <InputField type="email" placeholder="Your email address" required class="email-input" />
-            <button type="submit" class="subscribe-btn">
-              <i class="fas fa-paper-plane"></i>
-            </button>
+          <InputField type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
         </form>
       </div>
     </div>
@@ -84,11 +85,15 @@ const currentYear = new Date().getFullYear();
 
 <style scoped>
 .coupon-footer {
-  background: var(--dark-color);
+  background-color: var(--dark-color);
   color: var(--white-color);
 }
 
-.logo {
+.coupon-footer h5 {
+  margin-top: 0;
+}
+
+.coupon-footer .logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -96,7 +101,7 @@ const currentYear = new Date().getFullYear();
   font-weight: 700;
 }
 
-.logo img {
+.coupon-footer .logo img {
   height: 50px;
   width: 50px;
 }
@@ -119,28 +124,24 @@ const currentYear = new Date().getFullYear();
   background-color: var(--light-color);
 }
 
-.social-links a:hover i,
-.payment-methods a:hover i {
+.social-links a:hover i {
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
 
-.section-title {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.coupon-footer h5 {
   position: relative;
   padding-bottom: 0.75rem;
-  color: var(--white-color);
 }
 
-.section-title::after {
+.coupon-footer h5::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: 0;
   width: 70px;
   height: 2px;
-  background: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 .footer-links {
@@ -149,11 +150,10 @@ const currentYear = new Date().getFullYear();
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .footer-links a {
-  color: #ecf0f1;
   text-decoration: none;
   transition: all 0.3s ease;
   display: flex;
@@ -187,19 +187,21 @@ const currentYear = new Date().getFullYear();
   flex: 1;
   padding: 0.8rem 1.2rem;
   border: none;
+  border-radius: .5rem 0 0 .5rem;
   outline: none;
   font-size: 0.95rem;
   background-color: var(--white-color);
 }
 
-.subscribe-form button {
-  padding: 1rem 2rem;;
+.subscribe-form .btn {
+  padding: 1rem 2rem;
   background-color: var(--secondary-color);
   color: var(--white-color);
   border: none;
+  border-radius: 0 .5rem .5rem 0;
 }
 
-.subscribe-form button:hover {
+.subscribe-form .btn:hover {
   background-color: var(--primary-color);
 }
 
@@ -208,5 +210,4 @@ const currentYear = new Date().getFullYear();
   padding: 1.5rem;
   text-align: center;
 }
-
 </style>
