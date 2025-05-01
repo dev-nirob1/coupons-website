@@ -9,6 +9,7 @@ onMounted(() => {
 
 <template>
   <section id="hero" class="hero text-center">
+    <div class="overlay"></div>
     <div class="banner-image">
       <img src="/banner.jpg" />
     </div>
@@ -19,58 +20,68 @@ onMounted(() => {
           Exclusive Coupons
         </HeroTitle>
         <SubTitle class="text-white">
-  Unlock <span class="highlight">thousands of deals</span> and save up to 80% at top retailers - <br/>
-  verified coupons updated daily for maximum savings
-</SubTitle>
+          Unlock thousands of deals and save up to 80% at top retailers - <br />
+          verified coupons updated daily for maximum savings
+        </SubTitle>
         <div class="input-field flex align-center relative">
           <InputField placeholder="Search Stores, Categories">
           </InputField>
           <BaseButton>Find Deals</BaseButton>
         </div>
       </div>
-      </div>
+    </div>
   </section>
 </template>
 <style scoped>
-#hero{
+#hero {
   transition: opacity 0.3s ease, transform 0.3s ease;
   will-change: opacity, transform;
   overflow-y: hidden;
 }
-#content{
+
+#content {
   transition: all 0.3s ease, transform 0.3s ease;
 }
+
 .hero {
-  position: reltaive;
-  height: 100Vh;
+  position: relative;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
-.hero .banner-image{
+
+.hero .banner-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.hero .banner-image img{
+
+.hero .banner-image img {
   object-fit: 100% 100%;
   width: 100%;
   height: 100%;
 }
-.hero .content{
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: 111;
+}
+
+.hero .content {
   padding: 0 .5rem;
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   z-index: 999;
-}
-
-.hero .highlight {
-  border-bottom: 5px solid var(--alternative-color);
 }
 
 .input-field input {
@@ -92,5 +103,4 @@ onMounted(() => {
   top: 0;
   padding: 1.18rem 1.75rem;
 }
-
 </style>
