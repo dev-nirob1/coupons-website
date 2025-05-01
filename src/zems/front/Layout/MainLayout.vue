@@ -1,6 +1,6 @@
 <script setup>
-import FooterSection from '@/components/section/FooterSection.vue';
-import HeaderSection from '@/components/section/HeaderSection.vue';
+import FooterSection from '@/components/Section/FooterSection.vue';
+import HeaderSection from '@/components/Section/HeaderSection.vue';
 import { RouterView } from 'vue-router';
 // import { zems_animate } from '@/plugins/zems_animate';
 

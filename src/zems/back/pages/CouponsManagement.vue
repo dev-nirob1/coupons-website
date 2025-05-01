@@ -1,10 +1,8 @@
 <script setup>
-import BaseButton from '@/components/element/BaseButton.vue';
-import BaseTitle from '@/components/element/BaseTitle.vue';
+import BaseTable from '@/components/Element/BaseTable.vue';
+import TableHeader from '@/components/Element/TableHeader.vue';
+import TableRow from '@/components/Element/TableRow.vue';
 import { ref } from 'vue';
-import BaseTable from '../Components/Element/BaseTable.vue';
-import TableHeader from '../Components/Element/TableHeader.vue';
-import TableRow from '../Components/Element/TableRow.vue';
 
 const coupons = ref([
   {

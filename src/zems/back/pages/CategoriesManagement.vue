@@ -1,11 +1,13 @@
 <script setup>
-import PopUp from '@/components/widgets/PopUp.vue';
 import { ref } from 'vue';
-import BaseTable from '../Components/Element/BaseTable.vue';
-import TableHeader from '../Components/Element/TableHeader.vue';
-import TableRow from '../Components/Element/TableRow.vue';
+
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
+import PopUp from '@/components/Widgets/PopUp.vue';
+import BaseTable from '@/components/Element/BaseTable.vue';
+import TableHeader from '@/components/Element/TableHeader.vue';
+import TableRow from '@/components/Element/TableRow.vue';
+
 const isModalOpen = ref(false)
 const handleCloseModal = () => {
   isModalOpen.value = false;

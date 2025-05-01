@@ -1,6 +1,6 @@
 <script setup>
-import CouponCard from '../widgets/CouponCard.vue';
-import LoadingCard from '../widgets/LoadingCard.vue';
+import LoadingCard from '@/components/Widgets/LoadingCard.vue';
+import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 
 defineProps({
   featured: {
@@ -27,7 +27,7 @@ defineProps({
         <LoadingCard v-for="(l, i) in 6" :key="i"/>
       </template>
       <template v-else>
-        <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id" />
+        <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id"/>
         <!-- link button-->
         <RouterLink class="link-card" to="/category_list/featured">
           <div class="flex flex-col justify-center align-center text-center">

@@ -1,8 +1,8 @@
 <script setup>
 import axios from 'axios';
-import CouponCard from '../widgets/CouponCard.vue';
 import { useQuery } from '@tanstack/vue-query';
-import LoadingCard from '../widgets/LoadingCard.vue';
+import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
+import LoadingCard from '@/components/Widgets/LoadingCard.vue';
 
 const { isLoading, data: exclusiveCoupon = [] } = useQuery({
   queryKey: ['exclusive'],

@@ -1,10 +1,10 @@
 <script setup>
+import BreadcrumbSection from '@/components/Widgets/BreadcrumbSection.vue';
+import LoadingCard from '@/components/Widgets/LoadingCard.vue';
+import CouponCard from '@/zems/front/Components/widgets/CouponCard.vue';
 import { useRoute } from 'vue-router';
 import { useQuery } from '@tanstack/vue-query';
-import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
-import CouponCard from '@/components/widgets/CouponCard.vue';
 import axios from 'axios';
-import LoadingCard from '@/components/widgets/LoadingCard.vue';
 const route = useRoute();
 
 const { isPending: isLoading, data: couponsData = [] } = useQuery({

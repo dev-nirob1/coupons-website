@@ -1,9 +1,7 @@
 <script setup>
-// import { ref } from 'vue';
-import CountDown from '../widgets/CountDown.vue';
-import CouponCard from '../widgets/CouponCard.vue';
+import LoadingCard from '@/components/Widgets/LoadingCard.vue';
 import { computed } from 'vue';
-import LoadingCard from '../widgets/LoadingCard.vue';
+import CouponCard from '@/zems/front/Widgets/CouponCard.vue';
 const props = defineProps({
   ending: {
     type: Array

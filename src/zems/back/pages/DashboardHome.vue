@@ -1,7 +1,6 @@
 <script setup>
 import BaseTitle from '@/components/element/BaseTitle.vue';
-import CompanyList from '@/components/section/CompanyList.vue';
-import NewCoupon from '@/components/section/NewCoupon.vue';
+import NewCoupon from '../Components/Section/NewCoupon.vue';
 
 </script>
 

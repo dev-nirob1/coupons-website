@@ -1,16 +1,16 @@
 <script setup>
 import 'animate.css';
-import BannerSection from '@/components/section/BannerSection.vue';
-import ByCompany from '@/components/section/ByCompany.vue';
-import CategorySection from '@/components/section/CategorySection.vue';
-import EndingSoon from '@/components/section/EndingSoon.vue';
-import FeaturedCoupon from '@/components/section/FeaturedCoupon.vue';
-import NewsLetterSection from '@/components/section/NewsLetterSection.vue';
-import TestimonialSection from '@/components/section/TestimonialSection.vue';
-import TimelineSection from '@/components/section/TimelineSection.vue';
-import ExclusiveCoupon from '@/components/section/ExclusiveCoupon.vue';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
+import BannerSection from '@/zems/front/Components/Section/BannerSection.vue';
+import CategorySection from '@/zems/front/Components/Section/CategorySection.vue';
+import FeaturedCoupon from '@/zems/front/Components/Section/FeaturedCoupon.vue';
+import ByCompany from '@/zems/front/Components/Section/ByCompany.vue';
+import ExclusiveCoupon from '@/zems/front/Components/Section/ExclusiveCoupon.vue';
+import TestimonialSection from '@/zems/front/Components/Section/TestimonialSection.vue';
+import NewsLetterSection from '@/zems/front/Components/Section/NewsLetterSection.vue';
+import TimelineSection from '@/zems/front/Components/Section/TimelineSection.vue';
+import CallToAction from '@/zems/front/Components/Section/CallToAction.vue';
 
 const {isLoading, data } = useQuery ({
   queryKey: ['home'],
@@ -24,13 +24,13 @@ const {isLoading, data } = useQuery ({
 
 <template>
   <BannerSection />
-  <CategorySection :categories="data?.cat" :isLoading="isLoading" />
+  <CategorySection :categories="data?.cat" :isLoading="isLoading"/>
   <FeaturedCoupon :featured="data?.featured" :isLoading="isLoading" />
   <ByCompany />
   <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
   <ExclusiveCoupon/>
-  <!-- <TimelineSection /> -->
+  <TimelineSection />
   <TestimonialSection />
   <NewsLetterSection />
-  <!-- <CallToAction /> -->
+  <CallToAction />
 </template>

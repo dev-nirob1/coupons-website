@@ -1,10 +1,8 @@
 <script setup>
-import BaseButton from '@/components/element/BaseButton.vue';
-import BaseTitle from '@/components/element/BaseTitle.vue';
-import InputField from '@/components/element/InputField.vue';
-import BaseTable from '../Components/Element/BaseTable.vue';
-import TableHeader from '../Components/Element/TableHeader.vue';
-import TableRow from '../Components/Element/TableRow.vue';
+import BaseTable from '@/components/Element/BaseTable.vue';
+import TableHeader from '@/components/Element/TableHeader.vue';
+import TableRow from '@/components/Element/TableRow.vue';
+
 
 </script>
 
@@ -15,55 +13,55 @@ import TableRow from '../Components/Element/TableRow.vue';
         <BaseTitle tag="h5">Total Users: 385</BaseTitle>
         <InputField placeholder="Search User" />
       </div>
-      <BaseTable>
-        <TableHeader>
-          <div>SL</div>
-          <div>Name</div>
-          <div>Image</div>
-          <div>Email</div>
-          <div>Role</div>
-          <div>Member Since</div>
-          <div>Actions</div>
-        </TableHeader>
-        <TableRow v-for="(data, i) in 5" :key="i">
-          <div class="sl">
-            <div class="medium-none">Sl</div>
-            1
-            <!-- {{  }} -->
-            <!-- {{ data.id }} -->
-          </div>
-          <div>
-            <div class="medium-none">Name</div>
-            Mr. Jack
-            <!-- {{  }} -->
-          </div>
-          <div>
-            <div class="medium-none">Image</div>
-            <img src="/author.jpg" alt="">
-          </div>
-          <div>
-            <div class="medium-none">Email</div>
-            jack@gmail.com
-            <!-- {{  }} -->
-          </div>
-          <div>
-            <div class="medium-none">Role</div>
-            Admin
-            <!-- {{  }} -->
-          </div>
-          <div>
-            <div class="medium-none">Member since</div>
-            24-05-2022
-            <!-- {{  }} -->
-          </div>
+      <BaseTable >
+      <TableHeader>
+        <div>SL</div>
+        <div>Name</div>
+        <div>Image</div>
+        <div>Email</div>
+        <div>Role</div>
+        <div>Member Since</div>
+        <div>Actions</div>
+      </TableHeader>
+      <TableRow v-for="(data, i) in 5" :key="i">
+        <div class="sl">
+          <div class="medium-none">Sl</div>
+          1
+          <!-- {{  }} -->
+          <!-- {{ data.id }} -->
+        </div>
+        <div>
+          <div class="medium-none">Name</div>
+          Mr. Jack
+          <!-- {{  }} -->
+        </div>
+        <div>
+          <div class="medium-none">Image</div>
+          <img src="/author.jpg" alt="">
+        </div>
+        <div>
+          <div class="medium-none">Email</div>
+          jack@gmail.com
+          <!-- {{  }} -->
+        </div>
+        <div>
+          <div class="medium-none">Role</div>
+          Admin
+          <!-- {{  }} -->
+        </div>
+        <div>
+          <div class="medium-none">Member since</div>
+          24-05-2022
+          <!-- {{  }} -->
+        </div>
 
-          <div class="flex align-center gap-1">
-            <div class="medium-none">Actions</div>
-            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
-            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
-            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
-          </div>
-        </TableRow>
+        <div class="flex align-center gap-1">
+          <div class="medium-none">Actions</div>
+          <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
+          <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+          <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
+        </div>
+      </TableRow>
       </BaseTable>
     </div>
   </div>
@@ -101,8 +99,8 @@ import TableRow from '../Components/Element/TableRow.vue';
   display: block;
 }
 
-@media (min-width: 768px){
-  .medium-none{
+@media (min-width: 768px) {
+  .medium-none {
     display: none;
   }
 }

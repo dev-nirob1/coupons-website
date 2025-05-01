@@ -1,6 +1,6 @@
 <script setup>
-import CategoryCard from '../widgets/CategoryCard.vue';
-import LoadingSkeleton from '../widgets/LoadingSkeleton.vue';
+import LoadingSkeleton from '@/components/Widgets/LoadingSkeleton.vue';
+import CategoryCard from '@/zems/front/Components/Widgets/CategoryCard.vue';
 defineProps({
   categories: {
     type: Array

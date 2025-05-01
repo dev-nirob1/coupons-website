@@ -1,5 +1,5 @@
 <script setup>
-import { heroSectionAnimation } from '@/plugins/animation';
+import { heroSectionAnimation } from '@/Plugins/animation';
 import { onMounted } from 'vue';
 
 onMounted(() => {

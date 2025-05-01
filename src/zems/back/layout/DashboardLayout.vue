@@ -1,11 +1,11 @@
 <script setup>
-import DashboardSidebar from '@/components/section/DashboardSidebar.vue';
 import { RouterView } from 'vue-router';
+import DashboardSidebar from '@/zems/back/Components/Widgets/DashboardSidebar.vue';
 </script>
 
 <template>
   <div class="dashboard">
-    <DashboardSidebar class="aside" />
+    <DashboardSidebar class="aside"/>
     <div class="router-view">
       <RouterView />
     </div>

@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import BaseButton from '@/components/element/BaseButton.vue';
-import BaseTitle from '@/components/element/BaseTitle.vue';
-import InputField from '@/components/element/InputField.vue';
-
+<script setup>
 </script>
 
 <template>
@@ -103,7 +99,7 @@ import InputField from '@/components/element/InputField.vue';
   border-radius: .5rem;
 }
 .add-coupon {
-  padding:1.5rem;                           
+  padding:1.5rem;
 }
 
 .add-coupon h5 {

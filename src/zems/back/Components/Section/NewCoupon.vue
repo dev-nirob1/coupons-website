@@ -1,7 +1,7 @@
 <script setup>
-import BaseTable from '@/zems/back/Components/Element/BaseTable.vue';
-import TableHeader from '@/zems/back/Components/Element/TableHeader.vue';
-import TableRow from '@/zems/back/Components/Element/TableRow.vue';
+import BaseTable from '@/components/Element/BaseTable.vue';
+import TableHeader from '@/components/Element/TableHeader.vue';
+import TableRow from '@/components/Element/TableRow.vue';
 import { ref } from 'vue';
 
 const coupons = ref([

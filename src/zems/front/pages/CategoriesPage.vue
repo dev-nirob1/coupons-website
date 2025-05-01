@@ -1,9 +1,9 @@
 <script setup>
-import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
-import CategoryCard from '@/components/widgets/CategoryCard.vue';
-import LoadingSkeleton from '@/components/widgets/LoadingSkeleton.vue';
+import LoadingSkeleton from '@/components/Widgets/LoadingSkeleton.vue';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
+import CategoryCard from '@/zems/front/Components/Widgets/CategoryCard.vue';
+import BreadcrumbSection from '@/components/Widgets/BreadcrumbSection.vue';
 
 const { isLoading, data: categories = [] } = useQuery({
   queryKey: () => ['category'],
