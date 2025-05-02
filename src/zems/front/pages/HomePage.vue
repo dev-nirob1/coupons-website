@@ -10,7 +10,6 @@ import ExclusiveCoupon from '@/zems/front/Components/Section/ExclusiveCoupon.vue
 import TestimonialSection from '@/zems/front/Components/Section/TestimonialSection.vue';
 import NewsLetterSection from '@/zems/front/Components/Section/NewsLetterSection.vue';
 import TimelineSection from '@/zems/front/Components/Section/TimelineSection.vue';
-import CallToAction from '@/zems/front/Components/Section/CallToAction.vue';
 import EndingSoon from '@/zems/front/Components/Section/EndingSoon.vue';
 
 const {isLoading, data } = useQuery ({
@@ -32,5 +31,4 @@ const {isLoading, data } = useQuery ({
   <TimelineSection />
   <TestimonialSection />
   <NewsLetterSection />
-  <CallToAction />
 </template>
