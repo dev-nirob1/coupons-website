@@ -21,7 +21,8 @@ const companies = [
       <!-- <LoadingSkeleton /> -->
       <!-- company data  -->
       <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
-      <div class="span-2">
+
+      <div class="medium-span-2">
         <!-- link card/btn -->
         <RouterLink class="link-card" to="/company">
           <div class="all-4 gap-1 align-center">
@@ -45,13 +46,12 @@ const companies = [
   padding: 2rem .5rem;
 }
 .link-card {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   height: 100%;
   width: 100%;
   background-color: var(--white-color);
   box-shadow: var(--box-shadow);
-  /* color: var(--white-color); */
   padding: 1rem;
   border-radius: 1rem;
   transition: all .3s ease-in-out;
