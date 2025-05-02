@@ -11,6 +11,7 @@ import TestimonialSection from '@/zems/front/Components/Section/TestimonialSecti
 import NewsLetterSection from '@/zems/front/Components/Section/NewsLetterSection.vue';
 import TimelineSection from '@/zems/front/Components/Section/TimelineSection.vue';
 import EndingSoon from '@/zems/front/Components/Section/EndingSoon.vue';
+import PricingSection from '../Components/Section/PricingSection.vue';
 
 const {isLoading, data } = useQuery ({
   queryKey: ['home'],
@@ -28,6 +29,7 @@ const {isLoading, data } = useQuery ({
   <ByCompany />
   <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
   <ExclusiveCoupon/>
+  <PricingSection/>
   <TimelineSection />
   <TestimonialSection />
   <NewsLetterSection />
