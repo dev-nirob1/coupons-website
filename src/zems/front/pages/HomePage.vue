@@ -11,7 +11,7 @@ import TestimonialSection from '@/zems/front/Components/Section/TestimonialSecti
 import NewsLetterSection from '@/zems/front/Components/Section/NewsLetterSection.vue';
 import TimelineSection from '@/zems/front/Components/Section/TimelineSection.vue';
 import CallToAction from '@/zems/front/Components/Section/CallToAction.vue';
-import EndingSoon from '@zems/front/Components/Section/EndingSoon.vue';
+import EndingSoon from '@/zems/front/Components/Section/EndingSoon.vue';
 
 const {isLoading, data } = useQuery ({
   queryKey: ['home'],
@@ -20,7 +20,6 @@ const {isLoading, data } = useQuery ({
     return res.data
   }}
 })
-
 </script>
 
 <template>
