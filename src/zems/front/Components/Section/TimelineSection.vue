@@ -7,7 +7,8 @@
             Save Money in <br> 3 Simple Steps
           </BaseTitle>
           <BaseParagraph>
-            Get the best coupons and promo codes with zero hassle. We verify every deal so you don’t have to—just copy, apply, and save instantly at checkout.
+            Get the best coupons and promo codes with zero hassle. We verify every deal so you don’t have to—just copy,
+            apply, and save instantly at checkout.
           </BaseParagraph>
           <BaseButton class="btn bg-secondary text-white">Get Started</BaseButton>
         </div>
@@ -41,12 +42,14 @@
 
 <style scoped>
 .timeline {
-  padding: 5rem 0;
+  padding: 5rem .5rem;
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
-
+.timeline h4 {
+  margin: 0;
+}
 .timeline-card {
   padding: 2rem;
   box-shadow: box-shadow;
@@ -54,12 +57,12 @@
   position: relative;
 }
 
-.two {
-  align-self: self-end;
-  margin-bottom: 8rem;
-}
-
-.timeline-card::before {
+@media (min-width: 992px){
+  .two {
+    align-self: self-end;
+    margin-bottom: 8rem;
+  }
+  .timeline-card::before {
   content: '';
   position: absolute;
   top: -15px;
@@ -95,8 +98,7 @@
   background-color: var(--alternative-color);
   z-index: 99;
 }
-
-.timeline h4 {
-  margin: 0;
 }
+
+
 </style>
