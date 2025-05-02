@@ -4,7 +4,7 @@ const heroSectionAnimation = () => {
 
   window.addEventListener('scroll', () => {
     const scrollValue = window.scrollY
-    console.log(scrollValue)
+    // console.log(scrollValue)
     // Calculate a value between 1 and 0 based on scroll (fade out)
     const opacity = 1 - scrollValue / 800
     const scale = 1 - scrollValue / 2000

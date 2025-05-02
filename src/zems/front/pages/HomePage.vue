@@ -6,7 +6,7 @@ import BannerSection from '@/zems/front/Components/Section/BannerSection.vue';
 import CategorySection from '@/zems/front/Components/Section/CategorySection.vue';
 import FeaturedCoupon from '@/zems/front/Components/Section/FeaturedCoupon.vue';
 import ByCompany from '@/zems/front/Components/Section/ByCompany.vue';
-import ExclusiveCoupon from '@/zems/front/Components/Section/ExclusiveCoupon.vue';
+// import ExclusiveCoupon from '@/zems/front/Components/Section/ExclusiveCoupon.vue';
 import TestimonialSection from '@/zems/front/Components/Section/TestimonialSection.vue';
 import NewsLetterSection from '@/zems/front/Components/Section/NewsLetterSection.vue';
 import TimelineSection from '@/zems/front/Components/Section/TimelineSection.vue';
@@ -28,7 +28,7 @@ const {isLoading, data } = useQuery ({
   <FeaturedCoupon :featured="data?.featured" :isLoading="isLoading" />
   <ByCompany />
   <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
-  <ExclusiveCoupon/>
+  <!-- <ExclusiveCoupon/> -->
   <PricingSection/>
   <TimelineSection />
   <TestimonialSection />

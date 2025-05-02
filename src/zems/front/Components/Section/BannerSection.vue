@@ -15,7 +15,7 @@ onMounted(() => {
     </div>
     <div id="content" class="content">
       <div>
-        <HeroTitle>
+        <HeroTitle class="text-white">
           Save Big with
           Exclusive Coupons
         </HeroTitle>

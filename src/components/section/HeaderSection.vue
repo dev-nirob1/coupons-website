@@ -1,11 +1,14 @@
 <script setup>
-import { onMounted, ref } from 'vue';
-import { navbarAnimation } from '@/plugins/animation';
+import { computed, onMounted, ref } from 'vue';
+import { navbarAnimation } from '@/Plugins/animation';
+import { useRoute } from 'vue-router';
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
+const route = useRoute()
+const routeName = computed(() => route.name);
 
 onMounted(() => {
   navbarAnimation()
@@ -19,10 +22,11 @@ onMounted(() => {
 })
 // onMounted(()=> {
 // })
+console.log(routeName);
 </script>
 
 <template>
-  <header class="navbar ">
+  <header class="navbar" :class="{'bg-secondary': routeName !== 'home'}">
     <nav class="flex justify-between align-center container">
       <!-- Logo -->
       <router-link to="/" class="logo">

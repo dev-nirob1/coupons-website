@@ -11,6 +11,7 @@ const props = defineProps({
     type: Boolean
   }
 })
+console.log(props);
 console.log(props.ending);
 const leftCoupons = computed(() => props?.ending?.slice(0, 2) ?? []);
 const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);

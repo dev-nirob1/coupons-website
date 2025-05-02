@@ -20,9 +20,9 @@ const { data: pricing = [] } = useQuery({
     <div class="medium-3 gap-1 medium-gap-2">
       <div v-for="data in pricing" :key=data.id class="pricing-card">
       <HeroTitle>{{ data.price }} <span>$</span></HeroTitle>
-      <Subtitle>{{ data.name }}</Subtitle>
+      <BaseTitle tag="h5">{{ data.name }}</BaseTitle>
       <BaseParagraph>{{ data.details }}</BaseParagraph>
-      <BaseButton class="width-full bg-secondary text-white">Explore</BaseButton>
+      <BaseButton class="width-full bg-secondary text-white">Buy Now</BaseButton>
     </div>
     </div>
   </section>
