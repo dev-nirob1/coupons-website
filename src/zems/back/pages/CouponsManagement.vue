@@ -3,14 +3,29 @@ import BaseTable from '@/components/Element/BaseTable.vue';
 import TableHeader from '@/components/Element/TableHeader.vue';
 import TableRow from '@/components/Element/TableRow.vue';
 import PopUp from '@/components/Widgets/PopUp.vue';
-import { ref } from 'vue';
+import PopView from '@/components/Section/PopView.vue';
+import PopEdit from '@/components/Section/PopEdit.vue';
 
+import { ref } from 'vue';
+const popupValue = ref()
+const popName = ref()
 const isModalOpen = ref(false)
+// const id = ref()
+const myComponent = {
+  popView: PopView,
+  popEdit: PopEdit
+}
+
+const currentComponent = (name) => myComponent[name]
 
 const handleCloseModal = () => {
   isModalOpen.value = false;
 }
-const handleOpenModal = () => {
+const handleOpenModal = (data, name) => {
+  popupValue.value = data
+  popName.value = name
+  // console.log('data',data);
+  // console.log('name',popName.value);
   isModalOpen.value = true;
 }
 
@@ -46,9 +61,14 @@ const coupons = ref([
 </script>
 <template>
   <div class="coupons-management">
+
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
-      View coupon details
+
+      <component :is="currentComponent(popName)" :data="popupValue">
+      </component>
     </PopUp>
+    <!-- <PopView /> -->
+
     <!-- Header Section -->
     <header class="flex align-center justify-between">
       <div>
@@ -105,8 +125,9 @@ const coupons = ref([
         <div>
           <div class="medium-none">Actions</div>
           <div class="flex gap-1">
-            <BaseButton @click="handleOpenModal" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
-            <RouterLink to="/edit-coupon"><BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton></RouterLink>
+            <BaseButton @click="handleOpenModal(coupon, 'popView')" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i>
+            </BaseButton>
+            <BaseButton @click="handleOpenModal(coupon, 'popEdit')" class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>
@@ -124,6 +145,7 @@ const coupons = ref([
   border-radius: .5rem;
   border-color: var(--border-color);
 }
+
 /* Responsive Breakpoints */
 @media (min-width: 768px) {
   .medium-none {

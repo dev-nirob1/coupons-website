@@ -1,13 +1,13 @@
 <template>
   <!-- <div class="sl">
-      <div class="medium-none">Id</div>
-      1
-    </div> -->
+    <div class="medium-none">Id</div>
+    1
+  </div> -->
   <div class="table-row">
     <slot></slot>
   </div>
 </template>
-<style scoped>
+<style>
 .table-row {
   display: flex;
   flex-direction: column;
@@ -15,6 +15,9 @@
   align-items: center;
   margin-bottom: 2rem;
   padding: .5rem;
+}
+.table-row .sl {
+  background-color: red;
 }
 
 .table-row:not(:last-child) {

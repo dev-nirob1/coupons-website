@@ -1,14 +1,14 @@
 <script setup>
 defineProps({
   couponData: {
-  type: Object
-},
-handleOpenModal: {
-  type: Function
-},
-isModalOpen: {
-  type: Boolean
-}
+    type: Object
+  },
+  handleOpenModal: {
+    type: Function
+  },
+  isModalOpen: {
+    type: Boolean
+  }
 })
 
 </script>
@@ -20,18 +20,19 @@ isModalOpen: {
 
     <div class="flex justify-between gap-1">
       <div>
-        <BaseTitle tag="h5">{{couponData?.name}}</BaseTitle>
+        <BaseTitle tag="h5">{{ couponData?.name }}</BaseTitle>
         <BaseParagraph>{{ couponData?.details }}</BaseParagraph>
       </div>
       <div>
         <span>Flat</span>
-        <BaseTitle v-if="couponData?.discount_percent" class="price">{{couponData?.discount_percent}} <span>%</span></BaseTitle>
-        <BaseTitle v-else class="price">{{couponData?.discount}} <span>$</span></BaseTitle>
+        <BaseTitle v-if="couponData?.discount_percent" class="price">{{ couponData?.discount_percent }} <span>%</span>
+        </BaseTitle>
+        <BaseTitle v-else class="price">{{ couponData?.discount }} <span>$</span></BaseTitle>
       </div>
     </div>
     <div class="card-footer pt-1">
       <div class="flex justify-between align-center">
-        <BaseParagraph>Validity: {{couponData?.expire_date}}</BaseParagraph>
+        <BaseParagraph>Validity: {{ couponData?.expire_date }}</BaseParagraph>
         <BaseButton @click='handleOpenModal' class="bg-white">Get Code</BaseButton>
       </div>
       <div class="circle-1"></div>
@@ -57,19 +58,24 @@ isModalOpen: {
 .coupon-card h3 {
   margin-top: 10px;
 }
+
 .coupon-card .price {
   display: flex;
   align-items: center;
 }
+
 .coupon-card .price span {
   font-size: 1.5rem;
 }
+
 .card-footer {
   position: relative;
   border-top: 5px dashed #fff;
   text-align: center;
 }
-.card-footer .circle-1,.circle-2 {
+
+.card-footer .circle-1,
+.circle-2 {
   position: absolute;
   top: -25px;
   height: 50px;
@@ -77,6 +83,7 @@ isModalOpen: {
   border-radius: 50%;
   background-color: var(--white-color);
 }
+
 .circle-1 {
   left: -55px;
 }
@@ -85,6 +92,4 @@ isModalOpen: {
 .circle-2 {
   right: -55px;
 }
-
-
 </style>

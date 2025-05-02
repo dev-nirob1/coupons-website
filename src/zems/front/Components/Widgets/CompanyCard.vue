@@ -3,7 +3,9 @@ import { RouterLink } from 'vue-router';
 
 defineProps({
   company: {
-    type: Object
+    type: Object,
+    required: false,
+    // default: null
   }
 })
 </script>

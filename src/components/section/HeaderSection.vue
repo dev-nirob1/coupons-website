@@ -9,7 +9,16 @@ const toggleMenu = () => {
 
 onMounted(() => {
   navbarAnimation()
+  const navbar = document.querySelector('.nav-links')
+  console.log(navbar.childNodes);
+  navbar.childNodes.forEach(element => {
+    element.addEventListener('click', ()=> {
+      isMenuOpen.value = false
+    })
+  });
 })
+// onMounted(()=> {
+// })
 </script>
 
 <template>
@@ -29,7 +38,7 @@ onMounted(() => {
       <!-- Navigation Links -->
       <ul class="nav-links" :class="{ 'active': isMenuOpen }">
         <ListItem><router-link to="/">Home</router-link></ListItem>
-        <Listitem><router-link to="/coupon_list">Latest Coupons</router-link></Listitem>
+        <ListItem><router-link to="/coupon_list">Latest Coupons</router-link></ListItem>
         <ListItem><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></ListItem>
         <ListItem><router-link to="/coupon_list/ending_soon">Ending Soon</router-link></ListItem>
         <ListItem><router-link to="/categories">Categories</router-link></ListItem>
