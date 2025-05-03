@@ -1,11 +1,13 @@
 <script setup>
 import PopUp from '@/components/Widgets/PopUp.vue';
-import PopView from '@/components/Section/PopView.vue';
-import PopEdit from '@/components/Section/PopEdit.vue';
-
 import { ref } from 'vue';
+import { useQuery } from '@tanstack/vue-query';
+import axios from 'axios';
+import PopView from '@zems/back/Components/Widgets/PopView.vue';
+import PopEdit from '@zems/back/Components/Widgets/PopEdit.vue';
 const popupValue = ref()
 const popName = ref()
+
 const isModalOpen = ref(false)
 // const id = ref()
 const myComponent = {
@@ -18,53 +20,46 @@ const currentComponent = (name) => myComponent[name]
 const handleCloseModal = () => {
   isModalOpen.value = false;
 }
-const handleOpenModal = (data, name) => {
-  popupValue.value = data
-  popName.value = name
-  // console.log('data',data);
-  // console.log('name',popName.value);
-  isModalOpen.value = true;
-}
 
-const coupons = ref([
-  {
-    id: 1,
-    code: 'SUMMER25',
-    discount: '25% OFF',
-    uses: 142,
-    maxUses: 500,
-    validUntil: '2023-09-30',
-    status: 'active'
-  },
-  {
-    id: 2,
-    code: 'WELCOME10',
-    discount: '$10 OFF',
-    uses: 89,
-    maxUses: null,
-    validUntil: '2024-01-01',
-    status: 'active'
-  },
-  {
-    id: 3,
-    code: 'BLACKFRIDAY',
-    discount: '40% OFF',
-    uses: 320,
-    maxUses: 1000,
-    validUntil: '2022-11-25',
-    status: 'expired'
+// single coupon with full data
+const singleCouponDetails = async (id) => {
+  try {
+    const res = await axios.get(`https://coupon.zems.uk/api/coupon/${id}`)
+    console.log(res?.data);
+    return res?.data
+  } catch (error) {
+    console.log(error);
   }
-])
+}
+const handleOpenModal = async (data, name) => {
+  popName.value = name
+  isModalOpen.value = true;
+  const fullData = await singleCouponDetails(data?.id)
+  // console.log("full data", fullData.value);
+  if (fullData) {
+    popupValue.value = fullData
+  } else {
+    popupValue.value = data
+  }
+}
+// all coupon data fetching
+const { data: coupons = [] } = useQuery({
+  queryKey: ['coupon'],
+  queryFn: async () => {
+    const res = await axios.get('https://coupon.zems.uk/api/coupon')
+    return res?.data
+  }
+})
+
 </script>
 <template>
   <div class="coupons-management">
 
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
-
       <component :is="currentComponent(popName)" :data="popupValue">
       </component>
     </PopUp>
-    <!-- <PopView /> -->
+
     <!-- Header Section -->
     <header class="flex align-center justify-between">
       <div>
@@ -87,10 +82,10 @@ const coupons = ref([
       <TableHeader>
         <div class="sl">SL</div>
         <div>Code</div>
+        <div>Name</div>
         <div>Discount</div>
-        <div>Uses</div>
-        <div>Valid Until</div>
-        <div>Status</div>
+        <div>Expire Date</div>
+        <div>Category</div>
         <div>Actions</div>
       </TableHeader>
       <TableRow v-for="(coupon, i) in coupons" :key="coupon.id">
@@ -104,27 +99,29 @@ const coupons = ref([
           {{ coupon.code }}
         </div>
         <div>
+          <div class="medium-none">Name</div>
+          {{ coupon.name }}
+        </div>
+        <div>
           <div class="medium-none">Discount</div>
-          {{ coupon.discount }}
+          {{ coupon.discount_percent }}$
         </div>
         <div>
-          <div class="medium-none">Uses</div>
-          {{ coupon.uses }}/{{ coupon.maxUses }}
+          <div class="medium-none">Expire Date</div>
+          {{ coupon.expire_date }}
         </div>
         <div>
-          <div class="medium-none">Valid Until</div>
-          {{ coupon.validUntil }}
-        </div>
-        <div>
-          <div class="medium-none">Status</div>
-          {{ coupon.status }}
+          <div class="medium-none">Category</div>
+          {{ coupon.cat_name }}
         </div>
         <div>
           <div class="medium-none">Actions</div>
           <div class="flex gap-1">
-            <BaseButton @click="handleOpenModal(coupon, 'popView')" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i>
+            <BaseButton @click="handleOpenModal(coupon, 'popView')" class="bg-secondary text-white"><i
+                class="fa-solid fa-eye"></i>
             </BaseButton>
-            <BaseButton @click="handleOpenModal(coupon, 'popEdit')" class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton @click="handleOpenModal(coupon, 'popEdit')" class="bg-primary text-white"><i
+                class="fa-solid fa-pen"></i></BaseButton>
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>
@@ -142,5 +139,4 @@ const coupons = ref([
   border-radius: .5rem;
   border-color: var(--border-color);
 }
-
 </style>
