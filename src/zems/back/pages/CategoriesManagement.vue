@@ -80,11 +80,7 @@ const { isLoading, data: categories = [] } = useQuery({
           <div class="flex gap-1">
             <BaseButton @click="handleOpenModal" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i>
             </BaseButton>
-
-            <RouterLink to="/edit-category">
-              <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
-            </RouterLink>
-
+            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>
@@ -130,5 +126,4 @@ const { isLoading, data: categories = [] } = useQuery({
   border-color: var(--border-color);
   border-radius: .5rem;
 }
-
 </style>

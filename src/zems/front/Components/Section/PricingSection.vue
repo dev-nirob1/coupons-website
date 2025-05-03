@@ -39,14 +39,17 @@ const { data: pricing = [] } = useQuery({
   background-color: var(--secondary-color);
   transition: all .5s;
 }
-.pricing-card:hover{
+
+.pricing-card:hover {
   background-color: var(--white-color);
   color: var(--light-color);
 }
-.pricing-card:hover .btn{
+
+.pricing-card:hover .btn {
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+
 .pricing-card img {
   height: 100px;
   width: 100px;
