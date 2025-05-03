@@ -1,7 +1,4 @@
 <script setup>
-import BaseTable from '@/components/Element/BaseTable.vue';
-import TableHeader from '@/components/Element/TableHeader.vue';
-import TableRow from '@/components/Element/TableRow.vue';
 import PopUp from '@/components/Widgets/PopUp.vue';
 import PopView from '@/components/Section/PopView.vue';
 import PopEdit from '@/components/Section/PopEdit.vue';
@@ -68,7 +65,6 @@ const coupons = ref([
       </component>
     </PopUp>
     <!-- <PopView /> -->
-
     <!-- Header Section -->
     <header class="flex align-center justify-between">
       <div>
@@ -79,7 +75,6 @@ const coupons = ref([
         <span>Add Coupon</span>
       </RouterLink>
     </header>
-
     <!-- select dropdown Section -->
     <select class="bg-white mb-2">
       <option value="all">All Statuses</option>
@@ -87,8 +82,10 @@ const coupons = ref([
       <option value="expired">Expired</option>
       <option value="scheduled">Scheduled</option>
     </select>
+
     <BaseTable>
       <TableHeader>
+        <div class="sl">SL</div>
         <div>Code</div>
         <div>Discount</div>
         <div>Uses</div>
@@ -146,10 +143,4 @@ const coupons = ref([
   border-color: var(--border-color);
 }
 
-/* Responsive Breakpoints */
-@media (min-width: 768px) {
-  .medium-none {
-    display: none;
-  }
-}
 </style>

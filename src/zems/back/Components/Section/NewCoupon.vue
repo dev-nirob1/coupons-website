@@ -1,7 +1,4 @@
 <script setup>
-import BaseTable from '@/components/Element/BaseTable.vue';
-import TableHeader from '@/components/Element/TableHeader.vue';
-import TableRow from '@/components/Element/TableRow.vue';
 import { ref } from 'vue';
 
 const coupons = ref([
@@ -35,7 +32,7 @@ const coupons = ref([
 ])
 </script>
 <template>
-  <div class="desktop-view">
+  <div>
     <BaseTitle>New Coupon</BaseTitle>
 
     <BaseTable>
@@ -86,6 +83,3 @@ const coupons = ref([
     </BaseTable>
   </div>
 </template>
-<style scoped>
-
-</style>

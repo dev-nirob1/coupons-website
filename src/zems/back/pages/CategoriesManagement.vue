@@ -32,7 +32,6 @@ const { isLoading, data: categories = [] } = useQuery({
     <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
       View category details
     </PopUp>
-    <!-- <TableData/> -->
     <!-- Header Section with Title and Add Button -->
     <header class="flex align-center justify-between">
       <div>
@@ -126,42 +125,10 @@ const { isLoading, data: categories = [] } = useQuery({
   padding: 1.5rem;
 }
 
-.table-row>div {
-  display: flex;
-  justify-content: space-between;
-}
-
 .categories input,
 .categories select {
   border-color: var(--border-color);
   border-radius: .5rem;
 }
 
-.categories .status-badge {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.categories .status-badge.active {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-}
-
-.categories .status-badge.expired {
-  background-color: var(--alternative-color);
-  color: var(--white-color);
-}
-
-@media (min-width: 768px) {
-  .table .table-row .medium-none {
-    display: none !important;
-  }
-
-  .sl {
-    max-width: 3rem;
-  }
-}
 </style>
