@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 import PopUp from '@/components/Widgets/PopUp.vue';
@@ -9,11 +8,11 @@ import PopUp from '@/components/Widgets/PopUp.vue';
 const isModalOpen = ref(false)
 const handleCloseModal = () => {
   isModalOpen.value = false;
-  console.log(isModalOpen.value);
+  // console.log(isModalOpen.value);
 }
 const handleOpenModal = () => {
   isModalOpen.value = true;
-  console.log(isModalOpen.value);
+  // console.log(isModalOpen.value);
 }
 
 const { isLoading, data: categories = [] } = useQuery({

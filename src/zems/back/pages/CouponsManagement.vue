@@ -1,10 +1,11 @@
 <script setup>
 import PopUp from '@/components/Widgets/PopUp.vue';
-import { ref } from 'vue';
-import { useQuery } from '@tanstack/vue-query';
-import axios from 'axios';
 import PopView from '@zems/back/Components/Widgets/PopView.vue';
 import PopEdit from '@zems/back/Components/Widgets/PopEdit.vue';
+import { useQuery } from '@tanstack/vue-query';
+import { ref } from 'vue';
+import axios from 'axios';
+
 const popupValue = ref()
 const popName = ref()
 

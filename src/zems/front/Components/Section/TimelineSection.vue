@@ -13,6 +13,7 @@
           <BaseButton class="btn bg-secondary text-white">Get Started</BaseButton>
         </div>
         <div class="timeline-card mt-2">
+          <div class="number">1</div>
           <BaseTitle tag="h5">Find Amazing Deals</BaseTitle>
           <BaseParagraph>
             Browse thousands of verified coupons and discount codes from your favorite stores.
@@ -21,6 +22,7 @@
       </div>
       <div class="two">
         <div class="timeline-card">
+          <div class="number">2</div>
           <BaseTitle tag="h5">Select & Copy</BaseTitle>
           <BaseParagraph>
             Choose your preferred offer and copy the code with one click or get direct store links.
@@ -29,6 +31,7 @@
       </div>
       <div class="three">
         <div class="timeline-card">
+          <div class="number">3</div>
           <BaseTitle tag="h5">Enjoy Savings</BaseTitle>
           <BaseParagraph>
             Apply the code at checkout and watch your total drop! Share with friends for extra rewards.
@@ -47,58 +50,68 @@
   display: flex;
   align-items: center;
 }
+
 .timeline h4 {
   margin: 0;
 }
+
 .timeline-card {
   padding: 2rem;
   box-shadow: box-shadow;
-  background-color: var(--white-color);
+  /* background-color: var(--white-color); */
   position: relative;
 }
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 5rem;
+  font-weight: 900;
+  color: lightgray;
+  z-index: -1;
+}
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .two {
     align-self: self-end;
     margin-bottom: 8rem;
   }
+
   .timeline-card::before {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  background-color: var(--alternative-color);
-  border-radius: 50%;
-}
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--alternative-color);
+    border-radius: 50%;
+  }
 
-.one .timeline-card::after {
-  content: '';
-  position: absolute;
-  width: calc(100% + 4.5rem);
-  height: 5px;
-  left: 0;
-  top: 0;
-  transform-origin: left center;
-  transform: rotate(-16deg);
-  background-color: var(--alternative-color);
-  z-index: 99;
-}
+  .one .timeline-card::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4.5rem);
+    height: 5px;
+    left: 0;
+    top: 0;
+    transform-origin: left center;
+    transform: rotate(-16deg);
+    background-color: var(--alternative-color);
+    z-index: 99;
+  }
 
-.two .timeline-card::after {
-  content: '';
-  position: absolute;
-  width: calc(100% + 4rem);
-  height: 5px;
-  left: 15px;
-  top: -6px;
-  transform-origin: left center;
-  transform: rotate(-23deg);
-  background-color: var(--alternative-color);
-  z-index: 99;
+  .two .timeline-card::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4rem);
+    height: 5px;
+    left: 15px;
+    top: -6px;
+    transform-origin: left center;
+    transform: rotate(-23deg);
+    background-color: var(--alternative-color);
+    z-index: 99;
+  }
 }
-}
-
-
 </style>

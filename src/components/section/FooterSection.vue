@@ -85,6 +85,7 @@ const currentYear = new Date().getFullYear();
 
 <style scoped>
 .coupon-footer {
+  margin-top: 5rem;
   background-color: var(--dark-color);
   color: var(--white-color);
 }
