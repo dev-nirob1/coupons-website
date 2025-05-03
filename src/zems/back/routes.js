@@ -5,9 +5,6 @@ import CouponsManagement from "@/zems/back/pages/CouponsManagement.vue";
 import DashboardHome from "@/zems/back/pages/DashboardHome.vue";
 import ProfilePage from "@/zems/back/pages/ProfilePage.vue";
 import UsersManagement from "@/zems/back/pages/UsersManagement.vue";
-import AddCategory from "@/zems/back/pages/AddCategory.vue";
-import EditCategory from "@/zems/back/pages/EditCategory.vue";
-import EditCoupon from "@/zems/back/pages/EditCoupon.vue";
 
 export default [
  {
@@ -23,16 +20,6 @@ export default [
           path: '/categories-management',
           name: 'categories-management',
           component: CategoriesManagement,
-        },
-        {
-          path: '/add-category',
-          name: 'add-category',
-          component: AddCategory,
-        },
-        {
-          path: '/edit-category', // /:id dynamic route
-          name: 'edit-category',
-          component: EditCategory,
         },
         {
           path: '/users-management',
@@ -53,11 +40,6 @@ export default [
           path: '/coupons-management',
           name: '/coupons-management',
           component: CouponsManagement,
-        },
-        {
-          path: '/edit-coupon', //:id dynamic route
-          name: '/edit-coupon',
-          component: EditCoupon,
         },
       ],
     },
