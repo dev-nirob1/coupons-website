@@ -1,12 +1,11 @@
 <script setup>
-import BaseTitle from '@/components/element/BaseTitle.vue';
-import NewCoupon from '../Components/Section/NewCoupon.vue';
+import NewCoupon from '@/zems/back/Components/Section/NewCoupon.vue';
 
 </script>
 
 <template>
   <div class="dashboard-home">
-    <div class="all-2 medium-4 gap-1 mt-1">
+    <div class="all-2 medium-4 gap-1">
       <div class="stats-card">
         <BaseTitle tag="h5">Users</BaseTitle>
         <BaseTitle>341</BaseTitle>

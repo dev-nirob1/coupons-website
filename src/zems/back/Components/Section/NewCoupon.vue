@@ -40,7 +40,7 @@ const coupons = ref([
 
     <BaseTable>
       <TableHeader>
-        <div>SL</div>
+        <div class="sl">SL</div>
         <div>Code</div>
         <div>Discount</div>
         <div>Uses</div>
@@ -87,27 +87,5 @@ const coupons = ref([
   </div>
 </template>
 <style scoped>
-.status-badge {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
 
-.status-badge.active {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-}
-
-.status-badge.expired {
-  background-color: var(--alternative-color);
-  color: var(--white-color);
-}
-
-@media (min-width: 768px) {
-  .medium-none {
-    display: none;
-  }
-}
 </style>

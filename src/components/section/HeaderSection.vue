@@ -12,6 +12,7 @@ const routeName = computed(() => route.name);
 
 onMounted(() => {
   navbarAnimation()
+
   const navbar = document.querySelector('.nav-links')
   console.log(navbar.childNodes);
   navbar.childNodes.forEach(element => {
@@ -20,9 +21,6 @@ onMounted(() => {
     })
   });
 })
-// onMounted(()=> {
-// })
-console.log(routeName);
 </script>
 
 <template>
