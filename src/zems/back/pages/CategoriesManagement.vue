@@ -79,7 +79,7 @@ const { isLoading, data: categories = [] } = useQuery({
           <div class="flex gap-1">
             <BaseButton @click="handleOpenModal" class="bg-secondary text-white"><i class="fa-solid fa-eye"></i>
             </BaseButton>
-            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton class="bg-success text-white"><i class="fa-solid fa-pen"></i></BaseButton>
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>

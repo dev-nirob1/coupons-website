@@ -12,10 +12,13 @@ html {
 
   --primary-color: #1f2937;
   --secondary-color: #7567eb;
-  --dark-color: #1f2937;
-  --light-color: #384252;
+  --danger-color: #DC3545;
+  --warning-color: #FFC107;
+  --success-color: #198754;
+  --dark-color: #212529;
+  --light-color: #585B5E;
   --white-color: #fff;
-  --border-color: #dfe6ee;
+  --border-color: #DEE2E6;
   --alternative-color: #f43f5e;
   /* ---------------typography------------ */
   /* headings  */
@@ -98,7 +101,15 @@ a {
 .text-secondary {
   color: var(--secondary-color);
 }
-
+.text-success {
+  color: var(--success-color);
+}
+.text-warning {
+  color: var(--warning-color);
+}
+.text-danger {
+  color: var(--danger-color);
+}
 .text-white {
   color: var(--white-color);
 }
@@ -121,7 +132,13 @@ a {
   background-color: var(--secondary-color);
 }
 .bg-danger {
-  background-color: var(--alternative-color);
+  background-color: var(--danger-color);
+}
+.bg-success {
+  background-color: var(--success-color);
+}
+.bg-warning {
+  background-color: var(--warning-color);
 }
 .bg-white {
   background-color: var(--white-color);

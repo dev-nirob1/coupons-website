@@ -51,6 +51,7 @@ defineProps({
   border-radius: .5rem;
   color: var(--white-color);
   background-color: var(--secondary-color);
+  z-index: 99;
 }
 
 @keyframes modalFadeIn {
