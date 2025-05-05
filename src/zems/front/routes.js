@@ -1,7 +1,5 @@
 import HomePage from '@/zems/front/Pages/HomePage.vue'
-import AboutPage from '@/zems/front/Pages/AboutPage.vue'
 import CouponsPage from '@/zems/front/Pages/CouponsPage.vue'
-import CouponDetailsPage from '@/zems/front/Pages/CouponDetailsPage.vue'
 import CompaniesPage from '@/zems/front/Pages/CompaniesPage.vue'
 import CategoriesPage from '@/zems/front/Pages/CategoriesPage.vue'
 import MainLayout from '@/zems/front/Layout/MainLayout.vue'
@@ -17,19 +15,9 @@ export default [
         component: HomePage,
       },
       {
-        path: '/about',
-        name: 'about',
-        component: AboutPage,
-      },
-      {
         path: '/coupon_list/:type?',
         name: 'coupon_list',
         component: CouponsPage,
-      },
-      {
-        path: '/coupons-details/:id', //single coupon details
-        name: 'coupons-details',
-        component: CouponDetailsPage,
       },
       {
         path: '/companies',

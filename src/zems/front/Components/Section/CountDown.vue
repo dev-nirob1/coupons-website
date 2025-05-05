@@ -1,53 +1,50 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue';
-// Countdown timer logic
-const hours = ref('12');
-const minutes = ref('45');
-const seconds = ref('30');
-let timerInterval;
-const updateTimer = () => {
-  // In a real app, calculate time until midnight or next deal batch
-  let sec = parseInt(seconds.value);
-  let min = parseInt(minutes.value);
-  let hr = parseInt(hours.value);
+// import { onBeforeUnmount, onMounted, ref } from 'vue';
+// const hours = ref('12');
+// const minutes = ref('45');
+// const seconds = ref('30');
+// let timerInterval;
+// const updateTimer = () => {
+//   let sec = parseInt(seconds.value);
+//   let min = parseInt(minutes.value);
+//   let hr = parseInt(hours.value);
 
-  if (sec > 0) sec--;
-  else {
-    sec = 59;
-    if (min > 0) min--;
-    else {
-      min = 59;
-      if (hr > 0) hr--;
-    }
-  }
+//   if (sec > 0) sec--;
+//   else {
+//     sec = 59;
+//     if (min > 0) min--;
+//     else {
+//       min = 59;
+//       if (hr > 0) hr--;
+//     }
+//   }
 
-  hours.value = hr.toString().padStart(2, '0');
-  minutes.value = min.toString().padStart(2, '0');
-  seconds.value = sec.toString().padStart(2, '0');
-};
-// Start/stop timer
+//   hours.value = hr.toString().padStart(2, '0');
+//   minutes.value = min.toString().padStart(2, '0');
+//   seconds.value = sec.toString().padStart(2, '0');
+// };
 
-onMounted(() => {
-  timerInterval = setInterval(updateTimer, 1000);
-});
+// onMounted(() => {
+//   timerInterval = setInterval(updateTimer, 1000);
+// });
 
-onBeforeUnmount(() => {
-  clearInterval(timerInterval);
-});
+// onBeforeUnmount(() => {
+//   clearInterval(timerInterval);
+// });
 </script>
 
 <template>
   <div class="countdown-timer">
         <div class="timer-box">
-          <span class="timer-value">{{ hours }}</span>
+          <span class="timer-value">11</span>
           <span class="timer-label">Hours</span>
         </div>
         <div class="timer-box">
-          <span class="timer-value">{{ minutes }}</span>
+          <span class="timer-value">59</span>
           <span class="timer-label">Minutes</span>
         </div>
         <div class="timer-box">
-          <span class="timer-value">{{ seconds }}</span>
+          <span class="timer-value">59</span>
           <span class="timer-label">Seconds</span>
         </div>
       </div>

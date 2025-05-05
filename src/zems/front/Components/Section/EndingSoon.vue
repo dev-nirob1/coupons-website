@@ -17,14 +17,14 @@ const props = defineProps({
     type: Function
   }
 })
-console.log(props);
-console.log(props.ending);
+// console.log(props);
+// console.log(props.ending);
 const leftCoupons = computed(() => props?.ending?.slice(0, 2) ?? []);
 const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
 </script>
 
 <template>
-  <section class="ending-soon my-5">
+  <section class="ending-soon ">
     <div class="container">
       <div class="medium-3 gap-2">
         <div class=" flex flex-col justify-center align-center">
@@ -39,22 +39,24 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
           </div>
         </div>
         <!-- Coupon Cards Grid -->
-        <div class="medium-span-2 medium-2 gap-2">
-          <div class="left">
+        <div class="medium-span-2 medium-2 gap-1 medium-gap-2">
+          <div class="left flex flex-col gap-1">
             <template v-if="isLoading">
               <LoadingCard v-for="(l, i) in 2" :key="i" />
             </template>
             <template v-else>
-              <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen"  />
+              <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id"
+                :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
             </template>
           </div>
 
-          <div class="right">
+          <div class="right flex flex-col gap-1">
             <template v-if="isLoading">
               <LoadingCard v-for="(l, i) in 2" :key="i" />
             </template>
             <template v-else>
-              <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id" :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
+              <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id"
+                :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
             </template>
           </div>
         </div>
@@ -68,6 +70,7 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
 .ending-soon {
   padding: 2rem .5rem;
 }
+
 .ending-soon h3 {
   margin-bottom: 0;
 }
@@ -125,11 +128,13 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
     transform: translate(-50%, -100%) rotate(360deg);
   }
 }
-.left {
+
+@media (min-width: 768px){
+  .ending-soon {
+  padding: 4rem .5rem;
+}
+  .left {
   margin-top: 5rem;
 }
-.left .coupon-card,
-.right .coupon-card {
-  margin-top: 1rem;
 }
 </style>
