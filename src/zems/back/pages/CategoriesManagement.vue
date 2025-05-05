@@ -1,9 +1,9 @@
 <script setup>
+import DashboardHeader from '@/zems/back/Components/Widgets/DashboardHeader.vue'
+import PopUp from '@/components/Widgets/PopUp.vue';
 import { ref } from 'vue';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
-import PopUp from '@/components/Widgets/PopUp.vue';
-// import TableData from './TableData.vue';
 
 const isModalOpen = ref(false)
 const handleCloseModal = () => {
@@ -32,15 +32,8 @@ const { isLoading, data: categories = [] } = useQuery({
       View category details
     </PopUp>
     <!-- Header Section with Title and Add Button -->
-    <header class="flex align-center justify-between">
-      <div>
-        <BaseTitle>Categories Management</BaseTitle>
-      </div>
-      <RouterLink to="/add-category" class="btn bg-secondary text-white p-1">
-        <i class="fa-solid fa-plus"></i>
-        <span>Add Categories</span>
-      </RouterLink>
-    </header>
+     <DashboardHeader to="/add-category" linkName="Add Category" title="Categories Management" />
+
     <!-- Filter/sorting -->
     <div class="flex justify-between mb-1">
       <select class="bg-white mb-2">

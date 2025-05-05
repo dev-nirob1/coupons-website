@@ -23,7 +23,7 @@ const paramsName = computed(() => route.params.type)
 }
 .breadcrumb ul {
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 0;
 }
 .breadcrumb ul li a{
@@ -36,5 +36,10 @@ const paramsName = computed(() => route.params.type)
 .breadcrumb ul li:not(:last-child)::after{
   content: '/';
   padding-left: 1rem;
+}
+@media (min-width: 768px){
+  .breadcrumb ul {
+  font-size: 1.5rem;
+}
 }
 </style>

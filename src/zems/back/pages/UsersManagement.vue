@@ -5,6 +5,7 @@
         <BaseTitle tag="h5">Total Users: 385</BaseTitle>
         <InputField placeholder="Search User" />
       </div>
+      
       <BaseTable>
         <TableHeader>
           <div class="sl">SL</div>

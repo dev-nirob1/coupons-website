@@ -19,10 +19,10 @@ onMounted(() => {
           Save Big with
           Exclusive Coupons
         </HeroTitle>
-        <SubTitle class="text-white">
+        <BaseParagraph class="text-white">
           Unlock thousands of deals and save up to 80% at top retailers - <br />
           verified coupons updated daily for maximum savings
-        </SubTitle>
+        </BaseParagraph>
         <div class="input-field flex align-center relative">
           <InputField placeholder="Search Stores, Categories">
           </InputField>
@@ -87,7 +87,7 @@ onMounted(() => {
 .input-field input {
   background-color: var(--white-color);
   border-radius: 1.5rem;
-  padding: 1.25rem;
+  padding: 1rem;
   outline: none;
   border: none;
 }
@@ -101,6 +101,15 @@ onMounted(() => {
   position: absolute;
   right: 0;
   top: 0;
+  padding: .9rem 1.5rem;
+}
+@media (min-width: 768px){
+  .input-field input {
+  padding: 1.25rem;
+}
+.input-field button {
+
   padding: 1.18rem 1.75rem;
+}
 }
 </style>

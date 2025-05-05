@@ -22,14 +22,14 @@ defineProps({
         <i class="fa-solid fa-tag text-secondary"></i> &nbsp; Category: &nbsp; Ramadan
       </div>
       <div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates et iusto fuga quidem veniam accusamus pariatur voluptatibus doloribus, soluta necessitatibus suscipit exercitationem libero commodi dignissimos? Voluptate facere nemo tenetur consequuntur!</p>
+        <BaseParagraph>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates et iusto fuga quidem veniam accusamus pariatur voluptatibus doloribus, soluta necessitatibus suscipit exercitationem libero commodi dignissimos? Voluptate facere nemo tenetur consequuntur!</BaseParagraph>
       </div>
-      <p class="text-danger">TODO: Add button for logged-in users (show everywhere except dashboard)</p>
+      <BaseParagraph class="text-danger">TODO: Add button for logged-in users (show everywhere except dashboard)</BaseParagraph>
       <BaseButton class="btn bg-secondary width-full text-white">Get Code</BaseButton>
     </div>
-    <p class="text-center text-light">
+    <BaseParagraph class="text-center text-light">
       Terms & Conditions Apply
-    </p>
+    </BaseParagraph>
   </div>
   <!-- {{ data }} -->
 </template>

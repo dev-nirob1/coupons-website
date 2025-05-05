@@ -1,4 +1,5 @@
 <script setup>
+import DashboardHeader from '@/zems/back/Components/Widgets/DashboardHeader.vue'
 import PopUp from '@/components/Widgets/PopUp.vue';
 import PopView from '@zems/back/Components/Widgets/PopView.vue';
 import PopEdit from '@zems/back/Components/Widgets/PopEdit.vue';
@@ -62,15 +63,8 @@ const { data: coupons = [] } = useQuery({
     </PopUp>
 
     <!-- Header Section -->
-    <header class="flex align-center justify-between">
-      <div>
-        <BaseTitle>Coupons Management</BaseTitle>
-      </div>
-      <RouterLink to="/add-coupon" class="btn p-1 bg-secondary text-white">
-        <i class="fa-solid fa-plus"></i>
-        <span>Add Coupon</span>
-      </RouterLink>
-    </header>
+     <DashboardHeader to="/add-coupon" linkName="Add Coupon" title="Coupons Management" />
+
     <!-- select dropdown Section -->
     <select class="bg-white mb-2">
       <option value="all">All Statuses</option>

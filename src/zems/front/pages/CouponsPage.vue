@@ -22,7 +22,7 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
   <section>
     <BreadcrumbSection />
     <div class="container py-2">
-      <div class="flex justify-end mb-2">
+      <div class="flex justify-end mb-2 pr-1">
         <div class="select">
           <select>
             <option value="sort" disabled>Sort By</option>

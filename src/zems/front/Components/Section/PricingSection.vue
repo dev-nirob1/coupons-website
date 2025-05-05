@@ -13,7 +13,7 @@ const { data: pricing = [] } = useQuery({
 </script>
 
 <template>
-  <section class="container py-5">
+  <section class="pricing container">
     <BaseTitle class="flex">Simple <span class="text-secondary"> Pricing</span>
       <hr>
     </BaseTitle>
@@ -30,6 +30,9 @@ const { data: pricing = [] } = useQuery({
 </template>
 
 <style scoped>
+.pricing {
+  padding: 5rem .5rem;
+}
 .pricing-card {
   text-align: center;
   border: 1px solid var(--border-color);
