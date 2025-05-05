@@ -121,9 +121,9 @@ const { data: coupons = [] } = useQuery({
             <BaseButton @click="handleOpenModal(coupon, 'popView')" class="bg-secondary text-white"><i
                 class="fa-solid fa-eye"></i>
             </BaseButton>
-            <BaseButton @click="handleOpenModal(coupon, 'popEdit')" class="bg-primary text-white"><i
+            <BaseButton @click="handleOpenModal(coupon, 'popEdit')" class="bg-success text-white"><i
                 class="fa-solid fa-pen"></i></BaseButton>
-            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
+            <BaseButton class="bg-danger text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>
       </TableRow>

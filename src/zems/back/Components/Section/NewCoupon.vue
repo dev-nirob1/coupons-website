@@ -75,8 +75,8 @@ const coupons = ref([
           <div class="medium-none">Actions</div>
           <div class="flex gap-1">
             <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-eye"></i></BaseButton>
-            <BaseButton class="bg-primary text-white"><i class="fa-solid fa-pen"></i></BaseButton>
-            <BaseButton class="bg-secondary text-white"><i class="fa-solid fa-trash"></i></BaseButton>
+            <BaseButton class="bg-success text-white"><i class="fa-solid fa-pen"></i></BaseButton>
+            <BaseButton class="bg-danger text-white"><i class="fa-solid fa-trash"></i></BaseButton>
           </div>
         </div>
       </TableRow>

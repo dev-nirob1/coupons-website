@@ -24,6 +24,7 @@ defineProps({
       <div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates et iusto fuga quidem veniam accusamus pariatur voluptatibus doloribus, soluta necessitatibus suscipit exercitationem libero commodi dignissimos? Voluptate facere nemo tenetur consequuntur!</p>
       </div>
+      <p class="text-danger">TODO: Add button for logged-in users (show everywhere except dashboard)</p>
       <BaseButton class="btn bg-secondary width-full text-white">Get Code</BaseButton>
     </div>
     <p class="text-center text-light">

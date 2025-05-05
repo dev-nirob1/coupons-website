@@ -52,7 +52,7 @@
       </div>
       <!-- Form buttons -->
       <div class="flex gap-1">
-        <button type="button" class="btn bg-primary text-white">Cancel</button>
+        <button type="button" class="btn bg-danger text-white">Cancel</button>
         <button type="submit" class="btn bg-secondary text-white">Save Changes</button>
       </div>
     </form>
