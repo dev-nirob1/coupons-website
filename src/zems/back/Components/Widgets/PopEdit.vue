@@ -4,7 +4,7 @@
 
     <form class="coupon-form">
       <div>
-        <label for="code">Promo Code</label>
+        <label for="code">Coupon Code</label>
         <InputField type="text" id="code" value="Ramadan301" />
       </div>
       <div>
@@ -48,7 +48,7 @@
       </div>
       <div class="flex align-center">
         <InputField type="checkbox" id="exclusive" />
-        <label for="exclusive">Exclusive Offer</label>
+        <label for="exclusive">Exclusive</label>
       </div>
       <!-- Form buttons -->
       <div class="flex gap-1">
@@ -66,7 +66,7 @@
 
 .coupon-form label {
   display: block;
-  margin-bottom: .5rem;
+  margin: .5rem 0;
   font-weight: 500;
   color: var(--light-color);
 }
