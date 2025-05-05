@@ -31,7 +31,10 @@ const { data: pricing = [] } = useQuery({
 
 <style scoped>
 .pricing {
-  padding: 5rem .5rem;
+  padding: 4rem .5rem;
+}
+.pricing h3 {
+  margin-top: 0;
 }
 .pricing-card {
   text-align: center;
