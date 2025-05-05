@@ -17,15 +17,12 @@ html {
   --white-color: #fff;
   --border-color: #dfe6ee;
   --alternative-color: #f43f5e;
-  --hover-color: #d75454;
   /* ---------------typography------------ */
   /* headings  */
   --heading-1: 1.5rem;
   --heading-2: 1.25rem;
   --heading-3: 1.25rem;
   --heading-4: 1.125rem;
-  /* --heading-5: 1.125rem; */
-  /* --heading-5: 1.125rem; */
 
   /* box shadows  */
   --testimonials-card-shadow: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
@@ -70,7 +67,6 @@ h4 {
 
 h5 {
   font-size: var(--heading-5);
-  /* margin: 0; */
 }
 
 h6 {
@@ -82,7 +78,6 @@ h6 {
 }
 .title {
   font-weight: bold;
-  /* font-size: var(--heading-3); */
 }
 
 .sub-title {
