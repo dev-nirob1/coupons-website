@@ -5,7 +5,6 @@ import DashboardHeader from '@/zems/back/Components/Widgets/DashboardHeader.vue'
 <template>
   <div class="add-coupon">
     <!-- Header Section -->
-
     <DashboardHeader to="/coupons-management" linkName="Back to Coupons" title="Add New Coupon"></DashboardHeader>
 
     <!-- Main Form Section -->
@@ -14,73 +13,56 @@ import DashboardHeader from '@/zems/back/Components/Widgets/DashboardHeader.vue'
         <!-- Coupon Code Section -->
         <fieldset>
           <legend>Coupon Information</legend>
-          <div class="all-2 gap-2">
+          <div class="medium-2 gap-1">
             <div>
-              <label>Coupon Code *</label>
-              <InputField type="text" placeholder="e.g. SUMMER25" required />
+              <label for="code">Coupon Code</label>
+              <InputField type="text" id="code" />
             </div>
-            <div class="flex gap-1 align-center">
-              <label>IsFeatured</label>
-              <InputField type="checkbox"></InputField>
+            <div>
+              <label for="name">Offer Name</label>
+              <InputField type="text" id="name" />
             </div>
           </div>
-          <!-- Discount Section -->
           <div>
-            <BaseTitle tag="h5">Discount</BaseTitle>
-            <div class="medium-2 gap-1">
-              <div>
-                <label>Discount Type *</label>
-                <div class="flex gap-1 mt-1">
-                  <label class="flex align-center">
-                    <InputField type="radio" name="discount-type" value="percentage" checked />
-                    <span>Percentage Discount</span>
-                  </label>
-                  <label class="flex align-center">
-                    <InputField type="radio" name="discount-type" value="fixed" />
-                    <span>Fixed Amount</span>
-                  </label>
-                </div>
-              </div>
+            <label for="title">Title</label>
+            <InputField type="text" id="title" />
+          </div>
 
-              <div class="form-group">
-                <label>Discount Value *</label>
-                <InputField type="number" placeholder="e.g. 25 for 25% or $25" required />
-              </div>
+          <div class="medium-2 gap-1">
+            <div>
+              <label for="discount_percent">Discount Percentage</label>
+              <InputField type="number" id="discount_percent" />
+            </div>
+            <div>
+              <label for="discount">Fixed Discount (if any)</label>
+              <InputField type="number" id="discount" placeholder="Not set" />
             </div>
           </div>
-          <!-- Validity Section -->
+          <div class="medium-2 gap-1">
+            <div>
+              <label for="expire_date">Expiry Date</label>
+              <InputField type="date" id="expire_date" />
+            </div>
+            <!-- select dropdown  -->
+            <div>
+              <label for="cat_name">Category</label>
+              <select id="cat_name">
+                <option value="Ramadan" selected>Ramadan</option>
+                <option value="Eid">Eid</option>
+                <option value="Seasonal">Seasonal</option>
+                <option value="Special">Special</option>
+              </select>
+            </div>
+          </div>
           <div>
-            <BaseTitle tag="h5">Validity</BaseTitle>
-            <div class="medium-2 gap-1">
-              <div>
-                <label>Start Date</label>
-                <InputField type="date" />
-              </div>
-              <div>
-                <label>End Date *</label>
-                <InputField type="date" required />
-              </div>
-            </div>
+            <label for="details">Details</label>
+            <BaseTextArea id="details" />
           </div>
-          <!-- Usage Limits Section -->
-          <div>
-            <BaseTitle tag="h5">Coupon Limits</BaseTitle>
-            <div class="medium-2 gap-1">
-              <div>
-                <label>Coupon limit</label>
-                <InputField type="number" placeholder="Leave empty for unlimited uses" />
-              </div>
-
-              <div>
-                <label>Minimum Money Spend</label>
-                <InputField type="number" placeholder="No minimum requirement" />
-              </div>
-            </div>
+          <div class="flex align-center">
+            <InputField type="checkbox" id="exclusive" />
+            <label for="exclusive">Exclusive</label>
           </div>
-          <!-- Form Actions -->
-          <div class="mt-2">
-            <BaseButton type="submit" class="btn bg-secondary text-white width-full">Create Coupon</BaseButton>
-          </div>
+          <BaseButton class="bg-secondary text-white width-full">Add Coupon</BaseButton>
         </fieldset>
       </form>
     </div>
@@ -88,17 +70,31 @@ import DashboardHeader from '@/zems/back/Components/Widgets/DashboardHeader.vue'
 </template>
 
 <style scoped>
-.add-coupon input {
-  border-color: var(--border-color);
-  border-radius: .5rem;
-}
-
 .add-coupon {
   padding: 1.5rem;
 }
 
-.add-coupon h5 {
-  margin-bottom: 1rem;
+.coupon-form label {
+  display: block;
+  margin: .5rem 0;
+  font-weight: 500;
+  color: var(--light-color);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: .5rem;
+  transition: border-color 0.3s;
+}
+
+.coupon-form input[type="checkbox"] {
+  width: fit-content;
+  margin-right: .25rem;
 }
 
 .add-coupon input[type=radio],
@@ -108,6 +104,7 @@ import DashboardHeader from '@/zems/back/Components/Widgets/DashboardHeader.vue'
 
 .add-coupon fieldset {
   padding: 1rem;
+  background-color: var(--white-color);
 }
 
 .add-coupon fieldset legend {
