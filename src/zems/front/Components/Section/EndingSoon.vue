@@ -9,6 +9,12 @@ const props = defineProps({
   },
   isLoading: {
     type: Boolean
+  },
+  isModalOpen: {
+    type: Boolean
+  },
+  handleOpenModal: {
+    type: Function
   }
 })
 console.log(props);
@@ -39,7 +45,7 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
               <LoadingCard v-for="(l, i) in 2" :key="i" />
             </template>
             <template v-else>
-              <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" />
+              <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id" :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen"  />
             </template>
           </div>
 
@@ -48,7 +54,7 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
               <LoadingCard v-for="(l, i) in 2" :key="i" />
             </template>
             <template v-else>
-              <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id" />
+              <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id" :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
             </template>
           </div>
         </div>

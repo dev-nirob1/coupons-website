@@ -63,7 +63,7 @@ const { data: coupons = [] } = useQuery({
     </PopUp>
 
     <!-- Header Section -->
-     <DashboardHeader to="/add-coupon" linkName="Add Coupon" title="Coupons Management" />
+    <DashboardHeader to="/add-coupon" linkName="Add Coupon" title="Coupons Management" />
 
     <!-- select dropdown Section -->
     <select class="bg-white mb-2">

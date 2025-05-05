@@ -1,31 +1,25 @@
 <script setup>
 import LoadingCard from '@/components/Widgets/LoadingCard.vue';
-import PopUp from '@/components/Widgets/PopUp.vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
-import { ref } from 'vue';
 defineProps({
   featured: {
     type: Array
   },
   isLoading: {
     type: Boolean
+  },
+  isModalOpen: {
+    type: Boolean
+  },
+  handleOpenModal: {
+    type: Function
   }
 })
-const isModalOpen = ref(false)
 
-const handleCloseModal = () => {
-  isModalOpen.value = false;
-}
-const handleOpenModal = () => {
-  isModalOpen.value = true;
-}
 </script>
 
 <template>
   <section class="featured-coupon container">
-    <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
-      <BaseTitle>Get Code</BaseTitle>
-    </PopUp>
     <!-- Section Header -->
     <div class="mb-3">
       <BaseTitle class="flex">Featured
@@ -38,6 +32,7 @@ const handleOpenModal = () => {
       <template v-if="isLoading">
         <LoadingCard v-for="(l, i) in 6" :key="i" />
       </template>
+
       <template v-else>
         <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id"
           :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />

@@ -68,7 +68,7 @@ onMounted(() => {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 999;
   transition: .3s ease;
 }
 
