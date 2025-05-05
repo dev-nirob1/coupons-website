@@ -1,31 +1,89 @@
-<script setup>
-import InputField from '@/components/Element/InputField.vue';
-
-const props = defineProps({
-  data: {
-    type: Object
-  }
-})
-console.log('popEdit data', props.data);
-</script>
 <template>
-  <div class="edit-coupon">
-    <form>
-      <InputField :value="data.name"  placeholder="Name" />
-      <InputField :value="data.details"  placeholder="Name" />
-      <InputField :value="data.code"  placeholder="Name" />
-      <InputField :value="data.title"  placeholder="Name" />
-      <InputField :value="data.discount_parcent"  placeholder="Name" />
-      <InputField :value="data.expire_date"  placeholder="Name" />
-      <InputField :value="data.cat_name"  placeholder="Name" />
-      <InputField :v-model="data.exclusive"  placeholder="Name" />
-      {{ data }}
+  <div class="update-coupon-form">
+    <BaseTitle>Update Coupon</BaseTitle>
+
+    <form class="coupon-form">
+      <div>
+        <label for="code">Promo Code</label>
+        <InputField type="text" id="code" value="Ramadan301" />
+      </div>
+      <div>
+        <label for="name">Offer Name</label>
+        <InputField type="text" id="name" value="Ramadan Offer 1 2025" />
+      </div>
+      <div>
+        <label for="title">Title</label>
+        <InputField type="text" id="title" value="Zannat" />
+      </div>
+
+      <div class="medium-2 gap-1">
+        <div>
+          <label for="discount_percent">Discount Percentage</label>
+          <InputField type="number" id="discount_percent" value="20" />
+        </div>
+        <div>
+          <label for="discount">Fixed Discount (if any)</label>
+          <InputField type="number" id="discount" placeholder="Not set" />
+        </div>
+      </div>
+      <div class="medium-2 gap-1">
+        <div>
+          <label for="expire_date">Expiry Date</label>
+          <InputField type="date" id="expire_date" value="2025-04-28" />
+        </div>
+        <!-- select dropdown  -->
+        <div>
+          <label for="cat_name">Category</label>
+          <select id="cat_name">
+            <option value="Ramadan" selected>Ramadan</option>
+            <option value="Eid">Eid</option>
+            <option value="Seasonal">Seasonal</option>
+            <option value="Special">Special</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="details">Details</label>
+        <BaseTextArea id="details" value="hello world" />
+      </div>
+      <div class="flex align-center">
+        <InputField type="checkbox" id="exclusive" />
+        <label for="exclusive">Exclusive Offer</label>
+      </div>
+      <!-- Form buttons -->
+      <div class="flex gap-1">
+        <button type="button" class="btn bg-primary text-white">Cancel</button>
+        <button type="submit" class="btn bg-secondary text-white">Save Changes</button>
+      </div>
     </form>
   </div>
 </template>
 
 <style scoped>
-.edit-coupon {
-  padding: 2rem;
+.update-coupon-form {
+  padding: 1.5rem;
+}
+
+.coupon-form label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  color: var(--light-color);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  padding: .75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: .5rem;
+  transition: border-color 0.3s;
+}
+
+.coupon-form input[type="checkbox"] {
+  width: fit-content;
+  margin-right: .25rem;
 }
 </style>
