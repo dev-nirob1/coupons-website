@@ -14,11 +14,15 @@ const { data: pricing = [] } = useQuery({
 
 <template>
   <section class="pricing container">
+
     <BaseTitle class="flex">Simple <span class="text-secondary"> Pricing</span>
       <hr>
     </BaseTitle>
     <div class="medium-3 gap-1 medium-gap-2">
       <div v-for="data in pricing" :key=data.id class="pricing-card">
+        <span class="icon">
+      <i class="fa-solid fa-circle-dollar-to-slot"></i>
+    </span>
         <!-- <BaseImage src="/price-list.png" /> -->
         <BaseTitle tag="h5">{{ data.name }}</BaseTitle>
         <HeroTitle>${{ data.price }} <span>/month</span></HeroTitle>
@@ -35,6 +39,9 @@ const { data: pricing = [] } = useQuery({
 }
 .pricing h3 {
   margin-top: 0;
+}
+.pricing-card span {
+  font-size: 4rem;
 }
 .pricing-card {
   text-align: center;

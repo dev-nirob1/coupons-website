@@ -24,7 +24,7 @@ const companies = [
 
       <div class="medium-span-2">
         <!-- link card/btn -->
-        <RouterLink class="link-card" to="/companies">
+        <RouterLink class="link-card" to="/companies_page">
           <div class="all-4 gap-1 align-center">
             <div>
               <BaseImage image="/company/store.png" />

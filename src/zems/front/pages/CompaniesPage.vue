@@ -1,6 +1,6 @@
 <script setup>
 import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
-import CompanyCard from '@zems/front/Components/Widgets/CompanyCard.vue'
+import CompanyCard from '../Components/Widgets/CompanyCard.vue';
 const companies = [
   { id: 1, name: "Nike", logo: "/company/nike.png", discount: "20% OFF" },
   { id: 2, name: "Adidas", logo: "/company/adidas.png", discount: "15% OFF" },
@@ -13,7 +13,7 @@ const companies = [
 <template>
   <section>
     <BreadcrumbSection />
-    <div class="medium-2 large-4 gap-1 large-gap-2 py-3">
+    <div class="container medium-2 large-4 gap-1 large-gap-2 py-3">
       <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
     </div>
   </section>
