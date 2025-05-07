@@ -3,7 +3,7 @@ import 'animate.css';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 import { ref } from 'vue'
-import PopUp from '@/Components/widgets/PopUp.vue'
+import PopUp from '@/components/widgets/PopUp.vue'
 import BannerSection from '@/zems/front/Components/Section/BannerSection.vue';
 import CategorySection from '@/zems/front/Components/Section/CategorySection.vue';
 import FeaturedCoupon from '@/zems/front/Components/Section/FeaturedCoupon.vue';

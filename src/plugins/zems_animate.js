@@ -1,51 +1,46 @@
-const zems_animate = ()=> {
-  console.log('animation loaded');
+const zems_animate = () => {
+  console.log('animation loaded')
 
-const isInView = document.querySelectorAll(".animate__animated");
+  const isInView = document.querySelectorAll('.animate__animated')
 
-const elementInView = (el, divideBy = 1) => {
-  const elementTop = el.getBoundingClientRect().top;
+  const elementInView = (el, divideBy = 1) => {
+    const elementTop = el.getBoundingClientRect().top
 
-  return (
-    elementTop <=
-    (window.innerHeight || document.documentElement.clientHeight) / divideBy
-  );
-};
+    return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / divideBy
+  }
 
-const elementOutofView = (el) => {
-  const elementTop = el.getBoundingClientRect().top;
+  const elementOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top
 
-  return (
-    elementTop > (window.innerHeight || document.documentElement.clientHeight)
-  );
-};
+    return elementTop > (window.innerHeight || document.documentElement.clientHeight)
+  }
 
-const displayScrollElement = (element, zems) => {
-  element.classList.add(zems);
-};
+  const displayScrollElement = (element, zems) => {
+    element.classList.add(zems)
+  }
 
-const hideScrollElement = (element, zems) => {
-  element.classList.remove(zems);
-};
+  const hideScrollElement = (element, zems) => {
+    element.classList.remove(zems)
+  }
 
-const handleScrollAnimation = () => {
-  isInView.forEach((el) => {
-   let zems = el.getAttribute("data-zems")
-    if (elementInView(el, 1.25)) {
-      if(zems != null){
-        console.log(zems);
-        displayScrollElement(el, zems);
+  const handleScrollAnimation = () => {
+    isInView.forEach((el) => {
+      let zems = el.getAttribute('data-zems')
+      if (elementInView(el, 1.25)) {
+        if (zems != null) {
+          console.log(zems)
+          displayScrollElement(el, zems)
+        }
+      } else if (elementOutofView(el)) {
+        if (zems != null) {
+          hideScrollElement(el, zems)
+        }
       }
-    } else if (elementOutofView(el)) {
-      if(zems != null){
-        hideScrollElement(el, zems);
-      }
-    }
+    })
+  }
+
+  window.addEventListener('scroll', () => {
+    handleScrollAnimation()
   })
 }
-
-window.addEventListener("scroll", () => {
-  handleScrollAnimation();
-});
-}
-export {zems_animate};
+export { zems_animate }

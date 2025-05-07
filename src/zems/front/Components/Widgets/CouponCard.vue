@@ -16,8 +16,6 @@ defineProps({
 <template>
   <div :class="['coupon-card', couponData?.exclusive ? 'bg-danger' : 'bg-secondary']">
 
-
-
     <div class="flex justify-between gap-1">
       <div>
         <BaseTitle tag="h5">{{ couponData?.name }}</BaseTitle>

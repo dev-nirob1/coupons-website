@@ -1,6 +1,6 @@
 <script setup>
-import BreadcrumbSection from '@/components/Widgets/BreadcrumbSection.vue';
-import LoadingCard from '@/components/Widgets/LoadingCard.vue';
+import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
+import LoadingCard from '@/components/widgets/LoadingCard.vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 import { useRoute } from 'vue-router';
 import { useQuery } from '@tanstack/vue-query';
@@ -21,6 +21,7 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
 <template>
   <section>
     <BreadcrumbSection />
+
     <div class="container py-2">
       <div class="flex justify-end mb-2 pr-1">
         <div class="select">
@@ -37,10 +38,11 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
         <BaseTitle class="text-center">Opps! No Data Found</BaseTitle>
       </div>
 
-      <div class=" medium-2 large-3 gap-2">
+      <div class="medium-2 large-3 gap-2">
         <template v-if="isLoading">
           <LoadingCard v-for="(data, i) in 6" :key="i"></LoadingCard>
         </template>
+
         <template v-else>
           <CouponCard v-for="couponData in couponsData" :couponData="couponData" :key="couponData.id" />
         </template>

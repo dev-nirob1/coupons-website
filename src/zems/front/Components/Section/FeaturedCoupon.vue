@@ -1,5 +1,5 @@
 <script setup>
-import LoadingCard from '@/components/Widgets/LoadingCard.vue';
+import LoadingCard from '@/components/widgets/LoadingCard.vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 defineProps({
   featured: {
@@ -37,13 +37,13 @@ defineProps({
         <CouponCard v-for="couponData in featured" :couponData="couponData" :key="couponData.id"
           :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
         <!-- link button-->
-        <RouterLink class="link-card" to="/category_list/featured">
+        <RouterLink class="link-card" to="/coupon_list/exclusive">
           <div class="flex flex-col justify-center align-center text-center">
             <div>
               <BaseImage image="/company/store.png" />
             </div>
             <div>
-              <SubTitle>All Featured Coupons</SubTitle>
+              <SubTitle>All Exclusive Coupons</SubTitle>
               <BaseParagraph>Limited-time offers! Click to view exclusive deals and special discounts.</BaseParagraph>
             </div>
           </div>
