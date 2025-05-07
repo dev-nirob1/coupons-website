@@ -1,115 +1,103 @@
 <script setup>
-import { heroSectionAnimation } from '@/Plugins/animation';
-import { onMounted } from 'vue';
 
-onMounted(() => {
-  heroSectionAnimation()
-});
 </script>
 
 <template>
-  <section id="hero" class="hero text-center">
-    <div class="overlay"></div>
-    <div class="banner-image">
-      <img src="/banner.jpg" />
-    </div>
-    <div id="content" class="content">
-      <div>
+  <section class="hero bg-light">
+    <div class="content container medium-2 align-center justify-between">
+      <div class="text-content">
         <HeroTitle class="text-white">
-          Save Big with
-          Exclusive Coupons
+          <span>
+            Exclusive Coupons
+          </span>
+          <br>
+          <span class="highlight">
+            Huge Savings
+          </span>
+          <br>
+          <span class="font-big">
+            GRAB NOW!
+          </span>
         </HeroTitle>
         <BaseParagraph class="text-white">
-          Unlock thousands of deals and save up to 80% at top retailers - <br />
+          Unlock thousands of deals and save up to 80% at top retailers -
           verified coupons updated daily for maximum savings
         </BaseParagraph>
-        <div class="input-field flex align-center relative">
-          <InputField placeholder="Search Stores, Categories">
-          </InputField>
-          <BaseButton>Find Deals</BaseButton>
-        </div>
+        <BaseButton class="bg-alternative text-white">
+          Explore Now
+        </BaseButton>
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1674620213535-9b2a2553ef40?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
       </div>
     </div>
   </section>
 </template>
 <style scoped>
-#hero {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  will-change: opacity, transform;
-  overflow-y: hidden;
-}
-
-#content {
-  transition: all 0.3s ease, transform 0.3s ease;
-}
-
 .hero {
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
-}
-
-.hero .banner-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero .banner-image img {
-  object-fit: 100% 100%;
-  width: 100%;
-  height: 100%;
-}
-
-.hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-  z-index: 111;
+  /* background-color: var(--light-color); */
 }
 
 .hero .content {
-  padding: 0 .5rem;
+  margin-top: 3rem;
+  width: 100%;
+  text-align: left;
+  z-index: 990;
+}
+
+.hero .hero-title {
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin:  0;
+}
+
+.hero .hero-title .highlight {
+  padding: .5rem;
+  font-size: 2rem;
+  background-color: var(--alternative-color);
+}
+
+.hero .hero-title .font-big {
+  font-size: 5.5rem;
+}
+
+.hero .btn {
+  font-size: 1.25rem;
+  padding: 1rem 1.75rem;
+}
+.hero .btn:hover {
+  background-color: var(--white-color);
+  color: var(--secondary-color);
+}
+
+.hero .content .img {
+  margin-top: 1rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
 }
 
-.input-field input {
-  background-color: var(--white-color);
-  border-radius: 1.5rem;
-  padding: 1rem;
-  outline: none;
-  border: none;
+.hero .content .img img {
+  width: 500px;
+  height: 500px;
+  background-color: transparent !important;
+  mix-blend-mode: multiply;
+  /* border-radius: 50%; */
 }
 
-.input-field button {
-  background-color: var(--alternative-color);
-  color: var(--white-color);
-  border-radius: 0 1.5rem 1.5rem 0;
-  border: none;
-  outline: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: .9rem 1.5rem;
-}
-@media (min-width: 768px){
-  .input-field input {
-  padding: 1.25rem;
-}
-.input-field button {
 
-  padding: 1.18rem 1.75rem;
-}
+@media (min-width: 768px) {
+  .text-content {
+    width: 80%;
+    /* margin-top: 2rem; */
+  }
 }
 </style>

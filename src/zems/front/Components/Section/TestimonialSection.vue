@@ -17,14 +17,16 @@ onMounted(() => {
       if (cardIndex < cardList.length - 1) {
         console.log(cardIndex);
         let lastIndex = cardList.length - 3
-        // cardContainer.style.transform = `translateX(-${cardIndex * cardWidth}px)`
+
         cardContainer.scrollTo({
           left: cardWidth * (cardIndex + 1),
           behavior: 'smooth'
         });
         if (cardIndex == lastIndex) {
-          cardIndex = 0;
+          cardIndex = -2;
+          console.log(cardIndex, lastIndex);
         }
+
         cardIndex++;
       }
     })
@@ -51,14 +53,15 @@ onMounted(() => {
       <div class="span-3 text-center">
 
         <BaseTitle>Feedback &
-         <br> Testimonials</BaseTitle>
-         <BaseParagraph>
+          <br> Testimonials
+        </BaseTitle>
+        <BaseParagraph>
           Real savings from real people. See how our community saves big every day.
         </BaseParagraph>
       </div>
       <div class="span-5">
         <div class="cards-scroll-container">
-          <TestimonialsCard v-for="(item, i) in 6" :key="i" />
+          <TestimonialsCard v-for="(item, i) in 6" :key="i" :i="i" />
         </div>
         <div class="flex gap-1">
           <button class="btn bg-white" id="prev">Prev</button>
@@ -73,6 +76,7 @@ onMounted(() => {
 .testimonials {
   padding: 5rem .5rem;
 }
+
 .testimonials h3 {
   margin-top: 0;
 }

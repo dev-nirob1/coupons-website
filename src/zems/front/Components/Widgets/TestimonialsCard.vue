@@ -1,4 +1,10 @@
-
+<script setup>
+defineProps({
+  i : {
+    type: Number
+  }
+})
+</script>
 <template>
   <div class="testimonial">
     <div class="flex align-center gap-1">
@@ -11,6 +17,7 @@
       </div>
     </div>
     <div class="flex">
+     index {{ i }}
       <BaseParagraph>
         <i class="fa-solid fa-quote-left fa-2x"></i> Precious ipsum dolor sit amet
         consectetur adipisicing elit, sed dos

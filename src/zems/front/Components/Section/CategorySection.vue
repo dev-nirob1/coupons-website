@@ -1,5 +1,5 @@
 <script setup>
-import LoadingSkeleton from '@/components/Widgets/LoadingSkeleton.vue';
+import LoadingSkeleton from '@/components/widgets/LoadingSkeleton.vue';
 import CategoryCard from '@/zems/front/Components/Widgets/CategoryCard.vue';
 defineProps({
   categories: {
@@ -15,7 +15,7 @@ defineProps({
   <section id="category" class="categories">
     <div class="container">
       <BaseTitle class="text-dark flex">
-        Browse <span class="text-secondary">Categories</span>
+        Browse <span class="text-primary">Categories</span>
         <hr />
       </BaseTitle>
       <!-- loading skeleton  -->

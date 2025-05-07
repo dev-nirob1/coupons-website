@@ -10,16 +10,19 @@ html {
   --montserrat-font: 'Montserrat', sans-serif;
   --roboto-font: 'Roboto', serif;
 
-  --primary-color: #1f2937;
-  --secondary-color: #7567eb;
+  --primary-color: #63C8D4;
+  --secondary-color: #002E5B;
+  --alternative-color: #F69052;
+  --dark-color: #212529;
+  --light-color: #585B5E;
+
+
   --danger-color: #DC3545;
   --warning-color: #FFC107;
   --success-color: #198754;
-  --dark-color: #212529;
-  --light-color: #585B5E;
   --white-color: #fff;
   --border-color: #DEE2E6;
-  --alternative-color: #f43f5e;
+  /* --alternative-color: #f43f5e; */
   /* ---------------typography------------ */
   /* headings  */
   --heading-1: 1.5rem;
@@ -121,13 +124,13 @@ a {
 }
 
 .bg-light {
-  background-color: rgb(from var(--primary-color) r g b/ 5%);
+  /* background-color: rgb(from var(--primary-color) r g b/ 5%); */
+  background-color: #D4EBFF;
 }
 
 .bg-primary {
   background-color: var(--primary-color);
 }
-
 .bg-secondary {
   background-color: var(--secondary-color);
 }
@@ -140,6 +143,10 @@ a {
 .bg-warning {
   background-color: var(--warning-color);
 }
+.bg-alternative {
+  background-color: var(--alternative-color);
+}
+
 .bg-white {
   background-color: var(--white-color);
 }

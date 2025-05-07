@@ -14,7 +14,7 @@ defineProps({
       <small>{{ Object.keys(category.name).length }} deals</small>
     </div>
     <div class="category-overlay">
-      <RouterLink class="btn p-1 text-white bg-secondary" :to="`/category_list/${category?.slug}`">Go to Category
+      <RouterLink class="btn p-1 text-white bg-primary" :to="`/category_list/${category?.slug}`">Go to Category
       </RouterLink>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import { navbarAnimation } from '@/Plugins/animation';
+import { navbarAnimation } from '@/plugins/animation';
 import { useRoute } from 'vue-router';
 const isMenuOpen = ref(false);
 
@@ -57,7 +57,7 @@ onMounted(() => {
 }
 
 .scroll-up .navbar {
-  background-color: var(--alternative-color);
+  background-color: var(--secondary-color);
 }
 
 .navbar {

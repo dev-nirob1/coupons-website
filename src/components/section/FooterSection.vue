@@ -86,7 +86,7 @@ const currentYear = new Date().getFullYear();
 <style scoped>
 .coupon-footer {
   margin-top: 5rem;
-  background-color: var(--dark-color);
+  background-color: var(--secondary-color);
   color: var(--white-color);
 }
 
@@ -122,7 +122,7 @@ const currentYear = new Date().getFullYear();
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--light-color);
+  background-color: var(--alternative-color);
 }
 
 .social-links a:hover i {
@@ -141,8 +141,8 @@ const currentYear = new Date().getFullYear();
   left: 0;
   bottom: 0;
   width: 70px;
-  height: 2px;
-  background-color: var(--secondary-color);
+  height: 5px;
+  background-color: var(--primary-color);
 }
 
 .footer-links {
@@ -164,14 +164,14 @@ const currentYear = new Date().getFullYear();
 
 .footer-links a::before {
   content: '→';
-  color: var(--secondary-color);
+  color: var(--primary-color);
   opacity: 0;
   display: none;
   transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   padding-left: 5px;
 }
 
@@ -196,7 +196,7 @@ const currentYear = new Date().getFullYear();
 
 .subscribe-form .btn {
   padding: 1rem 2rem;
-  background-color: var(--secondary-color);
+  background-color: var(--alternative-color);
   color: var(--white-color);
   border: none;
   border-radius: 0 .5rem .5rem 0;
@@ -207,7 +207,6 @@ const currentYear = new Date().getFullYear();
 }
 
 .footer-bottom {
-  background: var(--light-color);
   padding: 1.5rem;
   text-align: center;
 }

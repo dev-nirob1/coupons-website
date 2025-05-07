@@ -13,7 +13,7 @@ const companies = [
 
 <template>
   <section class="company-section container">
-    <BaseTitle class="flex">Company <span class="text-secondary"> Offer</span>
+    <BaseTitle class="flex">Company <span class="text-primary"> Offer</span>
       <hr>
     </BaseTitle>
     <div class="medium-4 gap-1 medium-gap-2">
@@ -24,7 +24,7 @@ const companies = [
 
       <div class="medium-span-2">
         <!-- link card/btn -->
-        <RouterLink class="link-card" to="/companies_page">
+        <RouterLink class="link-card" to="/companies">
           <div class="all-4 gap-1 align-center">
             <div>
               <BaseImage image="/company/store.png" />

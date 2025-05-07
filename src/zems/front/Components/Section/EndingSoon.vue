@@ -60,6 +60,25 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
             </template>
           </div>
         </div>
+
+
+        <div style="border: 1px solid red;" class="medium-span-2 medium-2 gap-1 medium-gap-2">
+         <div>
+          <h2>Colums</h2>
+         </div>
+         <div style="height: 200px; border: 5px solid green">
+          <h2>Colums 2</h2>
+         </div>
+         <div style="height: 200px; border: 5px solid green">
+          <h2>Colums 2</h2>
+         </div>
+         <div style="height: 200px; border: 5px solid green">
+          <h2>Colums 2</h2>
+         </div>
+         <div style="height: 200px; border: 5px solid green">
+          <h2>Colums 2</h2>
+         </div>
+        </div>
       </div>
     </div>
   </section>
