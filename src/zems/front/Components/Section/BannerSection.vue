@@ -44,7 +44,7 @@
   background-image: url('https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png');
   background-position: bottom right;
   background-repeat: no-repeat;
-  background-size: auto 50%;
+  background-size: auto 100%;
   /* background-blend-mode: darken; */
 }
 
@@ -62,7 +62,7 @@
 
 .hero .hero-title .highlight {
   font-size: 1.75rem;
- background-color: var(--alternative-color);
+  background-color: var(--alternative-color);
 }
 
 .hero .hero-title .font-big {
@@ -103,9 +103,11 @@
     font-size: 1.15rem;
     margin-top: 0;
   }
-.hero .text-content {
-  width: 80%;
-}
+
+  .hero .text-content {
+    width: 80%;
+  }
+
   .hero .hero-title .highlight {
     font-size: 2rem;
     border-bottom: 3px solid var(--alternative-color);

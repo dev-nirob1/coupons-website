@@ -18,6 +18,7 @@ const { data: pricing = [] } = useQuery({
       <BaseTitle class="flex">Simple <span class="text-secondary"> Pricing</span>
         <hr>
       </BaseTitle>
+
       <div class="medium-3 gap-1 medium-gap-2">
         <div v-for="data in pricing" :key=data.id class="pricing-card">
           <span class="icon">
@@ -27,7 +28,7 @@ const { data: pricing = [] } = useQuery({
           <BaseTitle tag="h5">{{ data.name }}</BaseTitle>
           <HeroTitle>${{ data.price }} <span>/month</span></HeroTitle>
           <BaseParagraph>{{ data.details }}</BaseParagraph>
-          <BaseButton class="bg-white">Buy Now</BaseButton>
+          <BaseButton>Buy Now</BaseButton>
         </div>
       </div>
     </div>
@@ -36,12 +37,8 @@ const { data: pricing = [] } = useQuery({
 
 <style scoped>
 .pricing {
-  padding: 4rem .5rem;
+  padding: 5rem .5rem;
   background: var(--primary-lighten-color);
-}
-
-.pricing h3 {
-  margin-top: 0;
 }
 
 .pricing-card {
@@ -49,33 +46,40 @@ const { data: pricing = [] } = useQuery({
   border-radius: .75rem;
   padding: 3rem 2rem;
   transition: all .5s;
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
 }
 
 .pricing-card .icon {
   font-size: 5rem;
+  color: var(--primary-color);
 }
 
 .pricing-card:hover {
-  background-color: var(--white-color);
-  color: var(--light-color);
-}
-
-.pricing-card:hover .btn {
-  background-color: var(--white-color);
-}
-
-.pricing-card img {
-  height: 100px;
-  width: 100px;
+  transform: translateY(-1rem);
 }
 
 .pricing-card .btn {
+  border: 1px solid transparent;
+  background: var(--primary-color);
+  color: var(--white-color);
   border-radius: 1.5rem;
   width: 100%;
 }
 
+.pricing-card .btn:hover {
+  background-color: var(--white-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.pricing h5 {
+  margin: .5rem 0;
+}
+
 .pricing-card .hero-title {
-  margin: 0 0 1rem 0;
+  margin: 0 0 .5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
