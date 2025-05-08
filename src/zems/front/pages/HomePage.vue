@@ -14,6 +14,7 @@ import NewsLetterSection from '@/zems/front/Components/Section/NewsLetterSection
 import TimelineSection from '@/zems/front/Components/Section/TimelineSection.vue';
 import EndingSoon from '@/zems/front/Components/Section/EndingSoon.vue';
 import PricingSection from '../Components/Section/PricingSection.vue';
+import AboutUs from '../Components/Section/AboutUs.vue';
 
 const { isLoading, data } = useQuery({
   queryKey: ['home'],
@@ -74,6 +75,7 @@ const handleOpenModal = () => {
     :ending="data?.ending" :isLoading="isLoading" />
   <!-- <ExclusiveCoupon/> -->
   <PricingSection />
+  <AboutUs/>
   <TimelineSection />
   <TestimonialSection />
   <NewsLetterSection />

@@ -57,7 +57,7 @@ const { data: pricing = [] } = useQuery({
 }
 
 .pricing-card:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-.5rem);
 }
 
 .pricing-card .btn {
