@@ -37,27 +37,27 @@
 </template>
 <style scoped>
 .hero {
-  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
 }
-/* todo make margin-top 5-6rem for mobile */
+
 .hero .content {
-  margin-top: 3rem;
+  padding: .5rem;
+  margin-top: 5rem;
   width: 100%;
   text-align: left;
   z-index: 990;
 }
+
 .hero .hero-title {
-    margin: 0;
-  }
+  margin: 0;
+}
+
 .hero .hero-title .highlight {
-  padding: .5rem;
   font-size: 1.75rem;
   border-bottom: 3px solid var(--alternative-color);
-  /* background-color: var(--alternative-color); */
 }
 
 .hero .hero-title .font-big {
@@ -85,28 +85,25 @@
 .hero .content .img img {
   width: 100%;
   height: 100%;
-  mix-blend-mode: color-dodge;
-  /* border-radius: 50%; */
 }
 
 
 @media (min-width: 768px) {
-  .text-content {
-    width: 80%;
-    /* margin-top: 2rem; */
-  }
 
+  .hero .content {
+    margin-top: 3rem;
+  }
 
   .hero p {
     font-size: 1.15rem;
     margin-top: 0;
   }
-
+.hero .text-content {
+  width: 80%;
+}
   .hero .hero-title .highlight {
-    padding: .5rem;
     font-size: 2rem;
     border-bottom: 3px solid var(--alternative-color);
-    /* background-color: var(--alternative-color); */
   }
 
   .hero .hero-title .font-big {

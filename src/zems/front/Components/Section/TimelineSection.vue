@@ -2,7 +2,7 @@
   <section class="timeline container">
     <div class="large-3 gap-2 height-full relative">
       <div class="one">
-        <div class="pb-2">
+        <div class="pb-5">
           <BaseTitle tag="h4">
             Save Money in <br> 3 Simple Steps
           </BaseTitle>
@@ -12,7 +12,7 @@
           </BaseParagraph>
           <BaseButton class="btn bg-secondary text-white">Get Started</BaseButton>
         </div>
-        <div class="timeline-card mt-2">
+        <div class="timeline-card">
           <div class="number">1</div>
           <BaseTitle tag="h5">Find Amazing Deals</BaseTitle>
           <BaseParagraph>
@@ -61,6 +61,7 @@
   /* background-color: var(--white-color); */
   position: relative;
 }
+
 .number {
   position: absolute;
   top: 0;
@@ -72,11 +73,6 @@
 }
 
 @media (min-width: 992px) {
-  .two {
-    align-self: self-end;
-    margin-bottom: 8rem;
-  }
-
   .timeline-card::before {
     content: '';
     position: absolute;
@@ -87,7 +83,11 @@
     background-color: var(--alternative-color);
     border-radius: 50%;
   }
-
+  .two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .one .timeline-card::after {
     content: '';
     position: absolute;
@@ -96,7 +96,7 @@
     left: 0;
     top: 0;
     transform-origin: left center;
-    transform: rotate(-16deg);
+    transform: rotate(-20deg);
     background-color: var(--alternative-color);
     z-index: 99;
   }
@@ -107,9 +107,9 @@
     width: calc(100% + 4rem);
     height: 5px;
     left: 15px;
-    top: -6px;
+    top: -4px;
     transform-origin: left center;
-    transform: rotate(-23deg);
+    transform: rotate(-20deg);
     background-color: var(--alternative-color);
     z-index: 99;
   }
