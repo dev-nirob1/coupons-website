@@ -68,7 +68,7 @@ defineProps({
   text-decoration: none;
   height: 100%;
   width: 100%;
-  background-color: var(--secondary-color);
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
   box-shadow: var(--box-shadow);
   color: var(--white-color);
   padding: 1rem;
@@ -79,7 +79,12 @@ defineProps({
 .link-card:hover {
   transform: scale(1.02);
 }
-
+.link-card h5 {
+  margin: 0;
+}
+.link-card p {
+  margin-top: .5rem;
+}
 .link-card img {
   height: 100%;
   width: 100%;
