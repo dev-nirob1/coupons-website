@@ -12,8 +12,9 @@ const companies = [
 </script>
 
 <template>
-  <section class="company-section container">
-    <BaseTitle class="flex">Company <span class="text-primary"> Offer</span>
+  <section class="company-section">
+    <div class="container">
+      <BaseTitle class="flex">Company <span class="text-primary"> Offer</span>
       <hr>
     </BaseTitle>
     <div class="medium-4 gap-1 medium-gap-2">
@@ -38,21 +39,26 @@ const companies = [
         </RouterLink>
       </div>
     </div>
+    </div>
   </section>
 </template>
 
 <style scoped>
 .company-section {
   padding: 2rem .5rem;
+  background: var(--primary-lighten-color);
 }
+
 .link-card {
-  display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   height: 100%;
   width: 100%;
-  background-color: var(--white-color);
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: var(--white-color);
   box-shadow: var(--box-shadow);
-  padding: 1rem;
+  padding: 1rem 3rem;
   border-radius: 1rem;
   transition: all .3s ease-in-out;
 }
@@ -60,7 +66,13 @@ const companies = [
 .link-card:hover {
   transform: scale(1.02);
 }
-
+.link-card .sub-title {
+  margin: 0;
+}
+.link-card p {
+  margin-top: .5rem;
+  margin-bottom: 0;
+}
 .link-card img {
   height: 100%;
   width: 100%;

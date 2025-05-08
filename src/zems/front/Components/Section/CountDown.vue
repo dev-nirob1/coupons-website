@@ -60,13 +60,13 @@
 }
 
 .timer-box {
-  background: #f43f5e;
-  color: white;
+  background: var(--danger-color);
+  color: var(--white-color);
   padding: 0.8rem 1.2rem;
   border-radius: 8px;
   text-align: center;
   min-width: 80px;
-  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+  box-shadow: var(--box-shadow);
 }
 
 .timer-value {

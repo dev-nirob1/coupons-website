@@ -11,18 +11,19 @@ html {
   --roboto-font: 'Roboto', serif;
 
   --primary-color: #63C8D4;
+  --primary-light-color: #A3FEFF;
+  --primary-lighten-color: #D0F1F8;
   --secondary-color: #002E5B;
   --alternative-color: #F69052;
   --dark-color: #212529;
   --light-color: #585B5E;
+  --white-color: #fff;
+  --border-color: #DEE2E6;
 
 
   --danger-color: #DC3545;
   --warning-color: #FFC107;
   --success-color: #198754;
-  --white-color: #fff;
-  --border-color: #DEE2E6;
-  /* --alternative-color: #f43f5e; */
   /* ---------------typography------------ */
   /* headings  */
   --heading-1: 1.5rem;
@@ -31,8 +32,8 @@ html {
   --heading-4: 1.125rem;
 
   /* box shadows  */
-  --testimonials-card-shadow: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --testimonials-card-shadow: 0 5px 20px 0 rgba(23, 44, 82, 0.293);
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.109);
 }
 
 body {

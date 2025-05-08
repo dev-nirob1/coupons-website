@@ -28,9 +28,9 @@
         </BaseButton>
       </div>
       <div class="img">
-        <img
-          src="https://images.unsplash.com/photo-1674620213535-9b2a2553ef40?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="">
+        <!-- <img
+          src="https://images.pexels.com/photos/17796/christmas-xmas-gifts-presents.jpg"
+          alt=""> -->
       </div>
     </div>
   </section>
@@ -41,6 +41,11 @@
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
+  background-image: url('https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  /* background-blend-mode: darken; */
 }
 
 .hero .content {
@@ -57,7 +62,7 @@
 
 .hero .hero-title .highlight {
   font-size: 1.75rem;
-  border-bottom: 3px solid var(--alternative-color);
+ background-color: var(--alternative-color);
 }
 
 .hero .hero-title .font-big {

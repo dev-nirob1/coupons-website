@@ -13,21 +13,22 @@ const { data: pricing = [] } = useQuery({
 </script>
 
 <template>
-  <section class="pricing container">
-
-    <BaseTitle class="flex">Simple <span class="text-secondary"> Pricing</span>
-      <hr>
-    </BaseTitle>
-    <div class="medium-3 gap-1 medium-gap-2">
-      <div v-for="data in pricing" :key=data.id class="pricing-card">
-        <span class="icon">
-      <i class="fa-solid fa-circle-dollar-to-slot"></i>
-    </span>
-        <!-- <BaseImage src="/price-list.png" /> -->
-        <BaseTitle tag="h5">{{ data.name }}</BaseTitle>
-        <HeroTitle>${{ data.price }} <span>/month</span></HeroTitle>
-        <BaseParagraph>{{ data.details }}</BaseParagraph>
-        <BaseButton class="bg-white">Buy Now</BaseButton>
+  <section class="pricing">
+    <div class="container">
+      <BaseTitle class="flex">Simple <span class="text-secondary"> Pricing</span>
+        <hr>
+      </BaseTitle>
+      <div class="medium-3 gap-1 medium-gap-2">
+        <div v-for="data in pricing" :key=data.id class="pricing-card">
+          <span class="icon">
+            <i class="fa-solid fa-circle-dollar-to-slot"></i>
+          </span>
+          <!-- <BaseImage src="/price-list.png" /> -->
+          <BaseTitle tag="h5">{{ data.name }}</BaseTitle>
+          <HeroTitle>${{ data.price }} <span>/month</span></HeroTitle>
+          <BaseParagraph>{{ data.details }}</BaseParagraph>
+          <BaseButton class="bg-white">Buy Now</BaseButton>
+        </div>
       </div>
     </div>
   </section>
@@ -36,21 +37,22 @@ const { data: pricing = [] } = useQuery({
 <style scoped>
 .pricing {
   padding: 4rem .5rem;
+  background: var(--primary-lighten-color);
 }
+
 .pricing h3 {
   margin-top: 0;
 }
-.pricing-card span {
-  font-size: 4rem;
-}
+
 .pricing-card {
   text-align: center;
-  border: 1px solid var(--border-color);
-  color: var(--white-color);
   border-radius: .75rem;
-  padding: 2rem 1rem;
-  background-color: var(--secondary-color);
+  padding: 3rem 2rem;
   transition: all .5s;
+}
+
+.pricing-card .icon {
+  font-size: 5rem;
 }
 
 .pricing-card:hover {
@@ -59,8 +61,7 @@ const { data: pricing = [] } = useQuery({
 }
 
 .pricing-card:hover .btn {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
+  background-color: var(--white-color);
 }
 
 .pricing-card img {

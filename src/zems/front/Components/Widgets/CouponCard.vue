@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <template>
-  <div :class="['coupon-card', couponData?.exclusive ? 'bg-danger' : 'bg-secondary']">
+  <div class="coupon-card">
 
     <div class="flex justify-between gap-1">
       <div>
@@ -41,8 +41,8 @@ defineProps({
 
 <style scoped>
 .coupon-card {
-  /* background-color: var(--secondary-color); */
-  color: var(--white-color);
+  background: linear-gradient(to bottom, var(--primary-lighten-color), var(--primary-light-color));
+  color: var(--secondary-color);
   padding: 2rem;
   border-radius: .75rem;
   overflow: hidden;

@@ -1,9 +1,9 @@
 <script setup>
-import LoadingCard from '@/components/Widgets/LoadingCard.vue';
+import LoadingCard from '@/components/widgets/LoadingCard.vue';
 import { computed } from 'vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 import CountDown from './CountDown.vue';
-const props = defineProps({
+defineProps({
   ending: {
     type: Array
   },
@@ -19,8 +19,8 @@ const props = defineProps({
 })
 // console.log(props);
 // console.log(props.ending);
-const leftCoupons = computed(() => props?.ending?.slice(0, 2) ?? []);
-const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
+// const leftCoupons = computed(() => props?.ending?.slice(0, 2) ?? []);
+// const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
 </script>
 
 <template>
@@ -39,53 +39,37 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
           </div>
         </div>
         <!-- Coupon Cards Grid -->
-        <div class="medium-span-2 medium-2 gap-1 medium-gap-2">
-          <div class="left flex flex-col gap-1">
-            <template v-if="isLoading">
-              <LoadingCard v-for="(l, i) in 2" :key="i" />
-            </template>
-            <template v-else>
-              <CouponCard v-for="couponData in leftCoupons" :couponData="couponData" :key="couponData.id"
-                :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
-            </template>
+        <div class="medium-span-2">
+          <div class="masonry-grid">
+            <CouponCard v-for="(couponData, i) in ending" :key="couponData.id" :class="{ 'first-col': i === 0 }"
+              class="masonry-item" />
           </div>
-
-          <div class="right flex flex-col gap-1">
-            <template v-if="isLoading">
-              <LoadingCard v-for="(l, i) in 2" :key="i" />
-            </template>
-            <template v-else>
-              <CouponCard v-for="couponData in rightCoupons" :couponData="couponData" :key="couponData.id"
-                :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" />
-            </template>
-          </div>
-        </div>
-
-
-        <div style="border: 1px solid red;" class="medium-span-2 medium-2 gap-1 medium-gap-2">
-         <div>
-          <h2>Colums</h2>
-         </div>
-         <div style="height: 200px; border: 5px solid green">
-          <h2>Colums 2</h2>
-         </div>
-         <div style="height: 200px; border: 5px solid green">
-          <h2>Colums 2</h2>
-         </div>
-         <div style="height: 200px; border: 5px solid green">
-          <h2>Colums 2</h2>
-         </div>
-         <div style="height: 200px; border: 5px solid green">
-          <h2>Colums 2</h2>
-         </div>
         </div>
       </div>
+
     </div>
   </section>
 </template>
 
 
 <style scoped>
+.masonry-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: masonry;
+  align-items: start;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.masonry-item {
+  width: 100%;
+}
+
+.first-col {
+  margin-top: 3rem;
+}
+
 .ending-soon {
   padding: 2rem .5rem;
 }
@@ -148,12 +132,13 @@ const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
   }
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .ending-soon {
-  padding: 4rem .5rem;
-}
+    padding: 4rem .5rem;
+  }
+
   .left {
-  margin-top: 5rem;
-}
+    margin-top: 5rem;
+  }
 }
 </style>
