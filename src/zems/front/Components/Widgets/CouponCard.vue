@@ -94,7 +94,7 @@ defineProps({
 .card-footer .circle-1,
 .circle-2 {
   position: absolute;
-  top: -25px;
+  top: -27px;
   height: 50px;
   width: 50px;
   border-radius: 50%;

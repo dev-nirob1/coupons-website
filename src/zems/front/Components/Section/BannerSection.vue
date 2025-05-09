@@ -6,19 +6,24 @@
   <section class="hero bg-light">
     <div class="content container medium-2 align-center justify-between">
       <div class="text-content">
-        <HeroTitle class="text-white">
+        <div class="text-white">
+          <HeroTitle>Exclusive Coupons</HeroTitle>
+          <HeroTitle class="highlight">Huge Savings</HeroTitle>
+          <HeroTitle class="font-big">GRAB NOW!</HeroTitle>
+        </div>
+        <!-- <HeroTitle class="text-white">
           <span>
-            Exclusive Coupons
+
           </span>
           <br>
           <span class="highlight">
-            Huge Savings
+
           </span>
           <br>
-          <span class="font-big">
+          <span>
             GRAB NOW!
           </span>
-        </HeroTitle>
+        </HeroTitle> -->
         <BaseParagraph class="text-white">
           Unlock thousands of deals and save up to 80% at top retailers -
           verified coupons updated daily for maximum savings
@@ -28,9 +33,7 @@
         </BaseButton>
       </div>
       <div class="img">
-        <img
-          src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png"
-          alt="">
+        <img src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="">
       </div>
     </div>
   </section>
@@ -56,21 +59,22 @@
   margin: 0;
 }
 
-.hero .hero-title .highlight {
+.hero .hero-title.highlight {
+  display: inline-block;
   font-size: 1.75rem;
   padding: 1rem;
+  margin: .5rem 0;
   background-color: var(--primary-lighten-color);
   color: var(--primary-color);
 }
 
-.hero .hero-title .font-big {
+.hero .hero-title.font-big {
   font-size: 3.5rem;
 }
 
 .hero .btn {
   background-color: var(--alternative-color);
   color: var(--white-color);
-  /* border-radius: 2rem; */
   font-size: 1.25rem;
   padding: 1rem 1.75rem;
 }
@@ -93,9 +97,7 @@
   height: 100%;
 }
 
-
 @media (min-width: 768px) {
-
   .hero .content {
     margin-top: 3rem;
   }

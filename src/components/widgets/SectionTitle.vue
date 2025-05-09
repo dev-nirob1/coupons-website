@@ -68,6 +68,7 @@ defineProps({
   z-index: 1;
 }
 
+
 .coupon-title .title {
   margin: 0;
   text-align: center;
