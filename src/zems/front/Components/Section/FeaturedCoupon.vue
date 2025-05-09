@@ -1,5 +1,6 @@
 <script setup>
 import LoadingCard from '@/components/widgets/LoadingCard.vue';
+import SectionTitle from '@/components/widgets/SectionTitle.vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 defineProps({
   featured: {
@@ -21,12 +22,7 @@ defineProps({
 <template>
   <section class="featured-coupon container">
     <!-- Section Header -->
-    <div class="mb-3">
-      <BaseTitle class="flex">Featured
-        <span class="text-secondary">Coupons</span>
-        <hr>
-      </BaseTitle>
-    </div>
+   <SectionTitle title="Featured Coupon" class="justify-center text-secondary"/>
     <!-- Coupon Grid -->
     <div class="medium-3 gap-2">
       <template v-if="isLoading">
@@ -54,7 +50,7 @@ defineProps({
 </template>
 <style scoped>
 .featured-coupon {
-  padding: 2rem .5rem;
+  padding: 5rem .5rem;
 }
 
 .featured-coupon h3 {

@@ -16,10 +16,10 @@ defineProps({
 <template>
   <div class="coupon-card">
 
-    <div class="flex justify-between gap-1">
+    <div class="card-body">
       <div>
         <BaseTitle tag="h5">{{ couponData?.name }}</BaseTitle>
-        <BaseParagraph>{{ couponData?.details }}</BaseParagraph>
+        <BaseParagraph>{{ couponData?.details < 15 ? couponData.details : couponData.details.substring(0, 50) }}...</BaseParagraph>
       </div>
       <div>
         <span>Flat</span>
@@ -28,10 +28,10 @@ defineProps({
         <BaseTitle v-else class="price">{{ couponData?.discount }} <span>$</span></BaseTitle>
       </div>
     </div>
-    <div class="card-footer pt-1">
+    <div class="card-footer">
       <div class="flex justify-between align-center">
         <BaseParagraph>Validity: {{ couponData?.expire_date }}</BaseParagraph>
-        <BaseButton @click='handleOpenModal' class="bg-white">Get Code</BaseButton>
+        <BaseButton @click='handleOpenModal' class="bg-white text-secondary">Get Code</BaseButton>
       </div>
       <div class="circle-1"></div>
       <div class="circle-2"></div>
@@ -41,20 +41,30 @@ defineProps({
 
 <style scoped>
 .coupon-card {
-  background: linear-gradient(to bottom, var(--primary-lighten-color), var(--primary-light-color));
+  position: relative;
+  background: linear-gradient(30deg, var(--primary-lighten-color), var(--primary-light-color));
   color: var(--secondary-color);
-  padding: 2rem;
+  padding: 2rem 2rem 6rem 2rem;
   border-radius: .75rem;
   overflow: hidden;
 }
 
+.card-body{
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
 
 .coupon-card h5 {
-  margin: 0 0 10px 0;
+  margin: 0;
+}
+.coupon-card p {
+  margin-top: .5rem;
 }
 
 .coupon-card h3 {
-  margin-top: 10px;
+  margin: 0;
 }
 
 .coupon-card .price {
@@ -65,13 +75,22 @@ defineProps({
 .coupon-card .price span {
   font-size: 1.5rem;
 }
-
 .card-footer {
-  position: relative;
-  border-top: 5px dashed #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6rem;
+  width: 100%;
+  padding: 1.5rem;
+  /* position: relative; */
+  border-top: 5px dashed var(--primary-color);
   text-align: center;
+  background-color: rgb(from var(--primary-color) r g b/ 30%);
 }
-
+.card-footer .btn {
+  margin: 0;
+  border-radius: .5rem;
+}
 .card-footer .circle-1,
 .circle-2 {
   position: absolute;
@@ -79,15 +98,14 @@ defineProps({
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: var(--white-color);
+  background-color: #faf9f6;
+  z-index: 9999;
 }
-
 .circle-1 {
-  left: -55px;
+  left: -25px;
 }
-
 /* Right circle */
 .circle-2 {
-  right: -55px;
+  right: -25px;
 }
 </style>

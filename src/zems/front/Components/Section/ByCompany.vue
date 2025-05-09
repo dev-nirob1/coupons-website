@@ -1,4 +1,5 @@
 <script setup>
+import SectionTitle from '@/components/widgets/SectionTitle.vue';
 import CompanyCard from '@/zems/front/Components/Widgets/CompanyCard.vue';
 // import LoadingSkeleton from '../widgets/LoadingSkeleton.vue';
 const companies = [
@@ -14,39 +15,41 @@ const companies = [
 <template>
   <section class="company-section">
     <div class="container">
-      <BaseTitle class="flex">Company <span class="text-primary"> Offer</span>
-      <hr>
-    </BaseTitle>
-    <div class="medium-4 gap-1 medium-gap-2">
-      <!-- loading skeleton  -->
-      <!-- <LoadingSkeleton /> -->
-      <!-- company data  -->
-      <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
 
-      <div class="medium-span-2">
-        <!-- link card/btn -->
-        <RouterLink class="link-card" to="/companies">
-          <div class="all-4 gap-1 align-center">
-            <div>
-              <BaseImage image="/company/store.png" />
+      <SectionTitle class="justify-center text-primary" title="Company Offer" />
+
+      <div class="medium-4 gap-1 medium-gap-2">
+        <!-- loading skeleton  -->
+        <!-- <template>
+          <LoadingSkeleton v-for="(load, i) in 8" :key="i" />
+        </template> -->
+        <!-- company data  -->
+        <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
+
+        <div class="medium-span-2">
+          <!-- link card/btn -->
+          <RouterLink class="link-card" to="/companies">
+            <div class="all-4 gap-1 align-center">
+              <div>
+                <BaseImage image="/company/store.png" />
+              </div>
+              <div class="span-3">
+                <SubTitle>Explore All Partner Companies</SubTitle>
+                <BaseParagraph> Discover our full network of trusted partners and browse their exclusive offers. Click
+                  to
+                  view all available companies.</BaseParagraph>
+              </div>
             </div>
-            <div class="span-3">
-              <SubTitle>Explore All Partner Companies</SubTitle>
-              <BaseParagraph> Discover our full network of trusted partners and browse their exclusive offers. Click to
-                view all available companies.</BaseParagraph>
-            </div>
-          </div>
-        </RouterLink>
+          </RouterLink>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 </template>
 
 <style scoped>
 .company-section {
-  padding: 2rem .5rem;
-  background: var(--primary-lighten-color);
+  padding: 5rem .5rem;
 }
 
 .link-card {
@@ -66,13 +69,16 @@ const companies = [
 .link-card:hover {
   transform: scale(1.02);
 }
+
 .link-card .sub-title {
   margin: 0;
 }
+
 .link-card p {
   margin-top: .5rem;
   margin-bottom: 0;
 }
+
 .link-card img {
   height: 100%;
   width: 100%;

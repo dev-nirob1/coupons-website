@@ -1,10 +1,12 @@
 <script setup>
 defineProps({
-  category: Object
+  category: Object,
+  i: Number
 })
 </script>
 
-<template>
+<template >
+ <template v-if="i < 4">
   <div class="category-card">
     <div class="bg-white p-2">
       <div class="category-image">
@@ -18,6 +20,7 @@ defineProps({
       </RouterLink>
     </div>
   </div>
+ </template>
 </template>
 
 

@@ -23,14 +23,14 @@
           Unlock thousands of deals and save up to 80% at top retailers -
           verified coupons updated daily for maximum savings
         </BaseParagraph>
-        <BaseButton class="bg-alternative text-white">
+        <BaseButton>
           Explore Now
         </BaseButton>
       </div>
       <div class="img">
-        <!-- <img
-          src="https://images.pexels.com/photos/17796/christmas-xmas-gifts-presents.jpg"
-          alt=""> -->
+        <img
+          src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png"
+          alt="">
       </div>
     </div>
   </section>
@@ -41,10 +41,6 @@
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
-  background-image: url('https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png');
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
   /* background-blend-mode: darken; */
 }
 
@@ -62,7 +58,9 @@
 
 .hero .hero-title .highlight {
   font-size: 1.75rem;
-  background-color: var(--alternative-color);
+  padding: 1rem;
+  background-color: var(--primary-lighten-color);
+  color: var(--primary-color);
 }
 
 .hero .hero-title .font-big {
@@ -70,6 +68,9 @@
 }
 
 .hero .btn {
+  background-color: var(--alternative-color);
+  color: var(--white-color);
+  /* border-radius: 2rem; */
   font-size: 1.25rem;
   padding: 1rem 1.75rem;
 }
@@ -88,7 +89,7 @@
 }
 
 .hero .content .img img {
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 
@@ -110,7 +111,6 @@
 
   .hero .hero-title .highlight {
     font-size: 2rem;
-    border-bottom: 3px solid var(--alternative-color);
   }
 
   .hero .hero-title .font-big {

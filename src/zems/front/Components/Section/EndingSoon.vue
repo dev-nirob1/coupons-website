@@ -1,6 +1,4 @@
 <script setup>
-import LoadingCard from '@/components/widgets/LoadingCard.vue';
-import { computed } from 'vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 import CountDown from './CountDown.vue';
 defineProps({
@@ -41,7 +39,7 @@ defineProps({
         <!-- Coupon Cards Grid -->
         <div class="medium-span-2">
           <div class="masonry-grid">
-            <CouponCard v-for="(couponData, i) in ending" :key="couponData.id" :class="{ 'first-col': i === 0 }"
+            <CouponCard v-for="couponData in ending" :key="couponData.id" :couponData="couponData"
               class="masonry-item" />
           </div>
         </div>
@@ -50,7 +48,6 @@ defineProps({
     </div>
   </section>
 </template>
-
 
 <style scoped>
 .masonry-grid {
@@ -71,7 +68,8 @@ defineProps({
 }
 
 .ending-soon {
-  padding: 2rem .5rem;
+  padding: 5rem .5rem;
+  background-color: var(--secondary-color);
 }
 
 .ending-soon h3 {

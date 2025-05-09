@@ -1,4 +1,5 @@
 <script setup>
+import SectionTitle from '@/components/widgets/SectionTitle.vue';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 
@@ -15,20 +16,21 @@ const { data: pricing = [] } = useQuery({
 <template>
   <section class="pricing">
     <div class="container">
-      <BaseTitle class="flex">Simple <span class="text-secondary"> Pricing</span>
-        <hr>
-      </BaseTitle>
+      <SectionTitle title="Simple Pricing" class="justify-center text-secondary"></SectionTitle>
 
-      <div class="medium-3 gap-1 medium-gap-2">
-        <div v-for="data in pricing" :key=data.id class="pricing-card">
-          <span class="icon">
-            <i class="fa-solid fa-circle-dollar-to-slot"></i>
-          </span>
-          <!-- <BaseImage src="/price-list.png" /> -->
-          <BaseTitle tag="h5">{{ data.name }}</BaseTitle>
-          <HeroTitle>${{ data.price }} <span>/month</span></HeroTitle>
-          <BaseParagraph>{{ data.details }}</BaseParagraph>
-          <BaseButton>Buy Now</BaseButton>
+      <div class="medium-3 gap-1 align-center medium-gap-2">
+        <div v-for="data in pricing" :key=data.id>
+          <div class="pricing-card">
+            <p v-if="data.is_featured" class="bg-alternative p-1 text-white">Exclusive</p>
+            <span class="icon">
+              <i class="fa-solid fa-circle-dollar-to-slot"></i>
+            </span>
+            <!-- <BaseImage src="/price-list.png" /> -->
+            <BaseTitle tag="h5">{{ data.name }}</BaseTitle>
+            <HeroTitle>${{ data.price }} <span>/month</span></HeroTitle>
+            <BaseParagraph>{{ data.details }}</BaseParagraph>
+            <BaseButton>Buy Now</BaseButton>
+          </div>
         </div>
       </div>
     </div>

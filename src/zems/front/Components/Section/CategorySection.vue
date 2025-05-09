@@ -1,5 +1,6 @@
 <script setup>
 import LoadingSkeleton from '@/components/widgets/LoadingSkeleton.vue';
+import SectionTitle from '@/components/widgets/SectionTitle.vue';
 import CategoryCard from '@/zems/front/Components/Widgets/CategoryCard.vue';
 defineProps({
   categories: {
@@ -9,28 +10,28 @@ defineProps({
     type: Boolean
   }
 })
+
 </script>
 
 <template>
   <section class="categories">
     <div class="container">
-      <BaseTitle class="text-dark flex">
-        Browse <span class="text-primary">Categories</span>
-        <hr />
-      </BaseTitle>
+      <SectionTitle title="Browse Category" class="justify-center" />
       <!-- loading skeleton  -->
       <div class="medium-2 large-5 gap-1 medium-gap-2">
         <template v-if="isLoading">
           <LoadingSkeleton v-for="(load, i) in 5" :key="i" />
         </template>
+
         <template v-else>
-          <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
+          <CategoryCard v-for="(category, i) in categories" :i="i" :category="category" :key="category.id" />
+
           <!-- link button  -->
           <RouterLink class="link-card" to="/categories">
             <div class="flex flex-col justify-center align-center text-center">
               <div class="image">
-              <BaseImage image="/categories.png" />
-            </div>
+                <BaseImage image="/categories.png" />
+              </div>
               <div>
                 <SubTitle>Explore All</SubTitle>
                 <BaseParagraph>View our complete collection of products across all categories</BaseParagraph>
@@ -46,7 +47,7 @@ defineProps({
 <style scoped>
 .categories {
   transition: all .3s ease;
-  padding: 2rem .5rem;
+  padding: 5rem .5rem;
 }
 
 .link-card {
@@ -63,11 +64,18 @@ defineProps({
   border-radius: 1rem;
   transition: all .3s ease-in-out;
 }
+
 .link-card .sub-title {
   margin: 0;
 }
+
 .link-card p {
   margin-top: .5rem;
+}
+.link-card img {
+  height: 80px;
+  width: 80px;
+  margin-bottom: .5rem;
 }
 
 .link-card:hover {
