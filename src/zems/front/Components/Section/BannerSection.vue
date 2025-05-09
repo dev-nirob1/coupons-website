@@ -21,7 +21,7 @@
         </BaseButton>
       </div>
       <div class="img">
-        <img src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="">
+        <BaseImage src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="" />
       </div>
     </div>
   </section>
@@ -32,7 +32,6 @@
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
-  /* background-blend-mode: darken; */
 }
 
 .hero .content {

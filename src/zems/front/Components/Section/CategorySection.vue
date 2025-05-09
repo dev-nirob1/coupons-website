@@ -82,10 +82,4 @@ defineProps({
   transform: scale(1.02);
 }
 
-hr {
-  flex: 1;
-  border: none;
-  margin: 15px 0;
-  border-bottom: 3px solid var(--primary-color);
-}
 </style>

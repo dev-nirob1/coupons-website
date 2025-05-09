@@ -15,7 +15,6 @@ defineProps({
 
 <template>
   <div class="coupon-card">
-
     <div class="card-body">
       <div>
         <SubTitle>{{ couponData?.name }}</SubTitle>

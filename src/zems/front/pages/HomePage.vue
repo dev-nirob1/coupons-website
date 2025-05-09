@@ -41,38 +41,41 @@ const handleOpenModal = () => {
 <template>
   <PopUp :handleCloseModal="handleCloseModal" :isModalOpen="isModalOpen">
     <div class="coupon-details">
-    <div class="bg-secondary relative">
-      <BaseTitle>Ramadan Offer</BaseTitle>
-      <div class="discount">
-        <BaseTitle tag="h5">20% OFF</BaseTitle>
-      </div>
-    </div>
-    <div>
-      <div class="flex align-center">
-        <i class="fa-solid fa-stopwatch text-secondary"></i> &nbsp; Exprie date: &nbsp; <p>2025-04-28</p>
-      </div>
-      <div class="flex align-center">
-        <i class="fa-solid fa-tag text-secondary"></i> &nbsp; Category: &nbsp; Ramadan
+      <div class="bg-secondary relative">
+        <BaseTitle>Ramadan Offer</BaseTitle>
+        <div class="discount">
+          <BaseTitle tag="h5">20% OFF</BaseTitle>
+        </div>
       </div>
       <div>
-        <BaseParagraph>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates et iusto fuga quidem veniam accusamus pariatur voluptatibus doloribus, soluta necessitatibus suscipit exercitationem libero commodi dignissimos? Voluptate facere nemo tenetur consequuntur!</BaseParagraph>
+        <div class="flex align-center">
+          <i class="fa-solid fa-stopwatch text-secondary"></i> &nbsp; Exprie date: &nbsp; <p>2025-04-28</p>
+        </div>
+        <div class="flex align-center">
+          <i class="fa-solid fa-tag text-secondary"></i> &nbsp; Category: &nbsp; Ramadan
+        </div>
+        <div>
+          <BaseParagraph>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates et iusto fuga quidem
+            veniam accusamus pariatur voluptatibus doloribus, soluta necessitatibus suscipit exercitationem libero
+            commodi dignissimos? Voluptate facere nemo tenetur consequuntur!</BaseParagraph>
+        </div>
+        <BaseParagraph class="text-danger">TODO: Add button for logged-in users (show everywhere except dashboard)
+        </BaseParagraph>
+        <BaseButton class="btn bg-secondary width-full text-white">Get Code</BaseButton>
       </div>
-      <BaseParagraph class="text-danger">TODO: Add button for logged-in users (show everywhere except dashboard)</BaseParagraph>
-      <BaseButton class="btn bg-secondary width-full text-white">Get Code</BaseButton>
+      <BaseParagraph class="text-center text-light">
+        Terms & Conditions Apply
+      </BaseParagraph>
     </div>
-    <BaseParagraph class="text-center text-light">
-      Terms & Conditions Apply
-    </BaseParagraph>
-  </div>
   </PopUp>
 
   <BannerSection />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
-  <AboutUs/>
+  <AboutUs />
   <FeaturedCoupon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
-  :featured="data?.featured" :isLoading="isLoading" />
+    :featured="data?.featured" :isLoading="isLoading" />
   <EndingSoon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
-  :ending="data?.ending" :isLoading="isLoading" />
+    :ending="data?.ending" :isLoading="isLoading" />
 
 
   <ByCompany />
@@ -95,6 +98,7 @@ const handleOpenModal = () => {
   text-align: center;
   color: var(--white-color);
 }
+
 .discount {
   position: absolute;
   right: 20px;
