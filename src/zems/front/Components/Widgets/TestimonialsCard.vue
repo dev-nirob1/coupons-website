@@ -1,12 +1,12 @@
 <script setup>
 defineProps({
-  i : {
+  i: {
     type: Number
   }
 })
 </script>
 <template>
-  <div class="testimonial">
+  <div class="testimonial-card">
     <div class="flex align-center gap-1">
       <BaseImage image="/author.jpg" />
       <div>
@@ -17,7 +17,6 @@ defineProps({
       </div>
     </div>
     <div class="flex">
-     index {{ i }}
       <BaseParagraph>
         <i class="fa-solid fa-quote-left fa-2x"></i> Precious ipsum dolor sit amet
         consectetur adipisicing elit, sed dos
@@ -31,26 +30,27 @@ defineProps({
   </div>
 </template>
 <style scoped>
-.testimonial {
+.testimonial-card {
   flex: 0 0 auto;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   width: 300px;
-  height: 280px;
-  background:#F0F0F0;
-  border-radius: 8px;
+  min-height: 280px;
+  background: var(--white-color);
+  border-radius: .5rem;
   box-shadow: var(--box-shadow);
 }
 
-.testimonial h5 {
+
+.testimonial-card h5 {
   margin: 0;
   padding: 0;
 }
 
-.testimonial p {
+.testimonial-card p {
   margin: 10px 0 0 0;
 }
 
-.testimonial img {
+.testimonial-card img {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;

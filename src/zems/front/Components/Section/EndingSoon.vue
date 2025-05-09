@@ -1,6 +1,7 @@
 <script setup>
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
 import CountDown from './CountDown.vue';
+import ClockCompo from '../Widgets/ClockCompo.vue';
 defineProps({
   ending: {
     type: Array
@@ -20,125 +21,58 @@ defineProps({
 <template>
   <section class="ending-soon">
     <div class="container">
-      <div class="medium-3 gap-2">
-        <div class=" flex flex-col justify-center align-center">
-          <div class="text-center">
+      <div class="medium-2 large-3 gap-2">
+        <div class="flex flex-col justify-center align-center text-center">
+          <div>
             <BaseTitle>Ending In</BaseTitle>
-            <SubTitle>Grab these deals before they expire!</SubTitle>
-            <div class="clock">
-              <div class="hour-hand"></div>
-              <div class="minute-hand"></div>
-            </div>
+            <SubTitle class="mb-2">Grab these deals before they expire!</SubTitle>
+
+            <ClockCompo />
             <CountDown />
           </div>
         </div>
         <!-- Coupon Cards Grid -->
-        <div class="medium-span-2">
+        <div class="large-span-2">
           <div class="masonry-grid">
             <div v-for="couponData in ending" :key="couponData.id" class="masonry-item">
-            <CouponCard :couponData="couponData" :isModalOpen="isModalOpen" :handleOpenModal="handleOpenModal" />
+              <CouponCard :couponData="couponData" :isModalOpen="isModalOpen" :handleOpenModal="handleOpenModal" />
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </template>
 
 <style scoped>
-.masonry-grid {
-  columns: 2;
-  row-gap: 2rem;
-  column-gap: 2rem;
-}
-
-.masonry-item {
-  margin-bottom: 2rem;
-}
-.masonry-item:nth-child(1){
-  margin-top: 5rem;
-}
-
-.first-col {
-  margin-top: 3rem;
-}
-
 .ending-soon {
-  padding: 5rem .5rem;
+  padding: 3rem .5rem;
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
-
-.ending-soon .card-footer .circle-1,
-.ending-soon .card-footer .circle-2 {
-  background-color: var(--secondary-color);
+.ending-soon .sub-title {
+  margin-top: .5rem;
 }
-
-.ending-soon h3 {
-  margin-bottom: 0;
-}
-
-.ending-soon h5 {
-  margin-top: 15px;
-}
-
-.clock {
-  width: 150px;
-  height: 150px;
-  border: 6px solid var(--danger-color);
-  border-radius: 50%;
-  position: relative;
-  margin: 0 auto;
-}
-
-.clock::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: var(--danger-color);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hour-hand {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 4px;
-  height: 40px;
-  background: var(--danger-color);
-  transform-origin: bottom;
-  transform: translate(-50%, -100%) rotate(30deg);
-}
-
-.minute-hand {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 3px;
-  height: 60px;
-  background: var(--danger-color);
-  transform-origin: bottom;
-  transform: translate(-50%, -100%) rotate(0deg);
-  animation: spin 10s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
+.masonry-item {
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .ending-soon {
     padding: 4rem .5rem;
   }
+}
 
-  .left {
+@media (min-width: 992px) {
+  .ending-soon {
+    padding: 5rem .5rem;
+  }
+  .masonry-grid {
+    columns: 2;
+    row-gap: 2rem;
+    column-gap: 2rem;
+  }
+  .masonry-item:nth-child(1) {
     margin-top: 5rem;
   }
 }

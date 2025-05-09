@@ -4,7 +4,7 @@ const currentYear = new Date().getFullYear();
 
 </script>
 <template>
-  <footer class="coupon-footer">
+  <footer class="footer">
     <div class="container medium-2 large-4 gap-2 p-2">
       <div>
         <div class="logo">
@@ -61,15 +61,15 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <div class="newsletter">
+      <div>
         <BaseTitle tag="h5">Get Exclusive Deals</BaseTitle>
         <BaseParagraph>Subscribe to receive special offers before anyone else</BaseParagraph>
 
         <form class="subscribe-form">
           <InputField type="email" placeholder="Your email address" required />
-          <button type="submit" class="btn">
+          <BaseButton type="submit">
             <i class="fas fa-paper-plane"></i>
-          </button>
+          </BaseButton>
         </form>
       </div>
     </div>
@@ -84,17 +84,19 @@ const currentYear = new Date().getFullYear();
 
 
 <style scoped>
-.coupon-footer {
+.footer {
   margin-top: 5rem;
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
 
-.coupon-footer h5 {
-  margin-top: 0;
+.footer h5 {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
 }
 
-.coupon-footer .logo {
+.footer .logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -102,7 +104,7 @@ const currentYear = new Date().getFullYear();
   font-weight: 700;
 }
 
-.coupon-footer .logo img {
+.footer .logo img {
   height: 50px;
   width: 50px;
 }
@@ -130,22 +132,17 @@ const currentYear = new Date().getFullYear();
   transition: all 0.3s ease;
 }
 
-.coupon-footer h5 {
-  position: relative;
-  padding-bottom: 0.75rem;
-}
-
-.coupon-footer h5::after {
+.footer h5::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: 0;
   width: 70px;
-  height: 5px;
+  height: 3px;
   background-color: var(--primary-color);
 }
 
-.footer-links {
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -154,7 +151,7 @@ const currentYear = new Date().getFullYear();
   gap: 1rem;
 }
 
-.footer-links a {
+ul a {
   text-decoration: none;
   transition: all 0.3s ease;
   display: flex;
@@ -162,7 +159,7 @@ const currentYear = new Date().getFullYear();
   gap: 0.5rem;
 }
 
-.footer-links a::before {
+ul a::before {
   content: '→';
   color: var(--primary-color);
   opacity: 0;
@@ -170,12 +167,12 @@ const currentYear = new Date().getFullYear();
   transition: all 0.3s ease;
 }
 
-.footer-links a:hover {
+ul a:hover {
   color: var(--primary-color);
   padding-left: 5px;
 }
 
-.footer-links a:hover::before {
+ul a:hover::before {
   opacity: 1;
   display: block;
 }

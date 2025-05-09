@@ -31,11 +31,9 @@ defineProps({
 .company-card:hover {
   transform: translateY(-10px);
 }
-
 .company-card h3 {
-  margin: 10px;
+  margin: .5rem;
 }
-
 .company-card img {
   height: 80px;
   width: 80px;

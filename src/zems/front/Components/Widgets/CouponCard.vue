@@ -18,8 +18,9 @@ defineProps({
 
     <div class="card-body">
       <div>
-        <BaseTitle tag="h5">{{ couponData?.name }}</BaseTitle>
-        <BaseParagraph>{{ couponData?.details < 15 ? couponData.details : couponData.details.substring(0, 50) }}...</BaseParagraph>
+        <SubTitle>{{ couponData?.name }}</SubTitle>
+        <BaseParagraph>{{ couponData?.details < 15 ? couponData.details : couponData.details.substring(0, 50)
+            }}...</BaseParagraph>
       </div>
       <div>
         <span>Flat</span>
@@ -49,22 +50,15 @@ defineProps({
   overflow: hidden;
 }
 
-.card-body{
+.card-body {
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.coupon-card h5 {
-  margin: 0;
-}
 .coupon-card p {
   margin-top: .5rem;
-}
-
-.coupon-card h3 {
-  margin: 0;
 }
 
 .coupon-card .price {
@@ -75,6 +69,7 @@ defineProps({
 .coupon-card .price span {
   font-size: 1.5rem;
 }
+
 .card-footer {
   position: absolute;
   bottom: 0;
@@ -87,10 +82,12 @@ defineProps({
   text-align: center;
   background-color: rgb(from var(--primary-color) r g b/ 30%);
 }
+
 .card-footer .btn {
   margin: 0;
   border-radius: .5rem;
 }
+
 .card-footer .circle-1,
 .circle-2 {
   position: absolute;
@@ -108,4 +105,5 @@ defineProps({
 .circle-2 {
   right: -25px;
 }
+
 </style>

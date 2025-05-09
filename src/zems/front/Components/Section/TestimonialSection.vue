@@ -4,14 +4,15 @@ import TestimonialsCard from '@/zems/front/Components/Widgets/TestimonialsCard.v
 
 onMounted(() => {
   const owlCarousel = () => {
-    const cardList = document.getElementsByClassName('testimonial');
-    const cardContainer = document.querySelector('.cards-scroll-container')
+    const cardList = document.getElementsByClassName('testimonial-card');
+    const cardContainer = document.querySelector('.cards-container')
     const prevBtn = document.getElementById('prev')
     const nextBtn = document.getElementById('next')
 
-    const cardWidth = cardList[0].offsetWidth + 16
+    const cardWidth = cardList[0].offsetWidth + 32
     let cardIndex = 0;
-    console.log(cardList.length);
+
+    // console.log(cardList.length);
     nextBtn.addEventListener('click', () => {
       // todo: nextBtn logic in individual function
       if (cardIndex < cardList.length - 1) {
@@ -44,14 +45,14 @@ onMounted(() => {
     })
   }
   owlCarousel()
+
 })
 </script>
 
 <template>
   <div class="testimonials bg-white">
-    <div class="medium-8 align-center container">
-      <div class="span-3 text-center">
-
+    <div class="medium-8 gap-1 medium-gap-2 align-center container">
+      <div class="span-3 text-center p-2">
         <BaseTitle>Feedback &
           <br> Testimonials
         </BaseTitle>
@@ -60,12 +61,12 @@ onMounted(() => {
         </BaseParagraph>
       </div>
       <div class="span-5">
-        <div class="cards-scroll-container">
-          <TestimonialsCard v-for="(item, i) in 6" :key="i" :i="i" />
+        <div class="cards-container">
+          <TestimonialsCard v-for="i in 6" :key="i"/>
         </div>
         <div class="flex gap-1">
-          <button class="btn bg-white" id="prev">Prev</button>
-          <button class="btn bg-white" id="next">Next</button>
+          <button class="bg-white" id="prev">Prev</button>
+          <button class="bg-white" id="next">Next</button>
         </div>
       </div>
     </div>
@@ -73,6 +74,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
 .testimonials {
   padding: 5rem .5rem;
 }
@@ -81,16 +83,16 @@ onMounted(() => {
   margin-top: 0;
 }
 
-.cards-scroll-container {
+.cards-container {
   width: 100%;
   overflow: auto;
-  padding-bottom: 1rem;
+  padding: 1rem;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   transition: all .5s ease-in-out;
 }
 
-.cards-scroll-container::-webkit-scrollbar {
+.cards-container::-webkit-scrollbar {
   display: none;
 }
 </style>

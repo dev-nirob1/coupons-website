@@ -35,19 +35,19 @@
 
 <template>
   <div class="countdown-timer">
-        <div class="timer-box">
-          <span class="timer-value">11</span>
-          <span class="timer-label">Hours</span>
-        </div>
-        <div class="timer-box">
-          <span class="timer-value">59</span>
-          <span class="timer-label">Minutes</span>
-        </div>
-        <div class="timer-box">
-          <span class="timer-value">59</span>
-          <span class="timer-label">Seconds</span>
-        </div>
-      </div>
+    <div>
+      <BaseTitle tag="h4">11</BaseTitle>
+      <span>Hours</span>
+    </div>
+    <div>
+      <BaseTitle tag="h4">59</BaseTitle>
+      <span>Minutes</span>
+    </div>
+    <div>
+      <BaseTitle tag="h4">59</BaseTitle>
+      <span>Seconds</span>
+    </div>
+  </div>
 </template>
 
 <style>
@@ -59,27 +59,12 @@
   margin: 2rem 0;
 }
 
-.timer-box {
+.countdown-timer>div {
   background: var(--danger-color);
-  color: var(--white-color);
-  padding: 0.8rem 1.2rem;
+  height: 6rem;
+  width: 6rem;
+  padding: .75rem 1rem;
   border-radius: 8px;
-  text-align: center;
-  min-width: 80px;
-  box-shadow: var(--box-shadow);
 }
 
-.timer-value {
-  font-size: 1.8rem;
-  font-weight: 700;
-  display: block;
-  line-height: 1;
-}
-
-.timer-label {
-  font-size: 0.7rem;
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 </style>

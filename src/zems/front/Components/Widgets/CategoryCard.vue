@@ -8,7 +8,7 @@ defineProps({
 <template >
  <template v-if="i < 4">
   <div class="category-card">
-    <div class="bg-white p-2">
+    <div class="p-2">
       <div class="category-image">
         <BaseImage :image="category?.icon || '/categories/health.png'" />
       </div>
@@ -16,7 +16,7 @@ defineProps({
       <small>{{ Object.keys(category.name).length }} deals</small>
     </div>
     <div class="category-overlay">
-      <RouterLink class="btn p-1 text-white bg-primary" :to="`/category_list/${category?.slug}`">Go to Category
+      <RouterLink class="btn" :to="`/category_list/${category?.slug}`">Go to Category
       </RouterLink>
     </div>
   </div>
@@ -26,8 +26,9 @@ defineProps({
 
 <style scoped>
 .category-card {
+  background-color: var(--white-color);
   text-align: center;
-  border-radius: 12px;
+  border-radius: .75rem;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -55,7 +56,7 @@ defineProps({
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,8 +64,12 @@ defineProps({
   transition: opacity 0.3s ease;
   z-index: 999;
 }
-
 .category-card:hover .category-overlay {
   opacity: 1;
+}
+.category-overlay .btn {
+  padding: .75rem 1rem;
+  color: var(--white-color);
+  background-color: var(--alternative-color);
 }
 </style>

@@ -15,15 +15,10 @@ const companies = [
 <template>
   <section class="company-section">
     <div class="container">
-
-      <SectionTitle class="justify-center text-primary" title="Company Offer" />
+      <SectionTitle title="Company Offer" />
 
       <div class="medium-4 gap-1 medium-gap-2">
-        <!-- loading skeleton  -->
-        <!-- <template>
-          <LoadingSkeleton v-for="(load, i) in 8" :key="i" />
-        </template> -->
-        <!-- company data  -->
+
         <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
 
         <div class="medium-span-2">
@@ -58,8 +53,8 @@ const companies = [
   text-decoration: none;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   color: var(--white-color);
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   box-shadow: var(--box-shadow);
   padding: 1rem 3rem;
   border-radius: 1rem;
@@ -68,10 +63,6 @@ const companies = [
 
 .link-card:hover {
   transform: scale(1.02);
-}
-
-.link-card .sub-title {
-  margin: 0;
 }
 
 .link-card p {
@@ -84,10 +75,4 @@ const companies = [
   width: 100%;
 }
 
-hr {
-  flex: 1;
-  border: none;
-  margin: 15px 0;
-  border-bottom: 3px solid var(--primary-color);
-}
 </style>

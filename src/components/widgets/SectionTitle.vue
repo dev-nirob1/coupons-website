@@ -5,7 +5,7 @@ defineProps({
 </script>
 <template>
   <div class="coupon-container">
-    <div class="scissors"><i class="fas fa-barcode"></i></div>
+    <div class="bar-code"><i class="fas fa-barcode"></i></div>
     <div class="coupon-title">
       <BaseTitle>{{ title }}</BaseTitle>
     </div>
@@ -16,12 +16,13 @@ defineProps({
 .coupon-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 5rem;
   height: 6rem;
   overflow:hidden;
 }
 
-.scissors {
+.bar-code {
   font-size: 3rem;
   padding: .5rem;
   border: 5px dashed;
@@ -68,10 +69,4 @@ defineProps({
   z-index: 1;
 }
 
-
-.coupon-title .title {
-  margin: 0;
-  text-align: center;
-  width: 100%;
-}
 </style>
