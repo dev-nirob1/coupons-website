@@ -99,8 +99,8 @@ defineProps({
   width: 50px;
   border-radius: 50%;
   background-color: #faf9f6;
-  z-index: 9999;
 }
+
 .circle-1 {
   left: -25px;
 }

@@ -40,7 +40,7 @@ defineProps({
         <div class="medium-span-2">
           <div class="masonry-grid">
             <CouponCard v-for="couponData in ending" :key="couponData.id" :couponData="couponData"
-              class="masonry-item" />
+              class="masonry-item" :isModalOpen="isModalOpen" :handleOpenModal="handleOpenModal" />
           </div>
         </div>
       </div>
@@ -71,7 +71,10 @@ defineProps({
   padding: 5rem .5rem;
   background-color: var(--secondary-color);
 }
-
+.ending-soon .card-footer .circle-1,
+.ending-soon .card-footer .circle-2{
+  background-color: var(--secondary-color);
+}
 .ending-soon h3 {
   margin-bottom: 0;
 }

@@ -18,6 +18,7 @@ defineProps({
   align-items: center;
   margin-bottom: 5rem;
   height: 6rem;
+  overflow:hidden;
 }
 
 .scissors {
@@ -39,6 +40,32 @@ defineProps({
   height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.coupon-title::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: -16px;
+  height: 30px;
+  width: 30px;
+  background-color: #faf9f6;
+  border: 1px solid var(--white-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+.coupon-title::after {
+  content: '';
+  position: absolute;
+  top: 75px;
+  left: -16px;
+  height: 30px;
+  width: 30px;
+  background-color: #faf9f6;
+  border: 1px solid var(--white-color);
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .coupon-title .title {
