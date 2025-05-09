@@ -11,19 +11,7 @@
           <HeroTitle class="highlight">Huge Savings</HeroTitle>
           <HeroTitle class="font-big">GRAB NOW!</HeroTitle>
         </div>
-        <!-- <HeroTitle class="text-white">
-          <span>
 
-          </span>
-          <br>
-          <span class="highlight">
-
-          </span>
-          <br>
-          <span>
-            GRAB NOW!
-          </span>
-        </HeroTitle> -->
         <BaseParagraph class="text-white">
           Unlock thousands of deals and save up to 80% at top retailers -
           verified coupons updated daily for maximum savings

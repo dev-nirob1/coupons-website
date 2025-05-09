@@ -46,24 +46,24 @@ defineProps({
 .coupon-title::before {
   content: '';
   position: absolute;
-  top: -18px;
-  left: -16px;
+  top: -22px;
+  left: -22px;
   height: 30px;
   width: 30px;
   background-color: #faf9f6;
-  border: 1px solid var(--white-color);
+  border: 5px solid;
   border-radius: 50%;
   z-index: 1;
 }
 .coupon-title::after {
   content: '';
   position: absolute;
-  top: 75px;
-  left: -16px;
+  top: 70px;
+  left: -22px;
   height: 30px;
   width: 30px;
   background-color: #faf9f6;
-  border: 1px solid var(--white-color);
+  border: 5px solid;
   border-radius: 50%;
   z-index: 1;
 }

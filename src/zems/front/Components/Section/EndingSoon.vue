@@ -15,14 +15,10 @@ defineProps({
     type: Function
   }
 })
-// console.log(props);
-// console.log(props.ending);
-// const leftCoupons = computed(() => props?.ending?.slice(0, 2) ?? []);
-// const rightCoupons = computed(() => props?.ending?.slice(2, 4) ?? []);
 </script>
 
 <template>
-  <section class="ending-soon ">
+  <section class="ending-soon">
     <div class="container">
       <div class="medium-3 gap-2">
         <div class=" flex flex-col justify-center align-center">
@@ -39,8 +35,9 @@ defineProps({
         <!-- Coupon Cards Grid -->
         <div class="medium-span-2">
           <div class="masonry-grid">
-            <CouponCard v-for="couponData in ending" :key="couponData.id" :couponData="couponData"
-              class="masonry-item" :isModalOpen="isModalOpen" :handleOpenModal="handleOpenModal" />
+            <div v-for="couponData in ending" :key="couponData.id" class="masonry-item">
+            <CouponCard :couponData="couponData" :isModalOpen="isModalOpen" :handleOpenModal="handleOpenModal" />
+            </div>
           </div>
         </div>
       </div>
@@ -51,16 +48,16 @@ defineProps({
 
 <style scoped>
 .masonry-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: masonry;
-  align-items: start;
-  grid-auto-flow: dense;
-  grid-template-columns: repeat(2, 1fr);
+  columns: 2;
+  row-gap: 2rem;
+  column-gap: 2rem;
 }
 
 .masonry-item {
-  width: 100%;
+  margin-bottom: 2rem;
+}
+.masonry-item:nth-child(1){
+  margin-top: 5rem;
 }
 
 .first-col {
@@ -70,11 +67,14 @@ defineProps({
 .ending-soon {
   padding: 5rem .5rem;
   background-color: var(--secondary-color);
+  color: var(--white-color);
 }
+
 .ending-soon .card-footer .circle-1,
-.ending-soon .card-footer .circle-2{
+.ending-soon .card-footer .circle-2 {
   background-color: var(--secondary-color);
 }
+
 .ending-soon h3 {
   margin-bottom: 0;
 }
@@ -86,7 +86,7 @@ defineProps({
 .clock {
   width: 150px;
   height: 150px;
-  border: 6px solid #333;
+  border: 6px solid var(--danger-color);
   border-radius: 50%;
   position: relative;
   margin: 0 auto;
@@ -97,7 +97,7 @@ defineProps({
   position: absolute;
   width: 12px;
   height: 12px;
-  background: #333;
+  background: var(--danger-color);
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -110,7 +110,7 @@ defineProps({
   top: 50%;
   width: 4px;
   height: 40px;
-  background: var(--light-color);
+  background: var(--danger-color);
   transform-origin: bottom;
   transform: translate(-50%, -100%) rotate(30deg);
 }
@@ -121,7 +121,7 @@ defineProps({
   top: 50%;
   width: 3px;
   height: 60px;
-  background: var(--light-color);
+  background: var(--danger-color);
   transform-origin: bottom;
   transform: translate(-50%, -100%) rotate(0deg);
   animation: spin 10s linear infinite;
