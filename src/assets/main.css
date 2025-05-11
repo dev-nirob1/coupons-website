@@ -10,20 +10,19 @@ html {
   --montserrat-font: 'Montserrat', sans-serif;
   --roboto-font: 'Roboto', serif;
 
-  --primary-color: #63C8D4;
-  --primary-light-color: #A3FEFF;
-  --primary-lighten-color: #D0F1F8;
-  --primary-light-black-color: #ADBFBF;
-  --secondary-color: #002E5B;
-  --alternative-color: #F69052;
+  --primary-color: #63c8d4;
+  --primary-light-color: #a3feff;
+  --primary-lighten-color: #d0f1f8;
+  --primary-light-black-color: #adbfbf;
+  --secondary-color: #002e5b;
+  --alternative-color: #f69052;
   --dark-color: #212529;
-  --light-color: #585B5E;
+  --light-color: #585b5e;
   --white-color: #fff;
-  --border-color: #DEE2E6;
+  --border-color: #dee2e6;
 
-
-  --danger-color: #DC3545;
-  --warning-color: #FFC107;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
   --success-color: #198754;
   /* ---------------typography------------ */
   /* headings  */
@@ -82,7 +81,6 @@ h5 {
 
 h6 {
   font-size: var(--heading-6);
-  margin: 0;
 }
 .hero-title {
   font-size: var(--heading-1);
@@ -130,7 +128,7 @@ a {
 
 .bg-light {
   /* background-color: rgb(from var(--primary-color) r g b/ 5%); */
-  background-color: #D4EBFF;
+  background-color: #d4ebff;
 }
 
 .bg-primary {

@@ -10,7 +10,6 @@ defineProps({
     type: Boolean
   }
 })
-
 </script>
 
 <template>
@@ -39,7 +38,7 @@ defineProps({
   </div>
 </template>
 
-<style scoped>
+<style>
 .coupon-card {
   position: relative;
   background: linear-gradient(30deg, var(--primary-lighten-color), var(--primary-light-color));
@@ -88,7 +87,7 @@ defineProps({
 }
 
 .card-footer .circle-1,
-.circle-2 {
+.card-footer .circle-2 {
   position: absolute;
   top: -27px;
   height: 50px;

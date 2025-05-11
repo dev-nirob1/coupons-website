@@ -26,7 +26,6 @@ defineProps({
           <div>
             <BaseTitle>Ending In</BaseTitle>
             <SubTitle class="mb-2">Grab these deals before they expire!</SubTitle>
-
             <ClockCompo />
             <CountDown />
           </div>
@@ -44,17 +43,23 @@ defineProps({
   </section>
 </template>
 
-<style scoped>
+<style>
 .ending-soon {
   padding: 3rem .5rem;
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+
 .ending-soon .sub-title {
   margin-top: .5rem;
 }
+
 .masonry-item {
   margin-bottom: 2rem;
+}
+.ending-soon .card-footer .circle-1,
+.ending-soon .card-footer .circle-2 {
+  background-color: var(--secondary-color);
 }
 
 @media (min-width: 768px) {
@@ -67,11 +72,13 @@ defineProps({
   .ending-soon {
     padding: 5rem .5rem;
   }
+
   .masonry-grid {
     columns: 2;
     row-gap: 2rem;
     column-gap: 2rem;
   }
+
   .masonry-item:nth-child(1) {
     margin-top: 5rem;
   }
