@@ -19,15 +19,17 @@ defineProps({
   justify-content: center;
   margin-bottom: 5rem;
   height: 6rem;
-  overflow:hidden;
+  overflow: hidden;
 }
-
 .bar-code {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
   font-size: 3rem;
-  padding: .5rem;
-  border: 5px dashed;
+  border: 5px solid var(--secondary-color);
+  border-right: 5px dashed var(--white-color);
+  border-left: 5px dashed var(--white-color);
   height: 100%;
-  width: 6rem;
+  width: 8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,9 +37,9 @@ defineProps({
 
 .coupon-title {
   padding: 1rem 2rem;
-  border: 5px solid;
+  border: 5px solid var(--secondary-color);
   border-left: none;
-  border-right: 5px dashed;
+  border-right: 5px dashed var(--secondary-color);
   height: 100%;
   display: flex;
   align-items: center;
@@ -45,28 +47,27 @@ defineProps({
 }
 
 .coupon-title::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: -22px;
-  left: -22px;
+  top: -24px;
+  left: -23px;
   height: 30px;
   width: 30px;
   background-color: #faf9f6;
-  border: 5px solid;
+  border: 5px solid var(--secondary-color);
   border-radius: 50%;
   z-index: 1;
 }
 .coupon-title::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 70px;
-  left: -22px;
+  top: 74px;
+  left: -23px;
   height: 30px;
   width: 30px;
   background-color: #faf9f6;
-  border: 5px solid;
+  border: 5px solid var(--secondary-color);
   border-radius: 50%;
   z-index: 1;
 }
-
 </style>

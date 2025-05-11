@@ -46,39 +46,39 @@ defineProps({
 
 <style scoped>
 .categories {
-  transition: all .3s ease;
-  padding: 5rem .5rem;
+  transition: all 0.3s ease;
+  padding: 5rem 0.5rem;
 }
 
-.link-card {
+.categories .link-card {
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   box-shadow: var(--box-shadow);
   color: var(--white-color);
   padding: 1rem;
   border-radius: 1rem;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.link-card .sub-title {
-  margin: 0;
+.categories .link-card p {
+  margin-top: 0.5rem;
 }
-
-.link-card p {
-  margin-top: .5rem;
-}
-.link-card img {
+.categories .link-card img {
   height: 80px;
   width: 80px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
-.link-card:hover {
+.categories .link-card:hover {
   transform: scale(1.02);
 }
 

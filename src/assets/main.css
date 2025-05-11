@@ -44,6 +44,7 @@ body {
   font-family: var(--montserrat-font);
   line-height: 1.6;
   font-size: 1rem;
+  color: var(--secondary-color);
   background-color: #faf9f6;
 }
 

@@ -28,6 +28,53 @@ defineProps({
 .category-card {
   background-color: var(--white-color);
   text-align: center;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow);
+}
+
+.category-card .category-image {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+.category-card h5{
+  margin: .75rem 0 .5rem 0;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+.category-overlay .btn {
+  padding: 0.75rem 1rem;
+  color: var(--white-color);
+  background-color: var(--alternative-color);
+}
+/* ------- */
+.category-card {
+  background-color: var(--white-color);
+  text-align: center;
   border-radius: .75rem;
   overflow: hidden;
   position: relative;

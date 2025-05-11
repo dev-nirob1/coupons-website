@@ -3,7 +3,7 @@
     <div class="container large-2 align-center gap-2">
       <!-- image div  -->
       <div class="image">
-        <img class="height-full" src="https://cdn.pixabay.com/photo/2023/06/05/17/19/shopping-8042865_960_720.png"
+        <img class="height-full" src="https://cdn.pixabay.com/photo/2024/10/06/22/36/shipping-9101364_960_720.png"
           alt="image" />
       </div>
       <div>
@@ -47,9 +47,9 @@
 
 <style scoped>
 .about-us {
-  padding: 5rem .5rem;
+  padding: 5rem 0.5rem;
   color: var(--secondary-color);
-  background: var(--primary-light-black-color);
+  background: var(--primary-lighten-color);
 }
 
 .about-us .title {
@@ -59,30 +59,30 @@
   list-style: none;
   padding: 0;
 }
-.about-us ul li{
+.about-us ul li {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .about-us i {
   font-size: 1.25rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 50%;
-  color: var(--primary-color);
-  background-color: var(--primary-lighten-color);
+  color: var(--primary-lighten-color);
+  background-color: var(--primary-color);
 }
 
 .about-us .quote {
   position: relative;
-  background-color: var(--primary-lighten-color);
+  background-color: var(--primary-color);
   width: 100%;
   padding: 1rem 1.5rem;
 }
 
 .about-us .quote::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   height: 100%;
@@ -95,13 +95,13 @@
   height: 70vh;
 }
 
-.btn {
+.about-us .btn {
   background-color: var(--alternative-color);
   color: var(--white-color);
   padding: 1.25rem 2rem;
   font-size: 1.25rem;
 }
-.btn:hover{
+.about-us .btn:hover {
   color: var(--alternative-color);
   background-color: var(--white-color);
 }
