@@ -67,8 +67,8 @@ onMounted(() => {
           <TestimonialsCard v-for="i in 6" :key="i" />
         </div>
         <div class="btn-container flex gap-1">
-          <button class="bg-white" id="prev">Prev</button>
-          <button class="bg-white" id="next">Next</button>
+          <BaseButton id="prev">Prev</BaseButton>
+          <BaseButton id="next">Next</BaseButton>
         </div>
       </div>
     </div>
@@ -77,13 +77,14 @@ onMounted(() => {
 
 <style scoped>
 .testimonials {
+  padding-left: 6rem;
   position: relative;
   background-color: var(--secondary-color)
 }
 
 .text-content {
   position: relative;
-  padding: 10rem 0;
+  padding: 12rem 0;
   padding-left: 3rem;
   background-color: var(--secondary-color);
   color: var(--white-color);
@@ -108,7 +109,7 @@ onMounted(() => {
 }
 
 .cards-container {
-  margin-top: 2rem;
+  margin-top: 5rem;
   width: 100%;
   overflow: auto;
   padding: 1rem;
@@ -123,6 +124,10 @@ onMounted(() => {
 .btn-container {
   z-index: 3;
   position: relative;
+}
+.btn-container .btn {
+  padding: .75rem 1.5rem;
+  background-color: var(--white-color);
 }
 .cards-container::-webkit-scrollbar {
   display: none;
