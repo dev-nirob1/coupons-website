@@ -7,7 +7,10 @@ defineProps({
 </script>
 <template>
   <div class="pricing-card">
-    <p v-if="price.is_featured" class="bg-alternative p-1 text-white">Exclusive</p>
+
+    <div class="exclusive-badge">
+      <p v-if="price.is_featured" class="badge bg-alternative p-1 text-white">Exclusive</p>
+    </div>
     <span class="icon">
       <i class="fa-solid fa-circle-dollar-to-slot"></i>
     </span>
@@ -19,6 +22,7 @@ defineProps({
 </template>
 <style scoped>
 .pricing-card {
+  position: relative;
   text-align: center;
   border-radius: .75rem;
   padding: 3rem 2rem;
@@ -64,5 +68,30 @@ defineProps({
 .pricing-card .hero-title span {
   font-size: 1.75rem;
   font-weight: bold;
+}
+
+.pricing-card .exclusive-badge{
+  position: relative;
+  margin: 0;
+  overflow:hidden;
+}
+.badge{
+  margin: 0;
+}
+.pricing-card .badge::before,
+.pricing-card .badge::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 3.5rem;
+  width: 3.5rem;
+  rotate: 45deg;
+  background: var(--white-color);
+}
+.badge::before{
+  left: -1.75rem;
+}
+.badge::after{
+  right: -1.75rem;
 }
 </style>
