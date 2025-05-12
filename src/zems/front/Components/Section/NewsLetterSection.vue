@@ -24,8 +24,8 @@
 }
 
 .news-letter .content {
-  border-top-left-radius:8rem;
-  border-bottom-left-radius: 8rem;
+  border-top-left-radius:10rem;
+  border-bottom-left-radius: 10rem;
   height: 30vh;
   background-color: var(--white-color);
 }

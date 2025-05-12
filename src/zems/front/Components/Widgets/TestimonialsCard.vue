@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
-  i: {
-    type: Number
+  data: {
+    type: Object
   }
 })
 </script>
@@ -10,20 +10,15 @@ defineProps({
     <div class="flex align-center gap-1">
       <BaseImage image="/author.jpg" />
       <div>
-        <SubTitle>Adam Josheph</SubTitle>
+        <SubTitle>{{data.name}}</SubTitle>
         <BaseParagraph>
-          Selling Agent
+          {{data.role}}
         </BaseParagraph>
       </div>
     </div>
     <div class="flex">
       <BaseParagraph>
-        <i class="fa-solid fa-quote-left fa-2x"></i> Precious ipsum dolor sit amet
-        consectetur adipisicing elit, sed dos
-        mod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad min
-        veniam, quis nostrud Precious ips
-        um dolor sit amet, consecte
+        <i class="fa-solid fa-quote-left fa-2x"></i> {{data.quote}}
       </BaseParagraph>
     </div>
 

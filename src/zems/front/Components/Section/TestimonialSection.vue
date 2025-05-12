@@ -1,7 +1,38 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref} from 'vue';
 import TestimonialsCard from '@/zems/front/Components/Widgets/TestimonialsCard.vue';
-
+const reviews = ref([
+  {
+    "name": "Adam Josheph",
+    "role": "Frequent Shopper",
+    "quote": "I've saved over $500 this month using coupons from this site! The deals are always verified and the interface makes it easy to find discounts for my favorite stores."
+  },
+  {
+    "name": "Sarah Williams",
+    "role": "Budget Mom",
+    "quote": "This website helps me stretch our family budget further. The grocery coupons alone save us $100+ every week. I recommend it to all my mom friends!"
+  },
+  {
+    "name": "Michael Chen",
+    "role": "College Student",
+    "quote": "As a student on tight budget, these coupon codes are lifesavers. I get discounts on everything from textbooks to pizza delivery. 10/10 would recommend!"
+  },
+  {
+    "name": "Emily Rodriguez",
+    "role": "Small Business Owner",
+    "quote": "We use this site to find deals on office supplies and software subscriptions. The business category coupons have saved our startup thousands this year."
+  },
+  {
+    "name": "David Kim",
+    "role": "Travel Enthusiast",
+    "quote": "Booked 3 vacations this year using travel deals from here. Got 40% off hotels and discounted airfare. The travel section is my favorite!"
+  },
+  {
+    "name": "Jessica Patel",
+    "role": "Fashion Blogger",
+    "quote": "I share coupon codes with my followers daily. This site has the most up-to-date fashion deals and exclusive discounts you won't find elsewhere."
+  }
+])
 onMounted(() => {
   const owlCarousel = () => {
     const cardList = document.getElementsByClassName('testimonial-card');
@@ -45,8 +76,9 @@ onMounted(() => {
     })
   }
   owlCarousel()
-
 })
+
+
 </script>
 
 <template>
@@ -64,7 +96,7 @@ onMounted(() => {
       </div>
       <div class="span-5 height-full">
         <div class="cards-container">
-          <TestimonialsCard v-for="i in 6" :key="i" />
+          <TestimonialsCard v-for="(data, i) in reviews" :data="data" :key="i" />
         </div>
         <div class="btn-container flex gap-1">
           <BaseButton id="prev">Prev</BaseButton>
