@@ -4,7 +4,7 @@
 
 <template>
   <div class="news-letter">
-    <div class="content medium-5 align-center">
+    <div class="content medium-5 pr-5 align-center container">
       <div class="medium-span-2 text-center">
         <SubTitle>Subscribe Our</SubTitle>
         <BaseTitle>NewsLetter</BaseTitle>
@@ -24,12 +24,23 @@
 }
 
 .news-letter .content {
-  /* max-width: 992px; */
-  /* margin-left: 6rem; */
-  border-top-left-radius:7rem;
-  border-bottom-left-radius: 7rem;
+  border-top-left-radius:8rem;
+  border-bottom-left-radius: 8rem;
   height: 30vh;
   background-color: var(--white-color);
 }
-
+.news-letter input{
+  outline: none;
+  border: 2px solid var(--secondary-color);
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+.news-letter .btn{
+  outline: none;
+  padding: 0 2rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 0;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
 </style>

@@ -51,20 +51,22 @@ onMounted(() => {
 
 <template>
   <div class="testimonials">
-    <div class="medium-8 gap-1 medium-gap-2">
-      <div class="span-3 text-content ">
-        <BaseTitle>Feedback &
-          <br> Testimonials
-        </BaseTitle>
-        <BaseParagraph>
-          Real savings from real people. See how our community saves big every day.
-        </BaseParagraph>
+    <div class="medium-8 container">
+      <div class="span-3 text-content">
+        <div>
+          <BaseTitle>Feedback &
+            <br> Testimonials
+          </BaseTitle>
+          <BaseParagraph>
+            Real savings from real people. See how our community saves big every day.
+          </BaseParagraph>
+        </div>
       </div>
       <div class="span-5 height-full">
         <div class="cards-container">
-          <TestimonialsCard v-for="i in 6" :key="i"/>
+          <TestimonialsCard v-for="i in 6" :key="i" />
         </div>
-        <div class="flex gap-1">
+        <div class="btn-container flex gap-1">
           <button class="bg-white" id="prev">Prev</button>
           <button class="bg-white" id="next">Next</button>
         </div>
@@ -74,21 +76,25 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 .testimonials {
   position: relative;
+  background-color: var(--secondary-color)
 }
 
-.text-content{
+.text-content {
   position: relative;
   padding: 10rem 0;
   padding-left: 3rem;
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+.span-5{
+  background-color: white;
+  position: relative;
+}
 
-.text-content::after{
-  content: 'dfdf';
+.text-content::after {
+  content: '';
   position: absolute;
   height: 100%;
   width: 100%;
@@ -98,19 +104,26 @@ onMounted(() => {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   background-color: var(--secondary-color);
-  border-right: 5px solid red;
-  z-index: -1;
+  z-index: 1;
 }
 
 .cards-container {
+  margin-top: 2rem;
   width: 100%;
   overflow: auto;
   padding: 1rem;
+  padding-left: 0;
   display: flex;
   gap: 2rem;
   transition: all .5s ease-in-out;
+   position: relative;
+  z-index: 3;
 }
 
+.btn-container {
+  z-index: 3;
+  position: relative;
+}
 .cards-container::-webkit-scrollbar {
   display: none;
 }
