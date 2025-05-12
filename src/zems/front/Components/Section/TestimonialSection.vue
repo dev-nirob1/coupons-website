@@ -50,9 +50,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="testimonials bg-white">
-    <div class="medium-8 gap-1 medium-gap-2 align-center container">
-      <div class="span-3 text-center p-2">
+  <div class="testimonials">
+    <div class="medium-8 gap-1 medium-gap-2">
+      <div class="span-3 text-content ">
         <BaseTitle>Feedback &
           <br> Testimonials
         </BaseTitle>
@@ -60,7 +60,7 @@ onMounted(() => {
           Real savings from real people. See how our community saves big every day.
         </BaseParagraph>
       </div>
-      <div class="span-5">
+      <div class="span-5 height-full">
         <div class="cards-container">
           <TestimonialsCard v-for="i in 6" :key="i"/>
         </div>
@@ -76,11 +76,30 @@ onMounted(() => {
 <style scoped>
 
 .testimonials {
-  padding: 5rem .5rem;
+  position: relative;
 }
 
-.testimonials h3 {
-  margin-top: 0;
+.text-content{
+  position: relative;
+  padding: 10rem 0;
+  padding-left: 3rem;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.text-content::after{
+  content: 'dfdf';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: -100%;
+  top: 0;
+  padding-right: 5rem;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: var(--secondary-color);
+  border-right: 5px solid red;
+  z-index: -1;
 }
 
 .cards-container {

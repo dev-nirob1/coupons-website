@@ -11,11 +11,10 @@ const { data: pricing = [] } = useQuery({
     return res?.data
   }
 })
-
 </script>
 
 <template>
-  <section class="pricing">
+  <section class="pricing bg-lighten">
     <div class="container">
       <SectionTitle title="Simple Pricing"></SectionTitle>
       <div class="medium-3 gap-1 align-center medium-gap-2">
@@ -27,10 +26,10 @@ const { data: pricing = [] } = useQuery({
   </section>
 </template>
 
-<style scoped>
+<style>
 .pricing {
   padding: 3rem .5rem;
-  background: var(--primary-lighten-color);
+  /* background: var(--primary-lighten-color); */
 }
 
 @media (min-width: 768px) {

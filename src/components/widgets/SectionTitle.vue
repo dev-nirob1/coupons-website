@@ -12,62 +12,65 @@ defineProps({
   </div>
 </template>
 
-<style scoped>
+<style>
 .coupon-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 5rem;
-  height: 6rem;
+  height: 4.5rem;
   overflow: hidden;
 }
+
 .bar-code {
   background-color: var(--secondary-color);
   color: var(--white-color);
   font-size: 3rem;
-  border: 5px solid var(--secondary-color);
-  border-right: 5px dashed var(--white-color);
-  border-left: 5px dashed var(--white-color);
+  border: 2px solid var(--secondary-color);
+  border-right: 2px dashed var(--white-color);
+  border-left: 2px dashed var(--white-color);
   height: 100%;
-  width: 8rem;
+  width: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .coupon-title {
-  padding: 1rem 2rem;
-  border: 5px solid var(--secondary-color);
+  padding: 1rem 3rem;
+  border: 1px solid var(--secondary-color);
   border-left: none;
-  border-right: 5px dashed var(--secondary-color);
+  border-right: 3px dashed var(--secondary-color);
   height: 100%;
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.coupon-title::before {
-  content: "";
-  position: absolute;
-  top: -24px;
-  left: -23px;
-  height: 30px;
-  width: 30px;
-  background-color: #faf9f6;
-  border: 5px solid var(--secondary-color);
-  border-radius: 50%;
-  z-index: 1;
-}
+.coupon-title::before,
 .coupon-title::after {
-  content: "";
+  content: '';
   position: absolute;
-  top: 74px;
-  left: -23px;
+  left: -18px;
   height: 30px;
   width: 30px;
   background-color: #faf9f6;
-  border: 5px solid var(--secondary-color);
+  border: 1px solid var(--secondary-color);
   border-radius: 50%;
   z-index: 1;
 }
+
+.coupon-title::before {
+  top: -24px;
+}
+
+.coupon-title::after {
+  bottom: -24px;
+}
+
+.bg-lighten .coupon-title::before,
+.bg-lighten .coupon-title::after {
+  background-color: var(--primary-lighten-color);
+}
+
 </style>

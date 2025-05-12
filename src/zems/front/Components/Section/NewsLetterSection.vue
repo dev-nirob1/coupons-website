@@ -11,30 +11,25 @@
       </div>
       <div class="medium-span-3 flex">
         <InputField class="bg-white" placeholder="Please Enter Your Email" />
-        <BaseButton class="bg-primary text-white">Subscribe</BaseButton>
+        <BaseButton class="bg-secondary text-white">Subscribe</BaseButton>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
 .news-letter {
-  padding: 2rem .5rem;
-  height: 40vh;
-  width: 100%;
+  padding-bottom: 5rem;
+  padding-left: 6rem;
   background-color: var(--secondary-color);
-  color: var(--white-color);
 }
 
 .news-letter .content {
-  max-width: 992px;
-  margin: 0 auto;
+  /* max-width: 992px; */
+  /* margin-left: 6rem; */
+  border-top-left-radius:7rem;
+  border-bottom-left-radius: 7rem;
+  height: 30vh;
+  background-color: var(--white-color);
 }
 
-.news-letter h3 {
-  margin: 0;
-}
-
-.news-letter h5 {
-  margin: 10px 0;
-}
 </style>
