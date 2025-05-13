@@ -25,10 +25,8 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   padding: 2rem;
-  background-color: var(--primary-color);
-  backdrop-filter: drop-shadow(4px 4px 10px blue);
 }
 
 .countdown-timer>div {
@@ -37,6 +35,37 @@
   width: 6rem;
   padding: .75rem 1rem;
   border-radius: 8px;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+.countdown-timer>div h4,
+.countdown-timer>div span{
+transition: all .3s ease;
 }
 
+.countdown-timer>div:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.countdown-timer>div:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.countdown-timer>div:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.1)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}
 </style>

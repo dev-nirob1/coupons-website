@@ -30,7 +30,7 @@ defineProps({
             <CountDown />
           </div>
           <div class="image">
-            <img src="https://i.pinimg.com/originals/d8/c5/cc/d8c5cc1c593277743eb3e0dbb81b278a.gif" alt="">
+            <!-- <img src="https://i.pinimg.com/originals/d8/c5/cc/d8c5cc1c593277743eb3e0dbb81b278a.gif" alt=""> -->
           </div>
         </div>
         <!-- Coupon Cards Grid -->
