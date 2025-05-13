@@ -22,12 +22,15 @@ defineProps({
   <section class="ending-soon">
     <div class="container">
       <div class="medium-2 large-3 gap-2">
-        <div class="flex flex-col justify-center align-center text-center">
-          <div>
+        <div class="ending-timer">
+          <div class="text">
             <BaseTitle>Ending In</BaseTitle>
             <SubTitle class="mb-2">Grab these deals before they expire!</SubTitle>
             <ClockCompo />
             <CountDown />
+          </div>
+          <div class="image">
+            <img src="https://i.pinimg.com/originals/d8/c5/cc/d8c5cc1c593277743eb3e0dbb81b278a.gif" alt="">
           </div>
         </div>
         <!-- Coupon Cards Grid -->
@@ -45,11 +48,35 @@ defineProps({
 
 <style>
 .ending-soon {
+  position:relative;
   padding: 3rem .5rem;
-  background-color: var(--secondary-color);
+  background:  var(--secondary-color);
   color: var(--white-color);
 }
-
+.ending-soon .ending-timer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.text{
+  z-index: 3;
+}
+.ending-soon .image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.ending-soon .image img{
+  opacity: 0.25;
+  width: 100%;
+  height: 100%;
+}
 .ending-soon .sub-title {
   margin-top: .5rem;
 }

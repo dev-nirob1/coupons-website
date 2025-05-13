@@ -8,7 +8,7 @@
 .clock {
   width: 150px;
   height: 150px;
-  border: 6px solid var(--danger-color);
+  border: 6px solid var(--alternative-color);
   border-radius: 50%;
   position: relative;
   margin: 0 auto;
@@ -19,7 +19,7 @@
   position: absolute;
   width: 12px;
   height: 12px;
-  background: var(--danger-color);
+  background: var(--alternative-color);
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -32,7 +32,7 @@
   top: 50%;
   width: 4px;
   height: 40px;
-  background: var(--danger-color);
+  background: var(--alternative-color);
   transform-origin: bottom;
   transform: translate(-50%, -100%) rotate(30deg);
 }
@@ -43,7 +43,7 @@
   top: 50%;
   width: 3px;
   height: 60px;
-  background: var(--danger-color);
+  background: var(--alternative-color);
   transform-origin: bottom;
   transform: translate(-50%, -100%) rotate(0deg);
   animation: spin 10s linear infinite;

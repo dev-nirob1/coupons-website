@@ -58,6 +58,7 @@
 .about-us ul {
   list-style: none;
   padding: 0;
+  margin: 2rem 0;
 }
 .about-us ul li {
   display: flex;
@@ -75,7 +76,7 @@
 
 .about-us .quote {
   position: relative;
-  background-color: var(--primary-color);
+  background-color: rgb(from var(--primary-color) r g b/ 15%);;
   width: 100%;
   padding: 1rem 1.5rem;
 }
@@ -108,7 +109,7 @@
 
 @media (min-width: 768px) {
   .about-us .quote {
-    width: 80%;
+    width: 90%;
   }
 }
 </style>

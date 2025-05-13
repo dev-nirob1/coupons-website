@@ -71,18 +71,17 @@ const handleOpenModal = () => {
 
   <BannerSection />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
-  <AboutUs />
-  <FeaturedCoupon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
-    :featured="data?.featured" :isLoading="isLoading" />
   <EndingSoon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
     :ending="data?.ending" :isLoading="isLoading" />
-
+  <AboutUs />
+  <FeaturedCoupon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
+  :featured="data?.featured" :isLoading="isLoading" />
+  <TimelineSection />
 
   <ByCompany />
 
   <!-- <ExclusiveCoupon/> -->
   <PricingSection />
-  <TimelineSection />
   <TestimonialSection />
   <NewsLetterSection />
 </template>

@@ -111,14 +111,14 @@ onMounted(() => {
 .testimonials {
   padding-left: 6rem;
   position: relative;
-  background-color: var(--secondary-color)
+  background: linear-gradient(to right, var(--primary-color),var(--primary-color), var(--white-color), var(--white-color));
 }
 
 .text-content {
   position: relative;
   padding: 12rem 0;
   padding-left: 3rem;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 .span-5{
@@ -136,7 +136,7 @@ onMounted(() => {
   padding-right: 5rem;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   z-index: 1;
 }
 

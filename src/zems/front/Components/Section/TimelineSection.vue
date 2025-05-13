@@ -1,6 +1,7 @@
 <template>
-  <section class="timeline container">
-    <div class="large-3 gap-2 height-full relative">
+  <section class="timeline bg-lighten">
+    <div class="container">
+      <div class="large-3 gap-2 height-full relative">
       <div class="one">
         <div class="pb-5">
           <BaseTitle tag="h4">
@@ -39,6 +40,7 @@
         </div>
       </div>
 
+    </div>
     </div>
   </section>
 </template>

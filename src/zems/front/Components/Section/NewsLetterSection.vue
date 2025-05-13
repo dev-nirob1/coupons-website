@@ -18,9 +18,11 @@
 </template>
 <style scoped>
 .news-letter {
-  padding-bottom: 5rem;
+  border-bottom: 5rem solid var(--primary-color);
   padding-left: 6rem;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  background: linear-gradient(to right, var(--primary-color),var(--primary-color), var(--white-color), var(--white-color));
+
 }
 
 .news-letter .content {

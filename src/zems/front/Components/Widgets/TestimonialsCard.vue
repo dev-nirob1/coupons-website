@@ -28,7 +28,7 @@ defineProps({
 .testimonial-card {
   flex: 0 0 auto;
   padding: 2rem 1.5rem;
-  width: 300px;
+  width: 400px;
   min-height: 280px;
   background: var(--white-color);
   border-radius: .5rem;

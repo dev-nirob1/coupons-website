@@ -7,10 +7,12 @@ defineProps({
 </script>
 <template>
   <div class="pricing-card">
-
-    <div class="exclusive-badge">
-      <p v-if="price.is_featured" class="badge bg-alternative p-1 text-white">Exclusive</p>
+    <div v-if="price.is_featured == 1" class="flex justify-end">
+      <div class="exclusive-badge">
+        <p class="badge">Exclusive</p>
+      </div>
     </div>
+
     <span class="icon">
       <i class="fa-solid fa-circle-dollar-to-slot"></i>
     </span>
@@ -70,28 +72,40 @@ defineProps({
   font-weight: bold;
 }
 
-.pricing-card .exclusive-badge{
+.pricing-card .exclusive-badge {
+  width: 280px;
   position: relative;
-  margin: 0;
-  overflow:hidden;
+  margin-right: -2rem;
+  margin-top: -1.5rem;
+  overflow: hidden;
 }
-.badge{
-  margin: 0;
+
+.badge {
+  background-color: var(--alternative-color);
+  color: var(--white-color);
+  padding: 1rem 1rem 1rem 3rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  /* box-shadow: var(--box-shadow); */
 }
-.pricing-card .badge::before,
-.pricing-card .badge::after{
+
+.pricing-card .badge::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: .95rem;
   height: 3.5rem;
   width: 3.5rem;
   rotate: 45deg;
   background: var(--white-color);
 }
-.badge::before{
+
+.badge::before {
   left: -1.75rem;
 }
-.badge::after{
+
+/* .badge::after{
   right: -1.75rem;
-}
+} */
 </style>

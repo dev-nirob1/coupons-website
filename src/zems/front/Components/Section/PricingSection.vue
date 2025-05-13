@@ -11,6 +11,7 @@ const { data: pricing = [] } = useQuery({
     return res?.data
   }
 })
+console.log(pricing);
 </script>
 
 <template>
