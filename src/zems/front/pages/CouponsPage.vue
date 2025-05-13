@@ -21,8 +21,7 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
 <template>
   <section>
     <BreadcrumbSection />
-
-    <div class="container py-2">
+    <div class="container py-2 medium-py-3 large-py-5">
       <div class="flex justify-end mb-2 pr-1">
         <div class="select">
           <select>

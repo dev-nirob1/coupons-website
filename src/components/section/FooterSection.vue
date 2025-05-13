@@ -123,7 +123,7 @@ const currentYear = new Date().getFullYear();
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--alternative-color);
+  background-color: var(--primary-color);
 }
 
 .social-links a:hover i {
@@ -192,7 +192,7 @@ ul a:hover::before {
 
 .subscribe-form .btn {
   padding: 1rem 2rem;
-  background-color: var(--alternative-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
   border: none;
   border-radius: 0 .5rem .5rem 0;

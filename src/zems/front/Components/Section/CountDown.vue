@@ -30,7 +30,7 @@
 }
 
 .countdown-timer>div {
-  background: var(--alternative-color);
+  background: var(--primary-color);
   height: 6rem;
   width: 6rem;
   padding: .75rem 1rem;
@@ -57,15 +57,18 @@ transition: all .3s ease;
 
 @keyframes pulse {
   0% {
-    transform: scale(1)
+    transform: scale(1);
+    opacity: .75;
   }
 
   50% {
-    transform: scale(1.1)
+    transform: scale(1.1);
+    opacity: 1;
   }
 
   100% {
-    transform: scale(1)
+    transform: scale(1);
+    opacity: .75;
   }
 }
 </style>
