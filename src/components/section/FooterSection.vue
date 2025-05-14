@@ -9,7 +9,7 @@ const currentYear = new Date().getFullYear();
       <div>
         <div class="logo">
           <BaseImage src="/logo.png" />
-          <span>CouponSavings</span>
+          <span>CouponCraze</span>
         </div>
         <BaseParagraph>Your gateway to exclusive discounts and savings</BaseParagraph>
         <div class="social-links">
@@ -98,7 +98,6 @@ const currentYear = new Date().getFullYear();
 .footer .logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -205,5 +204,6 @@ ul a:hover::before {
 .footer-bottom {
   padding: 1.5rem;
   text-align: center;
+  background-color:  rgb(from var(--primary-color) r g b/ 10%);
 }
 </style>

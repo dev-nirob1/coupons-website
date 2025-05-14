@@ -75,33 +75,35 @@ defineProps({
   height: 6rem;
   width: 100%;
   padding: 1.5rem;
-  /* position: relative; */
   border-top: 5px dashed var(--primary-color);
   text-align: center;
   background-color: rgb(from var(--primary-color) r g b/ 30%);
 }
-
 .card-footer .btn {
   margin: 0;
   border-radius: .5rem;
 }
-
-.card-footer .circle-1,
-.card-footer .circle-2 {
+.card-footer::before,
+.card-footer::after
+{
+  content: '';
   position: absolute;
-  top: -27px;
-  height: 50px;
-  width: 50px;
+  top: -23px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background-color: #faf9f6;
 }
-
-.circle-1 {
-  left: -25px;
+.card-footer::before {
+  left: -20px;
 }
-/* Right circle */
-.circle-2 {
-  right: -25px;
+.card-footer::after {
+  right: -20px;
+}
+
+.bg-secondary .card-footer::before,
+.bg-secondary .card-footer::after{
+  background-color: var(--secondary-color);
 }
 
 </style>

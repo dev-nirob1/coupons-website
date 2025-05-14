@@ -19,7 +19,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="ending-soon">
+  <section class="ending-soon bg-secondary">
     <div class="container">
       <div class="medium-2 large-3 gap-2">
         <div class="ending-timer">
@@ -46,11 +46,10 @@ defineProps({
   </section>
 </template>
 
-<style>
+<style scoped>
 .ending-soon {
   position:relative;
   padding: 3rem .5rem;
-  background:  var(--secondary-color);
   color: var(--white-color);
 }
 .ending-soon .ending-timer {
