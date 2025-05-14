@@ -25,9 +25,8 @@ const paramsName = computed(() => route.params.type)
   margin-top: 5.6rem;
   padding: 3rem .5rem;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    /* Gradient overlay */
-    url('https://img.freepik.com/free-photo/abstract-futuristic-background-with-3d-design_1361-3532.jpg') no-repeat center / 100%;
+   linear-gradient(rgba(255, 255, 255, 0.104), rgba(255, 255, 255, 0.142)),
+    url('https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center / 100%;
 }
 
 .breadcrumb ul {
