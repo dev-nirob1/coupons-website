@@ -3,6 +3,7 @@ import CouponsPage from '@/zems/front/Pages/CouponsPage.vue'
 import CompaniesPage from '@/zems/front/Pages/CompaniesPage.vue'
 import CategoriesPage from '@/zems/front/Pages/CategoriesPage.vue'
 import MainLayout from '@/zems/front/Layout/MainLayout.vue'
+import CompanyDetailsPage from './Pages/CompanyDetailsPage.vue'
 
 export default [
   {
@@ -25,10 +26,15 @@ export default [
         component: CompaniesPage,
       },
       {
-        path: '/company_list/:type?',
-        name: 'company_list',
-        component: CouponsPage,
+        path: '/companies/:type?',
+        name: 'company-details',
+        component: CompanyDetailsPage,
       },
+      // {
+      //   path: '/company_list/:type?',
+      //   name: 'company_list',
+      //   component: CouponsPage,
+      // },
       {
         path: '/categories',
         name: 'categories',

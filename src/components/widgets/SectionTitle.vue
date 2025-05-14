@@ -45,6 +45,10 @@ defineProps({
   display: flex;
   align-items: center;
   position: relative;
+
+ background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+ background-clip: text;
+    color: transparent;
 }
 
 .coupon-title::before,
