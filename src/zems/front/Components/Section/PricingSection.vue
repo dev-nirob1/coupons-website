@@ -11,7 +11,6 @@ const { data: pricing = [] } = useQuery({
     return res?.data
   }
 })
-console.log(pricing);
 </script>
 
 <template>
@@ -27,7 +26,7 @@ console.log(pricing);
   </section>
 </template>
 
-<style>
+<style scoped>
 .pricing {
   padding: 3rem .5rem;
   /* background: var(--primary-lighten-color); */

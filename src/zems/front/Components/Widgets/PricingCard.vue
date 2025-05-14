@@ -9,7 +9,7 @@ defineProps({
   <div class="pricing-card">
     <div v-if="price.is_featured == 1" class="flex justify-end">
       <div class="exclusive-badge">
-        <p class="badge">Exclusive</p>
+      <p class="badge"> <i class="fa-solid fa-crown"></i> Exclusive</p>
       </div>
     </div>
 
@@ -94,7 +94,7 @@ defineProps({
 .pricing-card .badge::before {
   content: '';
   position: absolute;
-  top: .95rem;
+  top: 1.1rem;
   height: 3.5rem;
   width: 3.5rem;
   rotate: 45deg;

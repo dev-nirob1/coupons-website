@@ -197,9 +197,6 @@ ul a:hover::before {
   border-radius: 0 .5rem .5rem 0;
 }
 
-.subscribe-form .btn:hover {
-  background-color: var(--primary-color);
-}
 
 .footer-bottom {
   padding: 1.5rem;
