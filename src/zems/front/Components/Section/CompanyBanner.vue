@@ -14,7 +14,6 @@
 
 <style scoped>
 .company-banner {
-  margin-top: 5.6rem;
   min-height: 40vh;
   display: flex;
   align-items: center;

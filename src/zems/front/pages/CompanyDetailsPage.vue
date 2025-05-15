@@ -1,5 +1,5 @@
 <script setup>
-// import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
+import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import { useQuery } from '@tanstack/vue-query';
 import CompanyBanner from '../Components/Section/CompanyBanner.vue';
 import CouponCard from '../Components/Widgets/CouponCard.vue';
@@ -15,7 +15,7 @@ const {data: couponsData = []} = useQuery({
 
 <template>
   <div class="company-details">
-    <!-- <BreadcrumbSection/> -->
+    <BreadcrumbSection/>
     <!-- Banner Section -->
     <CompanyBanner />
     <div class="container">
