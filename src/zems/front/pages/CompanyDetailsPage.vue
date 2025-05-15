@@ -43,7 +43,9 @@ watchEffect(() => {
 
       <ul class="pagination">
         <li>
-          <RouterLink>prev</RouterLink>
+          <RouterLink
+            :to="couponsData?.last_page == currentPage ? '' : `/companies/${$route.params.type}?p=${parseInt(currentPage) - 1}`">
+            Prev</RouterLink>
         </li>
 
         <li v-for="(link, i) in couponsData?.last_page" :key="i">
@@ -56,7 +58,6 @@ watchEffect(() => {
             :to="couponsData?.last_page == currentPage ? '' : `/companies/${$route.params.type}?p=${parseInt(currentPage) + 1}`">
             Next</RouterLink>
         </li>
-        <!-- https://coupon.zems.uk/api/coupon_list?page=2 -->
       </ul>
     </div>
   </div>
@@ -65,14 +66,24 @@ watchEffect(() => {
 
 <style scoped>
 .pagination {
+  margin-bottom: 5rem;
   list-style: none;
   padding: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: .5rem;
 }
 
 .pagination li {
   padding: 1rem 2rem;
+  border-radius: .5rem;
+  font-weight: bold;
+  color: var(--white-color);
   background-color: var(--primary-color);
+}
+
+.pagination li a {
+  text-decoration: none;
 }
 </style>
