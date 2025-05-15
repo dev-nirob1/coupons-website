@@ -26,7 +26,7 @@ export default [
         component: CompaniesPage,
       },
       {
-        path: '/companies/:type?',
+        path: '/companies/:type',
         name: 'company-details',
         component: CompanyDetailsPage,
       },
