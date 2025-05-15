@@ -1,58 +1,78 @@
 <script setup>
-import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import { useQuery } from '@tanstack/vue-query';
 import CompanyBanner from '../Components/Section/CompanyBanner.vue';
 import CouponCard from '../Components/Widgets/CouponCard.vue';
 import axios from 'axios';
-import { computed, ref } from 'vue';
+import { ref, watchEffect } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
 
-const currentPage = ref(1)
+const currentPage = ref(1) //currentPage
 
+// fetch function with page number
 const fetchData = async (pageNumber) => {
   const url = `https://coupon.zems.uk/api/coupon_list?page=${pageNumber}`
   const res = await axios.get(url)
   return res?.data
 }
 
-const { data: couponsData } = useQuery({
+// fetch using tanstack query
+const { data: couponsData = {} } = useQuery({
   queryKey: () => ['coupon_list', currentPage.value],
   queryFn: () => fetchData(currentPage.value)
 })
+const route = useRoute()
 
-const paginationLinks = computed(() => {
-  return couponsData.value?.links || [];
-});
+watchEffect(() => {
+  if (route?.query?.p) {
+    currentPage.value = route?.query?.p
+  }
+  fetchData(currentPage.value)
+  console.log(currentPage.value);
+})
 
-console.log((couponsData?.links));
 </script>
 
 <template>
   <div class="company-details">
-    <BreadcrumbSection />
     <!-- Banner Section -->
     <CompanyBanner />
     <div class="container">
       <div class="medium-2 large-3 gap-1 medium-gap-2 my-5">
-        <CouponCard v-for="couponData in couponsData?.data" :key=couponData.id :couponData="couponData"/>
+        <CouponCard v-for="couponData in couponsData?.data" :key=couponData.id :couponData="couponData" />
       </div>
-      <div class="btn-container">
-        <BaseButton v-for="(link, i) in paginationLinks" :key="i">{{ link.label }}</BaseButton>
-      </div>
+
+      <ul class="pagination">
+        <li>
+          <RouterLink>prev</RouterLink>
+        </li>
+
+        <li v-for="(link, i) in couponsData?.last_page" :key="i">
+          <RouterLink :class="link.active" :to="`/companies/${$route.params.type}?p=${i + 1}`">
+            {{ i + 1 }}</RouterLink>
+        </li>
+
+        <li>
+          <RouterLink
+            :to="couponsData?.last_page == currentPage ? '' : `/companies/${$route.params.type}?p=${parseInt(currentPage) + 1}`">
+            Next</RouterLink>
+        </li>
+        <!-- https://coupon.zems.uk/api/coupon_list?page=2 -->
+      </ul>
     </div>
   </div>
 </template>
 
 
 <style scoped>
-.btn-container {
+.pagination {
+  list-style: none;
+  padding: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: .5rem;
 }
 
-.btn-container button {
-  background-color: #1976d2;
-  color: white;
+.pagination li {
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
 }
 </style>
