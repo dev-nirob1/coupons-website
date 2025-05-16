@@ -2,19 +2,33 @@
 import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import LoadingCard from '@/components/widgets/LoadingCard.vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
-import { useRoute } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
+import { ref, watchEffect } from 'vue';
+// const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}`;
+
+const currentPage = ref(1)
 const route = useRoute();
 
-const { isPending: isLoading, data: couponsData = [] } = useQuery({
-  queryKey: () => [route.name, route.params.type],
-  queryFn: async () => {
-    const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}`;
-    const res = await axios.get(url);
-    return res.data.data;
-  }
+const fetchData = async (pageNumber) => {
+  const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}?page=${pageNumber}`;
+  const res = await axios.get(url)
+  console.log(url);
+  return res?.data
+}
+
+const { isPending: isLoading, data: couponsData = {} } = useQuery({
+  queryKey: () => [route?.name, route?.params?.type, currentPage?.value],
+  queryFn: async () => await fetchData(currentPage.value)
 });
+
+watchEffect(() => {
+  if (route?.query?.p) {
+    currentPage.value = route?.query?.p
+  }
+  fetchData(currentPage?.value)
+})
 </script>
 
 <template>
@@ -42,9 +56,24 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
         </template>
 
         <template v-else>
-          <CouponCard v-for="couponData in couponsData" :couponData="couponData" :key="couponData.id" />
+          <CouponCard v-for="couponData in couponsData?.data" :couponData="couponData" :key="couponData.id" />
         </template>
       </div>
+      <ul class="pagination">
+        <li>
+          <RouterLink
+            :to="currentPage == 1 ? '' : `/coupon_list/${$route.params.type}?p=${parseInt(currentPage) - 1}`">Prev
+          </RouterLink>
+        </li>
+        <li v-for="(link, i) in couponsData?.last_page" :key="i">
+          <RouterLink :class="link == currentPage && 'active'" :to="`/coupon_list/${route?.params?.type}?p=${link}`"> {{ i + 1 }}</RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            :to="couponsData?.last_page == currentPage ? '' : `/coupon_list/${route?.params?.type}?p=${parseInt(currentPage) + 1}`">
+            Next</RouterLink>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
@@ -54,5 +83,34 @@ const { isPending: isLoading, data: couponsData = [] } = useQuery({
   background-color: var(--white-color);
   border: var(--border-color);
   box-shadow: var(--box-shadow);
+}
+
+.pagination {
+  margin-top: 3rem;
+  list-style: none;
+  padding: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.pagination li {
+  border-radius: .5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: var(--white-color);
+}
+
+.pagination li a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+.pagination li a.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: .5rem;
 }
 </style>
