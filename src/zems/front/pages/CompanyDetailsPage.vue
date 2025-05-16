@@ -43,8 +43,7 @@ watchEffect(() => {
 
       <ul class="pagination">
         <li>
-          <RouterLink
-            :to="couponsData?.last_page == currentPage ? '' : `/companies/${$route.params.type}?p=${parseInt(currentPage) - 1}`">
+          <RouterLink :to="currentPage == 1 ? '' : `/companies/${$route.params.type}?p=${parseInt(currentPage) - 1}`">
             Prev</RouterLink>
         </li>
 
