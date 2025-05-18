@@ -26,9 +26,12 @@ const { isPending: isLoading, data: couponsData = {} } = useQuery({
 watchEffect(() => {
   if (route?.query?.p) {
     currentPage.value = route?.query?.p
+  }else{
+    currentPage.value = 1
   }
   fetchData(currentPage?.value)
 })
+
 </script>
 
 <template>
@@ -62,18 +65,22 @@ watchEffect(() => {
       <ul class="pagination">
         <li>
           <RouterLink
-            :to="currentPage == 1 ? '' : `/coupon_list/${$route.params.type}?p=${parseInt(currentPage) - 1}`">Prev
+            :to="currentPage == 1 ? '' : `/coupon_list/${$route.params.type}?p=${parseInt(currentPage) - 1}`">&laquo; Prev
           </RouterLink>
         </li>
         <li v-for="(link, i) in couponsData?.last_page" :key="i">
           <RouterLink :class="link == currentPage && 'active'" :to="`/coupon_list/${route?.params?.type}?p=${link}`"> {{ i + 1 }}</RouterLink>
         </li>
+
         <li>
           <RouterLink
             :to="couponsData?.last_page == currentPage ? '' : `/coupon_list/${route?.params?.type}?p=${parseInt(currentPage) + 1}`">
-            Next</RouterLink>
+            Next &raquo;</RouterLink>
         </li>
       </ul>
+
+      {{ couponsData?.links[0].url }}
+
     </div>
   </section>
 </template>

@@ -126,7 +126,7 @@ onMounted(() => {
   position: relative;
 }
 
-.text-content::after {
+/* .text-content::after {
   content: '';
   position: absolute;
   height: 100%;
@@ -138,7 +138,7 @@ onMounted(() => {
   border-bottom-right-radius: 50%;
   background-color: var(--primary-color);
   z-index: 1;
-}
+} */
 
 .cards-container {
   margin-top: 5rem;
@@ -163,5 +163,20 @@ onMounted(() => {
 }
 .cards-container::-webkit-scrollbar {
   display: none;
+}
+@media (min-width: 992px){
+  .text-content::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: -100%;
+  top: 0;
+  padding-right: 5rem;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: var(--primary-color);
+  z-index: 1;
+}
 }
 </style>

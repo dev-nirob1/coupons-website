@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -26,12 +25,15 @@
     </div>
   </section>
 </template>
+
 <style scoped>
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero .content {
@@ -106,4 +108,5 @@
     font-size: 5.5rem;
   }
 }
+
 </style>

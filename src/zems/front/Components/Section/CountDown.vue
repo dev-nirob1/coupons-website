@@ -31,9 +31,9 @@
 
 .countdown-timer>div {
   background: var(--primary-color);
-  height: 6rem;
-  width: 6rem;
-  padding: .75rem 1rem;
+  height: 5.5rem;
+  width: 5.5rem;
+  /* padding: .75rem 1rem; */
   border-radius: 8px;
   transition: all 0.3s ease;
   animation: pulse 2s infinite;

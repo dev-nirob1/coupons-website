@@ -49,7 +49,7 @@
 .about-us {
   padding: 5rem 0.5rem;
   color: var(--secondary-color);
-  background: var(--primary-lighten-color);
+  /* background: var(--primary-lighten-color); */
 }
 
 .about-us .title {
@@ -92,8 +92,11 @@
 }
 
 .about-us .image {
-  /* width: 100%; */
+  width: 100%;
   height: 70vh;
+}
+.about-us .image img{
+  width: 100%;
 }
 
 .about-us .btn {

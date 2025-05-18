@@ -29,9 +29,6 @@ defineProps({
             <ClockCompo />
             <CountDown />
           </div>
-          <div class="image">
-            <!-- <img src="https://i.pinimg.com/originals/d8/c5/cc/d8c5cc1c593277743eb3e0dbb81b278a.gif" alt=""> -->
-          </div>
         </div>
         <!-- Coupon Cards Grid -->
         <div class="large-span-2">
@@ -63,19 +60,7 @@ defineProps({
 .text{
   z-index: 3;
 }
-.ending-soon .image{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-}
-.ending-soon .image img{
-  opacity: 0.25;
-  width: 100%;
-  height: 100%;
-}
+
 .ending-soon .sub-title {
   margin-top: .5rem;
 }
