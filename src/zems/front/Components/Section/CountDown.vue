@@ -6,15 +6,15 @@
   <div class="countdown-timer">
     <div>
       <BaseTitle tag="h4">11</BaseTitle>
-      <span>Hours</span>
+      <small>Hours</small>
     </div>
     <div>
       <BaseTitle tag="h4">59</BaseTitle>
-      <span>Minutes</span>
+      <small>Minutes</small>
     </div>
     <div>
       <BaseTitle tag="h4">59</BaseTitle>
-      <span>Seconds</span>
+      <small>Seconds</small>
     </div>
   </div>
 </template>
@@ -30,10 +30,10 @@
 }
 
 .countdown-timer>div {
-  background: var(--primary-color);
+  background: rgb(from var(--primary-color) r g b/15%);
   height: 5.5rem;
   width: 5.5rem;
-  /* padding: .75rem 1rem; */
+  padding: .5rem 1rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   animation: pulse 2s infinite;

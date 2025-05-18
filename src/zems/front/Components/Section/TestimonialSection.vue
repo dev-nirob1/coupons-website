@@ -159,7 +159,8 @@ onMounted(() => {
 }
 .btn-container .btn {
   padding: .75rem 1.5rem;
-  background-color: var(--white-color);
+  background-color: var(--secondary-color);
+  color: var(--white-color);
 }
 .cards-container::-webkit-scrollbar {
   display: none;

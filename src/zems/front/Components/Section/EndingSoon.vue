@@ -20,11 +20,14 @@ defineProps({
 
 <template>
   <section class="ending-soon bg-secondary">
-    <div class="container">
+    <div class="container relative">
+      <div class="ending-image">
+        <img src="/ending-soon.svg" alt="">
+      </div>
       <div class="medium-2 large-3 gap-2">
         <div class="ending-timer">
           <div class="text">
-            <BaseTitle>Ending In</BaseTitle>
+            <BaseTitle>Ending Soon</BaseTitle>
             <SubTitle class="mb-2">Grab these deals before they expire!</SubTitle>
             <ClockCompo />
             <CountDown />
@@ -48,6 +51,14 @@ defineProps({
   position:relative;
   padding: 3rem .5rem;
   color: var(--white-color);
+  overflow: hidden;
+}
+.ending-image {
+  position: absolute;
+  opacity: .3;
+  width: 500px;
+  height: 500px;
+  left: -10rem;
 }
 .ending-soon .ending-timer {
   position: relative;
@@ -57,9 +68,7 @@ defineProps({
   justify-content: center;
   text-align: center;
 }
-.text{
-  z-index: 3;
-}
+
 
 .ending-soon .sub-title {
   margin-top: .5rem;
@@ -83,7 +92,15 @@ defineProps({
   .ending-soon {
     padding: 5rem .5rem;
   }
-
+.ending-image {
+  position: absolute;
+  opacity: .3;
+  width: 500px;
+  height: 500px;
+  left: -10rem;
+  bottom: -8rem;
+ /* border: 5px solid red; */
+}
   .masonry-grid {
     columns: 2;
     row-gap: 2rem;

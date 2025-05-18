@@ -45,7 +45,7 @@ defineProps({
 
 .pricing-card .btn {
   border: 1px solid transparent;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   color: var(--white-color);
   border-radius: 1.5rem;
   width: 100%;

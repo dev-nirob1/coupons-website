@@ -4,14 +4,25 @@
 <template>
   <section class="hero bg-light">
     <div class="content container medium-2 align-center justify-between">
-      <div class="text-content">
-        <div class="text-white">
+      <div class="star-1">
+        <img src="/star-1.png" alt="">
+      </div>
+      <div class="star-2">
+        <img src="/star-2.png" alt="">
+      </div>
+      <div class="star-3">
+        <img src="/angle-1.png" alt="">
+      </div>
+
+
+      <div class="text-content text-white">
+        <div>
           <HeroTitle>Exclusive Coupons</HeroTitle>
           <HeroTitle class="highlight">Huge Savings</HeroTitle>
           <HeroTitle class="font-big">GRAB NOW!</HeroTitle>
         </div>
 
-        <BaseParagraph class="text-white">
+        <BaseParagraph>
           Unlock thousands of deals and save up to 80% at top retailers -
           verified coupons updated daily for maximum savings
         </BaseParagraph>
@@ -27,6 +38,28 @@
 </template>
 
 <style scoped>
+.star-1 {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+}
+.star-2 {
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  z-index: -1;
+}
+.star-3 {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  left: 80%;
+  top: 20%;
+}
+.star-3 img{
+  width: 100%;
+  height: 100%;
+}
 .hero {
   min-height: 100vh;
   display: flex;
@@ -37,6 +70,8 @@
 }
 
 .hero .content {
+
+  position: relative;
   padding: .5rem;
   margin-top: 5rem;
   width: 100%;
