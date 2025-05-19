@@ -44,8 +44,7 @@
   position: absolute;
   height: 130px;
   width: 130px;
-  transition: all .5s ease-in-out;
-  animation: stars 2s infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 .star-1 {
@@ -133,23 +132,16 @@
   height: 100%;
 }
 
-@keyframes stars {
-  0% {
-    opacity: 1;
-    height: 130px;
-    width: 130px;
-  }
+@keyframes float {
 
-  50% {
-    opacity: .5;
-    height: 110px;
-    width: 110px;
-  }
-
+  0%,
   100% {
+    transform: translateY(0);
     opacity: 1;
-    height: 130px;
-    width: 130px;
+  }
+  50%{
+    transform: translateY(-1rem);
+    opacity: .5
   }
 }
 

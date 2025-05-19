@@ -32,8 +32,6 @@ defineProps({
         <BaseParagraph>Validity: {{ couponData?.expire_date }}</BaseParagraph>
         <BaseButton @click='handleOpenModal' class="bg-secondary text-white">Get Code</BaseButton>
       </div>
-      <div class="circle-1"></div>
-      <div class="circle-2"></div>
     </div>
   </div>
 </template>

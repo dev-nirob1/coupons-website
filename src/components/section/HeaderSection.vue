@@ -39,10 +39,6 @@ onMounted(() => {
 
       <!-- Navigation Links -->
       <ul class="nav-links" :class="{ 'active': isMenuOpen }">
-        <ListItem> <router-link to="/" class="logo">
-            <BaseImage src="/logo.png" alt="logo" />
-            <span class="brand">CouponCraze</span>
-          </router-link></ListItem>
         <ListItem><router-link to="/">Home</router-link></ListItem>
         <ListItem><router-link to="/coupon_list">Latest Coupons</router-link></ListItem>
         <ListItem><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></ListItem>
