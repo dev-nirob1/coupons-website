@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white statistics">
     <div class="container">
-      <ul class="small-2 larger-4 stats-content">
+      <ul class="small-2 larger-4 gap-2 medium-gap-1 stats-content">
         <!-- individual stats component  -->
         <li>
           <i class="fa-solid fa-tag"></i>

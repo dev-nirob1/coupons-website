@@ -17,7 +17,7 @@ const { data: pricing = [] } = useQuery({
   <section class="pricing bg-lighten">
     <div class="container">
       <SectionTitle title="Simple Pricing"></SectionTitle>
-      <div class="large-3 gap-1 align-center medium-gap-2">
+      <div class="medium-2 large-3 align-center gap-1 medium-gap-2">
         <div v-for="data in pricing" :key=data.id>
           <PricingCard :price="data" />
         </div>
