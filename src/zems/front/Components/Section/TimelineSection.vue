@@ -1,12 +1,11 @@
 <template>
   <section class="timeline-section bg-lighten">
     <div class="container">
-
       <div class="large-3 how-it-works">
         <div class="timeline">
           <img src="/all.png" alt="">
         </div>
-        <div class="">
+        <div>
           <div class="pb-5">
             <BaseTitle tag="h4">
               Save Money in <br> 3 Simple Steps
@@ -20,9 +19,6 @@
           </div>
           <div class="one">
             <div class="timeline-card">
-              <!-- <div class="first-img">
-              <img src="/first.png" alt="">
-            </div> -->
               <div class="number">1</div>
               <BaseTitle tag="h5">Find Amazing Deals</BaseTitle>
               <BaseParagraph>
@@ -34,9 +30,6 @@
         <div class="middle align-center">
           <div class="two">
             <div class="timeline-card">
-              <!-- <div class="second-img">
-              <img src="/second.png" alt="">
-            </div> -->
               <div class="number">2</div>
               <BaseTitle tag="h5">Select & Copy</BaseTitle>
               <BaseParagraph>
@@ -48,9 +41,6 @@
         <div>
           <div class="three">
             <div class="timeline-card">
-              <!-- <div class="third-img">
-              <img src="/third.png" alt="">
-            </div> -->
               <div class="number">3</div>
               <BaseTitle tag="h5">Enjoy Savings</BaseTitle>
               <BaseParagraph>
@@ -59,7 +49,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -70,19 +59,13 @@
   padding: 5rem .5rem;
 }
 
-.middle {
-  display: flex;
-}
-
-.one,
-.two,
-.three {
-  position: relative;
-}
-
 .how-it-works {
   position: relative;
   width: 100%;
+}
+
+.middle {
+  display: flex;
 }
 
 .timeline {
@@ -93,41 +76,46 @@
   width: 100%;
 }
 
-.timeline h4 {
-  margin: 0;
+.one,
+.two,
+.three {
+  position: relative;
 }
 
 .timeline-card {
   padding: 2rem;
-  box-shadow: box-shadow;
   position: relative;
 }
 
 .number {
   width: 100px;
   height: 100px;
+  line-height: 100px;
   border-radius: 50%;
   text-align: center;
-  line-height: 100px;
+  color: var(--white-color);
   background-color: var(--alternative-color);
   margin: 0 auto;
   font-size: 5rem;
   font-weight: 900;
-  color: var(--white-color);
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 992px) {
+  .timeline {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 3.5rem;
+  }
 
- .timeline {
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: 3rem;
+  .number {
+    margin-bottom: 3rem;
+  }
 }
-}
-@media (min-width: 1200px){
-  .timeline{
+
+@media (min-width: 1200px) {
+  .timeline {
     top: -1.5rem;
   }
 }
