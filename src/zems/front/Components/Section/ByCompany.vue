@@ -17,16 +17,16 @@ const companies = [
     <div class="container">
       <SectionTitle title="Company Offer" />
 
-      <div class="medium-4 gap-1 medium-gap-2">
+      <div class="medium-2 large-4 gap-1 medium-gap-2">
 
         <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
 
         <div class="medium-span-2">
           <!-- link card/btn -->
           <RouterLink class="link-card" to="/companies">
-            <div class="all-4 gap-1 align-center">
+            <div class="medium-4 gap-1 align-center">
               <div>
-                <BaseImage image="/company/store.png" />
+                <img src="/company/store.png" />
               </div>
               <div class="span-3">
                 <SubTitle>Explore All Partner Companies</SubTitle>
@@ -48,15 +48,12 @@ const companies = [
 }
 
 .link-card {
-  display: flex;
-  align-items: center;
+  text-align: center;
   text-decoration: none;
-  height: 100%;
-  width: 100%;
   color: var(--white-color);
   background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   box-shadow: var(--box-shadow);
-  padding: 1rem 3rem;
+  padding: 2rem;
   border-radius: 1rem;
   transition: all .3s ease-in-out;
 }
@@ -71,8 +68,18 @@ const companies = [
 }
 
 .link-card img {
-  height: 100%;
-  width: 100%;
+  height: 100px;
+  width: 100px;
 }
 
+@media (min-width: 768px) {
+  .link-card {
+    text-align: left;
+  }
+
+  .link-card img {
+    height: 150px;
+    width: 150px;
+  }
+}
 </style>
