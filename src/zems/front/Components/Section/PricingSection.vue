@@ -17,7 +17,7 @@ const { data: pricing = [] } = useQuery({
   <section class="pricing bg-lighten">
     <div class="container">
       <SectionTitle title="Simple Pricing"></SectionTitle>
-      <div class="medium-2 large-3 align-center gap-1 medium-gap-2">
+      <div class="medium-2 large-3 align-center justify-center gap-1 medium-gap-2">
         <div v-for="data in pricing" :key=data.id>
           <PricingCard :price="data" />
         </div>
@@ -29,7 +29,6 @@ const { data: pricing = [] } = useQuery({
 <style scoped>
 .pricing {
   padding: 3rem .5rem;
-  /* background: var(--primary-lighten-color); */
 }
 
 @media (min-width: 768px) {

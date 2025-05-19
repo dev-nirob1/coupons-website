@@ -43,20 +43,6 @@ defineProps({
   transform: translateY(-.5rem);
 }
 
-.pricing-card .btn {
-  border: 1px solid transparent;
-  background: var(--secondary-color);
-  color: var(--white-color);
-  border-radius: 1.5rem;
-  width: 100%;
-}
-
-.pricing-card .btn:hover {
-  background-color: var(--white-color);
-  color: var(--secondary-color);
-  border: 1px solid var(--primary-color);
-}
-
 .pricing-card .sub-title {
   margin: .5rem 0;
 }
@@ -70,6 +56,19 @@ defineProps({
 .pricing-card .hero-title span {
   font-size: 1.75rem;
   font-weight: bold;
+}
+.pricing-card .btn {
+  border: 1px solid transparent;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  border-radius: 1.5rem;
+  width: 100%;
+}
+
+.pricing-card .btn:hover {
+  background-color: var(--white-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .pricing-card .exclusive-badge {
@@ -88,24 +87,17 @@ defineProps({
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-  /* box-shadow: var(--box-shadow); */
 }
 
 .pricing-card .badge::before {
   content: '';
   position: absolute;
   top: 1.1rem;
+  left: -1.75rem;
   height: 3.5rem;
   width: 3.5rem;
   rotate: 45deg;
   background: var(--white-color);
 }
 
-.badge::before {
-  left: -1.75rem;
-}
-
-/* .badge::after{
-  right: -1.75rem;
-} */
 </style>

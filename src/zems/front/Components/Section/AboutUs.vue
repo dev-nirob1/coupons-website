@@ -3,7 +3,7 @@
     <div class="container large-2 align-center gap-2">
       <!-- image div  -->
       <div class="image">
-        <img class="height-full" src="https://cdn.pixabay.com/photo/2024/10/06/22/36/shipping-9101364_960_720.png"
+        <img src="https://cdn.pixabay.com/photo/2024/10/06/22/36/shipping-9101364_960_720.png"
           alt="image" />
       </div>
       <div>
@@ -68,7 +68,7 @@
 
 .about-us i {
   font-size: 1.25rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 50%;
   color: var(--primary-lighten-color);
   background-color: var(--primary-color);
@@ -93,26 +93,31 @@
 
 .about-us .image {
   width: 100%;
-  height: 70vh;
+  height: auto;
 }
 .about-us .image img{
-  width: 100%;
+  height: 100%;
 }
 
 .about-us .btn {
+  border: 1px solid transparent;
   background-color: var(--alternative-color);
   color: var(--white-color);
   padding: 1.25rem 2rem;
   font-size: 1.25rem;
 }
 .about-us .btn:hover {
-  color: var(--alternative-color);
+  color: var(--secondary-color);
   background-color: var(--white-color);
 }
 
 @media (min-width: 768px) {
   .about-us .quote {
     width: 90%;
+  }
+  .about-us .image{
+    width: fit-content;
+    height: 70vh;
   }
 }
 </style>
