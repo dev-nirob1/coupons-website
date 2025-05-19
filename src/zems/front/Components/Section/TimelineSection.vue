@@ -56,7 +56,7 @@
 
 <style scoped>
 .timeline-section {
-  padding: 5rem .5rem;
+  padding: 5rem .75rem;
 }
 .timeline-section .btn {
   font-size: 1.25rem;

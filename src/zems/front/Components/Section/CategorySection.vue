@@ -45,7 +45,7 @@ defineProps({
 
 <style scoped>
 .categories {
-  padding: 5rem 0.5rem;
+  padding: 5rem 0.75rem;
 }
 
 .categories .link-card {

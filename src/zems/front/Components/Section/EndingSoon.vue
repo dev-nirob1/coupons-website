@@ -51,7 +51,7 @@ defineProps({
 <style scoped>
 .ending-soon {
   position: relative;
-  padding: 3rem .5rem;
+  padding: 3rem .75rem;
   color: var(--white-color);
   overflow: hidden;
 }

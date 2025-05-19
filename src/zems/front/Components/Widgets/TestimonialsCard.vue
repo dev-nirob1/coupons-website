@@ -28,17 +28,18 @@ defineProps({
 .testimonial-card {
   flex: 0 0 auto;
   padding: 2rem 1.5rem;
-  width: 400px;
+  width: 350px;
   min-height: 280px;
   background: var(--white-color);
   border-radius: .5rem;
   box-shadow: var(--box-shadow);
 }
 
-
-.testimonial-card h5 {
-  margin: 0;
-  padding: 0;
+@media (min-width: 768px){
+  .testimonial-card {width: 380px;}
+}
+@media(min-width: 992px){
+  .testimonial-card{width: 400px;}
 }
 
 .testimonial-card p {

@@ -53,7 +53,7 @@ defineProps({
 </template>
 <style scoped>
 .featured-coupon {
-  padding: 5rem .5rem;
+  padding: 5rem .75rem;
 }
 
 .link-card {

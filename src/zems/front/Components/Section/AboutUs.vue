@@ -47,9 +47,7 @@
 
 <style scoped>
 .about-us {
-  padding: 5rem 0.5rem;
-  color: var(--secondary-color);
-  /* background: var(--primary-lighten-color); */
+  padding: 5rem .75rem;
 }
 .about-us .title {
   margin-bottom: 1rem;

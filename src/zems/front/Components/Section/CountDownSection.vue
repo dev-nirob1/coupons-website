@@ -38,7 +38,7 @@
 
 <style scoped>
 .statistics {
-  padding: 5rem .5rem;
+  padding: 5rem .75rem;
   margin: 0 auto;
 }
 

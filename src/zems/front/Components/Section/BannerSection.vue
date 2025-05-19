@@ -40,23 +40,26 @@
 <style scoped>
 .star-1,
 .star-2,
-.star-3{
+.star-3 {
   position: absolute;
   height: 130px;
   width: 130px;
   transition: all .5s ease-in-out;
   animation: stars 2s infinite;
 }
+
 .star-1 {
   left: 15%;
   top: 55%;
   z-index: -1;
 }
+
 .star-2 {
   left: 70%;
   top: 65%;
   z-index: -1;
 }
+
 .star-3 {
   right: 10%;
   top: 5%;
@@ -65,10 +68,11 @@
 
 .star-1 img,
 .star-2 img,
-.star-3 img{
+.star-3 img {
   width: 100%;
   height: 100%;
 }
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -80,7 +84,7 @@
 
 .hero .content {
   position: relative;
-  padding: .5rem;
+  padding: .75rem;
   margin-top: 5rem;
   width: 100%;
   text-align: left;
@@ -128,37 +132,43 @@
   width: 80%;
   height: 100%;
 }
+
 @keyframes stars {
-  0%{
+  0% {
     opacity: 1;
     height: 130px;
     width: 130px;
   }
-  50%{
+
+  50% {
     opacity: .5;
-     height: 110px;
+    height: 110px;
     width: 110px;
   }
-  100%{
+
+  100% {
     opacity: 1;
-     height: 130px;
+    height: 130px;
     width: 130px;
   }
 }
+
 @media (min-width: 768px) {
-.star-1 {
-left: 50%;
-  top: 20%;
-}
-.star-2 {
-  left: 60%;
-  top: 65%;
-}
-.star-3 {
-  right: 8%;
-  top: 5%;
-  z-index: -1;
-}
+  .star-1 {
+    left: 50%;
+    top: 20%;
+  }
+
+  .star-2 {
+    left: 60%;
+    top: 65%;
+  }
+
+  .star-3 {
+    right: 8%;
+    top: 5%;
+    z-index: -1;
+  }
 
 
   .hero .content {
@@ -182,5 +192,4 @@ left: 50%;
     font-size: 5.5rem;
   }
 }
-
 </style>

@@ -87,14 +87,14 @@ onMounted(() => {
     <div class="container">
       <div class="medium-8 align-center gap-2">
         <div class="medium-span-3 text-content flex flex-col justify-center">
-          <BaseTitle>Feedback &
+          <BaseTitle>Feedback & <br>
             Testimonials
           </BaseTitle>
           <BaseParagraph>
             Real savings from real people. See how our community saves big every day.
           </BaseParagraph>
         </div>
-        <div class="medium-span-5 medium-py-4">
+        <div class="medium-span-5 medium-py-5">
           <div class="cards-container">
             <TestimonialsCard v-for="(data, i) in reviews" :data="data" :key="i" />
           </div>
@@ -115,7 +115,7 @@ onMounted(() => {
 
 .text-content {
   position: relative;
-  padding: 3rem .5rem 0;
+  padding: 3rem .75rem 0;
   height: 100%;
   background-color: var(--primary-color);
   color: var(--white-color);
@@ -123,9 +123,9 @@ onMounted(() => {
 
 .text-content::after {
   content: '';
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   left: 0;
   bottom: -100%;
   background: var(--primary-color);
@@ -134,7 +134,7 @@ onMounted(() => {
 }
 
 .cards-container {
-  padding: 1rem .5rem;
+  padding: 1rem .75rem;
   width: 100%;
   overflow: auto;
   display: flex;
@@ -167,10 +167,6 @@ onMounted(() => {
   }
 
   .text-content::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
     left: 100%;
     top: 0;
     padding-right: 5rem;

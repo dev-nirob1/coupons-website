@@ -16,7 +16,7 @@ onMounted(() => {
   const navbar = document.querySelector('.nav-links')
   console.log(navbar.childNodes);
   navbar.childNodes.forEach(element => {
-    element.addEventListener('click', ()=> {
+    element.addEventListener('click', () => {
       isMenuOpen.value = false
     })
   });
@@ -24,11 +24,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="navbar" :class="{'bg-secondary': routeName !== 'home'}">
+  <header class="navbar" :class="{ 'bg-secondary': routeName !== 'home' }">
     <nav class="flex justify-between align-center container">
       <!-- Logo -->
       <router-link to="/" class="logo">
-        <BaseImage src="/logo.png" alt="logo"/>
+        <BaseImage src="/logo.png" alt="logo" />
         <span class="brand">CouponCraze</span>
       </router-link>
 
@@ -39,6 +39,10 @@ onMounted(() => {
 
       <!-- Navigation Links -->
       <ul class="nav-links" :class="{ 'active': isMenuOpen }">
+        <ListItem> <router-link to="/" class="logo">
+            <BaseImage src="/logo.png" alt="logo" />
+            <span class="brand">CouponCraze</span>
+          </router-link></ListItem>
         <ListItem><router-link to="/">Home</router-link></ListItem>
         <ListItem><router-link to="/coupon_list">Latest Coupons</router-link></ListItem>
         <ListItem><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></ListItem>
@@ -103,8 +107,8 @@ onMounted(() => {
   left: -100%;
   width: 80%;
   margin: 0;
-  color: var(--light-color);
-  background: var(--white-color);
+  color: var(--white-color);
+  background: var(--secondary-color);
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem;
@@ -113,7 +117,7 @@ onMounted(() => {
 }
 
 .navbar ul.active {
-  top: 100px;
+  top: 0;
   left: 0;
 }
 
@@ -131,9 +135,9 @@ onMounted(() => {
 /* Mobile Menu Styles */
 .hamburger {
   display: block;
+  color: var(--white-color);
   height: 2rem;
   width: 3rem;
-  background: transparent;
   border: none;
   cursor: pointer;
 }
@@ -143,6 +147,7 @@ onMounted(() => {
     display: block;
     margin: 0;
   }
+
   .navbar ul {
     position: inherit;
     color: var(--white-color);
@@ -173,5 +178,4 @@ onMounted(() => {
     display: none;
   }
 }
-
 </style>

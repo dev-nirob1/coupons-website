@@ -28,7 +28,7 @@ const { data: pricing = [] } = useQuery({
 
 <style scoped>
 .pricing {
-  padding: 3rem .5rem;
+  padding: 3rem .75rem;
 }
 
 @media (min-width: 768px) {

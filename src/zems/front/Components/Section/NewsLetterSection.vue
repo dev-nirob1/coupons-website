@@ -9,7 +9,7 @@
         <SubTitle>Subscribe Our</SubTitle>
         <BaseTitle>NewsLetter</BaseTitle>
       </div>
-      <div class="medium-span-3 flex">
+      <div class="medium-span-3 flex pl-1">
         <InputField class="bg-white" placeholder="Please Enter Your Email" />
         <BaseButton class="bg-secondary text-white">Subscribe</BaseButton>
       </div>
@@ -20,7 +20,6 @@
 .news-letter {
   border-bottom: 5rem solid var(--primary-color);
   border-top: 5rem solid var(--primary-color);
-  /* padding-left: 6rem; */
   background-color: var(--primary-color);
   background: linear-gradient(to right, var(--primary-color), var(--primary-color), var(--white-color), var(--white-color));
 
