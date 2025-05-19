@@ -115,7 +115,7 @@ onMounted(() => {
 
 .text-content {
   position: relative;
-  padding: 3rem .5rem;
+  padding: 3rem .5rem 0;
   height: 100%;
   background-color: var(--primary-color);
   color: var(--white-color);
@@ -134,8 +134,7 @@ onMounted(() => {
 }
 
 .cards-container {
-  padding: 1rem;
-  padding-left: 0;
+  padding: 1rem .5rem;
   width: 100%;
   overflow: auto;
   display: flex;
@@ -145,6 +144,7 @@ onMounted(() => {
 }
 
 .btn-container {
+  padding: 0 .5rem;
   z-index: 3;
   display: flex;
   gap: 1rem;
