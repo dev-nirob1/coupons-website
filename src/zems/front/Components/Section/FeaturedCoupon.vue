@@ -24,9 +24,8 @@ defineProps({
     <div class="container">
       <!-- Section Header -->
       <SectionTitle title="Featured Coupon" class="text-secondary" />
-
       <!-- Coupon Grid -->
-      <div class="medium-3 gap-2">
+      <div class="medium-2 large-3 gap-1 large-gap-2">
         <template v-if="isLoading">
           <LoadingCard v-for="(l, i) in 6" :key="i" />
         </template>
@@ -37,7 +36,7 @@ defineProps({
 
           <!-- link button-->
           <RouterLink class="link-card" to="/coupon_list/exclusive">
-            <div class="flex flex-col justify-center align-center text-center">
+            <div class="flex flex-col justify-center align-center">
               <div>
                 <BaseImage image="/company/store.png" />
               </div>
@@ -58,12 +57,8 @@ defineProps({
 }
 
 .link-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   text-decoration: none;
-  height: 100%;
-  width: 100%;
   background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
   box-shadow: var(--box-shadow);
   color: var(--white-color);
@@ -76,16 +71,12 @@ defineProps({
   transform: scale(1.02);
 }
 
-.link-card .subtitle {
-  margin: 0;
-}
-
 .link-card p {
   margin-top: .5rem;
 }
 
 .link-card img {
-  height: 100%;
-  width: 100%;
+  height: 100px;
+  width: 100px;
 }
 </style>

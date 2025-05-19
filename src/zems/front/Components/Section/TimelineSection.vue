@@ -15,7 +15,7 @@
               copy,
               apply, and save instantly at checkout.
             </BaseParagraph>
-            <BaseButton class="btn bg-secondary text-white">Get Started</BaseButton>
+            <BaseButton class="bg-secondary text-white">Get Started</BaseButton>
           </div>
           <div class="one">
             <div class="timeline-card">
@@ -58,7 +58,11 @@
 .timeline-section {
   padding: 5rem .5rem;
 }
-
+.timeline-section .btn {
+  font-size: 1.25rem;
+  border-radius: .5rem;
+  padding: 1.25rem 2.5rem;
+}
 .how-it-works {
   position: relative;
   width: 100%;
