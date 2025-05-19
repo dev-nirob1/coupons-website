@@ -30,8 +30,7 @@
   border-top-left-radius: 10rem;
   border-bottom-left-radius: 10rem;
   /* padding-right: 5rem; */
-  height: 40vh;
-  /* height: 30vh; */
+  height: 30vh;
   background-color: var(--white-color);
 }
 
@@ -60,7 +59,6 @@
 
   .news-letter .content {
     padding-right: 5rem;
-    height: 30vh;
   }
 
   .news-letter .btn {
