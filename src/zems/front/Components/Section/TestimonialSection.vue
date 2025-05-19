@@ -163,7 +163,7 @@ onMounted(() => {
 
 @media (min-width: 768px) {
   .testimonials {
-    background: linear-gradient(to right, var(--primary-color), var(--primary-color), var(--white-color), var(--white-color));
+    background: linear-gradient(to right, var(--primary-color), var(--primary-color), var(--white-color), var(--white-color), var(--white-color));
   }
 
   .text-content::after {
