@@ -26,7 +26,7 @@ defineProps({
       </div>
       <div class="medium-2 large-3 gap-2">
         <div class="ending-timer">
-          <div class="text">
+          <div>
             <BaseTitle>Ending Soon</BaseTitle>
             <SubTitle class="mb-2">Grab these deals before they expire!</SubTitle>
             <ClockCompo />

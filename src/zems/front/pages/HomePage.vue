@@ -84,7 +84,7 @@ const handleOpenModal = () => {
   <PricingSection />
   <CountDownSection/>
   <TestimonialSection />
-  <NewsLetterSection />
+  <!-- <NewsLetterSection /> -->
 </template>
 
 <style scoped>

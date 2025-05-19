@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref} from 'vue';
+import { onMounted, ref } from 'vue';
 import TestimonialsCard from '@/zems/front/Components/Widgets/TestimonialsCard.vue';
 const reviews = ref([
   {
@@ -83,24 +83,25 @@ onMounted(() => {
 
 <template>
   <div class="testimonials">
-    <div class="medium-8 container">
-      <div class="span-3 text-content">
-        <div>
+
+    <div class="container">
+      <div class="medium-8 align-center gap-2">
+        <div class="medium-span-3 text-content flex flex-col justify-center">
           <BaseTitle>Feedback &
-            <br> Testimonials
+            Testimonials
           </BaseTitle>
           <BaseParagraph>
             Real savings from real people. See how our community saves big every day.
           </BaseParagraph>
         </div>
-      </div>
-      <div class="span-5 height-full">
-        <div class="cards-container">
-          <TestimonialsCard v-for="(data, i) in reviews" :data="data" :key="i" />
-        </div>
-        <div class="btn-container flex gap-1">
-          <BaseButton id="prev">Prev</BaseButton>
-          <BaseButton id="next">Next</BaseButton>
+        <div class="medium-span-5 medium-py-4">
+          <div class="cards-container">
+            <TestimonialsCard v-for="(data, i) in reviews" :data="data" :key="i" />
+          </div>
+          <div class="btn-container">
+            <BaseButton id="prev">Prev</BaseButton>
+            <BaseButton id="next">Next</BaseButton>
+          </div>
         </div>
       </div>
     </div>
@@ -109,75 +110,81 @@ onMounted(() => {
 
 <style scoped>
 .testimonials {
-  padding-left: 6rem;
   position: relative;
-  background: linear-gradient(to right, var(--primary-color),var(--primary-color), var(--white-color), var(--white-color));
 }
 
 .text-content {
   position: relative;
-  padding: 12rem 0;
-  padding-left: 3rem;
+  padding: 3rem .5rem;
+  height: 100%;
   background-color: var(--primary-color);
   color: var(--white-color);
 }
-.span-5{
-  background-color: white;
-  position: relative;
+
+.text-content::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  background: var(--primary-color);
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 
-/* .text-content::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  right: -100%;
-  top: 0;
-  padding-right: 5rem;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  background-color: var(--primary-color);
-  z-index: 1;
-} */
-
 .cards-container {
-  margin-top: 5rem;
-  width: 100%;
-  overflow: auto;
   padding: 1rem;
   padding-left: 0;
+  width: 100%;
+  overflow: auto;
   display: flex;
   gap: 2rem;
   transition: all .5s ease-in-out;
-   position: relative;
   z-index: 3;
 }
 
 .btn-container {
   z-index: 3;
-  position: relative;
+  display: flex;
+  gap: 1rem;
 }
+
 .btn-container .btn {
   padding: .75rem 1.5rem;
+  border-radius: .5rem;
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+
 .cards-container::-webkit-scrollbar {
   display: none;
 }
-@media (min-width: 992px){
+
+@media (min-width: 768px) {
+  .testimonials {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-color), var(--white-color), var(--white-color));
+  }
+
   .text-content::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  right: -100%;
-  top: 0;
-  padding-right: 5rem;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  background-color: var(--primary-color);
-  z-index: 1;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 100%;
+    top: 0;
+    padding-right: 5rem;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 0;
+    background-color: var(--primary-color);
+    z-index: 1;
+  }
 }
+
+@media(min-width: 992px) {
+  .testimonials {
+    padding-left: 6rem;
+  }
 }
 </style>
