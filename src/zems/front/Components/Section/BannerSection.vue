@@ -4,6 +4,7 @@
 <template>
   <section class="hero bg-light">
     <div class="content container medium-2 align-center justify-between">
+
       <div class="star-1">
         <img src="/star-1.png" alt="">
       </div>
@@ -13,7 +14,6 @@
       <div class="star-3">
         <img src="/angle-1.png" alt="">
       </div>
-
 
       <div class="text-content text-white">
         <div>
@@ -38,24 +38,33 @@
 </template>
 
 <style scoped>
-.star-1 {
+.star-1,
+.star-2,
+.star-3{
   position: absolute;
-  left: 50%;
-  top: 20%;
+  height: 130px;
+  width: 130px;
+  transition: all .5s ease-in-out;
+  animation: stars 2s infinite;
 }
-.star-2 {
-  position: absolute;
-  left: 60%;
+.star-1 {
+  left: 15%;
   top: 55%;
   z-index: -1;
 }
-.star-3 {
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  left: 80%;
-  top: 20%;
+.star-2 {
+  left: 70%;
+  top: 65%;
+  z-index: -1;
 }
+.star-3 {
+  right: 10%;
+  top: 5%;
+  z-index: -1;
+}
+
+.star-1 img,
+.star-2 img,
 .star-3 img{
   width: 100%;
   height: 100%;
@@ -70,7 +79,6 @@
 }
 
 .hero .content {
-
   position: relative;
   padding: .5rem;
   margin-top: 5rem;
@@ -120,8 +128,39 @@
   width: 80%;
   height: 100%;
 }
-
+@keyframes stars {
+  0%{
+    opacity: 1;
+    height: 130px;
+    width: 130px;
+  }
+  50%{
+    opacity: .5;
+     height: 110px;
+    width: 110px;
+  }
+  100%{
+    opacity: 1;
+     height: 130px;
+    width: 130px;
+  }
+}
 @media (min-width: 768px) {
+.star-1 {
+left: 50%;
+  top: 20%;
+}
+.star-2 {
+  left: 60%;
+  top: 65%;
+}
+.star-3 {
+  right: 8%;
+  top: 5%;
+  z-index: -1;
+}
+
+
   .hero .content {
     margin-top: 3rem;
   }

@@ -25,7 +25,6 @@ defineProps({
 
         <template v-else>
           <CategoryCard v-for="(category, i) in categories" :i="i" :category="category" :key="category.id" />
-
           <!-- link button  -->
           <RouterLink class="link-card" to="/categories">
             <div class="flex flex-col justify-center align-center text-center">
@@ -46,7 +45,6 @@ defineProps({
 
 <style scoped>
 .categories {
-  transition: all 0.3s ease;
   padding: 5rem 0.5rem;
 }
 

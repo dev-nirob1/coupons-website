@@ -37,7 +37,7 @@ defineProps({
 }
 
 .coupon-title {
-  padding: 1rem 3rem;
+  padding: 1rem;
   border: 1px solid var(--secondary-color);
   border-left: none;
   border-right: 3px dashed var(--secondary-color);
@@ -73,4 +73,9 @@ defineProps({
   background-color: var(--primary-lighten-color);
 }
 
+@media (min-width: 768px) {
+  .coupon-title {
+    padding: 1rem 3rem;
+  }
+}
 </style>
