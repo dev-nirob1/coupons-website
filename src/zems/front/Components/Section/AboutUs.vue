@@ -51,7 +51,6 @@
   color: var(--secondary-color);
   /* background: var(--primary-lighten-color); */
 }
-
 .about-us .title {
   margin-bottom: 1rem;
 }
@@ -96,7 +95,7 @@
   height: auto;
 }
 .about-us .image img{
-  height: 100%;
+  width: 100%;
 }
 
 .about-us .btn {
@@ -118,6 +117,9 @@
   .about-us .image{
     width: fit-content;
     height: 70vh;
+  }
+  .about-us .image img{
+    height: 100%;
   }
 }
 </style>

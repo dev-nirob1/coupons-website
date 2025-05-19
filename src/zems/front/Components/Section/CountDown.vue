@@ -26,20 +26,17 @@
   justify-content: center;
   gap: 1.5rem;
   margin: 1.5rem 0;
-  padding: 2rem;
 }
-
 .countdown-timer>div {
   background: rgb(from var(--primary-color) r g b/15%);
   height: 5.5rem;
   width: 5.5rem;
-  padding: .5rem 1rem 1rem;
+  padding: 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
 }
-.countdown-timer>div h4,
-.countdown-timer>div span{
+.countdown-timer>div h4{
 transition: all .3s ease;
 }
 
@@ -69,6 +66,12 @@ transition: all .3s ease;
   100% {
     transform: scale(1);
     opacity: .75;
+  }
+}
+@media (min-width: 768px){
+  .countdown-timer>div {
+  height: 6.5rem;
+  width: 6.5rem;
   }
 }
 </style>

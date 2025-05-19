@@ -24,8 +24,10 @@ defineProps({
       <div class="ending-image">
         <img src="/ending-soon.svg" alt="">
       </div>
-      <div class="medium-2 large-3 gap-2">
-        <div class="ending-timer">
+
+
+      <div class="large-3 gap-1 medium-gap-2">
+        <div class="ending-timer large-span-1">
           <div>
             <BaseTitle>Ending Soon</BaseTitle>
             <SubTitle class="mb-2">Grab these deals before they expire!</SubTitle>
@@ -48,11 +50,12 @@ defineProps({
 
 <style scoped>
 .ending-soon {
-  position:relative;
+  position: relative;
   padding: 3rem .5rem;
   color: var(--white-color);
   overflow: hidden;
 }
+
 .ending-image {
   position: absolute;
   opacity: .3;
@@ -60,6 +63,7 @@ defineProps({
   height: 500px;
   left: -10rem;
 }
+
 .ending-soon .ending-timer {
   position: relative;
   display: flex;
@@ -77,30 +81,11 @@ defineProps({
 .masonry-item {
   margin-bottom: 2rem;
 }
-.ending-soon .card-footer .circle-1,
-.ending-soon .card-footer .circle-2 {
-  background-color: var(--secondary-color);
-}
 
 @media (min-width: 768px) {
   .ending-soon {
     padding: 4rem .5rem;
   }
-}
-
-@media (min-width: 992px) {
-  .ending-soon {
-    padding: 5rem .5rem;
-  }
-.ending-image {
-  position: absolute;
-  opacity: .3;
-  width: 500px;
-  height: 500px;
-  left: -10rem;
-  bottom: -8rem;
- /* border: 5px solid red; */
-}
   .masonry-grid {
     columns: 2;
     row-gap: 2rem;
@@ -110,5 +95,22 @@ defineProps({
   .masonry-item:nth-child(1) {
     margin-top: 5rem;
   }
+}
+
+@media (min-width: 992px) {
+  .ending-soon {
+    padding: 5rem .5rem;
+  }
+
+  .ending-image {
+    position: absolute;
+    opacity: .3;
+    width: 500px;
+    height: 500px;
+    left: -10rem;
+    bottom: -8rem;
+  }
+
+
 }
 </style>
