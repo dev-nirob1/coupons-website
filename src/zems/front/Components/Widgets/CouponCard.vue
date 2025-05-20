@@ -41,7 +41,7 @@ defineProps({
   position: relative;
   background: linear-gradient(30deg, var(--primary-lighten-color), var(--primary-light-color));
   color: var(--secondary-color);
-  padding: 2rem 2rem 6rem 2rem;
+  padding: 2rem 1rem 6rem 1rem;
   border-radius: .75rem;
   overflow: hidden;
 }
@@ -103,5 +103,9 @@ defineProps({
 .bg-secondary .card-footer::after{
   background-color: var(--secondary-color);
 }
-
+@media (min-width: 768px){
+  .coupon-card{
+     padding: 2rem 2rem 6rem 2rem;
+  }
+}
 </style>

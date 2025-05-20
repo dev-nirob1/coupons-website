@@ -3,9 +3,8 @@
 
 <template>
   <section class="hero bg-light">
-    <div class="container px-1">
+    <div class="container">
       <div class="content medium-2 align-center justify-between">
-        
         <div class="star-1">
           <img src="/star-1.png" alt="">
         </div>
@@ -15,7 +14,6 @@
         <div class="star-3">
           <img src="/angle-1.png" alt="">
         </div>
-
         <div class="text-content text-white">
           <div>
             <HeroTitle>Exclusive Coupons</HeroTitle>
@@ -40,6 +38,51 @@
 </template>
 
 <style scoped>
+.hero {
+  padding: 2rem 1rem;
+  background-color: var(--primary-color);
+}
+.hero .content {
+  position: relative;
+  margin-top: 5rem;
+  z-index:5;
+}
+
+.hero .hero-title.highlight {
+  display: inline-block;
+  font-size: 1.75rem;
+  padding: 1rem;
+  margin: .5rem 0;
+  color: var(--primary-color);
+  background-color: var(--primary-lighten-color);
+}
+.hero .hero-title.font-big {
+  font-size: 3.5rem;
+}
+.hero .btn {
+  font-size: 1.25rem;
+  padding: 1rem 1.75rem;
+  color: var(--white-color);
+  background-color: var(--alternative-color);
+}
+
+.hero .btn:hover {
+  color: var(--secondary-color);
+  background-color: var(--white-color);
+}
+
+.hero .content .img {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .content .img img {
+  width: 80%;
+  height: 100%;
+}
 .star-1,
 .star-2,
 .star-3 {
@@ -73,64 +116,6 @@
   width: 100%;
   height: 100%;
 }
-
-.hero {
-  /* min-height: 100vh; */
-  display: flex;
-  align-items: center;
-  background-color: var(--primary-color);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero .content {
-  position: relative;
-  /* padding: .75rem; */
-  margin-top: 5rem;
-  width: 100%;
-  text-align: left;
-  z-index: 990;
-}
-
-
-.hero .hero-title.highlight {
-  display: inline-block;
-  font-size: 1.75rem;
-  padding: 1rem;
-  margin: .5rem 0;
-  background-color: var(--primary-lighten-color);
-  color: var(--primary-color);
-}
-
-.hero .hero-title.font-big {
-  font-size: 3.5rem;
-}
-
-.hero .btn {
-  background-color: var(--alternative-color);
-  color: var(--white-color);
-  font-size: 1.25rem;
-  padding: 1rem 1.75rem;
-}
-
-.hero .btn:hover {
-  background-color: var(--white-color);
-  color: var(--secondary-color);
-}
-
-.hero .content .img {
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero .content .img img {
-  width: 80%;
-  height: 100%;
-}
-
 @keyframes float {
 
   0%,

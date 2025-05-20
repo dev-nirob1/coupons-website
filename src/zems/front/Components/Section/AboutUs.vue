@@ -1,5 +1,5 @@
 <template>
-  <section class="about-us bg-white">
+  <section class="about-us">
     <div class="container large-2 align-center gap-2">
       <!-- image div  -->
       <div class="image">
@@ -79,8 +79,8 @@
 }
 
 .about-us .quote::before {
-  content: "";
   position: absolute;
+  content: "";
   top: 0;
   left: 0;
   height: 100%;
@@ -90,10 +90,11 @@
 
 .about-us .image {
   width: 100%;
-  height: auto;
 }
 .about-us .image img{
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 .about-us .btn {
@@ -115,9 +116,9 @@
   .about-us .image{
     width: fit-content;
     height: 70vh;
+    margin: 0 auto;
   }
   .about-us .image img{
-    width: fit-content;
     height: 100%;
   }
 }
