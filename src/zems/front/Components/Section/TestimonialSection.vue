@@ -83,10 +83,9 @@ onMounted(() => {
 
 <template>
   <div class="testimonials">
-
     <div class="container">
       <div class="medium-8 align-center gap-2">
-        <div class="medium-span-3 text-content flex flex-col justify-center">
+        <div class="text-content medium-span-3 flex flex-col justify-center">
           <BaseTitle>Feedback & <br>
             Testimonials
           </BaseTitle>
@@ -109,16 +108,12 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.testimonials {
-  position: relative;
-}
-
 .text-content {
   position: relative;
-  padding: 3rem .75rem 0;
+  padding: 3.75rem 1rem 0;
   height: 100%;
-  background-color: var(--primary-color);
   color: var(--white-color);
+  background-color: var(--primary-color);
 }
 
 .text-content::after {
@@ -153,8 +148,8 @@ onMounted(() => {
 .btn-container .btn {
   padding: .75rem 1.5rem;
   border-radius: .5rem;
-  background-color: var(--secondary-color);
   color: var(--white-color);
+  background-color: var(--secondary-color);
 }
 
 .cards-container::-webkit-scrollbar {
@@ -166,14 +161,16 @@ onMounted(() => {
     background: linear-gradient(to right, var(--primary-color), var(--primary-color), var(--white-color), var(--white-color), var(--white-color));
   }
 
+  .text-content {
+    padding: 1rem;
+  }
+
   .text-content::after {
     left: 100%;
     top: 0;
     padding-right: 5rem;
     border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
     border-bottom-left-radius: 0;
-    background-color: var(--primary-color);
     z-index: 1;
   }
 }

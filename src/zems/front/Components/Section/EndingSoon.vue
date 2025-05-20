@@ -26,8 +26,8 @@ defineProps({
       </div>
 
 
-      <div class="large-3 gap-1 medium-gap-2">
-        <div class="ending-timer large-span-1">
+      <div class="large-3 gap-1 medium-gap-2 align-center">
+        <div class="text-center large-span-1">
           <div>
             <BaseTitle>Ending Soon</BaseTitle>
             <SubTitle class="mb-2">Grab these deals before they expire!</SubTitle>
@@ -50,7 +50,7 @@ defineProps({
 
 <style scoped>
 .ending-soon {
-  padding: 3.75rem 1rem;
+  padding: 3.5rem .75rem;
   color: var(--white-color);
   overflow: hidden;
 }
@@ -60,16 +60,7 @@ defineProps({
   opacity: .3;
   width: 500px;
   height: 500px;
-  left: -7rem;
-}
-
-.ending-soon .ending-timer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  left: -10rem;
 }
 
 .ending-soon .sub-title {
@@ -94,9 +85,12 @@ defineProps({
 
 @media (min-width: 992px) {
   .ending-image {
-    bottom: -7rem;
+    position: absolute;
+    opacity: .3;
+    width: 500px;
+    height: 500px;
+    left: -10rem;
+    bottom: -6rem;
   }
-
-
 }
 </style>

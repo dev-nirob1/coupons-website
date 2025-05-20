@@ -4,31 +4,30 @@
 
 <template>
   <div class="news-letter">
-    <div class="content medium-5 align-center container p-1">
-      <div class="medium-span-2 text-center">
-        <SubTitle>Subscribe Our</SubTitle>
-        <BaseTitle>NewsLetter</BaseTitle>
-      </div>
-      <div class="medium-span-3 flex pl-1">
-        <InputField class="bg-white" placeholder="Please Enter Your Email" />
-        <BaseButton class="bg-secondary text-white">Subscribe</BaseButton>
+    <div class="container">
+      <div class="content medium-5 align-center">
+        <div class="medium-span-2 text-center">
+          <SubTitle>Subscribe Our</SubTitle>
+          <BaseTitle>NewsLetter</BaseTitle>
+        </div>
+        <div class="medium-span-3 flex pl-1">
+          <InputField class="bg-white" placeholder="Please Enter Your Email" />
+          <BaseButton class="bg-secondary text-white">Subscribe</BaseButton>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
 .news-letter {
-  border-bottom: 5rem solid var(--primary-color);
   border-top: 5rem solid var(--primary-color);
-  background-color: var(--primary-color);
+  border-bottom: 5rem solid var(--primary-color);
   background: linear-gradient(to right, var(--primary-color), var(--primary-color), var(--white-color), var(--white-color));
-
 }
 
 .news-letter .content {
   border-top-left-radius: 10rem;
   border-bottom-left-radius: 10rem;
-  /* padding-right: 5rem; */
   height: 30vh;
   background-color: var(--white-color);
 }
@@ -42,7 +41,6 @@
 
 .news-letter .btn {
   outline: none;
-  /* padding: 0 2rem; */
   padding: 0 1rem;
   border: 2px solid var(--secondary-color);
   border-radius: 0;

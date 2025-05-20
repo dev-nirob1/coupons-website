@@ -16,7 +16,7 @@ defineProps({
 <template>
   <section class="categories">
     <div class="container">
-      <SectionTitle title="Browse Category" class="justify-center" />
+      <SectionTitle>Browse Category</SectionTitle>
       <!-- loading skeleton  -->
       <div class="medium-2 large-5 gap-1 medium-gap-2">
         <template v-if="isLoading">
@@ -55,9 +55,7 @@ defineProps({
   text-decoration: none;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom,
-      var(--primary-color),
-      var(--secondary-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   box-shadow: var(--box-shadow);
   color: var(--white-color);
   padding: 1rem;

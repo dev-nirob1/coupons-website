@@ -24,9 +24,10 @@
 .countdown-timer {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 1.5rem 0;
 }
+
 .countdown-timer>div {
   background: rgb(from var(--primary-color) r g b/15%);
   height: 5.5rem;
@@ -36,8 +37,9 @@
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
 }
-.countdown-timer>div h4{
-transition: all .3s ease;
+
+.countdown-timer>div h4 {
+  transition: all .3s ease;
 }
 
 .countdown-timer>div:nth-child(1) {
@@ -68,10 +70,15 @@ transition: all .3s ease;
     opacity: .75;
   }
 }
-@media (min-width: 768px){
+
+@media (min-width: 768px) {
+  .countdown-timer {
+    gap: 1.5rem;
+  }
+
   .countdown-timer>div {
-  height: 6.5rem;
-  width: 6.5rem;
+    height: 6.5rem;
+    width: 6.5rem;
   }
 }
 </style>

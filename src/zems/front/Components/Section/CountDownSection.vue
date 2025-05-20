@@ -47,10 +47,11 @@
   height: 100%;
   align-items: center;
 }
-.stats-content li{
- display: flex;
- align-items: center;
- gap: .5rem;
+
+.stats-content li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
 
 .stats-content i {
@@ -62,13 +63,14 @@
   border-radius: 1rem;
   background: var(--primary-lighten-color);
 }
+
 .stats-content p {
   margin: 0;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .statistics {
-  padding: 8rem .5rem;
-}
+    padding: 8rem .5rem;
+  }
 }
 </style>
