@@ -81,8 +81,6 @@ const currentYear = new Date().getFullYear();
   </footer>
 </template>
 
-
-
 <style scoped>
 .footer {
   background-color: var(--secondary-color);

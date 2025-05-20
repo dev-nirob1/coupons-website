@@ -35,13 +35,6 @@ defineProps({
   box-shadow: var(--box-shadow);
 }
 
-@media (min-width: 768px){
-  .testimonial-card {width: 380px;}
-}
-@media(min-width: 992px){
-  .testimonial-card{width: 400px;}
-}
-
 .testimonial-card p {
   margin: 10px 0 0 0;
 }
@@ -51,4 +44,12 @@ defineProps({
   width: 4rem;
   border-radius: 50%;
 }
+
+@media (min-width: 768px){
+  .testimonial-card {width: 380px;}
+}
+@media(min-width: 992px){
+  .testimonial-card{width: 400px;}
+}
+
 </style>

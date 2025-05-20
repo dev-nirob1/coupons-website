@@ -1,7 +1,7 @@
 <template>
-  <div class="coupon-container">
+  <div class="section-container">
     <div class="bar-code"><i class="fas fa-barcode"></i></div>
-    <div class="coupon-title">
+    <div class="section-name">
       <BaseTitle>
         <slot></slot>
       </BaseTitle>
@@ -10,7 +10,7 @@
 </template>
 
 <style>
-.coupon-container {
+.section-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,6 +18,7 @@
   height: 4.5rem;
   overflow: hidden;
 }
+
 .bar-code {
   color: var(--white-color);
   background-color: var(--secondary-color);
@@ -31,7 +32,8 @@
   align-items: center;
   justify-content: center;
 }
-.coupon-title {
+
+.section-name {
   padding: .75rem;
   border: 1px solid var(--secondary-color);
   border-left: none;
@@ -41,8 +43,9 @@
   align-items: center;
   position: relative;
 }
-.coupon-title::before,
-.coupon-title::after {
+
+.section-name::before,
+.section-name::after {
   content: '';
   position: absolute;
   left: -18px;
@@ -53,22 +56,27 @@
   border-radius: 50%;
   z-index: 1;
 }
-.coupon-title::before {
+
+.section-name::before {
   top: -24px;
 }
-.coupon-title::after {
+
+.section-name::after {
   bottom: -24px;
 }
+
 .bg-lighten .bar-code {
   border-right: 2px dashed var(--primary-lighten-color);
   border-left: 2px dashed var(--primary-lighten-color);
 }
-.bg-lighten .coupon-title::before,
-.bg-lighten .coupon-title::after {
+
+.bg-lighten .section-name::before,
+.bg-lighten .section-name::after {
   background-color: var(--primary-lighten-color);
 }
+
 @media (min-width: 768px) {
-  .coupon-title {
+  .section-name {
     padding: 1rem 3rem;
   }
 }

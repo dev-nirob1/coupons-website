@@ -85,11 +85,6 @@ defineProps({
 
 @media (min-width: 992px) {
   .ending-image {
-    position: absolute;
-    opacity: .3;
-    width: 500px;
-    height: 500px;
-    left: -10rem;
     bottom: -6rem;
   }
 }
