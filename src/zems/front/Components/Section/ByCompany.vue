@@ -15,7 +15,7 @@ const companies = [
 <template>
   <section class="company-section">
     <div class="container">
-      <SectionTitle title="Company Offer" />
+      <SectionTitle>Company Offer</SectionTitle>
 
       <div class="medium-2 large-4 gap-1 medium-gap-2">
 
@@ -44,7 +44,7 @@ const companies = [
 
 <style scoped>
 .company-section {
-  padding: 5rem .75rem;
+  padding: 3.75rem 1rem;
 }
 
 .link-card {

@@ -50,8 +50,7 @@ defineProps({
 
 <style scoped>
 .ending-soon {
-  position: relative;
-  padding: 3rem .75rem;
+  padding: 3.75rem 1rem;
   color: var(--white-color);
   overflow: hidden;
 }
@@ -61,7 +60,7 @@ defineProps({
   opacity: .3;
   width: 500px;
   height: 500px;
-  left: -10rem;
+  left: -7rem;
 }
 
 .ending-soon .ending-timer {
@@ -73,7 +72,6 @@ defineProps({
   text-align: center;
 }
 
-
 .ending-soon .sub-title {
   margin-top: .5rem;
 }
@@ -83,9 +81,6 @@ defineProps({
 }
 
 @media (min-width: 768px) {
-  .ending-soon {
-    padding: 4rem .5rem;
-  }
   .masonry-grid {
     columns: 2;
     row-gap: 2rem;
@@ -98,17 +93,8 @@ defineProps({
 }
 
 @media (min-width: 992px) {
-  .ending-soon {
-    padding: 5rem .5rem;
-  }
-
   .ending-image {
-    position: absolute;
-    opacity: .3;
-    width: 500px;
-    height: 500px;
-    left: -10rem;
-    bottom: -8rem;
+    bottom: -7rem;
   }
 
 

@@ -38,7 +38,7 @@
 
 <style scoped>
 .statistics {
-  padding: 5rem .75rem;
+  padding: 3.75rem 1rem;
   margin: 0 auto;
 }
 
@@ -54,7 +54,6 @@
 }
 
 .stats-content i {
-  position: relative;
   font-size: 3rem;
   height: 100px;
   width: 100px;
@@ -62,9 +61,7 @@
   line-height: 100px;
   border-radius: 1rem;
   background: var(--primary-lighten-color);
-  overflow: hidden;
 }
-
 .stats-content p {
   margin: 0;
 }

@@ -1,13 +1,10 @@
-<script setup>
-defineProps({
-  title: String
-})
-</script>
 <template>
   <div class="coupon-container">
     <div class="bar-code"><i class="fas fa-barcode"></i></div>
     <div class="coupon-title">
-      <BaseTitle>{{ title }}</BaseTitle>
+      <BaseTitle>
+        <slot></slot>
+      </BaseTitle>
     </div>
   </div>
 </template>
@@ -17,18 +14,18 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3.75rem;
   height: 4.5rem;
   overflow: hidden;
 }
 
 .bar-code {
-  background-color: var(--secondary-color);
   color: var(--white-color);
+  background-color: var(--secondary-color);
   font-size: 3rem;
   border: 2px solid var(--secondary-color);
-  border-right: 2px dashed var(--white-color);
-  border-left: 2px dashed var(--white-color);
+  border-right: 2px dashed #faf9f6;
+  border-left: 2px dashed #faf9f6;
   height: 100%;
   width: 7rem;
   display: flex;
@@ -66,6 +63,11 @@ defineProps({
 
 .coupon-title::after {
   bottom: -24px;
+}
+
+.bg-lighten .bar-code {
+  border-right: 2px dashed var(--primary-lighten-color);
+  border-left: 2px dashed var(--primary-lighten-color);
 }
 
 .bg-lighten .coupon-title::before,

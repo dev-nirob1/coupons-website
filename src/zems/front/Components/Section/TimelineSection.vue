@@ -56,13 +56,15 @@
 
 <style scoped>
 .timeline-section {
-  padding: 5rem .75rem;
+  padding: 3.75rem 1rem;
 }
+
 .timeline-section .btn {
   font-size: 1.25rem;
   border-radius: .5rem;
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 1.25rem;
 }
+
 .how-it-works {
   position: relative;
   width: 100%;

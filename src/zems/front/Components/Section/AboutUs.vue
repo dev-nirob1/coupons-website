@@ -1,5 +1,5 @@
 <template>
-  <section class="about-us">
+  <section class="about-us bg-white">
     <div class="container large-2 align-center gap-2">
       <!-- image div  -->
       <div class="image">
@@ -47,7 +47,7 @@
 
 <style scoped>
 .about-us {
-  padding: 5rem .75rem;
+  padding: 3.75rem 1rem;
 }
 .about-us .title {
   margin-bottom: 1rem;
@@ -79,8 +79,8 @@
 }
 
 .about-us .quote::before {
-  position: absolute;
   content: "";
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
@@ -117,6 +117,7 @@
     height: 70vh;
   }
   .about-us .image img{
+    width: fit-content;
     height: 100%;
   }
 }

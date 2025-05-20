@@ -3,35 +3,37 @@
 
 <template>
   <section class="hero bg-light">
-    <div class="content container medium-2 align-center justify-between">
-
-      <div class="star-1">
-        <img src="/star-1.png" alt="">
-      </div>
-      <div class="star-2">
-        <img src="/star-2.png" alt="">
-      </div>
-      <div class="star-3">
-        <img src="/angle-1.png" alt="">
-      </div>
-
-      <div class="text-content text-white">
-        <div>
-          <HeroTitle>Exclusive Coupons</HeroTitle>
-          <HeroTitle class="highlight">Huge Savings</HeroTitle>
-          <HeroTitle class="font-big">GRAB NOW!</HeroTitle>
+    <div class="container px-1">
+      <div class="content medium-2 align-center justify-between">
+        
+        <div class="star-1">
+          <img src="/star-1.png" alt="">
+        </div>
+        <div class="star-2">
+          <img src="/star-2.png" alt="">
+        </div>
+        <div class="star-3">
+          <img src="/angle-1.png" alt="">
         </div>
 
-        <BaseParagraph>
-          Unlock thousands of deals and save up to 80% at top retailers -
-          verified coupons updated daily for maximum savings
-        </BaseParagraph>
-        <BaseButton>
-          Explore Now
-        </BaseButton>
-      </div>
-      <div class="img">
-        <BaseImage src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="" />
+        <div class="text-content text-white">
+          <div>
+            <HeroTitle>Exclusive Coupons</HeroTitle>
+            <HeroTitle class="highlight">Huge Savings</HeroTitle>
+            <HeroTitle class="font-big">GRAB NOW!</HeroTitle>
+          </div>
+
+          <BaseParagraph>
+            Unlock thousands of deals and save up to 80% at top retailers -
+            verified coupons updated daily for maximum savings
+          </BaseParagraph>
+          <BaseButton>
+            Explore Now
+          </BaseButton>
+        </div>
+        <div class="img">
+          <BaseImage src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="" />
+        </div>
       </div>
     </div>
   </section>
@@ -73,7 +75,7 @@
 }
 
 .hero {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
@@ -83,16 +85,13 @@
 
 .hero .content {
   position: relative;
-  padding: .75rem;
+  /* padding: .75rem; */
   margin-top: 5rem;
   width: 100%;
   text-align: left;
   z-index: 990;
 }
 
-.hero .hero-title {
-  margin: 0;
-}
 
 .hero .hero-title.highlight {
   display: inline-block;
@@ -139,7 +138,8 @@
     transform: translateY(0);
     opacity: 1;
   }
-  50%{
+
+  50% {
     transform: translateY(-1rem);
     opacity: .5
   }

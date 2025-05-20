@@ -45,7 +45,7 @@ defineProps({
 
 <style scoped>
 .categories {
-  padding: 5rem 0.75rem;
+  padding: 3.75rem 1rem;
 }
 
 .categories .link-card {
@@ -55,11 +55,9 @@ defineProps({
   text-decoration: none;
   height: 100%;
   width: 100%;
-  background: linear-gradient(
-    to bottom,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(to bottom,
+      var(--primary-color),
+      var(--secondary-color));
   box-shadow: var(--box-shadow);
   color: var(--white-color);
   padding: 1rem;
@@ -70,6 +68,7 @@ defineProps({
 .categories .link-card p {
   margin-top: 0.5rem;
 }
+
 .categories .link-card img {
   height: 80px;
   width: 80px;
@@ -79,5 +78,4 @@ defineProps({
 .categories .link-card:hover {
   transform: scale(1.02);
 }
-
 </style>

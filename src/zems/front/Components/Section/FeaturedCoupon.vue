@@ -23,7 +23,7 @@ defineProps({
   <section class="featured-coupon">
     <div class="container">
       <!-- Section Header -->
-      <SectionTitle title="Featured Coupon" class="text-secondary" />
+      <SectionTitle>Featured Coupon</SectionTitle>
       <!-- Coupon Grid -->
       <div class="medium-2 large-3 gap-1 large-gap-2">
         <template v-if="isLoading">
@@ -53,7 +53,7 @@ defineProps({
 </template>
 <style scoped>
 .featured-coupon {
-  padding: 5rem .75rem;
+  padding: 3.75rem 1rem;
 }
 
 .link-card {

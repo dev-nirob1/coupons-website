@@ -144,7 +144,7 @@ onMounted(() => {
 }
 
 .btn-container {
-  padding: 0 .5rem;
+  padding: 0 .75rem;
   z-index: 3;
   display: flex;
   gap: 1rem;
