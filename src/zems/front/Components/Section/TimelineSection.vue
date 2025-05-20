@@ -58,41 +58,32 @@
 .timeline-section {
   padding: 3.75rem 1rem;
 }
-
 .timeline-section .btn {
   font-size: 1.25rem;
   border-radius: .5rem;
   padding: 1rem 1.25rem;
 }
-
 .how-it-works {
   position: relative;
   width: 100%;
 }
-
 .middle {
   display: flex;
 }
-
 .timeline {
   display: none;
 }
-
 .timeline img {
   width: 100%;
 }
-
 .one,
 .two,
 .three {
   position: relative;
 }
-
 .timeline-card {
   padding: 2rem;
-  position: relative;
 }
-
 .number {
   width: 100px;
   height: 100px;
@@ -114,12 +105,10 @@
     width: 100%;
     top: 3.5rem;
   }
-
   .number {
     margin-bottom: 3rem;
   }
 }
-
 @media (min-width: 1200px) {
   .timeline {
     top: -1.5rem;

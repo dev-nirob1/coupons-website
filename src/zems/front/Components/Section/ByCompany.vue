@@ -18,9 +18,7 @@ const companies = [
       <SectionTitle>Company Offer</SectionTitle>
 
       <div class="medium-2 large-4 gap-1 medium-gap-2">
-
         <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
-
         <div class="medium-span-2">
           <!-- link card/btn -->
           <RouterLink class="link-card" to="/companies">

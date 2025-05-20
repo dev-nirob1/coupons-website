@@ -67,10 +67,6 @@ defineProps({
   transition: all .3s ease-in-out;
 }
 
-.link-card:hover {
-  transform: scale(1.02);
-}
-
 .link-card p {
   margin-top: .5rem;
 }
@@ -79,4 +75,8 @@ defineProps({
   height: 100px;
   width: 100px;
 }
+.link-card:hover {
+  transform: scale(1.02);
+}
+
 </style>

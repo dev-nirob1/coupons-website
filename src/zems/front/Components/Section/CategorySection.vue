@@ -27,13 +27,13 @@ defineProps({
           <CategoryCard v-for="(category, i) in categories" :i="i" :category="category" :key="category.id" />
           <!-- link button  -->
           <RouterLink class="link-card" to="/categories">
-            <div class="flex flex-col justify-center align-center text-center">
-              <div class="image">
+            <div class="flex flex-col justify-center align-center">
+              <div>
                 <BaseImage image="/categories.png" />
               </div>
               <div>
                 <SubTitle>Explore All</SubTitle>
-                <BaseParagraph>View our complete collection of products across all categories</BaseParagraph>
+                <BaseParagraph>See all products in every category</BaseParagraph>
               </div>
             </div>
           </RouterLink>
@@ -49,18 +49,14 @@ defineProps({
 }
 
 .categories .link-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   text-decoration: none;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
   box-shadow: var(--box-shadow);
   color: var(--white-color);
   padding: 1rem;
   border-radius: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .categories .link-card p {
