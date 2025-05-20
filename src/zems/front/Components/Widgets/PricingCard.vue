@@ -68,7 +68,7 @@ defineProps({
 .pricing-card .btn:hover {
   background-color: var(--white-color);
   color: var(--secondary-color);
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--secondary-color);
 }
 
 .pricing-card .exclusive-badge {

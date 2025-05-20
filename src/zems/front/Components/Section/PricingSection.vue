@@ -30,5 +30,4 @@ const { data: pricing = [] } = useQuery({
 .pricing {
   padding: 3.75rem 1rem;
 }
-
 </style>

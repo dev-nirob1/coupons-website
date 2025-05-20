@@ -41,29 +41,25 @@
   padding: 3.75rem 1rem;
   margin: 0 auto;
 }
-
 .stats-content {
   list-style: none;
   height: 100%;
   align-items: center;
 }
-
 .stats-content li {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 1rem;
 }
-
 .stats-content i {
   font-size: 3rem;
   height: 100px;
   width: 100px;
-  text-align: center;
   line-height: 100px;
+  text-align: center;
   border-radius: 1rem;
   background: var(--primary-lighten-color);
 }
-
 .stats-content p {
   margin: 0;
 }
