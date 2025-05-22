@@ -61,6 +61,7 @@ defineProps({
   width: 500px;
   height: 500px;
   left: -10rem;
+  z-index: 0;
 }
 
 .ending-soon .sub-title {
