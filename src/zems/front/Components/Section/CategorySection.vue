@@ -96,11 +96,11 @@ defineProps({
   right: -40px;
 }
 
-.left-icons .icon:nth-child(1) .right-icons .icon:nth-child(1) {
+.left-icons .icon:nth-child(1), .right-icons .icon:nth-child(1) {
   top: 10%;
 }
 
-.left-icons .icon:nth-child(2) .right-icons .icon:nth-child(2) {
+.left-icons .icon:nth-child(2), .right-icons .icon:nth-child(2) {
   bottom: 15%;
 }
 
