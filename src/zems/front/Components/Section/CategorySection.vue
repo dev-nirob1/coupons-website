@@ -18,12 +18,14 @@ defineProps({
     <!-- left side icons -->
     <div class="bg-icons left-icons">
       <img class="icon" src="https://icons.veryicon.com/png/o/commerce-shopping/o2o-business-platform/coupon-59.png">
-      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png">
+      <img class="icon"
+        src="https://cdn-icons-png.freepik.com/256/8464/8464650.png?uid=R140702484&ga=GA1.1.1873161437.1736591058&semt=ais_hybrid">
     </div>
 
     <!-- right side icons -->
     <div class="bg-icons right-icons">
-      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2965/2965300.png">
+      <img class="icon"
+        src="https://cdn4.iconfinder.com/data/icons/discount-18/64/scissors-discount-coupon-promotion-percentage-sale-commerce-shopping-256.png">
       <img class="icon"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxAGJ56g30p7AXBl9BVmkDiqOnTURIlcXyRhHm1iij__nW_wcsU1F8TVdQSUK9rjUu8PY&usqp=CAU">
     </div>
@@ -80,28 +82,26 @@ defineProps({
 
 .icon {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
-.left-icons .icon:nth-child(1) {
-  top: 10%;
-  left: -50px;
-}
-
+.left-icons .icon:nth-child(1),
 .left-icons .icon:nth-child(2) {
-  bottom: 15%;
-  left: -50px;
+  left: -40px;
 }
 
-.right-icons .icon:nth-child(1) {
-  top: 10%;
-  right: -50px;
-}
-
+.right-icons .icon:nth-child(1),
 .right-icons .icon:nth-child(2) {
+  right: -40px;
+}
+
+.left-icons .icon:nth-child(1) .right-icons .icon:nth-child(1) {
+  top: 10%;
+}
+
+.left-icons .icon:nth-child(2) .right-icons .icon:nth-child(2) {
   bottom: 15%;
-  right: -50px;
 }
 
 /* Link card */
@@ -131,8 +131,8 @@ defineProps({
   transform: scale(1.02);
 }
 
-@media (min-width: 768px) {
-  /* .left-icons .icon:nth-child(1) {
+/* @media (min-width: 768px) {
+  .left-icons .icon:nth-child(1) {
     left: -50px;
   }
 
@@ -146,44 +146,38 @@ defineProps({
 
   .right-icons .icon:nth-child(2) {
     right: -50px;
-  } */
+  }
 }
 
 @media (min-width: 992px) {
 
-  /* .left-icons .icon:nth-child(1) {
-    left: -80px;
-  }
-
-  .left-icons .icon:nth-child(2) {
-    left: -80px;
-  }
-
-  .right-icons .icon:nth-child(1) {
-    right: -80px;
-  }
-
-  .right-icons .icon:nth-child(2) {
-    right: -80px;
-  } */
-}
-
-/* @media (min-width: 1200px) {
-
   .left-icons .icon:nth-child(1) {
-    left: -150px;
+    left: -80px;
   }
 
   .left-icons .icon:nth-child(2) {
-    left: -170px;
+    left: -80px;
   }
 
   .right-icons .icon:nth-child(1) {
-    right: -170px;
+    right: -80px;
   }
 
   .right-icons .icon:nth-child(2) {
-   right:-170px;
+    right: -80px;
   }
 } */
+
+@media (min-width: 1600px) {
+
+  .left-icons .icon:nth-child(1),
+  .left-icons .icon:nth-child(2) {
+    left: 170px;
+  }
+
+  .right-icons .icon:nth-child(1),
+  .right-icons .icon:nth-child(2) {
+    right: 170px;
+  }
+}
 </style>
