@@ -15,21 +15,6 @@ defineProps({
 
 <template>
   <section class="categories">
-    <!-- left side icons -->
-    <div class="bg-icons left-icons">
-      <img class="icon" src="https://icons.veryicon.com/png/o/commerce-shopping/o2o-business-platform/coupon-59.png">
-      <img class="icon"
-        src="https://cdn-icons-png.freepik.com/256/8464/8464650.png?uid=R140702484&ga=GA1.1.1873161437.1736591058&semt=ais_hybrid">
-    </div>
-
-    <!-- right side icons -->
-    <div class="bg-icons right-icons">
-      <img class="icon"
-        src="https://cdn4.iconfinder.com/data/icons/discount-18/64/scissors-discount-coupon-promotion-percentage-sale-commerce-shopping-256.png">
-      <img class="icon"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxAGJ56g30p7AXBl9BVmkDiqOnTURIlcXyRhHm1iij__nW_wcsU1F8TVdQSUK9rjUu8PY&usqp=CAU">
-    </div>
-
     <div class="container">
       <SectionTitle>Browse Category</SectionTitle>
       <div class="medium-2 large-5 gap-1 medium-gap-2">
@@ -63,47 +48,6 @@ defineProps({
   overflow: hidden;
 }
 
-.bg-icons {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  pointer-events: none;
-  opacity: .5;
-  z-index: 0;
-}
-
-.left-icons {
-  left: 0;
-}
-
-.right-icons {
-  right: 0;
-}
-
-.icon {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-}
-
-.left-icons .icon:nth-child(1),
-.left-icons .icon:nth-child(2) {
-  left: -40px;
-}
-
-.right-icons .icon:nth-child(1),
-.right-icons .icon:nth-child(2) {
-  right: -40px;
-}
-
-.left-icons .icon:nth-child(1), .right-icons .icon:nth-child(1) {
-  top: 10%;
-}
-
-.left-icons .icon:nth-child(2), .right-icons .icon:nth-child(2) {
-  bottom: 15%;
-}
-
 /* Link card */
 .link-card {
   text-align: center;
@@ -131,53 +75,4 @@ defineProps({
   transform: scale(1.02);
 }
 
-/* @media (min-width: 768px) {
-  .left-icons .icon:nth-child(1) {
-    left: -50px;
-  }
-
-  .left-icons .icon:nth-child(2) {
-    left: -50px;
-  }
-
-  .right-icons .icon:nth-child(1) {
-    right: -50px;
-  }
-
-  .right-icons .icon:nth-child(2) {
-    right: -50px;
-  }
-}
-
-@media (min-width: 992px) {
-
-  .left-icons .icon:nth-child(1) {
-    left: -80px;
-  }
-
-  .left-icons .icon:nth-child(2) {
-    left: -80px;
-  }
-
-  .right-icons .icon:nth-child(1) {
-    right: -80px;
-  }
-
-  .right-icons .icon:nth-child(2) {
-    right: -80px;
-  }
-} */
-
-@media (min-width: 1600px) {
-
-  .left-icons .icon:nth-child(1),
-  .left-icons .icon:nth-child(2) {
-    left: 170px;
-  }
-
-  .right-icons .icon:nth-child(1),
-  .right-icons .icon:nth-child(2) {
-    right: 170px;
-  }
-}
 </style>
