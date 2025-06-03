@@ -26,8 +26,6 @@ const { isLoading, data } = useQuery({
     }
   }
 })
-
-
 // popup logic
 const isModalOpen = ref(false)
 const handleCloseModal = () => {
@@ -69,7 +67,6 @@ const handleOpenModal = () => {
       </BaseParagraph>
     </div>
   </PopUp>
-
   <BannerSection />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
   <EndingSoon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"

@@ -95,7 +95,7 @@ watchEffect(() => {
 .pagination {
   margin-top: 3rem;
   list-style: none;
-  padding: none;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,10 +109,10 @@ watchEffect(() => {
   background-color: var(--white-color);
 }
 
-.pagination li a {
-  display: inline-block;
-  padding: 1rem 2rem;
-  text-decoration: none;
+  .pagination li a {
+    display: inline-block;
+    padding: .5rem 1rem;
+    text-decoration: none;
 }
 
 .pagination li a.active {
@@ -120,4 +120,5 @@ watchEffect(() => {
   color: var(--white-color);
   border-radius: .5rem;
 }
+
 </style>

@@ -1,26 +1,24 @@
 <script setup>
 defineProps({
-  category: Object,
-  i: Number
+  category: Object
 })
 </script>
 
-<template >
- <template v-if="i < 4">
-  <div class="category-card">
-    <div class="p-2">
-      <div class="category-image">
-        <BaseImage :image="category?.icon || '/categories/health.png'" />
+<template>
+
+    <div class="category-card">
+      <div class="p-2">
+        <div class="category-image">
+          <BaseImage :image="category?.icon || '/categories/health.png'" />
+        </div>
+        <BaseTitle tag="h5">{{ category?.name }}</BaseTitle>
+        <small>{{ Object.keys(category.name).length }} deals</small>
       </div>
-      <BaseTitle tag="h5">{{ category?.name }}</BaseTitle>
-      <small>{{ Object.keys(category.name).length }} deals</small>
+      <div class="category-overlay">
+        <RouterLink class="btn" :to="`/category_list/${category?.slug}`">Go to Category
+        </RouterLink>
+      </div>
     </div>
-    <div class="category-overlay">
-      <RouterLink class="btn" :to="`/category_list/${category?.slug}`">Go to Category
-      </RouterLink>
-    </div>
-  </div>
- </template>
 </template>
 
 
@@ -65,9 +63,11 @@ defineProps({
   transition: opacity 0.3s ease;
   z-index: 999;
 }
+
 .category-card:hover .category-overlay {
   opacity: 1;
 }
+
 .category-overlay .btn {
   padding: .75rem 1rem;
   color: var(--white-color);

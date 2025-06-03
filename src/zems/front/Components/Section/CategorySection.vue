@@ -23,7 +23,7 @@ defineProps({
         </template>
 
         <template v-else>
-          <CategoryCard v-for="(category, i) in categories" :i="i" :category="category" :key="category.id" />
+          <CategoryCard v-for="category in categories" :key="category.id" :category="category"></CategoryCard>
           <RouterLink class="link-card" to="/categories">
             <div class="flex flex-col justify-center align-center">
               <div>
@@ -74,5 +74,4 @@ defineProps({
 .link-card:hover {
   transform: scale(1.02);
 }
-
 </style>
