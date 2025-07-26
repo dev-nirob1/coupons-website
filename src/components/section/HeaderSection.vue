@@ -28,15 +28,11 @@ onMounted(() => {
     <nav class="flex justify-between align-center container">
       <!-- Logo -->
       <router-link to="/" class="logo">
-         <img
-            class="height-full width-full"
-            src="/logo.png"
-            alt="logo"
-          />
-          <div class="brand">
-            <span>CouponHub</span>
-            <p>Shop Smarter, Save Bigger</p>
-          </div>
+        <img class="height-full width-full" src="/logo.png" alt="logo" />
+        <div class="brand">
+          <span>CouponHub</span>
+          <p>Shop Smarter, Save Bigger</p>
+        </div>
       </router-link>
 
       <!-- Mobile Menu Button -->
@@ -77,32 +73,40 @@ onMounted(() => {
   z-index: 999;
   transition: 0.3s ease;
 }
+
 .navbar a {
   text-decoration: none;
 }
+
 .logo {
   display: flex;
   gap: 0.5rem;
 }
+
 .logo span {
   font-size: 1.8rem;
   font-weight: bold;
 }
+
 .logo p {
   margin-top: -0.5rem;
   font-size: 0.8rem;
 }
+
 .logo img {
   height: 65px;
   width: 100%;
 }
+
 .brand {
   display: none;
 }
+
 .nav-links {
   display: flex;
   align-items: center;
 }
+
 .navbar ul {
   list-style: none;
   position: fixed;
@@ -118,30 +122,37 @@ onMounted(() => {
   gap: 1.5rem;
   transition: 0.3s;
 }
+
 .navbar ul.active {
   top: 0;
   left: 0;
 }
+
 .navbar ul li a {
   font-weight: 500;
   transition: color 0.2s ease-in-out;
   position: relative;
   padding: 0.5rem 0;
 }
+
 .navbar ul li a:hover {
   color: var(--alternative-color);
 }
+
 /* dropdown menu  */
 .dropdown-container {
   position: relative;
 }
+
 .dropdown-menu {
   margin-left: 1.5rem;
   margin-top: 1rem;
 }
+
 .dropdown-menu a {
   display: block;
 }
+
 /* Mobile menu toggle */
 .hamburger {
   display: block;
@@ -149,11 +160,13 @@ onMounted(() => {
   border: none;
   cursor: pointer;
 }
+
 @media (min-width: 992px) {
-.brand {
+  .brand {
     display: block;
     margin: 0;
   }
+
   .navbar ul {
     position: inherit;
     color: var(--white-color);
@@ -164,6 +177,7 @@ onMounted(() => {
     background-color: transparent;
     padding: 0.75rem 0;
   }
+
   /* Desktop menu hover effects */
   .navbar ul li a::after {
     content: "";
@@ -175,9 +189,11 @@ onMounted(() => {
     background: var(--alternative-color);
     transition: width 0.3s ease;
   }
+
   .navbar ul li a:hover::after {
     width: 100%;
   }
+
   /* dropdonw menu  */
   .navbar .dropdown-menu {
     position: absolute;
@@ -190,12 +206,15 @@ onMounted(() => {
     display: none;
     transition: all 0.5s;
   }
+
   .navbar .dropdown-container:hover .dropdown-menu {
     display: block;
   }
+
   .navbar .dropdown-menu a {
     margin-bottom: 0.25rem;
   }
+
   /* expand navlinks on desktop  */
   .hamburger {
     display: none;

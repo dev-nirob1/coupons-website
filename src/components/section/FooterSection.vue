@@ -5,12 +5,19 @@ const currentYear = new Date().getFullYear();
 </script>
 <template>
   <footer class="footer">
-    <div class="container medium-2 large-4 gap-2 p-1 medium-p-2">
+    <div class="container medium-2 large-4 gap-2 py-2">
       <div>
-        <div class="logo">
-          <BaseImage src="/logo.png" />
-          <span>CouponCraze</span>
-        </div>
+        <RouterLink to="/" class="logo">
+         <img
+              class="height-full width-full"
+              src="/logo.png"
+              alt="logo"
+            />
+            <div>
+              <span>CouponHub</span>
+              <p>Shop Smarter, Save Bigger</p>
+            </div>
+        </RouterLink>
         <BaseParagraph>Your gateway to exclusive discounts and savings</BaseParagraph>
         <div class="social-links">
           <RouterLink to="#"><i class="fab fa-facebook-f"></i></RouterLink>
@@ -86,30 +93,34 @@ const currentYear = new Date().getFullYear();
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
-
 .footer h5 {
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.75rem;
 }
-
-.footer .logo {
+.logo {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
-  font-weight: 700;
+  gap: 0.5rem;
+  text-decoration: none;
 }
-
-.footer .logo img {
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.logo p {
+  margin-top: -0.5rem;
+  font-size: 0.8rem;
+}
+.logo img {
   height: 50px;
   width: 50px;
 }
-
 .social-links {
   display: flex;
   gap: 1rem;
 }
-
+/* Social links with hover effects */
 .social-links a {
   display: inline-block;
   text-decoration: none;
@@ -122,14 +133,12 @@ const currentYear = new Date().getFullYear();
   justify-content: center;
   background-color: var(--primary-color);
 }
-
 .social-links a:hover i {
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
-
 .footer h5::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -137,8 +146,7 @@ const currentYear = new Date().getFullYear();
   height: 3px;
   background-color: var(--primary-color);
 }
-
-ul {
+.footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -146,33 +154,29 @@ ul {
   flex-direction: column;
   gap: 1rem;
 }
-
-ul a {
+.footer ul a {
   text-decoration: none;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
-ul a::before {
-  content: '→';
+.footer ul a::before {
+  content: "→";
   color: var(--primary-color);
   opacity: 0;
   display: none;
   transition: all 0.3s ease;
 }
-
-ul a:hover {
+.footer ul a:hover {
   color: var(--primary-color);
   padding-left: 5px;
 }
-
-ul a:hover::before {
+.footer ul a:hover::before {
   opacity: 1;
   display: block;
 }
-
+/* Newsletter form */
 .subscribe-form {
   display: flex;
 }
@@ -181,24 +185,22 @@ ul a:hover::before {
   flex: 1;
   padding: 0.8rem 1.2rem;
   border: none;
-  border-radius: .5rem 0 0 .5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
   outline: none;
   font-size: 0.95rem;
   background-color: var(--white-color);
 }
-
 .subscribe-form .btn {
   padding: 1rem 2rem;
   background-color: var(--primary-color);
   color: var(--white-color);
   border: none;
-  border-radius: 0 .5rem .5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
-
-
+/* Footer copyright bar*/
 .footer-bottom {
   padding: 1.5rem;
   text-align: center;
-  background-color:  rgb(from var(--primary-color) r g b/ 10%);
+  background-color: rgb(from var(--primary-color) r g b/ 10%);
 }
 </style>
