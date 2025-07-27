@@ -47,7 +47,7 @@
 
 <style scoped>
 .about-us {
-  padding: 3.75rem 1rem;
+  padding: 3.75rem 0;
 }
 .about-us .title {
   margin-bottom: 1rem;
@@ -62,7 +62,6 @@
   align-items: center;
   gap: 0.5rem;
 }
-
 .about-us i {
   font-size: 1.25rem;
   padding: 0.75rem;
@@ -70,14 +69,12 @@
   color: var(--primary-lighten-color);
   background-color: var(--primary-color);
 }
-
 .about-us .quote {
   position: relative;
-  background-color: rgb(from var(--primary-color) r g b/ 15%);;
+  background-color: rgb(from var(--primary-color) r g b/ 15%);
   width: 100%;
   padding: 1rem 1.5rem;
 }
-
 .about-us .quote::before {
   position: absolute;
   content: "";
@@ -87,38 +84,38 @@
   width: 5px;
   background: var(--alternative-color);
 }
-
 .about-us .image {
   width: 100%;
 }
-.about-us .image img{
+.about-us .image img {
   width: 100%;
   height: auto;
   display: block;
 }
-
 .about-us .btn {
   border: 1px solid transparent;
-  background-color: var(--alternative-color);
   color: var(--white-color);
-  padding: 1.25rem 2rem;
-  font-size: 1.25rem;
-}
-.about-us .btn:hover {
-  color: var(--secondary-color);
-  background-color: var(--white-color);
+  background-color: var(--alternative-color);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
 }
 
+
 @media (min-width: 768px) {
+.about-us .btn {
+    font-size: 1.25rem;
+    padding: 1.25rem 2rem;
+  }
+
   .about-us .quote {
     width: 90%;
   }
-  .about-us .image{
+  .about-us .image {
     width: fit-content;
     height: 70vh;
     margin: 0 auto;
   }
-  .about-us .image img{
+  .about-us .image img {
     height: 100%;
   }
 }
