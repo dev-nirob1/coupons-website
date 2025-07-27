@@ -56,12 +56,15 @@
 
 <style scoped>
 .timeline-section {
-  padding: 3.75rem 1rem;
+  padding: 3.75rem 0;
 }
 .timeline-section .btn {
-  font-size: 1.25rem;
-  border-radius: .5rem;
-  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+}
+.timeline-section .btn:hover {
+  background-color: rgb(from var(--secondary-color) r g b / 90%);
 }
 .how-it-works {
   position: relative;
@@ -84,6 +87,7 @@
 .timeline-card {
   padding: 2rem;
 }
+/* Step number indicators */
 .number {
   width: 100px;
   height: 100px;
@@ -111,6 +115,11 @@
 }
 @media (min-width: 1200px) {
   .timeline {
+    top: 1.5rem;
+  }
+}
+@media (min-width: 1400px){
+   .timeline {
     top: -1.5rem;
   }
 }
