@@ -42,40 +42,40 @@ const companies = [
 
 <style scoped>
 .company-section {
-  padding: 3.75rem 1rem;
+  padding: 3.75rem 0;
 }
-
-.link-card {
+.company-section .link-card {
   text-align: center;
   text-decoration: none;
   color: var(--white-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to bottom,
+    rgb(from var(--secondary-color) r g b / 75%),
+    var(--secondary-color)
+  );
   box-shadow: var(--box-shadow);
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 1rem;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
-
-.link-card:hover {
+.company-section .link-card:hover {
   transform: scale(1.02);
 }
-
-.link-card p {
-  margin-top: .5rem;
+.company-section .link-card p {
+  margin-top: 0.5rem;
   margin-bottom: 0;
 }
-
-.link-card img {
+.company-section .link-card img {
   height: 100px;
   width: 100px;
 }
 
 @media (min-width: 768px) {
-  .link-card {
+ .company-section .link-card {
     text-align: left;
   }
-
-  .link-card img {
+  .company-section .link-card img {
     height: 150px;
     width: 150px;
   }

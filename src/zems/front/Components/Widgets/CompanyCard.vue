@@ -24,18 +24,17 @@ defineProps({
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
-  transition: all .3s ease-in-out;
   box-shadow: var(--box-shadow);
-}
-
-.company-card:hover {
-  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
 }
 .company-card h3 {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 .company-card img {
   height: 80px;
   width: 80px;
+}
+.company-card:hover {
+  transform: translateY(-10px);
 }
 </style>
