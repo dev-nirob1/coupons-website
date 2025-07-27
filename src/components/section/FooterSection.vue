@@ -8,15 +8,11 @@ const currentYear = new Date().getFullYear();
     <div class="container medium-2 large-4 gap-2 py-2">
       <div>
         <RouterLink to="/" class="logo">
-         <img
-              class="height-full width-full"
-              src="/logo.png"
-              alt="logo"
-            />
-            <div>
-              <span>CouponHub</span>
-              <p>Shop Smarter, Save Bigger</p>
-            </div>
+          <img class="height-full width-full" src="/logo.png" alt="logo" />
+          <div>
+            <span>CouponHub</span>
+            <p>Shop Smarter, Save Bigger</p>
+          </div>
         </RouterLink>
         <BaseParagraph>Your gateway to exclusive discounts and savings</BaseParagraph>
         <div class="social-links">
@@ -93,33 +89,40 @@ const currentYear = new Date().getFullYear();
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+
 .footer h5 {
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.75rem;
 }
+
 .logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
 }
+
 .logo span {
   font-size: 1.8rem;
   font-weight: bold;
 }
+
 .logo p {
   margin-top: -0.5rem;
   font-size: 0.8rem;
 }
+
 .logo img {
   height: 50px;
   width: 50px;
 }
+
 .social-links {
   display: flex;
   gap: 1rem;
 }
+
 /* Social links with hover effects */
 .social-links a {
   display: inline-block;
@@ -133,10 +136,12 @@ const currentYear = new Date().getFullYear();
   justify-content: center;
   background-color: var(--primary-color);
 }
+
 .social-links a:hover i {
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
+
 .footer h5::after {
   content: "";
   position: absolute;
@@ -146,6 +151,7 @@ const currentYear = new Date().getFullYear();
   height: 3px;
   background-color: var(--primary-color);
 }
+
 .footer ul {
   list-style: none;
   padding: 0;
@@ -154,6 +160,7 @@ const currentYear = new Date().getFullYear();
   flex-direction: column;
   gap: 1rem;
 }
+
 .footer ul a {
   text-decoration: none;
   transition: all 0.3s ease;
@@ -161,6 +168,7 @@ const currentYear = new Date().getFullYear();
   align-items: center;
   gap: 0.5rem;
 }
+
 .footer ul a::before {
   content: "→";
   color: var(--primary-color);
@@ -168,14 +176,17 @@ const currentYear = new Date().getFullYear();
   display: none;
   transition: all 0.3s ease;
 }
+
 .footer ul a:hover {
   color: var(--primary-color);
   padding-left: 5px;
 }
+
 .footer ul a:hover::before {
   opacity: 1;
   display: block;
 }
+
 /* Newsletter form */
 .subscribe-form {
   display: flex;
@@ -190,6 +201,7 @@ const currentYear = new Date().getFullYear();
   font-size: 0.95rem;
   background-color: var(--white-color);
 }
+
 .subscribe-form .btn {
   padding: 1rem 2rem;
   background-color: var(--primary-color);
@@ -197,6 +209,7 @@ const currentYear = new Date().getFullYear();
   border: none;
   border-radius: 0 0.5rem 0.5rem 0;
 }
+
 /* Footer copyright bar*/
 .footer-bottom {
   padding: 1.5rem;

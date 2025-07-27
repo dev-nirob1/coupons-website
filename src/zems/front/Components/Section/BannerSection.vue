@@ -39,39 +39,34 @@
 
 <style scoped>
 .hero {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
+  min-height: 100vh;
   background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .hero .content {
   position: relative;
   margin-top: 5rem;
   z-index: 5;
 }
-
 .hero .hero-title.highlight {
   display: inline-block;
   font-size: 1.75rem;
   padding: 1rem;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   color: var(--primary-color);
   background-color: var(--primary-lighten-color);
 }
-
 .hero .hero-title.font-big {
   font-size: 3.5rem;
 }
-
 .hero .btn {
-  font-size: 1.25rem;
-  padding: 1rem 1.75rem;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
   color: var(--white-color);
   background-color: var(--alternative-color);
-}
-
-.hero .btn:hover {
-  color: var(--secondary-color);
-  background-color: var(--white-color);
 }
 
 .hero .content .img {
@@ -81,61 +76,77 @@
   align-items: center;
   justify-content: center;
 }
-
 .hero .content .img img {
   width: 80%;
   height: 100%;
 }
-
 .star-1,
 .star-2,
 .star-3 {
   position: absolute;
-  height: 130px;
-  width: 130px;
+  height: 60px;
+  width: 60px;
   animation: float 3s ease-in-out infinite;
 }
-
 .star-1 {
-  left: 15%;
-  top: 55%;
-  z-index: -1;
-}
-
-.star-2 {
-  left: 70%;
+  left: 0;
   top: 65%;
   z-index: -1;
 }
-
+.star-2 {
+  right: 0;
+  top: 60%;
+  z-index: -1;
+}
 .star-3 {
   right: 10%;
   top: 5%;
   z-index: -1;
 }
-
 .star-1 img,
 .star-2 img,
 .star-3 img {
   width: 100%;
   height: 100%;
 }
-
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
     opacity: 1;
   }
-
   50% {
     transform: translateY(-1rem);
-    opacity: .5
+    opacity: 0.5;
   }
 }
 
+
 @media (min-width: 768px) {
+  .hero .content {
+    margin-top: 3rem;
+  }
+  .hero .btn {
+    font-size: 1.25rem;
+    padding: 1.25rem 2rem;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    margin-top: 0;
+  }
+  .hero .text-content {
+    width: 80%;
+  }
+
+  .hero .hero-title .highlight {
+    font-size: 2rem;
+  }
+
+  .hero .hero-title .font-big {
+    font-size: 5.5rem;
+  }
+
+  /* Star positioning adjustments */
   .star-1 {
     left: 50%;
     top: 20%;
@@ -150,28 +161,6 @@
     right: 8%;
     top: 5%;
     z-index: -1;
-  }
-
-
-  .hero .content {
-    margin-top: 3rem;
-  }
-
-  .hero p {
-    font-size: 1.15rem;
-    margin-top: 0;
-  }
-
-  .hero .text-content {
-    width: 80%;
-  }
-
-  .hero .hero-title .highlight {
-    font-size: 2rem;
-  }
-
-  .hero .hero-title .font-big {
-    font-size: 5.5rem;
   }
 }
 </style>
