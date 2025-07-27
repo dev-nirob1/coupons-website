@@ -53,29 +53,34 @@ defineProps({
 </template>
 <style scoped>
 .featured-coupon {
-  padding: 3.75rem 1rem;
+  padding: 3.75rem 0;
 }
 
-.link-card {
+.featured-coupon .link-card {
   text-align: center;
   text-decoration: none;
-  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to bottom,
+    rgb(from var(--secondary-color) r g b / 75%),
+    var(--secondary-color)
+  );
   box-shadow: var(--box-shadow);
   color: var(--white-color);
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 1rem;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
 
-.link-card p {
-  margin-top: .5rem;
+.featured-coupon .link-card p {
+  margin-top: 0.5rem;
 }
 
-.link-card img {
+.featured-coupon .link-card img {
   height: 100px;
   width: 100px;
 }
-.link-card:hover {
+.featured-coupon .link-card:hover {
   transform: scale(1.02);
 }
 
