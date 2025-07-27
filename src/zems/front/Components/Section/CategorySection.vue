@@ -43,35 +43,32 @@ defineProps({
 
 <style scoped>
 .categories {
-  padding: 3.5rem 1rem;
-  position: relative;
-  overflow: hidden;
+  padding: 3.75rem 0;
 }
-
-/* Link card */
-.link-card {
+.categories .link-card {
   text-align: center;
   text-decoration: none;
-  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to bottom,
+    rgb(from var(--secondary-color) r g b / 80%),
+    var(--secondary-color)
+  );
   box-shadow: var(--box-shadow);
   color: var(--white-color);
   padding: 1rem;
-  border-radius: 1rem;
-  transition: all .3s ease-in-out;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease-in-out;
   z-index: 1;
 }
-
-.link-card p {
+.categories .link-card p {
   margin-top: 0.5rem;
 }
-
-.link-card img {
+.categories .link-card img {
   height: 80px;
   width: 80px;
   margin-bottom: 0.5rem;
 }
-
-.link-card:hover {
+.categories .link-card:hover {
   transform: scale(1.02);
 }
 </style>

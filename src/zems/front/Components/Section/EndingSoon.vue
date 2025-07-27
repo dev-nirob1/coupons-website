@@ -25,7 +25,6 @@ defineProps({
         <img src="/ending-soon.svg" alt="">
       </div>
 
-
       <div class="large-3 gap-1 medium-gap-2 align-center">
         <div class="text-center large-span-1">
           <div>
@@ -50,35 +49,30 @@ defineProps({
 
 <style scoped>
 .ending-soon {
-  padding: 3.5rem .75rem;
+  padding: 3.5rem 0;
   color: var(--white-color);
   overflow: hidden;
 }
-
-.ending-image {
+.ending-soon .ending-image {
   position: absolute;
-  opacity: .3;
+  opacity: 0.3;
   width: 500px;
   height: 500px;
   left: -10rem;
-  z-index: 0;
 }
-
 .ending-soon .sub-title {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
-
 .masonry-item {
   margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
-  .masonry-grid {
+.masonry-grid {
     columns: 2;
     row-gap: 2rem;
     column-gap: 2rem;
   }
-
   .masonry-item:nth-child(1) {
     margin-top: 5rem;
   }

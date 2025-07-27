@@ -5,6 +5,7 @@
   </div>
 </template>
 <style scoped>
+/* Analog clock styling */
 .clock {
   width: 150px;
   height: 150px;
@@ -14,7 +15,6 @@
   position: relative;
   margin: 2rem auto;
 }
-
 .clock::after {
   content: "";
   width: 12px;
@@ -31,14 +31,12 @@
   top: 50%;
   transform-origin: bottom;
 }
-
 .hour-hand {
   width: 4px;
   height: 40px;
   background: var(--primary-color);
   transform: translate(-50%, -100%) rotate(30deg);
 }
-
 .minute-hand {
   width: 3px;
   height: 60px;
@@ -46,7 +44,6 @@
   transform: translate(-50%, -100%) rotate(0deg);
   animation: spin 10s linear infinite;
 }
-
 @keyframes spin {
   to {
     transform: translate(-50%, -100%) rotate(360deg);
