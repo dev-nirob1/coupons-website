@@ -13,7 +13,7 @@ defineProps({
       </div>
     </div>
 
-    <span class="icon">
+    <span class="price-icon">
       <i class="fa-solid fa-circle-dollar-to-slot"></i>
     </span>
     <SubTitle>{{ price.name }}</SubTitle>
@@ -23,36 +23,32 @@ defineProps({
   </div>
 </template>
 <style scoped>
+/* pricing card */
 .pricing-card {
   position: relative;
   text-align: center;
-  border-radius: .75rem;
-  padding: 3rem 2rem;
-  transition: all .5s;
+  border-radius: 0.75rem;
+  padding: 3rem 1rem;
+  transition: all 0.5s;
   background-color: var(--white-color);
   box-shadow: var(--box-shadow);
   cursor: pointer;
 }
-
-.pricing-card .icon {
+.pricing-card .price-icon {
   font-size: 5rem;
   color: var(--primary-color);
 }
-
 .pricing-card:hover {
-  transform: translateY(-.5rem);
+  transform: translateY(-0.5rem);
 }
-
 .pricing-card .sub-title {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
-
 .pricing-card .hero-title {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .pricing-card .hero-title span {
   font-size: 1.75rem;
   font-weight: bold;
@@ -64,21 +60,18 @@ defineProps({
   border-radius: 1.5rem;
   width: 100%;
 }
-
 .pricing-card .btn:hover {
   background-color: var(--white-color);
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
 }
-
 .pricing-card .exclusive-badge {
   width: 280px;
   position: relative;
-  margin-right: -2rem;
+  margin-right: -1rem;
   margin-top: -1.5rem;
   overflow: hidden;
 }
-
 .badge {
   background-color: var(--alternative-color);
   color: var(--white-color);
@@ -88,9 +81,8 @@ defineProps({
   text-transform: uppercase;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
-
 .pricing-card .badge::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 1.1rem;
   left: -1.75rem;
@@ -99,5 +91,4 @@ defineProps({
   rotate: 45deg;
   background: var(--white-color);
 }
-
 </style>
