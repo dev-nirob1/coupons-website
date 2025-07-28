@@ -36,26 +36,24 @@ watchEffect(() => {
   <div class="company-details">
     <!-- Banner Section -->
     <CompanyBanner />
-    <div class="container">
-      <div class="medium-2 large-3 gap-1 medium-gap-2 my-5">
+    <div class="container py-3">
+      <div class="medium-2 large-3 gap-2">
         <CouponCard v-for="couponData in couponsData?.data" :key=couponData.id :couponData="couponData" />
       </div>
 
       <ul class="pagination">
         <li>
-          <RouterLink :to="currentPage == 1 ? '' : `/companies/${$route.params.type}?p=${parseInt(currentPage) - 1}`">
-            Prev</RouterLink>
+          <RouterLink
+            :to="currentPage == 1 ? '' : `/coupon_list/${$route.params.type}?p=${parseInt(currentPage) - 1}`">&laquo; Prev
+          </RouterLink>
         </li>
-
         <li v-for="(link, i) in couponsData?.last_page" :key="i">
-          <RouterLink :class="link == currentPage && 'active'" :to="`/companies/${$route.params.type}?p=${i + 1}`">
-            {{ i + 1 }}</RouterLink>
+          <RouterLink :class="link == currentPage && 'active'" :to="`/coupon_list/${route?.params?.type}?p=${link}`"> {{ i + 1 }}</RouterLink>
         </li>
-
         <li>
           <RouterLink
-            :to="couponsData?.last_page == currentPage ? '' : `/companies/${$route.params.type}?p=${parseInt(currentPage) + 1}`">
-            Next</RouterLink>
+            :to="couponsData?.last_page == currentPage ? '' : `/coupon_list/${route?.params?.type}?p=${parseInt(currentPage) + 1}`">
+            Next &raquo;</RouterLink>
         </li>
       </ul>
     </div>
@@ -65,31 +63,29 @@ watchEffect(() => {
 
 <style scoped>
 .pagination {
-  margin-bottom: 5rem;
+  font-size: .875rem;
+  margin-top: 3rem;
   list-style: none;
-  padding: none;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
-
 .pagination li {
-  border-radius: .5rem;
-  font-weight: bold;
+  border-radius: 0.5rem;
+  font-weight: 500;
   color: var(--primary-color);
   background-color: var(--white-color);
 }
-
 .pagination li a {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
+  border-radius: 0.5rem;
 }
-
 .pagination li a.active {
   background-color: var(--primary-color);
   color: var(--white-color);
-  border-radius: .5rem;
 }
 </style>
