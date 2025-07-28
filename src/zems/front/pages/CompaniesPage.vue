@@ -13,7 +13,7 @@ const companies = [
 <template>
   <section>
     <BreadcrumbSection />
-    <div class="container medium-2 large-4 gap-1 large-gap-2 py-3">
+    <div class="container medium-2 large-4 gap-1 large-gap-2 py-4">
       <CompanyCard v-for="company in companies" :company="company" :key="company.id" />
     </div>
   </section>

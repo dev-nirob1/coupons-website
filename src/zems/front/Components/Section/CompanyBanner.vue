@@ -1,34 +1,57 @@
 <template>
-  <div class="company-banner">
-    <div class="container banner-content">
-      <div class="image">
-        <img src="/public/company/amazon.png" alt="">
-        <BaseTitle>Amazon</BaseTitle>
+    <section class="company-banner">
+      <!-- company logo  -->
+      <div class="container banner-content">
+        <img
+          src="./public/images/company/amazon.png"
+          alt="Company Logo"
+          class="company-logo"
+        />
+        <!-- company name and details-->
+        <div class="banner-text">
+          <h3 class="title">Amazon</h3>
+          <p>
+            We are a modern tech company focused on building high-quality
+            software solutions for businesses around the world.
+          </p>
+        </div>
       </div>
-      <div class="details">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae hic quas expedita magnam alias, in repellat dicta odio atque consequatur animi voluptatibus? Esse adipisci itaque qui perferendis et eaque debitis sunt excepturi fuga dolore, quae minima culpa, quo reprehenderit ratione obcaecati enim voluptates accusamus nam animi id delectus? Omnis, nostrum!
-      </div>
-    </div>
-  </div>
+    </section>
 </template>
 
 <style scoped>
 .company-banner {
-  margin-top: 5.6rem;
-  min-height: 40vh;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--white-color);
+  padding: 8.75rem 1rem 3.75rem 1rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, var(--primary-light-color), var(--primary-lighten-color));
 }
-.banner-content{
-  height: 100%;
+.company-banner .banner-content {
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
+  max-width: 1000px;
   width: 100%;
 }
-
-.company-banner .image {
+.company-banner .banner-text {
   flex: 1;
+  min-width: 280px;
+}
+.company-banner .company-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  border: 4px solid var(--white-color);
 }
 </style>

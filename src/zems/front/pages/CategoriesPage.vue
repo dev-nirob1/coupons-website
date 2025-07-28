@@ -19,7 +19,7 @@ const { isLoading, data: categories = [] } = useQuery({
 <template>
   <div>
     <BreadcrumbSection />
-    <section class="container py-2  medium-3 large-4 gap-1 medium-gap-2">
+    <section class="container py-4 medium-2 large-5 gap-1 medium-gap-2">
 
       <template v-if="isLoading">
         <LoadingSkeleton v-for="(d, i) in 8" :key="i" />
