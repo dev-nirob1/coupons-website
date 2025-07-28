@@ -1,5 +1,5 @@
 <template>
-  <div class="section-container">
+  <div class="section-header">
     <div class="bar-code"><i class="fas fa-barcode"></i></div>
     <div class="section-name">
       <BaseTitle>
@@ -10,7 +10,7 @@
 </template>
 
 <style>
-.section-container {
+.section-header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
   height: 4.5rem;
   overflow: hidden;
 }
-
+/* Bar code element */
 .bar-code {
   color: var(--white-color);
   background-color: var(--secondary-color);
@@ -32,9 +32,9 @@
   align-items: center;
   justify-content: center;
 }
-
+/* Section name with decorative elements */
 .section-name {
-  padding: .75rem;
+  padding: 0.75rem;
   border: 1px solid var(--secondary-color);
   border-left: none;
   border-right: 3px dashed var(--secondary-color);
@@ -43,10 +43,9 @@
   align-items: center;
   position: relative;
 }
-
 .section-name::before,
 .section-name::after {
-  content: '';
+  content: "";
   position: absolute;
   left: -18px;
   height: 30px;
@@ -56,20 +55,16 @@
   border-radius: 50%;
   z-index: 1;
 }
-
 .section-name::before {
   top: -24px;
 }
-
 .section-name::after {
   bottom: -24px;
 }
-
 .bg-lighten .bar-code {
   border-right: 2px dashed var(--primary-lighten-color);
   border-left: 2px dashed var(--primary-lighten-color);
 }
-
 .bg-lighten .section-name::before,
 .bg-lighten .section-name::after {
   background-color: var(--primary-lighten-color);

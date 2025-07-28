@@ -37,7 +37,7 @@ watchEffect(() => {
 <template>
   <section>
     <BreadcrumbSection />
-    <div class="container py-2 pb-5">
+    <div class="container py-3">
       <div class="flex justify-end mb-2 pr-1">
         <div class="select">
           <select>
