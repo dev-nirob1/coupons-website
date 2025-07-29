@@ -2,10 +2,11 @@
 import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import LoadingCard from '@/components/widgets/LoadingCard.vue';
 import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
-import { RouterLink, useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 import { ref, watchEffect } from 'vue';
+import PaginationButtons from '@/components/widgets/PaginationButtons.vue';
 // const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}`;
 
 const currentPage = ref(1)
@@ -14,7 +15,7 @@ const route = useRoute();
 const fetchData = async (pageNumber) => {
   const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}?page=${pageNumber}`;
   const res = await axios.get(url)
-  console.log(url);
+  // console.log(url);
   return res?.data
 }
 
@@ -22,7 +23,7 @@ const { isPending: isLoading, data: couponsData = {} } = useQuery({
   queryKey: () => [route?.name, route?.params?.type, currentPage?.value],
   queryFn: async () => await fetchData(currentPage.value)
 });
-
+console.log(couponsData);
 watchEffect(() => {
   if (route?.query?.p) {
     currentPage.value = route?.query?.p
@@ -62,23 +63,9 @@ watchEffect(() => {
           <CouponCard v-for="couponData in couponsData?.data" :couponData="couponData" :key="couponData.id" />
         </template>
       </div>
-      <ul class="pagination">
-        <li>
-          <RouterLink
-            :to="currentPage == 1 ? '' : `/coupon_list/${$route.params.type}?p=${parseInt(currentPage) - 1}`">&laquo; Prev
-          </RouterLink>
-        </li>
-        <li v-for="(link, i) in couponsData?.last_page" :key="i">
-          <RouterLink :class="link == currentPage && 'active'" :to="`/coupon_list/${route?.params?.type}?p=${link}`"> {{ i + 1 }}</RouterLink>
-        </li>
-        <li>
-          <RouterLink
-            :to="couponsData?.last_page == currentPage ? '' : `/coupon_list/${route?.params?.type}?p=${parseInt(currentPage) + 1}`">
-            Next &raquo;</RouterLink>
-        </li>
-      </ul>
+      <PaginationButtons :currentPage="currentPage" :couponsData="couponsData" :route="route"/>
 
-      {{ couponsData?.links[0].url }}
+      <!-- {{ couponsData?.links[0].url }} -->
 
     </div>
   </section>
@@ -91,33 +78,4 @@ watchEffect(() => {
   border: var(--border-color);
   box-shadow: var(--box-shadow);
 }
-
-.pagination {
-  font-size: .875rem;
-  margin-top: 3rem;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.pagination li {
-  border-radius: 0.5rem;
-  font-weight: 500;
-  color: var(--primary-color);
-  background-color: var(--white-color);
-}
-.pagination li a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border-radius: 0.5rem;
-}
-.pagination li a.active {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-
-
 </style>
