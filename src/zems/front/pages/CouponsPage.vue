@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 import { ref, watchEffect } from 'vue';
 import PaginationButtons from '@/components/widgets/PaginationButtons.vue';
+import SelectComponent from '@/components/widgets/SelectComponent.vue';
 // const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}`;
 
 const currentPage = ref(1)
@@ -27,7 +28,7 @@ console.log(couponsData);
 watchEffect(() => {
   if (route?.query?.p) {
     currentPage.value = route?.query?.p
-  }else{
+  } else {
     currentPage.value = 1
   }
   fetchData(currentPage?.value)
@@ -39,17 +40,7 @@ watchEffect(() => {
   <section>
     <BreadcrumbSection />
     <div class="container py-3">
-      <div class="flex justify-end mb-2 pr-1">
-        <div class="select">
-          <select>
-            <option value="sort" disabled>Sort By</option>
-            <option value="sort">Newest</option>
-            <option value="sort">Older</option>
-            <option value="sort">Populer</option>
-          </select>
-        </div>
-      </div>
-
+      <SelectComponent/>
       <div v-if="!isLoading && couponsData.length < 1">
         <BaseTitle class="text-center">Opps! No Data Found</BaseTitle>
       </div>
@@ -63,7 +54,7 @@ watchEffect(() => {
           <CouponCard v-for="couponData in couponsData?.data" :couponData="couponData" :key="couponData.id" />
         </template>
       </div>
-      <PaginationButtons :currentPage="currentPage" :couponsData="couponsData" :route="route"/>
+      <PaginationButtons :currentPage="currentPage" :couponsData="couponsData" :route="route" />
 
       <!-- {{ couponsData?.links[0].url }} -->
 
@@ -71,11 +62,3 @@ watchEffect(() => {
   </section>
 </template>
 
-<style scoped>
-.select select {
-  border-radius: 0.5rem;
-  background-color: var(--white-color);
-  border: var(--border-color);
-  box-shadow: var(--box-shadow);
-}
-</style>

@@ -35,7 +35,7 @@ watchEffect(() => {
 
 <template>
   <div class="company-details">
-    <!-- Banner Section -->
+    <!-- Banner Section [pass dynamic data from here instead of static data]-->
     <CompanyBanner />
     <div class="container py-3">
       <div class="medium-2 large-3 gap-2">
