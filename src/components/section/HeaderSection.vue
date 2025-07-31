@@ -39,7 +39,14 @@ onMounted(() => {
 
       <!-- Navigation Links -->
       <ul class="nav-links" :class="{ 'active': isMenuOpen }">
-        <ListItem><router-link to="/">Home</router-link></ListItem>
+         <ListItem class="dropdown-container">
+            Home <i class="fa-solid fa-angle-down"></i>
+            <div class="dropdown-menu">
+              <RouterLink to="/">Home 1</RouterLink>
+              <RouterLink to="/home-two">Home 2</RouterLink>
+              <RouterLink to="/home-three">Home 3</RouterLink>
+            </div>
+          </ListItem>
         <ListItem><router-link to="/coupon_list">Latest Coupons</router-link></ListItem>
         <ListItem><router-link to="/coupon_list/exclusive">Exclusive Coupons</router-link></ListItem>
         <ListItem><router-link to="/coupon_list/ending_soon">Ending Soon</router-link></ListItem>
