@@ -6,13 +6,13 @@
     <div class="container">
       <div class="content medium-2 align-center justify-between">
           <div class="star-1">
-            <img src="/star-1.png" alt="">
+            <BaseImage image="/star-1.png" alt="image"/>
           </div>
           <div class="star-2">
-            <img src="/star-2.png" alt="">
+            <BaseImage image="/star-2.png" alt="image"/>
           </div>
           <div class="star-3">
-            <img src="/angle-1.png" alt="">
+            <BaseImage image="/angle-1.png" alt="image"/>
           </div>
         <div class="text-content text-white">
           <div>
@@ -30,7 +30,7 @@
           </BaseButton>
         </div>
         <div class="img">
-          <BaseImage src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="" />
+          <BaseImage src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="image" />
         </div>
       </div>
     </div>

@@ -51,7 +51,7 @@
             alt="image"
           />
           <div class="about-card">
-            <SubTitle>20</SubTitle>
+            <BaseTitle>20</BaseTitle>
             <div>
               <BaseParagraph>%</BaseParagraph>
               <BaseParagraph>off</BaseParagraph>

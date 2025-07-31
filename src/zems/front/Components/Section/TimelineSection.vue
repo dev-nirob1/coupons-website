@@ -5,7 +5,7 @@
         <div class="timeline">
           <BaseImage image="/all.png" alt="image" />
         </div>
-        <div>
+        <div class="relative">
           <div class="pb-5">
             <BaseTitle tag="h4">
               Save Money in <br> 3 Simple Steps
@@ -58,35 +58,44 @@
 .timeline-section {
   padding: 3.75rem 0;
 }
+
 .timeline-section .btn {
   font-size: 1rem;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
 }
+
 .timeline-section .btn:hover {
   background-color: rgb(from var(--secondary-color) r g b / 90%);
 }
+
 .how-it-works {
   position: relative;
   width: 100%;
 }
+
 .middle {
   display: flex;
 }
+
 .timeline {
   display: none;
 }
+
 .timeline img {
   width: 100%;
 }
+
 .one,
 .two,
 .three {
   position: relative;
 }
+
 .timeline-card {
   padding: 2rem;
 }
+
 /* Step number indicators */
 .number {
   width: 100px;
@@ -109,17 +118,20 @@
     width: 100%;
     top: 3.5rem;
   }
+
   .number {
     margin-bottom: 3rem;
   }
 }
+
 @media (min-width: 1200px) {
   .timeline {
     top: 1.5rem;
   }
 }
-@media (min-width: 1400px){
-   .timeline {
+
+@media (min-width: 1400px) {
+  .timeline {
     top: -1.5rem;
   }
 }
