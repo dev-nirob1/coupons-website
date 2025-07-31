@@ -1,18 +1,18 @@
 <script setup>
 import { useQuery } from '@tanstack/vue-query';
-import HeroTwo from '../Components/Section/HeroTwo.vue';
-
+import HeroThree from '../Components/Section/HeroThree.vue';
 import axios from 'axios';
-import EndingSoon from '../Components/Section/EndingSoon.vue';
 import CategorySection from '../Components/Section/CategorySection.vue';
+import EndingSoon from '../Components/Section/EndingSoon.vue';
 import AboutUs from '../Components/Section/AboutUs.vue';
 import FeaturedCoupon from '../Components/Section/FeaturedCoupon.vue';
 import TimelineSection from '../Components/Section/TimelineSection.vue';
 import ByCompany from '../Components/Section/ByCompany.vue';
 import PricingSection from '../Components/Section/PricingSection.vue';
+import StatisticsSection from '../Components/Section/StatisticsSection.vue';
 import TestimonialSection from '../Components/Section/TestimonialSection.vue';
 import NewsLetterSection from '../Components/Section/NewsLetterSection.vue';
-import StatisticsTwo from '../Components/Section/StatisticsTwo.vue';
+
 const { isLoading, data } = useQuery({
   queryKey: ['home'],
   queryFn: async () => {
@@ -25,8 +25,8 @@ const { isLoading, data } = useQuery({
 </script>
 
 <template>
-  <HeroTwo/>
-   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
+  <HeroThree/>
+  <CategorySection :categories="data?.cat" :isLoading="isLoading" />
   <EndingSoon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
     :ending="data?.ending" :isLoading="isLoading" />
   <AboutUs />
@@ -37,7 +37,7 @@ const { isLoading, data } = useQuery({
 
   <!-- <ExclusiveCoupon/> -->
   <PricingSection />
-  <StatisticsTwo/>
+  <StatisticsSection/>
   <TestimonialSection />
   <NewsLetterSection />
 </template>

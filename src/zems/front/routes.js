@@ -4,6 +4,8 @@ import CompaniesPage from '@/zems/front/Pages/CompaniesPage.vue'
 import MainLayout from '@/zems/front/Layout/MainLayout.vue'
 import CompanyDetailsPage from './Pages/CompanyDetailsPage.vue'
 import CategoriesPage from '@/zems/front/Pages/CategoriesPage.vue'
+import HomeTwoPage from './Pages/HomeTwoPage.vue'
+import HomeThreePage from './Pages/HomeThreePage.vue'
 
 export default [
   {
@@ -14,6 +16,16 @@ export default [
         path: '',
         name: 'home',
         component: HomePage,
+      },
+      {
+        path: 'home-two',
+        name: 'home-two',
+        component: HomeTwoPage,
+      },
+      {
+        path: 'home-three',
+        name: 'home-three',
+        component: HomeThreePage,
       },
       {
         path: '/coupon_list/:type?',
