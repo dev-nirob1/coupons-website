@@ -12,6 +12,7 @@ import PricingSection from '../Components/Section/PricingSection.vue';
 import StatisticsSection from '../Components/Section/StatisticsSection.vue';
 import TestimonialSection from '../Components/Section/TestimonialSection.vue';
 import NewsLetterSection from '../Components/Section/NewsLetterSection.vue';
+import AboutThree from '../Components/Section/AboutThree.vue';
 
 const { isLoading, data } = useQuery({
   queryKey: ['home'],
@@ -27,11 +28,13 @@ const { isLoading, data } = useQuery({
 <template>
   <HeroThree/>
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
+  <AboutThree/>
+    <FeaturedCoupon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
+  :featured="data?.featured" :isLoading="isLoading" />
   <EndingSoon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
     :ending="data?.ending" :isLoading="isLoading" />
   <AboutUs />
-  <FeaturedCoupon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
-  :featured="data?.featured" :isLoading="isLoading" />
+
   <TimelineSection />
   <ByCompany />
 
