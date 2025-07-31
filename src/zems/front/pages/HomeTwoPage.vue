@@ -13,6 +13,7 @@ import PricingSection from '../Components/Section/PricingSection.vue';
 import TestimonialSection from '../Components/Section/TestimonialSection.vue';
 import NewsLetterSection from '../Components/Section/NewsLetterSection.vue';
 import StatisticsTwo from '../Components/Section/StatisticsTwo.vue';
+import AboutTwo from '../Components/Section/AboutTwo.vue';
 const { isLoading, data } = useQuery({
   queryKey: ['home'],
   queryFn: async () => {
@@ -30,6 +31,7 @@ const { isLoading, data } = useQuery({
   <EndingSoon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
     :ending="data?.ending" :isLoading="isLoading" />
   <AboutUs />
+  <AboutTwo/>
   <FeaturedCoupon :handleOpenModal="handleOpenModal" :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"
   :featured="data?.featured" :isLoading="isLoading" />
   <TimelineSection />
