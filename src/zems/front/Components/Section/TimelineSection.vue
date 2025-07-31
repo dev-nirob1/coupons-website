@@ -3,7 +3,7 @@
     <div class="container">
       <div class="large-3 how-it-works">
         <div class="timeline">
-          <img src="/all.png" alt="">
+          <BaseImage image="/all.png" alt="image" />
         </div>
         <div>
           <div class="pb-5">

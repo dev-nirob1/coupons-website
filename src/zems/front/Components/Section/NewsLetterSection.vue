@@ -7,13 +7,13 @@
     <div class="container">
      <div class="content">
           <div class="px-2 medium-px-3 large-px-5">
-            <h5 class="sub-title">Subscribe Our</h5>
-            <h3 class="title">NewsLetter</h3>
+            <SubTitle>Subscribe Our</SubTitle>
+            <BaseTitle>NewsLetter</BaseTitle>
           </div>
           <!-- Input and subscribe button -->
           <div class="subscribe-input">
-            <input class="bg-white" placeholder="Please Enter Your Email" />
-            <button class="btn bg-secondary text-white">Subscribe</button>
+            <InputField class="bg-white" placeholder="Please Enter Your Email" />
+            <BaseButton class="bg-secondary text-white">Subscribe</BaseButton>
           </div>
         </div>
     </div>

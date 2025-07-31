@@ -2,59 +2,59 @@
     <section class="about-two bg-lighten">
       <div class="large-2 gap-2 align-center container">
         <div class="about-two-content">
-          <h3 class="title mb-2">
+          <BaseTitle class="mb-2">
             Join Millions Of Smart Shoppers Who Save With Us.
-          </h3>
+          </BaseTitle>
           <ul>
-            <li>
+            <ListItem>
               <div>
                 <i class="icon fa-solid fa-hand-holding-heart fa-2xl"></i>
               </div>
               <div>
-                <h5 class="sub-title">Who We Are</h5>
-                <p>
+                <SubTitle>Who We Are</SubTitle>
+                <BaseParagraph>
                   Deal-hunters helping you save time and money. We find the
                   coupons so you don't have to.
-                </p>
+                </BaseParagraph>
               </div>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <div class="icon">
                 <i class="icon fa-solid fa-hand-holding-heart fa-2xl"></i>
               </div>
               <div>
-                <h5 class="sub-title">Why Trust Us?</h5>
-                <p>
+                <SubTitle>Why Trust Us?</SubTitle>
+                <BaseParagraph>
                   Every coupon is tested. We partner with brands to bring you
                   exclusive, working discounts.
-                </p>
+                </BaseParagraph>
               </div>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <div>
                 <i class="icon fa-solid fa-hand-holding-heart fa-2xl"></i>
               </div>
               <div>
-                <h5 class="sub-title">Our Promise</h5>
-                <p>
+                <SubTitle>Our Promise</SubTitle>
+                <BaseParagraph>
                   We’re not just a coupon site—we’re your savings ally.
                   Questions? Our team responds in under 5 minutes.
-                </p>
+                </BaseParagraph>
               </div>
-            </li>
+            </ListItem>
           </ul>
         </div>
 
         <div class="image-container relative">
-          <img
-            src="https://images.unsplash.com/photo-1740419014058-aa7e39329ced?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          <BaseImage
+            image="https://images.unsplash.com/photo-1740419014058-aa7e39329ced?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="image"
           />
           <div class="about-card">
-            <h3>20</h3>
+            <SubTitle>20</SubTitle>
             <div>
-              <p>%</p>
-              <p>off</p>
+              <BaseParagraph>%</BaseParagraph>
+              <BaseParagraph>off</BaseParagraph>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
   box-shadow: var(--box-shadow);
   background-color: var(--white-color);
 }
-.about-two .about-card h3 {
+.about-two .about-card .title {
   font-size: 2.5rem;
   font-weight: 900;
 }

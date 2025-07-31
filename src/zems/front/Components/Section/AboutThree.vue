@@ -2,32 +2,32 @@
 <section class="relative">
       <div class="container about-three large-2 align-center">
         <div class="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1740419014058-aa7e39329ced?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          <BaseImage
+            Image="https://images.unsplash.com/photo-1740419014058-aa7e39329ced?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Happy shoppers using coupons"
           />
         </div>
         <div class="about-three-content">
           <div>
-            <h3 class="title">About Our Coupons</h3>
-            <p>
+            <BaseTitle>About Our Coupons</BaseTitle>
+            <BaseParagraph>
               We partner with top brands to bring you exclusive discounts and
               deals you won't find anywhere else. Our team carefully verifies
               every coupon to ensure you get working, legitimate offers that
               actually save you money. Whether you're shopping online or
               in-store, we've got the best deals to help you stretch your budget
               further.
-            </p>
+            </BaseParagraph>
           </div>
           <div>
-            <h3 class="title">Our Services</h3>
+            <BaseTitle>Our Services</BaseTitle>
             <div>
               Beyond just listing coupons, we provide valuable services to
               enhance your savings experience:
               <ul>
-                <li>Daily deal alerts for limited-time offers</li>
-                <li>Price comparison tools to ensure you get the best deal</li>
-                <li>Exclusive member-only discounts</li>
+                <ListItem>Daily deal alerts for limited-time offers</ListItem>
+                <ListItem>Price comparison tools to ensure you get the best deal</ListItem>
+                <ListItem>Exclusive member-only discounts</ListItem>
               </ul>
               We're committed to helping you save money without compromising on
               quality or convenience.

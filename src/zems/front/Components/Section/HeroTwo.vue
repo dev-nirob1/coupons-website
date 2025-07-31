@@ -10,15 +10,15 @@
       </div>
       <div class="banner-content">
         <div>
-          <h1 class="hero-title">Guaranteed Working Coupon Codes</h1>
-          <p>
+          <HeroTitle>Guaranteed Working Coupon Codes</HeroTitle>
+          <BaseParagraph>
             We thoroughly test all our promo codes to ensure they work—so you
             save time and money at checkout. Enjoy a 95% success rate on all our
             offers!
-          </p>
+          </BaseParagraph>
           <div class="flex gap-1 justify-center">
-            <button class="btn bg-secondary text-white">GET DEALS</button>
-            <button class="btn bg-alternative text-white">LEARN MORE</button>
+            <BaseButton class="bg-secondary text-white">GET DEALS</BaseButton>
+            <BaseButton class="bg-alternative text-white">LEARN MORE</BaseButton>
           </div>
         </div>
       </div>

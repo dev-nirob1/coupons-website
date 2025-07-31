@@ -3,7 +3,7 @@
     <div class="container large-2 align-center gap-2">
       <!-- image div  -->
       <div class="image">
-        <img src="https://cdn.pixabay.com/photo/2024/10/06/22/36/shipping-9101364_960_720.png"
+        <BaseImage image="https://cdn.pixabay.com/photo/2024/10/06/22/36/shipping-9101364_960_720.png"
           alt="image" />
       </div>
       <div>
@@ -20,18 +20,18 @@
 
         <!-- icon + title container  -->
         <ul class="all-2 align-center gap-1">
-          <li>
+          <ListItem>
             <i class="fa-solid fa-tag"></i><span>Exclusive Discounts</span>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <i class="fa-solid fa-globe"></i><span>Worldwide Offers</span>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <i class="fa-solid fa-bolt"></i><span>Instant Savings</span>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <i class="fa-solid fa-shield"></i><span>Verified Deals</span>
-          </li>
+          </ListItem>
         </ul>
 
         <!-- icon + title container ends  -->

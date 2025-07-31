@@ -24,7 +24,7 @@ const companies = [
           <RouterLink class="link-card" to="/companies">
             <div class="medium-4 gap-1 align-center">
               <div>
-                <img src="/company/store.png" />
+                <BaseImage image="/company/store.png" />
               </div>
               <div class="span-3">
                 <SubTitle>Explore All Partner Companies</SubTitle>

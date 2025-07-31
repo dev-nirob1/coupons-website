@@ -22,7 +22,7 @@ defineProps({
   <section class="ending-soon bg-secondary">
     <div class="container relative">
       <div class="ending-image">
-        <img src="/ending-soon.svg" alt="">
+        <BaseImage src="/ending-soon.svg" alt="image"/>
       </div>
 
       <div class="large-3 gap-1 medium-gap-2 align-center">
