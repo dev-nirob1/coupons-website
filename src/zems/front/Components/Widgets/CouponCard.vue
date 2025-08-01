@@ -1,13 +1,13 @@
 <script setup>
+import { useModalStore } from '@/stores/modalStore';
+
 defineProps({
   couponData: {
     type: Object
   },
-  handleOpenModal: {
-    type: Function
-  },
-
 })
+const modalStore = useModalStore()
+
 </script>
 
 <template>
@@ -28,7 +28,7 @@ defineProps({
     <div class="card-footer">
       <div class="flex justify-between align-center">
         <BaseParagraph>Validity: {{ couponData?.expire_date }}</BaseParagraph>
-        <BaseButton @click='handleOpenModal' class="bg-secondary text-white">Get Code</BaseButton>
+        <BaseButton @click='modalStore.handleOpenModal' class="bg-secondary text-white">Get Code</BaseButton>
       </div>
     </div>
   </div>

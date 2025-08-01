@@ -13,6 +13,8 @@ import StatisticsSection from '@zems/front/Components/Section/StatisticsSection.
 import TestimonialSection from '@zems/front/Components/Section/TestimonialSection.vue';
 import NewsLetterSection from '@zems/front/Components/Section/NewsLetterSection.vue';
 import AboutThree from '@zems/front/Components/Section/AboutThree.vue';
+import { useModalStore } from '@/stores/modalStore';
+import CouponDetailsModal from '@zems/front/Components/Widgets/CouponDetailsModal.vue';
 
 const { isLoading, data } = useQuery({
   queryKey: ['home'],
@@ -23,9 +25,13 @@ const { isLoading, data } = useQuery({
     }
   }
 })
+
+const modalStore = useModalStore()
 </script>
 
 <template>
+    <CouponDetailsModal :isModalOpen="modalStore.isModalOpen" :handleCloseModal="modalStore.handleCloseModal" />
+
   <HeroThree />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
   <AboutThree />

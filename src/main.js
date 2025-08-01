@@ -11,19 +11,17 @@ import BaseTable from '@/components/element/BaseTable.vue'
 import TableHeader from '@/components/element/TableHeader.vue'
 import TableRow from '@/components/element/TableRow.vue'
 import './assets/main.css'
-// import { zems_animate } from './plugins/zems_animate'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { VueQueryPlugin } from '@tanstack/vue-query'
 
-
 const pinia = createPinia()
 const app = createApp(App)
 app.use(pinia)
 app.use(VueQueryPlugin)
-// app.use(zems_animate)
+
 app.use(router)
 app.component('BaseButton', BaseButton)
 app.component('BaseTitle', BaseTitle)

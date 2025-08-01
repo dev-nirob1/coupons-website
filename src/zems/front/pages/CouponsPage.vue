@@ -1,13 +1,16 @@
 <script setup>
 import BreadcrumbSection from '@/components/widgets/BreadcrumbSection.vue';
 import LoadingCard from '@/components/widgets/LoadingCard.vue';
-import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
+import CouponCard from '@zems/front/Components/Widgets/CouponCard.vue';
 import { useRoute } from 'vue-router';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 import { ref, watchEffect } from 'vue';
 import PaginationButtons from '@/components/widgets/PaginationButtons.vue';
 import SelectComponent from '@/components/widgets/SelectComponent.vue';
+import { useModalStore } from '@/stores/modalStore';
+import CouponDetailsModal from '@zems/front/Components/Widgets/CouponDetailsModal.vue';
+
 // const url = `https://coupon.zems.uk/api/${route.name}${route.params.type ? '/' + route.params.type : ''}`;
 
 const currentPage = ref(1)
@@ -20,11 +23,12 @@ const fetchData = async (pageNumber) => {
   return res?.data
 }
 
-const { isPending: isLoading, data: couponsData = {} } = useQuery({
+const { isPending: isLoading, data: couponsData = [] } = useQuery({
   queryKey: () => [route?.name, route?.params?.type, currentPage?.value],
   queryFn: async () => await fetchData(currentPage.value)
 });
-console.log(couponsData);
+
+// console.log(couponsData);
 watchEffect(() => {
   if (route?.query?.p) {
     currentPage.value = route?.query?.p
@@ -33,6 +37,8 @@ watchEffect(() => {
   }
   fetchData(currentPage?.value)
 })
+
+const modalStore = useModalStore()
 
 </script>
 
@@ -56,8 +62,7 @@ watchEffect(() => {
       </div>
       <PaginationButtons :currentPage="currentPage" :couponsData="couponsData" :route="route" />
 
-      <!-- {{ couponsData?.links[0].url }} -->
-
+  <CouponDetailsModal :isModalOpen="modalStore.isModalOpen" :handleCloseModal="modalStore.handleCloseModal" />
     </div>
   </section>
 </template>

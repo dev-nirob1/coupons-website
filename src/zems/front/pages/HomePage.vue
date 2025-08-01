@@ -1,7 +1,6 @@
 <script setup>
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
-import { ref } from 'vue'
 import BannerSection from '@zems/front/Components/Section/BannerSection.vue';
 import CategorySection from '@zems/front/Components/Section/CategorySection.vue';
 import FeaturedCoupon from '@zems/front/Components/Section/FeaturedCoupon.vue';
@@ -14,6 +13,7 @@ import PricingSection from '@zems/front/Components/Section/PricingSection.vue';
 import AboutUs from '@zems/front/Components/Section/AboutUs.vue';
 import StatisticsSection from '@zems/front/Components/Section/StatisticsSection.vue';
 import CouponDetailsModal from '@zems/front/Components/Widgets/CouponDetailsModal.vue';
+import { useModalStore } from '@/stores/modalStore';
 
 const { isLoading, data } = useQuery({
   queryKey: ['home'],
@@ -24,32 +24,22 @@ const { isLoading, data } = useQuery({
     }
   }
 })
-// popup logic
-const isModalOpen = ref(false)
-const handleCloseModal = () => {
-  isModalOpen.value = false;
-  console.log(isModalOpen.value);
 
-}
-const handleOpenModal = () => {
-  isModalOpen.value = true
-  console.log(isModalOpen.value);
-}
+const modalStore = useModalStore()
 
 </script>
 
 <template>
-  <CouponDetailsModal :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"/>
+  <CouponDetailsModal :isModalOpen="modalStore.isModalOpen" :handleCloseModal="modalStore.handleCloseModal" />
   <BannerSection />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
-  <EndingSoon :ending="data?.ending" :isLoading="isLoading" :handleOpenModal="handleOpenModal" />
+  <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
   <AboutUs />
-  <FeaturedCoupon :handleOpenModal="handleOpenModal"
-  :featured="data?.featured" :isLoading="isLoading" />
+  <FeaturedCoupon :featured="data?.featured" :isLoading="isLoading" />
   <TimelineSection />
   <ByCompany />
   <PricingSection />
-  <StatisticsSection/>
+  <StatisticsSection />
   <TestimonialSection />
   <NewsLetterSection />
 </template>
