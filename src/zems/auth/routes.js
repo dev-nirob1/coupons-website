@@ -1,6 +1,6 @@
-import AuthLayout from "@/zems/auth/AuthLayout/AuthLayout.vue";
-import LoginPage from "@/zems/auth/Pages/LoginPage.vue";
-import RegisterPage from "@/zems/auth/Pages/RegisterPage.vue";
+import AuthLayout from "@zems/auth/AuthLayout/AuthLayout.vue";
+import LoginPage from "@zems/auth/Pages/LoginPage.vue";
+import RegisterPage from "@zems/auth/Pages/RegisterPage.vue";
 
 export default [
   {

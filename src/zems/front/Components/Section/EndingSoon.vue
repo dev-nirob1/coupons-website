@@ -1,7 +1,7 @@
 <script setup>
-import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
-import CountDown from './CountDown.vue';
-import ClockCompo from '../Widgets/ClockCompo.vue';
+import CouponCard from '@zems/front/Components/Widgets/CouponCard.vue';
+import CountDown from '@zems/front/Components/Widgets/CountDown.vue';
+import ClockCompo from '@zems/front/Components/Widgets/ClockCompo.vue';
 defineProps({
   ending: {
     type: Array

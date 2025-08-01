@@ -15,30 +15,30 @@ defineProps({
         <div class="modal-details">
           <!-- Coupon Header -->
           <div class="bg-primary relative">
-            <h3 class="title">Ramadan Special Offer</h3>
+            <BaseTitle>Ramadan Special Offer</BaseTitle>
             <div class="discount">
-              <h5 class="sub-title">20% OFF</h5>
+              <SubTitle>20% OFF</SubTitle>
             </div>
           </div>
 
           <!-- modal Body -->
           <div class="modal-body">
             <ul>
-              <li>
+              <ListItem>
                 <i class="fa-solid fa-stopwatch text-secondary"></i>
                 <span class="text-bold">Expires:</span>
                 <span>2025-04-28 (11:59 PM)</span>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <i class="fa-solid fa-tag text-secondary"></i>
                 <span class="text-bold">Category:</span>
                 <span>Ramadan Essentials</span>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <i class="fa-solid fa-store text-secondary"></i>
                 <span class="text-bold">Valid at:</span>
                 <span>All participating stores</span>
-              </li>
+              </ListItem>
             </ul>
             <BaseParagraph>
               Enjoy 20% discount on all grocery items during this holy month of

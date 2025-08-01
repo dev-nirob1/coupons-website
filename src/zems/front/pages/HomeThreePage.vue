@@ -29,8 +29,8 @@ const { isLoading, data } = useQuery({
   <HeroThree />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
   <AboutThree />
-  <FeaturedCoupon :handleOpenModal="handleOpenModal" :featured="data?.featured" :isLoading="isLoading" />
-  <EndingSoon :handleOpenModal="handleOpenModal" :ending="data?.ending" :isLoading="isLoading" />
+  <FeaturedCoupon :featured="data?.featured" :isLoading="isLoading" />
+  <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
   <AboutUs />
   <TimelineSection />
   <ByCompany />

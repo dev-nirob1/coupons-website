@@ -29,10 +29,10 @@ const { isLoading, data } = useQuery({
 <template>
   <HeroTwo />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
-  <EndingSoon :handleOpenModal="handleOpenModal" :ending="data?.ending" :isLoading="isLoading" />
+  <EndingSoon :ending="data?.ending" :isLoading="isLoading" />
   <AboutUs />
   <AboutTwo />
-  <FeaturedCoupon :handleOpenModal="handleOpenModal" :featured="data?.featured" :isLoading="isLoading" />
+  <FeaturedCoupon :featured="data?.featured" :isLoading="isLoading" />
   <TimelineSection />
   <ByCompany />
   <PricingSection />

@@ -1,3 +1,0 @@
-<template>
-  CompanyList
-</template>

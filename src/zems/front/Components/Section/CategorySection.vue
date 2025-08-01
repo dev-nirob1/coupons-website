@@ -1,7 +1,7 @@
 <script setup>
 import LoadingSkeleton from '@/components/widgets/LoadingSkeleton.vue';
 import SectionTitle from '@/components/widgets/SectionTitle.vue';
-import CategoryCard from '@/zems/front/Components/Widgets/CategoryCard.vue';
+import CategoryCard from '@zems/front/Components/Widgets/CategoryCard.vue';
 
 defineProps({
   categories: {
@@ -17,6 +17,7 @@ defineProps({
   <section class="categories">
     <div class="container">
       <SectionTitle>Browse Category</SectionTitle>
+      
       <div class="medium-2 large-5 gap-1 medium-gap-2">
         <template v-if="isLoading">
           <LoadingSkeleton v-for="(load, i) in 5" :key="i" />

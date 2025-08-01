@@ -2,12 +2,12 @@
 <section class="hero-three bg-primary">
       <div class="container medium-12">
         <div class="swiper-controls">
-          <button class="button-next">
+          <BaseButton class="button-next">
             Next <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <button class="button-prev">
+          </BaseButton>
+          <BaseButton class="button-prev">
             <i class="fa-solid fa-arrow-left"></i> Previous
-          </button>
+          </BaseButton>
         </div>
         <div class="span-11 py-3">
           <div class="swiper mySwiper">
@@ -16,41 +16,41 @@
                 <div class="medium-2 gap-3 align-center relative">
                   <div class="swiper-content">
                     <div>
-                      <h1 class="hero-title">Huge Savings With</h1>
-                      <h1 class="hero-title">Exclusive Coupons</h1>
+                      <HeroTitle>Huge Savings With</HeroTitle>
+                      <HeroTitle>Exclusive Coupons</HeroTitle>
                     </div>
-                    <p>
+                    <BaseParagraph>
                       Unlock thousands of verified deals and save up to 80% at
                       your favorite retailers. New coupons added daily for
                       maximum savings!
-                    </p>
-                    <button class="btn bg-secondary text-white">
+                    </BaseParagraph>
+                    <BaseButton class="bg-secondary text-white">
                       Explore Now
-                    </button>
+                    </BaseButton>
                   </div>
                   <div class="hero-three-img">
-                    <img
+                    <BaseImage
                       class="img-full"
-                      src="https://media.istockphoto.com/id/687572186/photo/handsome-young-man-in-shopping.jpg?s=612x612&w=0&k=20&c=P5__LphyJf3BZd4ha1SKHgzv1UC_7foYccB9L6-29Qo="
+                      image="https://media.istockphoto.com/id/687572186/photo/handsome-young-man-in-shopping.jpg?s=612x612&w=0&k=20&c=P5__LphyJf3BZd4ha1SKHgzv1UC_7foYccB9L6-29Qo="
                       alt=""
                     />
                     <!-- discount card  -->
                     <div class="discount-card">
-                      <h3 class="title">20</h3>
+                      <BaseTitle>20</BaseTitle>
                       <div>
-                        <p>%</p>
-                        <p>off</p>
+                        <BaseParagraph>%</BaseParagraph>
+                        <BaseParagraph>off</BaseParagraph>
                       </div>
                     </div>
                     <!-- discount coupon card  -->
                     <div class="coupon-1">
                       <span>50% OFF</span>
-                      <h5 class="sub-title">Amazon</h5>
+                      <SubTitle>Amazon</SubTitle>
                     </div>
                     <!-- discount coupon card  -->
                     <div class="coupon-2">
                       <span>$20 OFF</span>
-                      <h5 class="sub-title">Nike</h5>
+                      <SubTitle>Nike</SubTitle>
                     </div>
                   </div>
                 </div>
@@ -59,41 +59,41 @@
                 <div class="medium-2 gap-3 align-center relative">
                   <div class="swiper-content">
                     <div>
-                      <h1 class="hero-title">Exclusive Coupons</h1>
-                      <h1 class="hero-title">Huge Savings</h1>
+                      <HeroTitle>Exclusive Coupons</HeroTitle>
+                      <HeroTitle>Huge Savings</HeroTitle>
                     </div>
-                    <p>
+                    <BaseParagraph>
                       Unlock thousands of verified deals and save up to 80% at
                       your favorite retailers. New coupons added daily for
                       maximum savings!
-                    </p>
-                    <button class="btn bg-secondary text-white">
+                    </BaseParagraph>
+                    <BaseButton class="bg-secondary text-white">
                       Explore Now
-                    </button>
+                    </BaseButton>
                   </div>
                   <div class="hero-three-img">
-                    <img
+                    <BaseImage
                       class="img-full"
-                      src="https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      image="https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt=""
                     />
                     <!-- discount card  -->
                     <div class="discount-card">
-                      <h3 class="title">20</h3>
+                      <BaseTitle>20</BaseTitle>
                       <div>
-                        <p>%</p>
-                        <p>off</p>
+                        <BaseParagraph>%</BaseParagraph>
+                        <BaseParagraph>off</BaseParagraph>
                       </div>
                     </div>
                     <!-- discount coupon card  -->
                     <div class="coupon-1">
                       <span>50% OFF</span>
-                      <h5 class="sub-title">Amazon</h5>
+                      <SubTitle>Amazon</SubTitle>
                     </div>
                     <!-- discount coupon card  -->
                     <div class="coupon-2">
                       <span>$20 OFF</span>
-                      <h5 class="sub-title">Nike</h5>
+                      <SubTitle>Nike</SubTitle>
                     </div>
                   </div>
                 </div>
@@ -102,41 +102,41 @@
                 <div class="medium-2 gap-3 align-center relative">
                   <div class="swiper-content">
                     <div>
-                      <h1 class="hero-title">Exclusive Coupons</h1>
-                      <h1 class="hero-title">Huge Savings</h1>
+                      <HeroTitle>Exclusive Coupons</HeroTitle>
+                      <HeroTitle>Huge Savings</HeroTitle>
                     </div>
-                    <p>
+                    <BaseParagraph>
                       Unlock thousands of verified deals and save up to 80% at
                       your favorite retailers. New coupons added daily for
                       maximum savings!
-                    </p>
-                    <button class="btn bg-secondary text-white">
+                    </BaseParagraph>
+                    <BaseButton class="bg-secondary text-white">
                       Explore Now
-                    </button>
+                    </BaseButton>
                   </div>
                   <div class="hero-three-img">
-                    <img
+                    <BaseImage
                       class="img-full"
-                      src="https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      image="https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                       alt=""
                     />
                     <!-- discount card  -->
                     <div class="discount-card">
-                      <h3 class="title">20</h3>
+                      <BaseTitle>20</BaseTitle>
                       <div>
-                        <p>%</p>
-                        <p>off</p>
+                        <BaseParagraph>%</BaseParagraph>
+                        <BaseParagraph>off</BaseParagraph>
                       </div>
                     </div>
                     <!-- discount coupon card  -->
                     <div class="coupon-1">
                       <span>50% OFF</span>
-                      <h5 class="sub-title">Amazon</h5>
+                      <SubTitle>Amazon</SubTitle>
                     </div>
                     <!-- discount coupon card  -->
                     <div class="coupon-2">
                       <span>$20 OFF</span>
-                      <h5 class="sub-title">Nike</h5>
+                      <SubTitle>Nike</SubTitle>
                     </div>
                   </div>
                 </div>

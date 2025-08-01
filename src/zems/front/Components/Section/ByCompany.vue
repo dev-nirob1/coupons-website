@@ -1,7 +1,7 @@
 <script setup>
 import SectionTitle from '@/components/widgets/SectionTitle.vue';
 import CompanyCard from '@/zems/front/Components/Widgets/CompanyCard.vue';
-// import LoadingSkeleton from '../widgets/LoadingSkeleton.vue';
+
 const companies = [
   { id: 1, name: "Nike", logo: "/company/nike.png", discount: "20% OFF" },
   { id: 2, name: "Adidas", logo: "/company/adidas.png", discount: "15% OFF" },

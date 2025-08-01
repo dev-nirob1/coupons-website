@@ -5,7 +5,6 @@ defineProps({
 </script>
 
 <template>
-
     <div class="category-card">
       <div class="p-2">
         <div class="category-image">

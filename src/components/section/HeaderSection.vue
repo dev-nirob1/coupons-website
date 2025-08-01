@@ -11,7 +11,7 @@ onMounted(() => {
   navbarAnimation()
 
   const navbar = document.querySelector('.nav-links')
-  console.log(navbar.childNodes);
+  // console.log(navbar.childNodes);
   navbar.childNodes.forEach(element => {
     element.addEventListener('click', () => {
       isMenuOpen.value = false
@@ -24,13 +24,13 @@ onMounted(() => {
   <header class="navbar">
     <nav class="flex justify-between align-center container">
       <!-- Logo -->
-      <router-link to="/" class="logo">
-        <img class="height-full width-full" src="/logo.png" alt="logo" />
+      <RouterLink to="/" class="logo">
+        <BaseImage class="height-full width-full" image="/logo.png" alt="logo" />
         <div class="brand">
           <span>CouponHub</span>
-          <p>Shop Smarter, Save Bigger</p>
+          <BaseParagraph>Shop Smarter, Save Bigger</BaseParagraph>
         </div>
-      </router-link>
+      </RouterLink>
 
       <!-- Mobile Menu Button -->
       <BaseButton class="hamburger" @click="toggleMenu">

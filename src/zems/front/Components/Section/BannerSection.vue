@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <section class="hero bg-light">
     <div class="container">
@@ -30,7 +27,7 @@
           </BaseButton>
         </div>
         <div class="img">
-          <BaseImage src="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="image" />
+          <BaseImage image="https://cdn.pixabay.com/photo/2023/02/23/10/11/valentine-7808440_960_720.png" alt="image" />
         </div>
       </div>
     </div>

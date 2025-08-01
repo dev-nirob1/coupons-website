@@ -42,7 +42,7 @@ import InputField from '@/components/element/InputField.vue';
             <InputField type="checkbox" />
             I aggree to the <RouterLink to="/">terms & conditions</RouterLink>
           </div>
-          <button class="btn bg-secondary text-white width-full">Create Account</button>
+          <BaseButton class="bg-secondary text-white width-full">Create Account</BaseButton>
         </form>
         <div class="divider">
           <div></div>or <div></div>
@@ -52,8 +52,8 @@ import InputField from '@/components/element/InputField.vue';
           <BaseButton class="btn"><i class="fa-brands fa-facebook-f"></i> Facebook</BaseButton>
         </div>
         <div>
-          <p>Already have an account? <RouterLink to="/login">Login Here</RouterLink>
-          </p>
+          <BaseParagraph>Already have an account? <RouterLink to="/login">Login Here</RouterLink>
+          </BaseParagraph>
         </div>
       </div>
     </div>

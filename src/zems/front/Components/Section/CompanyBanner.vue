@@ -2,18 +2,18 @@
     <section class="company-banner">
       <!-- company logo  -->
       <div class="container banner-content">
-        <img
-          src="./public/images/company/amazon.png"
+        <BaseImage
+          image="./public/images/company/amazon.png"
           alt="Company Logo"
           class="company-logo"
         />
         <!-- company name and details-->
         <div class="banner-text">
-          <h3 class="title">Amazon</h3>
-          <p>
+          <BaseTitle>Amazon</BaseTitle>
+          <BaseParagraph>
             We are a modern tech company focused on building high-quality
             software solutions for businesses around the world.
-          </p>
+          </BaseParagraph>
         </div>
       </div>
     </section>

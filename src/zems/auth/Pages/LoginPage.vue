@@ -1,5 +1,3 @@
-
-
 <template>
   <section class="login-page height-full">
     <div class="container medium-2 align-center gap-2">
@@ -23,7 +21,7 @@
             <InputField />
             <label class="label">Password</label>
           </div>
-          <BaseButton class="btn bg-secondary text-white width-full">Sign In</BaseButton>
+          <BaseButton class="bg-secondary text-white width-full">Sign In</BaseButton>
         </form>
         <div class="divider">
           <div></div>or <div></div>

@@ -1,7 +1,7 @@
 <script setup>
 import LoadingCard from '@/components/widgets/LoadingCard.vue';
 import SectionTitle from '@/components/widgets/SectionTitle.vue';
-import CouponCard from '@/zems/front/Components/Widgets/CouponCard.vue';
+import CouponCard from '@zems/front/Components/Widgets/CouponCard.vue';
 defineProps({
   featured: {
     type: Array
