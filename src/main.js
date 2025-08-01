@@ -10,7 +10,12 @@ import ListItem from '@/components/element/ListItem.vue'
 import BaseTable from '@/components/element/BaseTable.vue'
 import TableHeader from '@/components/element/TableHeader.vue'
 import TableRow from '@/components/element/TableRow.vue'
+// swiper css
+import 'swiper/css'
+// css styles
 import './assets/main.css'
+
+// pinia state management
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -18,10 +23,13 @@ import router from './router'
 import { VueQueryPlugin } from '@tanstack/vue-query'
 
 const pinia = createPinia()
-const app = createApp(App)
-app.use(pinia)
-app.use(VueQueryPlugin)
 
+const app = createApp(App)
+
+app.use(pinia)
+// vue tanstackquery
+app.use(VueQueryPlugin)
+// router
 app.use(router)
 app.component('BaseButton', BaseButton)
 app.component('BaseTitle', BaseTitle)

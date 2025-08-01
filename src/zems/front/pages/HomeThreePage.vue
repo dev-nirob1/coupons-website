@@ -26,7 +26,9 @@ const { isLoading, data } = useQuery({
   }
 })
 
+// store from pinia
 const modalStore = useModalStore()
+
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import TestimonialsCard from '@zems/front/Components/Widgets/TestimonialsCard.vue';
+import TestimonialsCard from '@/zems/front/Components/Widgets/TestimonialsCard.vue';
 const reviews = ref([
   {
     "name": "Adam Josheph",

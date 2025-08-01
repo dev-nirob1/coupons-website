@@ -1,152 +1,87 @@
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Navigation } from 'swiper/modules'
+
+// Props to control Swiper
+const modules = [Autoplay, Navigation]
+</script>
+
 <template>
-<section class="hero-three bg-primary">
-      <div class="container medium-12">
-        <div class="swiper-controls">
-          <BaseButton class="button-next">
-            Next <i class="fa-solid fa-arrow-right"></i>
-          </BaseButton>
-          <BaseButton class="button-prev">
-            <i class="fa-solid fa-arrow-left"></i> Previous
-          </BaseButton>
-        </div>
-        <div class="span-11 py-3">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper span-11">
-              <div class="swiper-slide">
-                <div class="medium-2 gap-3 align-center relative">
-                  <div class="swiper-content">
-                    <div>
-                      <HeroTitle>Huge Savings With</HeroTitle>
-                      <HeroTitle>Exclusive Coupons</HeroTitle>
-                    </div>
-                    <BaseParagraph>
-                      Unlock thousands of verified deals and save up to 80% at
-                      your favorite retailers. New coupons added daily for
-                      maximum savings!
-                    </BaseParagraph>
-                    <BaseButton class="bg-secondary text-white">
-                      Explore Now
-                    </BaseButton>
-                  </div>
-                  <div class="hero-three-img">
-                    <BaseImage
-                      class="img-full"
-                      image="https://media.istockphoto.com/id/687572186/photo/handsome-young-man-in-shopping.jpg?s=612x612&w=0&k=20&c=P5__LphyJf3BZd4ha1SKHgzv1UC_7foYccB9L6-29Qo="
-                      alt=""
-                    />
-                    <!-- discount card  -->
-                    <div class="discount-card">
-                      <BaseTitle>20</BaseTitle>
-                      <div>
-                        <BaseParagraph>%</BaseParagraph>
-                        <BaseParagraph>off</BaseParagraph>
-                      </div>
-                    </div>
-                    <!-- discount coupon card  -->
-                    <div class="coupon-1">
-                      <span>50% OFF</span>
-                      <SubTitle>Amazon</SubTitle>
-                    </div>
-                    <!-- discount coupon card  -->
-                    <div class="coupon-2">
-                      <span>$20 OFF</span>
-                      <SubTitle>Nike</SubTitle>
-                    </div>
+  <section class="hero-three bg-primary">
+    <div class="container medium-12">
+      <div class="swiper-controls">
+        <BaseButton class="button-next">
+          Next <i class="fa-solid fa-arrow-right"></i>
+        </BaseButton>
+        <BaseButton class="button-prev">
+          <i class="fa-solid fa-arrow-left"></i> Previous
+        </BaseButton>
+      </div>
+
+      <div class="span-11 py-3">
+        <Swiper
+          class="mySwiper"
+          :loop="true"
+          :autoplay="{ delay: 3500, disableOnInteraction: false }"
+          :speed="600"
+          :navigation="{
+            nextEl: '.button-next',
+            prevEl: '.button-prev'
+          }"
+          :modules="modules"
+        >
+          <SwiperSlide v-for="(slide, index) in 3" :key="index">
+            <div class="medium-2 gap-3 align-center relative">
+              <div class="swiper-content">
+                <div>
+                  <HeroTitle>Exclusive Coupons</HeroTitle>
+                  <HeroTitle>Huge Savings</HeroTitle>
+                </div>
+                <BaseParagraph>
+                  Unlock thousands of verified deals and save up to 80% at your favorite retailers. New coupons added
+                  daily for maximum savings!
+                </BaseParagraph>
+                <BaseButton class="bg-secondary text-white">Explore Now</BaseButton>
+              </div>
+
+              <div class="hero-three-img">
+                <BaseImage
+                  class="img-full"
+                  :image="[
+                    'https://media.istockphoto.com/id/687572186/photo/handsome-young-man-in-shopping.jpg?s=612x612&w=0&k=20&c=P5__LphyJf3BZd4ha1SKHgzv1UC_7foYccB9L6-29Qo=',
+                    'https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?q=80&w=1470&auto=format&fit=crop',
+                    'https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg'
+                  ][index]"
+                  alt=""
+                />
+
+                <!-- discount card -->
+                <div class="discount-card">
+                  <BaseTitle>20</BaseTitle>
+                  <div>
+                    <BaseParagraph>%</BaseParagraph>
+                    <BaseParagraph>off</BaseParagraph>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="medium-2 gap-3 align-center relative">
-                  <div class="swiper-content">
-                    <div>
-                      <HeroTitle>Exclusive Coupons</HeroTitle>
-                      <HeroTitle>Huge Savings</HeroTitle>
-                    </div>
-                    <BaseParagraph>
-                      Unlock thousands of verified deals and save up to 80% at
-                      your favorite retailers. New coupons added daily for
-                      maximum savings!
-                    </BaseParagraph>
-                    <BaseButton class="bg-secondary text-white">
-                      Explore Now
-                    </BaseButton>
-                  </div>
-                  <div class="hero-three-img">
-                    <BaseImage
-                      class="img-full"
-                      image="https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt=""
-                    />
-                    <!-- discount card  -->
-                    <div class="discount-card">
-                      <BaseTitle>20</BaseTitle>
-                      <div>
-                        <BaseParagraph>%</BaseParagraph>
-                        <BaseParagraph>off</BaseParagraph>
-                      </div>
-                    </div>
-                    <!-- discount coupon card  -->
-                    <div class="coupon-1">
-                      <span>50% OFF</span>
-                      <SubTitle>Amazon</SubTitle>
-                    </div>
-                    <!-- discount coupon card  -->
-                    <div class="coupon-2">
-                      <span>$20 OFF</span>
-                      <SubTitle>Nike</SubTitle>
-                    </div>
-                  </div>
+
+                <!-- discount coupon cards -->
+                <div class="coupon-1">
+                  <span>50% OFF</span>
+                  <SubTitle>Amazon</SubTitle>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="medium-2 gap-3 align-center relative">
-                  <div class="swiper-content">
-                    <div>
-                      <HeroTitle>Exclusive Coupons</HeroTitle>
-                      <HeroTitle>Huge Savings</HeroTitle>
-                    </div>
-                    <BaseParagraph>
-                      Unlock thousands of verified deals and save up to 80% at
-                      your favorite retailers. New coupons added daily for
-                      maximum savings!
-                    </BaseParagraph>
-                    <BaseButton class="bg-secondary text-white">
-                      Explore Now
-                    </BaseButton>
-                  </div>
-                  <div class="hero-three-img">
-                    <BaseImage
-                      class="img-full"
-                      image="https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                      alt=""
-                    />
-                    <!-- discount card  -->
-                    <div class="discount-card">
-                      <BaseTitle>20</BaseTitle>
-                      <div>
-                        <BaseParagraph>%</BaseParagraph>
-                        <BaseParagraph>off</BaseParagraph>
-                      </div>
-                    </div>
-                    <!-- discount coupon card  -->
-                    <div class="coupon-1">
-                      <span>50% OFF</span>
-                      <SubTitle>Amazon</SubTitle>
-                    </div>
-                    <!-- discount coupon card  -->
-                    <div class="coupon-2">
-                      <span>$20 OFF</span>
-                      <SubTitle>Nike</SubTitle>
-                    </div>
-                  </div>
+                <div class="coupon-2">
+                  <span>$20 OFF</span>
+                  <SubTitle>Nike</SubTitle>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
-    </section>
+    </div>
+  </section>
 </template>
+
 
 <style scoped>
 .hero-three {
