@@ -6,9 +6,7 @@ defineProps({
   handleOpenModal: {
     type: Function
   },
-  isModalOpen: {
-    type: Boolean
-  }
+
 })
 </script>
 
