@@ -1,21 +1,19 @@
 <script setup>
-import 'animate.css';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
 import { ref } from 'vue'
-import BannerSection from '@/zems/front/Components/Section/BannerSection.vue';
-import CategorySection from '@/zems/front/Components/Section/CategorySection.vue';
-import FeaturedCoupon from '@/zems/front/Components/Section/FeaturedCoupon.vue';
-import ByCompany from '@/zems/front/Components/Section/ByCompany.vue';
-// import ExclusiveCoupon from '@/zems/front/Components/Section/ExclusiveCoupon.vue';
-import TestimonialSection from '@/zems/front/Components/Section/TestimonialSection.vue';
-import NewsLetterSection from '@/zems/front/Components/Section/NewsLetterSection.vue';
-import TimelineSection from '@/zems/front/Components/Section/TimelineSection.vue';
-import EndingSoon from '@/zems/front/Components/Section/EndingSoon.vue';
-import PricingSection from '../Components/Section/PricingSection.vue';
-import AboutUs from '../Components/Section/AboutUs.vue';
-import StatisticsSection from '../Components/Section/StatisticsSection.vue';
-import ModalDetailsModal from '../Components/Widgets/ModalDetailsModal.vue';
+import BannerSection from '@zems/front/Components/Section/BannerSection.vue';
+import CategorySection from '@zems/front/Components/Section/CategorySection.vue';
+import FeaturedCoupon from '@zems/front/Components/Section/FeaturedCoupon.vue';
+import ByCompany from '@zems/front/Components/Section/ByCompany.vue';
+import TestimonialSection from '@zems/front/Components/Section/TestimonialSection.vue';
+import NewsLetterSection from '@zems/front/Components/Section/NewsLetterSection.vue';
+import TimelineSection from '@zems/front/Components/Section/TimelineSection.vue';
+import EndingSoon from '@zems/front/Components/Section/EndingSoon.vue';
+import PricingSection from '@zems/front/Components/Section/PricingSection.vue';
+import AboutUs from '@zems/front/Components/Section/AboutUs.vue';
+import StatisticsSection from '@zems/front/Components/Section/StatisticsSection.vue';
+import CouponDetailsModal from '@zems/front/Components/Widgets/CouponDetailsModal.vue';
 
 const { isLoading, data } = useQuery({
   queryKey: ['home'],
@@ -41,7 +39,7 @@ const handleOpenModal = () => {
 </script>
 
 <template>
-  <ModalDetailsModal :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"/>
+  <CouponDetailsModal :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal"/>
   <BannerSection />
   <CategorySection :categories="data?.cat" :isLoading="isLoading" />
   <EndingSoon :ending="data?.ending" :isLoading="isLoading" :handleOpenModal="handleOpenModal" />
