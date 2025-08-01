@@ -77,6 +77,7 @@ defineProps({
 .card-footer .btn {
   margin: 0;
   border-radius: 0.5rem;
+  padding: .75rem;
 }
 .card-footer::before,
 .card-footer::after {
@@ -110,8 +111,8 @@ defineProps({
   border-color: var(--secondary-color);
 }
 @media (min-width: 768px){
-  .coupon-card{
-     padding: 2rem 2rem 6rem 2rem;
+ .coupon-card {
+    padding: 2rem 2rem 6rem 2rem;
   }
 }
 </style>
